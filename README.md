@@ -1,4 +1,4 @@
-# Public configfuration files
+# Public configuration files
 
 This README provides a comprehensive overview of the configuration files required for the functioning of rpc system.
 
