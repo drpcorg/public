@@ -1,0 +1,6 @@
+rules:
+  - client: erigon
+    networks:
+      - ethereum
+    blacklist: 
+      - v2.40.0
