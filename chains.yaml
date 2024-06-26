@@ -213,8 +213,6 @@ chain-settings:
       settings:
         expected-block-time: 2.7s
         allow-pruning-requirement: true
-        options:
-          disable-validation: true
         lags:
           syncing: 40
           lagging: 20
@@ -240,8 +238,6 @@ chain-settings:
       settings:
         expected-block-time: 260ms
         allow-pruning-requirement: true
-        options:
-          disable-validation: true
         lags:
           syncing: 40
           lagging: 20
@@ -358,7 +354,6 @@ chain-settings:
         allow-pruning-requirement: true
         options:
           validate-peers: false
-          validate-syncing: false
         lags:
           syncing: 10
           lagging: 5
@@ -404,7 +399,7 @@ chain-settings:
       label: Mantle
       type: eth
       settings:
-        expected-block-time: 500ms
+        expected-block-time: 2s
         allow-pruning-requirement: true
         options:
           validate-peers: false
@@ -1188,7 +1183,7 @@ chain-settings:
       type: eth
       settings:
         fork-choice: quorum
-        expected-block-time: 5s
+        expected-block-time: 6s
         lags:
           syncing: 40
           lagging: 20
@@ -1197,8 +1192,14 @@ chain-settings:
           priority: 100
           code: ZETA_CHAIN_MAINNET
           grpcId: 1045
-          short-names: [zeta-chain]
+          short-names: [zeta-chain, zeta-chain-mainnet]
           chain-id: 0x1b58
+        - id: Testnet
+          priority: 1
+          code: ZETA_CHAIN_TESTNET
+          grpcId: 10087
+          short-names: [zeta-chain-testnet, athens]
+          chain-id: 0x1b59
     - id: bittorrent
       label: BitTorrent
       type: eth
@@ -1271,7 +1272,6 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-          validate-syncing: false
         fork-choice: quorum
         expected-block-time: 300ms
         lags:
