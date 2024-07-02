@@ -104,6 +104,8 @@ chain-settings:
         mev-critical: true
         expected-block-time: 2.7s
         allow-pruning-requirement: true
+        options:
+          validate-peers: false
         lags:
           syncing: 20
           lagging: 10
@@ -211,6 +213,8 @@ chain-settings:
       label: Polygon zkEVM
       type: eth
       settings:
+        options:
+          validate-peers: false
         expected-block-time: 2.7s
         allow-pruning-requirement: true
         options:
@@ -238,6 +242,8 @@ chain-settings:
       label: Arbitrum Nova
       type: eth
       settings:
+        options:
+          validate-peers: false
         expected-block-time: 260ms
         allow-pruning-requirement: true
         options:
@@ -456,6 +462,8 @@ chain-settings:
       label: Celo
       type: eth
       settings:
+        options:
+          validate-peers: false
         expected-block-time: 5s
         allow-pruning-requirement: true
         lags:
@@ -667,6 +675,8 @@ chain-settings:
       label: Immutable zkEVM
       type: eth
       settings:
+        options:
+          validate-peers: false
         expected-block-time: 2s
         lags:
           syncing: 5
@@ -808,6 +818,8 @@ chain-settings:
       label: Taiko
       type: eth
       settings:
+        options:
+          validate-peers: false
         expected-block-time: 60s
         lags:
           syncing: 6
@@ -999,6 +1011,8 @@ chain-settings:
       label: Zora
       type: eth
       settings:
+        options:
+          validate-peers: false
         fork-choice: quorum
         expected-block-time: 2s
         lags:
@@ -1021,6 +1035,8 @@ chain-settings:
       label: Mode
       type: eth
       settings:
+        options:
+          validate-peers: false
         fork-choice: quorum
         expected-block-time: 2s
         lags:
@@ -1083,6 +1099,8 @@ chain-settings:
       label: Neon EVM
       type: eth
       settings:
+        options:
+          validate-peers: false
         fork-choice: quorum
         expected-block-time: 500ms
         lags:
@@ -1141,6 +1159,8 @@ chain-settings:
       label: Heco
       type: eth
       settings:
+        options:
+          validate-peers: false
         fork-choice: quorum
         expected-block-time: 3s
         lags:
@@ -1187,6 +1207,8 @@ chain-settings:
       label: ZetaChain
       type: eth
       settings:
+        options:
+          validate-peers: false
         fork-choice: quorum
         expected-block-time: 5s
         lags:
@@ -1203,6 +1225,8 @@ chain-settings:
       label: BitTorrent
       type: eth
       settings:
+        options:
+          validate-peers: false
         fork-choice: quorum
         expected-block-time: 2s
         lags:
@@ -1485,7 +1509,7 @@ chain-settings:
           lagging: 1
       chains:
         - id: Mainnet
-          chain-id: osmosis
+          chain-id: osmosis-1
           short-names: [ osmosis ]
           code: OSMOSIS
           grpcId: 1060
@@ -1521,7 +1545,9 @@ chain-settings:
       label: Rootstock
       type: eth
       settings:
-        fork-choice: quorum
+        options:
+          validate-peers: false
+        fork-choice: height
         expected-block-time: 45s
         lags:
           syncing: 6
@@ -1561,6 +1587,8 @@ chain-settings:
       label: GameSwift
       type: eth
       settings:
+        options:
+          validate-peers: false
         expected-block-time: 2s
         lags:
           syncing: 10
