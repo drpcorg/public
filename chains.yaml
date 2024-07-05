@@ -39,7 +39,7 @@ chain-settings:
         lags:
           syncing: 6
           lagging: 1
-      fork-choice: quorum
+        fork-choice: quorum
       chains:
         - id: Mainnet
           chain-id: 0x1
