@@ -1587,6 +1587,7 @@ chain-settings:
       label: GameSwift
       type: eth
       settings:
+        currency: GSWIFT
         options:
           validate-peers: false
         expected-block-time: 2s
