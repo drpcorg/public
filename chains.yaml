@@ -950,11 +950,11 @@ chain-settings:
           lagging: 20
         fork-choice: quorum
       chains:
-        - id: Artio
+        - id: bArtio
           priority: 10
-          code: BERACHAIN_ARTIO
-          short-names: [artio, berachain-artio]
-          chain-id: 0x138d5
+          code: BERACHAIN_BARTIO
+          short-names: [bartio, berachain-bartio]
+          chain-id: 0x138d4
           grpcId: 10047
     - id: blast
       label: Blast
