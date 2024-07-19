@@ -1627,3 +1627,27 @@ chain-settings:
           short-names: [zircuit-testnet]
           chain-id: 0xbf03
           grpcId: 10088
+    - id: avail
+      label: Avail
+      type: polkadot
+      settings:
+        expected-block-time: 3s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+        fork-choice: height
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: AVAIL_MAINNET
+          short-names: [ avail ]
+          chain-id: Avail Network
+          grpcId: 1064
+        - id: Testnet
+          priority: 10
+          code: AVAIL_TESTNET
+          short-names: [ avail-testnet ]
+          chain-id: Avail Turing Network
+          grpcId: 10089
