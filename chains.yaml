@@ -319,6 +319,8 @@ chain-settings:
           priority: 100
           code: LINEA
           grpcId: 1011
+          gas-price-condition:
+            - ne 1000000000 # misconfiguration in official docs
           short-names: [linea]
           chain-id: 0xe708
         - id: Sepolia
