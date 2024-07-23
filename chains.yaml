@@ -1651,3 +1651,27 @@ chain-settings:
           short-names: [ avail-testnet ]
           chain-id: Avail Turing Network
           grpcId: 10089
+    - id: fraxtal
+      label: Fraxtal
+      type: eth
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 2s
+      lags:
+        syncing: 10
+        lagging: 5
+      fork-choice: height
+      chains:
+        - id: Testnet
+          priority: 1
+          code: FRAXTAL_TESTNET
+          short-names: [ fraxtal-testnet ]
+          chain-id: 0x9da
+          grpcId: 10090
+        - id: Mainnet
+          priority: 100
+          code: FRAXTAL_MAINNET
+          short-names: [ fraxtal ]
+          chain-id: 0xfc
+          grpcId: 1065
