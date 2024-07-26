@@ -1675,49 +1675,27 @@ chain-settings:
           short-names: [ fraxtal ]
           chain-id: 0xfc
           grpcId: 1065
-    - id: tron-evm
-      label: Tron evm
+    - id: tron
+      label: Tron
       type: eth
       settings:
         options:
           validate-peers: false
-        expected-block-time: 4s
+        expected-block-time: 2s
         lags:
           syncing: 10
           lagging: 5
+        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
-          code: TRON_EVM_MAINNET
-          short-names: [tron-evm]
+          code: TRON_MAINNET
+          short-names: [tron]
           chain-id: 0x2b6653dc
           grpcId: 1066
         - id: Shasta
           priority: 10
-          code: TRON_EVM_SHASTA
-          short-names: [tron-evm-shasta]
+          code: TRON_SHASTA
+          short-names: [tron-shasta]
           chain-id: 0x94a9059e
           grpcId: 10091
-    - id: tron-http
-      label: Tron http
-      type: tron-http
-      settings:
-        options:
-          validate-peers: false
-        expected-block-time: 4s
-        lags:
-          syncing: 10
-          lagging: 5
-      chains:
-        - id: Mainnet
-          priority: 100
-          code: TRON_HTTP_MAINNET
-          short-names: [tron-http]
-          chain-id: 0x0
-          grpcId: 1067
-        - id: Shasta
-          priority: 10
-          code: TRON_HTTP_SHASTA
-          short-names: [tron-http-shasta]
-          chain-id: 0x0
-          grpcId: 10092
