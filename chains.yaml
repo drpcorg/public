@@ -1675,3 +1675,27 @@ chain-settings:
           short-names: [ fraxtal ]
           chain-id: 0xfc
           grpcId: 1065
+    - id: tron
+      label: Tron
+      type: eth
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 2s
+        lags:
+          syncing: 10
+          lagging: 5
+        fork-choice: quorum
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: TRON_MAINNET
+          short-names: [tron]
+          chain-id: 0x2b6653dc
+          grpcId: 1066
+        - id: Shasta
+          priority: 10
+          code: TRON_SHASTA
+          short-names: [tron-shasta]
+          chain-id: 0x94a9059e
+          grpcId: 10091
