@@ -900,7 +900,7 @@ chain-settings:
           priority: 100
           code: ALEPHZERO_MAINNET
           short-names: [alephzero]
-          chain-id: 0xA1EF
+          chain-id: 0xa1ef
           grpcId: 1070
         - id: Sepolia
           priority: 2
