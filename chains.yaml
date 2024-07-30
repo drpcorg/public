@@ -1699,3 +1699,53 @@ chain-settings:
           short-names: [tron-shasta]
           chain-id: 0x94a9059e
           grpcId: 10091
+    - id: kroma
+      label: Kroma
+      type: eth
+      settings:
+        expected-block-time: 2s
+        allow-pruning-requirement: true
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+        fork-choice: quorum
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: KROMA_MAINNET
+          grpcId: 1068
+          short-names: [kroma]
+          chain-id: 0xff
+        - id: Sepolia
+          priority: 1
+          code: KROMA_SEPOLIA
+          grpcId: 10093
+          short-names: [kroma-sepolia]
+          chain-id: 0x936
+    - id: wemix
+      label: Wemix
+      type: eth
+      settings:
+        expected-block-time: 2s
+        allow-pruning-requirement: true
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+        fork-choice: quorum
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: WEMIX_MAINNET
+          grpcId: 1069
+          short-names: [wemix]
+          chain-id: 0x457
+        - id: Testnet
+          priority: 1
+          code: WEMIX_TESTNET
+          grpcId: 10094
+          short-names: [wemix-testnet]
+          chain-id: 0x458
