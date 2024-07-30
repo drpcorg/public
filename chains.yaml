@@ -896,6 +896,12 @@ chain-settings:
           validate-peers: false
         fork-choice: quorum
       chains:
+        - id: Mainnet
+          priority: 100
+          code: ALEPHZERO_MAINNET
+          short-names: [alephzero]
+          chain-id: 0xa1ef
+          grpcId: 1070
         - id: Sepolia
           priority: 2
           code: ALEPHZERO_SEPOLIA
