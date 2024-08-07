@@ -908,8 +908,8 @@ chain-settings:
           short-names: [alephzero-sepolia]
           chain-id: 0x7f7
           grpcId: 10078
-    - id: connext
-      label: Connext Network
+    - id: everclear
+      label: Everclear Network
       type: eth
       settings:
         expected-block-time: 60s
@@ -922,8 +922,8 @@ chain-settings:
       chains:
         - id: Sepolia
           priority: 2
-          code: CONNEXT_SEPOLIA
-          short-names: [connext-sepolia]
+          code: EVERCLEAR_SEPOLIA
+          short-names: [everclear-sepolia]
           chain-id: 0x18fe
           grpcId: 10077
     - id: harmony
