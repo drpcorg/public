@@ -1755,3 +1755,39 @@ chain-settings:
           grpcId: 10094
           short-names: [wemix-testnet]
           chain-id: 0x458
+    - id: polkadot
+      label: Polkadot
+      type: polkadot
+      settings:
+        expected-block-time: 3s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+        fork-choice: height
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: POLKADOT_MAINNET
+          short-names: [ polkadot ]
+          chain-id: Polkadot
+          grpcId: 1071
+    - id: kusama
+      label: Kusama
+      type: polkadot
+      settings:
+        expected-block-time: 3s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+        fork-choice: height
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: KUSAMA_MAINNET
+          short-names: [ kusama ]
+          chain-id: Kusama
+          grpcId: 1072
