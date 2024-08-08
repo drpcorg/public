@@ -909,7 +909,7 @@ chain-settings:
           chain-id: 0x7f7
           grpcId: 10078
     - id: everclear
-      label: Everclear Network
+      label: Everclear
       type: eth
       settings:
         expected-block-time: 60s
