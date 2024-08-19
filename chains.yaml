@@ -118,13 +118,6 @@ chain-settings:
           grpcId: 1002
           chain-id: 0x89
           short-names: [polygon, matic]
-        - id: Mumbai
-          priority: 1
-          call-validate-contract: 0x53Daa71B04d589429f6d3DF52db123913B818F23
-          code: POLYGON_POS_MUMBAI
-          grpcId: 10013
-          chain-id: 0x13881
-          short-names: [polygon-mumbai]
         - id: Amoy
           priority: 10
           code: POLYGON_POS_AMOY
