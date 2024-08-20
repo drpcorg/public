@@ -1784,3 +1784,69 @@ chain-settings:
           short-names: [ kusama ]
           chain-id: Kusama
           grpcId: 1072
+    - id: Metal L2
+      label: metall2
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+        fork-choice: quorum
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: METAL_L2_MAINNET
+          grpcId: 1073
+          short-names: [metall2]
+          chain-id: 0x6d6
+        - id: Testnet
+          priority: 1
+          code: METAL_L2_TESTNET
+          grpcId: 10095
+          short-names: [metall2-testnet]
+          chain-id: 0x6cc
+    - id: BOB
+      label: bob
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+        fork-choice: quorum
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: BOB_MAINNET
+          grpcId: 1074
+          short-names: [bob]
+          chain-id: 0xed88
+        - id: Testnet
+          priority: 1
+          code: BOB_TESTNET
+          grpcId: 10096
+          short-names: [bob-testnet]
+          chain-id: 0xc576d
+    - id: GOAT
+      label: goat
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+        fork-choice: quorum
+      chains:
+        - id: Testnet
+          priority: 1
+          code: GOAT_TESTNET
+          grpcId: 10097
+          short-names: [goat-testnet]
+          chain-id: 0xd80
