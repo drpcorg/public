@@ -1849,4 +1849,4 @@ chain-settings:
           code: GOAT_TESTNET
           grpcId: 10097
           short-names: [goat-testnet]
-          chain-id: 0xd80
+          chain-id: 0x929
