@@ -1714,8 +1714,8 @@ chain-settings:
           short-names: [ kusama ]
           chain-id: Kusama
           grpcId: 1072
-    - id: Metal L2
-      label: metall2
+    - id: metall2
+      label: Metal L2
       type: eth
       settings:
         expected-block-time: 2s
@@ -1737,8 +1737,8 @@ chain-settings:
           grpcId: 10095
           short-names: [metall2-testnet]
           chain-id: 0x6cc
-    - id: BOB
-      label: bob
+    - id: bob
+      label: BOB
       type: eth
       settings:
         expected-block-time: 2s
@@ -1760,8 +1760,8 @@ chain-settings:
           grpcId: 10096
           short-names: [bob-testnet]
           chain-id: 0xc576d
-    - id: GOAT
-      label: goat
+    - id: goat
+      label: GOAT
       type: eth
       settings:
         expected-block-time: 2s
