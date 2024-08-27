@@ -109,7 +109,6 @@ settings:
     lags:
         syncing: 40
         lagging: 20
-    fork-choice: quorum
 ```
 
 ### Field Descriptions
@@ -119,7 +118,6 @@ settings:
 | `expected-block-time`        | Default expected time for block generation.                       |
 | `lags.syncing`               | Number of blocks considered for syncing.                          |
 | `lags.lagging`               | Number of blocks considered for lagging.                          |
-| `fork-choice`                | Fork choice rule used by the protocol. Could be quorum or height. |
 | `options.validate-peers`     | Enable validation of peers for chains                             |
 | `options.validate-syncing`   | Enable validation of syncing state                                |
 | `options.disable-validation` | Disable all validations                                           |

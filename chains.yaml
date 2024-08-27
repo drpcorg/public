@@ -39,7 +39,6 @@ chain-settings:
         lags:
           syncing: 6
           lagging: 1
-        fork-choice: quorum
       chains:
         - id: Mainnet
           chain-id: 0x1
@@ -83,7 +82,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -109,7 +107,6 @@ chain-settings:
         lags:
           syncing: 20
           lagging: 10
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -135,7 +132,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -160,7 +156,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -184,7 +179,6 @@ chain-settings:
         lags:
           syncing: 20
           lagging: 10
-        fork-choice: height
       chains:
         - id: Mainnet
           priority: 100
@@ -213,7 +207,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -240,7 +233,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           code: ARBITRUM_NOVA
@@ -256,7 +248,6 @@ chain-settings:
         lags:
           syncing: 70
           lagging: 50
-        fork-choice: height # wait for providers
         options:
           validate-peers: false
       chains:
@@ -283,7 +274,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -306,7 +296,6 @@ chain-settings:
         lags:
           syncing: 6
           lagging: 1
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -333,7 +322,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -358,7 +346,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -382,7 +369,6 @@ chain-settings:
         lags:
           syncing: 80
           lagging: 40
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -407,7 +393,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: height # investigate
       chains:
         - id: Mainnet
           priority: 100
@@ -432,7 +417,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -447,7 +431,6 @@ chain-settings:
           short-names: [klaytn-baobab]
           chain-id: 0x3e9
           settings:
-            fork-choice: height
     - id: celo
       label: Celo
       type: eth
@@ -459,7 +442,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -482,7 +464,6 @@ chain-settings:
         lags:
           syncing: 6
           lagging: 1
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -505,7 +486,6 @@ chain-settings:
         lags:
           syncing: 6
           lagging: 1
-        fork-choice: quorum
       chains:
         - id: Moonriver
           priority: 50
@@ -523,7 +503,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: quorum
       chains:
         - id: Sepolia
           priority: 10
@@ -547,7 +526,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -562,7 +540,6 @@ chain-settings:
           chain-id: 0x152
           grpcId: 10030
           settings:
-            fork-choice: height # wait for providers
     - id: metis
       label: Metis
       type: eth
@@ -574,7 +551,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -598,7 +574,6 @@ chain-settings:
         lags:
           syncing: 400
           lagging: 200
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -623,7 +598,6 @@ chain-settings:
         lags:
           syncing: 20
           lagging: 10
-        fork-choice: height # investigate
       chains:
         - id: Mainnet
           priority: 100
@@ -647,7 +621,6 @@ chain-settings:
         lags:
           syncing: 5
           lagging: 1
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -671,7 +644,6 @@ chain-settings:
         lags:
           syncing: 5
           lagging: 1
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -696,7 +668,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: height
       chains:
         - id: Mainnet
           priority: 1
@@ -721,7 +692,6 @@ chain-settings:
         lags:
           syncing: 1000
           lagging: 100
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -749,7 +719,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: height # wait for more providers
       chains:
         - id: Mainnet
           priority: 100
@@ -773,7 +742,6 @@ chain-settings:
           lagging: 10
         options:
           validate-peers: false
-        fork-choice: height
       chains:
         - id: Mainnet
           priority: 100
@@ -796,7 +764,6 @@ chain-settings:
         lags:
           syncing: 20
           lagging: 10
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -814,7 +781,6 @@ chain-settings:
         lags:
           syncing: 6
           lagging: 2
-        fork-choice: height # wait for providers
       chains:
         - id: Mainnet
           priority: 100
@@ -838,7 +804,6 @@ chain-settings:
         lags:
           syncing: 20
           lagging: 10
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -863,7 +828,6 @@ chain-settings:
           lagging: 5
         options:
           validate-peers: false
-        fork-choice: quorum
       chains:
         - id: Manta Pacific Mainnet
           priority: 100
@@ -887,7 +851,6 @@ chain-settings:
           lagging: 5
         options:
           validate-peers: false
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -911,7 +874,6 @@ chain-settings:
           lagging: 5
         options:
           validate-peers: false
-        fork-choice: quorum
       chains:
         - id: Sepolia
           priority: 2
@@ -927,7 +889,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet Shard 0
           priority: 100
@@ -949,7 +910,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: bArtio
           priority: 10
@@ -1009,7 +969,6 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-        fork-choice: quorum
         expected-block-time: 2s
         lags:
           syncing: 40
@@ -1033,7 +992,6 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-        fork-choice: quorum
         expected-block-time: 2s
         lags:
           syncing: 40
@@ -1079,7 +1037,6 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-        fork-choice: quorum
         expected-block-time: 3s
         lags:
           syncing: 40
@@ -1097,7 +1054,6 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-        fork-choice: quorum
         expected-block-time: 500ms
         lags:
           syncing: 40
@@ -1119,7 +1075,6 @@ chain-settings:
       label: Boba Ethereum
       type: eth
       settings:
-        fork-choice: quorum
         expected-block-time: 1m
         options:
           validate-peers: false
@@ -1137,7 +1092,6 @@ chain-settings:
       label: Boba BNB
       type: eth
       settings:
-        fork-choice: quorum
         expected-block-time: 5s
         options:
           validate-peers: false
@@ -1157,7 +1111,6 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-        fork-choice: quorum
         expected-block-time: 3s
         lags:
           syncing: 40
@@ -1179,7 +1132,6 @@ chain-settings:
       label: Playnance
       type: eth
       settings:
-        fork-choice: quorum
         expected-block-time: 15s
         options:
           validate-peers: false
@@ -1205,7 +1157,6 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-        fork-choice: quorum
         expected-block-time: 6s
         lags:
           syncing: 40
@@ -1229,7 +1180,6 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-        fork-choice: quorum
         expected-block-time: 2s
         lags:
           syncing: 40
@@ -1251,7 +1201,6 @@ chain-settings:
       label: Thundercore
       type: eth
       settings:
-        fork-choice: quorum
         expected-block-time: 1s
         lags:
           syncing: 40
@@ -1273,7 +1222,6 @@ chain-settings:
       label: Core
       type: eth
       settings:
-        fork-choice: quorum
         expected-block-time: 3s
         lags:
           syncing: 40
@@ -1297,7 +1245,6 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-        fork-choice: quorum
         expected-block-time: 300ms
         lags:
           syncing: 40
@@ -1319,7 +1266,6 @@ chain-settings:
       label: Near
       type: near
       settings:
-        fork-choice: quorum
         expected-block-time: 1s
         lags:
           syncing: 40
@@ -1347,7 +1293,6 @@ chain-settings:
       label: OP Celestia Raspberry
       type: eth
       settings:
-        fork-choice: quorum
         expected-block-time: 15s
         options:
           validate-peers: false
@@ -1365,7 +1310,6 @@ chain-settings:
       label: Arbitrum Blueberry
       type: eth
       settings:
-        fork-choice: quorum
         expected-block-time: 15s
         options:
           validate-peers: false
@@ -1383,7 +1327,6 @@ chain-settings:
       label: Polygon Blackberry
       type: eth
       settings:
-        fork-choice: quorum
         expected-block-time: 15s
         options:
           validate-peers: false
@@ -1401,7 +1344,6 @@ chain-settings:
       label: Dymension
       type: eth
       settings:
-        fork-choice: quorum
         expected-block-time: 4s
         lags:
           syncing: 40
@@ -1444,7 +1386,6 @@ chain-settings:
       label: re.al
       type: eth
       settings:
-        fork-choice: quorum
         expected-block-time: 15s
         options:
           validate-peers: false
@@ -1548,7 +1489,6 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-        fork-choice: height
         expected-block-time: 45s
         lags:
           syncing: 6
@@ -1576,7 +1516,6 @@ chain-settings:
           lagging: 5
         options:
           validate-peers: false
-        fork-choice: quorum
       chains:
         - id: Sepolia
           priority: 2
@@ -1594,7 +1533,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: quorum
       chains:
         - id: Testnet
           priority: 1
@@ -1612,7 +1550,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -1636,7 +1573,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: height
       chains:
         - id: Mainnet
           priority: 100
@@ -1660,7 +1596,6 @@ chain-settings:
       lags:
         syncing: 10
         lagging: 5
-      fork-choice: height
       chains:
         - id: Testnet
           priority: 1
@@ -1684,7 +1619,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -1709,7 +1643,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -1734,7 +1667,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -1758,7 +1690,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: height
       chains:
         - id: Mainnet
           priority: 100
@@ -1776,7 +1707,6 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 5
-        fork-choice: height
       chains:
         - id: Mainnet
           priority: 100
@@ -1794,7 +1724,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -1818,7 +1747,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Mainnet
           priority: 100
@@ -1842,7 +1770,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: quorum
       chains:
         - id: Testnet
           priority: 1
