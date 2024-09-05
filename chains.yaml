@@ -430,7 +430,6 @@ chain-settings:
           grpcId: 10024
           short-names: [klaytn-baobab]
           chain-id: 0x3e9
-          settings:
     - id: celo
       label: Celo
       type: eth
@@ -539,7 +538,6 @@ chain-settings:
           short-names: [cronos-testnet]
           chain-id: 0x152
           grpcId: 10030
-          settings:
     - id: metis
       label: Metis
       type: eth
