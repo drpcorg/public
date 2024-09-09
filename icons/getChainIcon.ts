@@ -77,6 +77,7 @@ import Zircuit from "./Zircuit.svg";
 import Tron from "./Tron.png";
 import Fraxtal from "./Fraxtal.svg";
 import Goat from "./Goat.svg";
+import Metall2 from "./Metall2.svg";
 
 const Icons: Record<string, any> = {
   arbitrum: Arbitrum,
@@ -159,6 +160,7 @@ const Icons: Record<string, any> = {
   thundercore: Thundercore,
   "zeta-chain": Zetachain,
   zora: Zora,
+  metall2: Metall2,
 };
 
 const DarkIcons: Record<string, any> = {
