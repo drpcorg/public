@@ -1,0 +1,857 @@
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 1
+  explorers:
+    - https://etherscan.io
+    - https://eth.blockscout.com
+    - https://ethereum.dex.guru
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 10
+  explorers:
+    - https://optimistic.etherscan.io
+    - https://optimism.blockscout.com
+    - https://optimism.dex.guru
+- currency:
+    name: ThunderCore Testnet Token
+    symbol: TST
+    decimals: 18
+  chain-id: 18
+  explorers:
+    - https://explorer-testnet.thundercore.com
+- currency:
+    name: Cronos
+    symbol: CRO
+    decimals: 18
+  chain-id: 25
+  explorers:
+    - https://explorer.cronos.org
+- currency:
+    name: Smart Bitcoin
+    symbol: RBTC
+    decimals: 18
+  chain-id: 30
+  explorers:
+    - https://explorer.rsk.co
+    - https://rootstock.blockscout.com
+- currency:
+    name: Testnet Smart Bitcoin
+    symbol: tRBTC
+    decimals: 18
+  chain-id: 31
+  explorers:
+    - https://explorer.testnet.rsk.co
+- currency:
+    name: Telos
+    symbol: TLOS
+    decimals: 18
+  chain-id: 40
+  explorers:
+    - https://teloscan.io
+- currency:
+    name: Telos
+    symbol: TLOS
+    decimals: 18
+  chain-id: 41
+  explorers:
+    - https://testnet.teloscan.io
+- currency:
+    name: BNB Chain Native Token
+    symbol: BNB
+    decimals: 18
+  chain-id: 56
+  explorers:
+    - https://bscscan.com
+    - https://bnb.dex.guru
+- currency:
+    name: Ether
+    symbol: ETC
+    decimals: 18
+  chain-id: 61
+  explorers:
+    - https://etc.blockscout.com
+    - https://explorer-blockscout.etc-network.info
+    - https://explorer-alethio.etc-network.info
+    - https://explorer-expedition.etc-network.info
+    - https://etcerscan.com
+    - https://www.oklink.com/etc
+    - https://etc.tokenview.io
+- currency:
+    name: OKExChain Global Utility Token in testnet
+    symbol: OKT
+    decimals: 18
+  chain-id: 65
+  explorers:
+    - https://www.oklink.com/okexchain-test
+- currency:
+    name: OKXChain Global Utility Token
+    symbol: OKT
+    decimals: 18
+  chain-id: 66
+  explorers:
+    - https://www.oklink.com/en/okc
+- currency:
+    name: BNB Chain Native Token
+    symbol: tBNB
+    decimals: 18
+  chain-id: 97
+  explorers:
+    - https://testnet.bscscan.com
+- currency:
+    name: xDAI
+    symbol: XDAI
+    decimals: 18
+  chain-id: 100
+  explorers:
+    - https://gnosisscan.io
+    - https://gnosis.blockscout.com
+    - https://gnosis.dex.guru
+- currency:
+    name: ThunderCore Token
+    symbol: TT
+    decimals: 18
+  chain-id: 108
+  explorers:
+    - https://viewblock.io/thundercore
+- currency:
+    name: Fuse
+    symbol: FUSE
+    decimals: 18
+  chain-id: 122
+  explorers:
+    - https://explorer.fuse.io
+- currency:
+    name: Huobi ECO Chain Native Token
+    symbol: HT
+    decimals: 18
+  chain-id: 128
+  explorers:
+    - https://hecoinfo.com
+- currency:
+    name: POL
+    symbol: POL
+    decimals: 18
+  chain-id: 137
+  explorers:
+    - https://polygonscan.com
+    - https://polygon.dex.guru
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 169
+  explorers:
+    - https://pacific-explorer.manta.network
+- currency:
+    name: BitTorrent
+    symbol: BTT
+    decimals: 18
+  chain-id: 199
+  explorers:
+    - https://bttcscan.com
+- currency:
+    name: BNB Chain Native Token
+    symbol: BNB
+    decimals: 18
+  chain-id: 204
+  explorers:
+    - https://mainnet.opbnbscan.com
+- currency:
+    name: Fantom
+    symbol: FTM
+    decimals: 18
+  chain-id: 250
+  explorers:
+    - https://ftmscan.com
+    - https://fantom.dex.guru
+- currency:
+    name: Frax Ether
+    symbol: frxETH
+    decimals: 18
+  chain-id: 252
+  explorers:
+    - https://fraxscan.com
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 255
+  explorers:
+    - https://blockscout.kroma.network
+- currency:
+    name: Huobi ECO Chain Test Native Token
+    symbol: htt
+    decimals: 18
+  chain-id: 256
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 288
+  explorers:
+    - https://bobascan.com
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 300
+  explorers:
+    - https://sepolia.explorer.zksync.io
+- currency:
+    name: filecoin
+    symbol: FIL
+    decimals: 18
+  chain-id: 314
+  explorers:
+    - https://filfox.info/en
+    - https://beryx.zondax.ch
+    - https://explorer.glif.io
+    - https://dev.storage
+    - https://filscan.io
+    - https://filscout.io/en
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 324
+  explorers:
+    - https://explorer.zksync.io
+- currency:
+    name: Cronos Test Coin
+    symbol: TCRO
+    decimals: 18
+  chain-id: 338
+  explorers:
+    - https://explorer.cronos.org/testnet
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 919
+  explorers:
+    - https://sepolia.explorer.mode.network
+- currency:
+    name: KAIA
+    symbol: KLAY
+    decimals: 18
+  chain-id: 1001
+  explorers:
+    - https://baobab.klaytnscope.com
+    - https://baobab.klaytnfinder.io
+- currency:
+    name: BitTorrent
+    symbol: BTT
+    decimals: 18
+  chain-id: 1028
+  explorers:
+    - https://testscan.bittorrentchain.io
+- currency:
+    name: Metis
+    symbol: METIS
+    decimals: 18
+  chain-id: 1088
+  explorers:
+    - https://andromeda-explorer.metis.io
+- currency:
+    name: DYM
+    symbol: DYM
+    decimals: 18
+  chain-id: 1100
+  explorers:
+    - https://dym.fyi
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 1101
+  explorers:
+    - https://zkevm.polygonscan.com
+- currency:
+    name: WEMIX
+    symbol: WEMIX
+    decimals: 18
+  chain-id: 1111
+  explorers:
+    - https://explorer.wemix.com
+- currency:
+    name: TestnetWEMIX
+    symbol: tWEMIX
+    decimals: 18
+  chain-id: 1112
+  explorers:
+    - https://microscope.test.wemix.com
+- currency:
+    name: Core Blockchain Testnet Native Token
+    symbol: tCORE
+    decimals: 18
+  chain-id: 1115
+  explorers:
+    - https://scan.test.btcs.network
+- currency:
+    name: Core Blockchain Native Token
+    symbol: CORE
+    decimals: 18
+  chain-id: 1116
+  explorers:
+    - https://scan.coredao.org
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 1135
+  explorers:
+    - https://blockscout.lisk.com
+- currency:
+    name: Glimmer
+    symbol: GLMR
+    decimals: 18
+  chain-id: 1284
+  explorers:
+    - https://moonbeam.moonscan.io
+- currency:
+    name: Moonriver
+    symbol: MOVR
+    decimals: 18
+  chain-id: 1285
+  explorers:
+    - https://moonriver.moonscan.io
+- currency:
+    name: Dev
+    symbol: DEV
+    decimals: 18
+  chain-id: 1287
+  explorers:
+    - https://moonbase.moonscan.io
+- currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  chain-id: 1740
+  explorers:
+    - https://testnet.explorer.metall2.com
+- currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  chain-id: 1750
+  explorers:
+    - https://explorer.metall2.com
+- currency:
+    name: Ronin
+    symbol: RON
+    decimals: 18
+  chain-id: 2020
+  explorers:
+    - https://app.roninchain.com/
+- currency:
+    name: TZERO
+    symbol: TZERO
+    decimals: 18
+  chain-id: 2039
+  explorers:
+    - https://evm-explorer-testnet.alephzero.org
+- currency:
+    name: TKava
+    symbol: TKAVA
+    decimals: 18
+  chain-id: 2221
+  explorers:
+    - http://testnet.kavascan.com
+- currency:
+    name: Kava
+    symbol: KAVA
+    decimals: 18
+  chain-id: 2222
+  explorers:
+    - https://kavascan.com
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 2358
+  explorers:
+    - https://blockscout.sepolia.kroma.network
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 2442
+  explorers:
+    - https://cardona-zkevm.polygonscan.com
+- currency:
+    name: Frax Ether
+    symbol: frxETH
+    decimals: 18
+  chain-id: 2522
+  explorers:
+    - https://holesky.fraxscan.com
+- currency:
+    name: Fantom
+    symbol: FTM
+    decimals: 18
+  chain-id: 4002
+  explorers:
+    - https://testnet.ftmscan.com
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 4202
+  explorers:
+    - https://sepolia-blockscout.lisk.com
+- currency:
+    name: Mantle
+    symbol: MNT
+    decimals: 18
+  chain-id: 5000
+  explorers:
+    - https://mantlescan.xyz
+    - https://explorer.mantle.xyz
+- currency:
+    name: Sepolia Mantle
+    symbol: MNT
+    decimals: 18
+  chain-id: 5003
+  explorers:
+    - https://explorer.sepolia.mantle.xyz
+- currency:
+    name: BNB Chain Native Token
+    symbol: tBNB
+    decimals: 18
+  chain-id: 5611
+  explorers:
+    - https://opbnb-testnet.bscscan.com
+    - https://opbnbscan.com
+- currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  chain-id: 6398
+  explorers:
+    - https://connext-sepolia.blockscout.com
+- currency:
+    name: Zeta
+    symbol: ZETA
+    decimals: 18
+  chain-id: 7000
+  explorers:
+    - https://explorer.zetachain.com/
+- currency:
+    name: Zeta
+    symbol: ZETA
+    decimals: 18
+  chain-id: 7001
+  explorers:
+    - https://athens.explorer.zetachain.com
+    - https://zetachain-athens-3.blockscout.com
+- currency:
+    name: KAIA
+    symbol: KLAY
+    decimals: 18
+  chain-id: 8217
+  explorers:
+    - https://scope.klaytn.com
+    - https://klaytnfinder.io
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 8453
+  explorers:
+    - https://basescan.org
+    - https://base.blockscout.com
+    - https://base.dex.guru
+- currency:
+    name: test-Evmos
+    symbol: tEVMOS
+    decimals: 18
+  chain-id: 9000
+  explorers:
+    - https://testnet.escan.live
+- currency:
+    name: Evmos
+    symbol: EVMOS
+    decimals: 18
+  chain-id: 9001
+  explorers:
+    - https://escan.live
+- currency:
+    name: Chiado xDAI
+    symbol: XDAI
+    decimals: 18
+  chain-id: 10200
+  explorers:
+    - https://blockscout.chiadochain.net
+    - https://gnosis-chiado.blockscout.com
+- currency:
+    name: Islamic Coin
+    symbol: ISLM
+    decimals: 18
+  chain-id: 11235
+  explorers:
+    - https://explorer.haqq.network
+- currency:
+    name: IMX
+    symbol: IMX
+    decimals: 18
+  chain-id: 13371
+  explorers:
+    - https://explorer.immutable.com
+- currency:
+    name: Test IMX
+    symbol: tIMX
+    decimals: 18
+  chain-id: 13473
+  explorers:
+    - https://explorer.testnet.immutable.com
+- currency:
+    name: Testnet ETH
+    symbol: ETH
+    decimals: 18
+  chain-id: 17000
+  explorers:
+    - https://holesky.beaconcha.in
+    - https://holesky.otterscan.io
+    - https://holesky.etherscan.io
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 34443
+  explorers:
+    - https://explorer.mode.network
+- currency:
+    name: Aleph Zero
+    symbol: AZERO
+    decimals: 18
+  chain-id: 41455
+  explorers:
+    - https://evm-explorer.alephzero.org
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 42161
+  explorers:
+    - https://arbiscan.io
+    - https://explorer.arbitrum.io
+    - https://arbitrum.dex.guru
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 42170
+  explorers:
+    - https://nova-explorer.arbitrum.io
+    - https://nova.dex.guru
+- currency:
+    name: CELO
+    symbol: CELO
+    decimals: 18
+  chain-id: 42220
+  explorers:
+    - https://celoscan.io
+    - https://explorer.celo.org
+- currency:
+    name: Avalanche
+    symbol: AVAX
+    decimals: 18
+  chain-id: 43113
+  explorers:
+    - https://testnet.snowtrace.io
+- currency:
+    name: Avalanche
+    symbol: AVAX
+    decimals: 18
+  chain-id: 43114
+  explorers:
+    - https://snowtrace.io
+- currency:
+    name: CELO
+    symbol: CELO
+    decimals: 18
+  chain-id: 44787
+  explorers:
+    - https://alfajores.celoscan.io
+- currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  chain-id: 48899
+  explorers:
+    - https://explorer.testnet.zircuit.com
+- currency:
+    name: Zircuit
+    symbol: ETH
+    decimals: 18
+  chain-id: 48900
+  explorers:
+    - https://explorer.zircuit.com/
+- currency:
+    name: Islamic Coin
+    symbol: ISLMT
+    decimals: 18
+  chain-id: 54211
+  explorers:
+    - https://explorer.testedge2.haqq.network
+- currency:
+    name: Boba Token
+    symbol: BOBA
+    decimals: 18
+  chain-id: 56288
+  explorers:
+    - https://bobascan.com
+- currency:
+    name: Linea Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 59141
+  explorers:
+    - https://sepolia.lineascan.build
+    - https://explorer.sepolia.linea.build
+- currency:
+    name: Linea Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 59144
+  explorers:
+    - https://lineascan.build
+    - https://explorer.linea.build
+    - https://linea.l2scan.co
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 60808
+  explorers:
+    - https://explorer.gobob.xyz
+- currency:
+    name: MATIC
+    symbol: MATIC
+    decimals: 18
+  chain-id: 80002
+  explorers:
+    - https://www.oklink.com/amoy
+- currency:
+    name: BERA Token
+    symbol: BERA
+    decimals: 18
+  chain-id: 80084
+  explorers:
+    - https://bartio.beratrail.io
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 81457
+  explorers:
+    - https://blastscan.io
+    - https://blastexplorer.io
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 84532
+  explorers:
+    - https://base-sepolia.blockscout.com
+- currency:
+    name: reETH
+    symbol: reETH
+    decimals: 18
+  chain-id: 111188
+  explorers:
+    - https://explorer.re.al
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 167000
+  explorers:
+    - https://taikoscan.io
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 167009
+  explorers:
+    - https://blockscoutapi.hekla.taiko.xyz
+    - https://hekla.taikoscan.network
+- currency:
+    name: testnet filecoin
+    symbol: tFIL
+    decimals: 18
+  chain-id: 314159
+  explorers:
+    - https://calibration.filscan.io
+    - https://calibration.filscout.com/en
+    - https://calibration.filfox.info
+    - https://explorer.glif.io/?network=calibration
+    - https://beryx.zondax.ch
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 421614
+  explorers:
+    - https://sepolia-explorer.arbitrum.io
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 534351
+  explorers:
+    - https://sepolia.scrollscan.com
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 534352
+  explorers:
+    - https://scrollscan.com
+- currency:
+    name: EDU
+    symbol: EDU
+    decimals: 18
+  chain-id: 656476
+  explorers:
+    - https://opencampus-codex.blockscout.com
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 808813
+  explorers:
+    - https://bob-sepolia.explorer.gobob.xyz
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 3441006
+  explorers:
+    - https://pacific-explorer.sepolia-testnet.manta.network
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 7777777
+  explorers:
+    - https://explorer.zora.energy
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 11155111
+  explorers:
+    - https://sepolia.etherscan.io
+    - https://sepolia.otterscan.io
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 11155420
+  explorers:
+    - https://optimism-sepolia.blockscout.com
+- currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  chain-id: 94204209
+  explorers:
+    - https://polygon-blackberry.gelatoscout.com
+- currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  chain-id: 123420111
+  explorers:
+    - https://opcelestia-raspberry.gelatoscout.com
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 168587773
+  explorers:
+    - https://testnet.blastscan.io
+- currency:
+    name: Neon
+    symbol: NEON
+    decimals: 18
+  chain-id: 245022926
+  explorers:
+    - https://devnet.neonscan.org
+    - https://neon-devnet.blockscout.com
+- currency:
+    name: Neon
+    symbol: NEON
+    decimals: 18
+  chain-id: 245022934
+  explorers:
+    - https://neonscan.org
+    - https://neon.blockscout.com
+- currency:
+    name: Tron
+    symbol: TRX
+    decimals: 6
+  chain-id: 728126428
+  explorers:
+    - https://tronscan.org
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 999999999
+  explorers:
+    - https://sepolia.explorer.zora.energy
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 1313161554
+  explorers:
+    - https://aurorascan.dev
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 1313161555
+  explorers:
+    - https://testnet.aurorascan.dev
+- currency:
+    name: ONE
+    symbol: ONE
+    decimals: 18
+  chain-id: 1666600000
+  explorers:
+    - https://explorer.harmony.one
+- currency:
+    name: ONE
+    symbol: ONE
+    decimals: 18
+  chain-id: 1666600001
+  explorers:
+    - https://explorer.harmony.one/blocks/shard/1
+- currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  chain-id: 88153591557
+  explorers:
+    - https://arb-blueberry.gelatoscout.com
+- currency:
+    name: PBG
+    symbol: PBG
+    decimals: 18
+  explorers:
+    - https://explorer.playblock.io
+  chain-id: 1829
+- currency:
+    name: GSWIFT
+    symbol: tGS
+    decimals: 18
+  explorers:
+    - https://testnet.gameswift.io/
+  chain-id: 10888
