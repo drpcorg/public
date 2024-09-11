@@ -1776,3 +1776,20 @@ chain-settings:
           grpcId: 10097
           short-names: [goat-testnet]
           chain-id: 0x929
+    - id: astar
+      label: Astar
+      type: polkadot
+      settings:
+        expected-block-time: 12s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ASTAR_MAINNET
+          short-names: [ astar-mainnet ]
+          chain-id: 0x250
+          grpcId: 1026
