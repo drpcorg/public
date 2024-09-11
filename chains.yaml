@@ -320,7 +320,7 @@ chain-settings:
           priority: 2
           code: LINEA_SEPOLIA
           grpcId: 10074
-          short-names: [ linea-sepolia ]
+          short-names: [linea-sepolia]
           chain-id: 0xe705
     - id: gnosis
       label: Gnosis
@@ -445,6 +445,33 @@ chain-settings:
           code: KLAYTN_BAOBAB
           grpcId: 10024
           short-names: [klaytn-baobab]
+          chain-id: 0x3e9
+          settings:
+            fork-choice: height
+    - id: kaia
+      label: Kaia
+      type: eth
+      settings:
+        expected-block-time: 1s
+        allow-pruning-requirement: true
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+        fork-choice: quorum
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: KAIA
+          grpcId: 1076
+          short-names: [kaia]
+          chain-id: 0x2019
+        - id: Kairos
+          priority: 1
+          code: KAIA_KAIROS
+          grpcId: 10098
+          short-names: [kaya-kairos]
           chain-id: 0x3e9
           settings:
             fork-choice: height
@@ -1469,13 +1496,13 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: cosmoshub-4
-          short-names: [ cosmos-hub ]
+          short-names: [cosmos-hub]
           code: COSMOS_HUB
           grpcId: 1057
           priority: 100
         - id: Testnet
           chain-id: provider
-          short-names: [ cosmos-hub-testnet ]
+          short-names: [cosmos-hub-testnet]
           code: COSMOS_HUB_TESTNET
           grpcId: 10079
           priority: 10
@@ -1490,13 +1517,13 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: axelar-dojo-1
-          short-names: [ axelar ]
+          short-names: [axelar]
           code: AXELAR
           grpcId: 1059
           priority: 100
         - id: Testnet
           chain-id: axelar-testnet-lisbon-3
-          short-names: [ axelar-testnet ]
+          short-names: [axelar-testnet]
           code: AXELAR_TESTNET
           grpcId: 10081
           priority: 10
@@ -1511,13 +1538,13 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: osmosis-1
-          short-names: [ osmosis ]
+          short-names: [osmosis]
           code: OSMOSIS
           grpcId: 1060
           priority: 100
         - id: Testnet
           chain-id: osmo-test-5
-          short-names: [ osmosis-testnet ]
+          short-names: [osmosis-testnet]
           code: OSMOSIS_TESTNET
           grpcId: 10082
           priority: 10
@@ -1532,13 +1559,13 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: neutron-1
-          short-names: [ neutron ]
+          short-names: [neutron]
           code: NEUTRON
           grpcId: 1061
           priority: 100
         - id: Testnet
           chain-id: pion-1
-          short-names: [ neutron-testnet ]
+          short-names: [neutron-testnet]
           code: NEUTRON_TESTNET
           grpcId: 10083
           priority: 10
@@ -1556,13 +1583,13 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: 0x1e
-          short-names: [ rootstock, rootstock-mainnet ]
+          short-names: [rootstock, rootstock-mainnet]
           code: ROOTSTOCK_MAINNET_CHAIN
           grpcId: 1062
           priority: 100
         - id: Testnet
           chain-id: 0x1f
-          short-names: [ rootstock-testnet ]
+          short-names: [rootstock-testnet]
           code: ROOTSTOCK_TESTNET_CHAIN
           grpcId: 10084
           priority: 10
@@ -1641,13 +1668,13 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: AVAIL_MAINNET
-          short-names: [ avail ]
+          short-names: [avail]
           chain-id: Avail Network
           grpcId: 1064
         - id: Testnet
           priority: 10
           code: AVAIL_TESTNET
-          short-names: [ avail-testnet ]
+          short-names: [avail-testnet]
           chain-id: Avail Turing Network
           grpcId: 10089
     - id: fraxtal
@@ -1665,13 +1692,13 @@ chain-settings:
         - id: Testnet
           priority: 1
           code: FRAXTAL_TESTNET
-          short-names: [ fraxtal-testnet ]
+          short-names: [fraxtal-testnet]
           chain-id: 0x9da
           grpcId: 10090
         - id: Mainnet
           priority: 100
           code: FRAXTAL_MAINNET
-          short-names: [ fraxtal ]
+          short-names: [fraxtal]
           chain-id: 0xfc
           grpcId: 1065
     - id: tron
@@ -1763,7 +1790,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: POLKADOT_MAINNET
-          short-names: [ polkadot ]
+          short-names: [polkadot]
           chain-id: Polkadot
           grpcId: 1071
     - id: kusama
@@ -1781,7 +1808,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: KUSAMA_MAINNET
-          short-names: [ kusama ]
+          short-names: [kusama]
           chain-id: Kusama
           grpcId: 1072
     - id: Metal L2
