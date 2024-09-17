@@ -147,6 +147,20 @@
   explorers:
     - https://pacific-explorer.manta.network
 - currency:
+    name: X Layer Global Utility Token in testnet
+    symbol: OKB
+    decimals: 18
+  chain-id: 195
+  explorers:
+    - https://www.oklink.com/xlayer-test
+- currency:
+    name: X Layer Global Utility Token
+    symbol: OKB
+    decimals: 18
+  chain-id: 196
+  explorers:
+    - https://www.oklink.com/xlayer
+- currency:
     name: BitTorrent
     symbol: BTT
     decimals: 18
@@ -355,6 +369,13 @@
   explorers:
     - https://evm-explorer-testnet.alephzero.org
 - currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 2192
+  explorers:
+    - https://explorer.snaxchain.io
+- currency:
     name: TKava
     symbol: TKAVA
     decimals: 18
@@ -517,6 +538,13 @@
     - https://holesky.beaconcha.in
     - https://holesky.otterscan.io
     - https://holesky.etherscan.io
+- currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  chain-id: 25327
+  explorers:
+    - https://scan.everclear.org
 - currency:
     name: Ether
     symbol: ETH

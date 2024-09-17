@@ -874,6 +874,12 @@ chain-settings:
         options:
           validate-peers: false
       chains:
+        - id: Mainnet
+          priority: 100
+          code: EVERCLEAR_MAINNET
+          short-names: [everclear]
+          chain-id: 0x62ef
+          grpcId: 1076
         - id: Sepolia
           priority: 2
           code: EVERCLEAR_SEPOLIA
@@ -1776,3 +1782,49 @@ chain-settings:
           grpcId: 10097
           short-names: [goat-testnet]
           chain-id: 0x929
+    - id: snaxchain
+      label: Snaxchain
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: SNAXCHAIN_MAINNET
+          grpcId: 1077
+          short-names: [snaxchain]
+          chain-id: 0xed88
+        - id: Testnet
+          priority: 1
+          code: SNAXCHAIN_SEPOLIA
+          grpcId: 10098
+          short-names: [snaxchain-sepolia]
+          chain-id: 0x890
+    - id: xlayer
+      label: XLayer
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: XLAYER_MAINNET
+          grpcId: 1078
+          short-names: [xlayer]
+          chain-id: 0xC4
+        - id: Testnet
+          priority: 1
+          code: XLAYER_TESTNET
+          grpcId: 10099
+          short-names: [xlayer-testnet]
+          chain-id: 0xC3
