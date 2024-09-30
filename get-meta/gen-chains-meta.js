@@ -106,7 +106,7 @@ let manualChains = new Map([
       },
       explorers: ["https://explorer.zircuit.com/"],
     },
-  ]
+  ],
 ]);
 
 function merge(el) {
@@ -129,7 +129,7 @@ async function init() {
   const response = await fetch("https://chainid.network/chains.json");
   const chains = await response.json();
   const chainConfig = yaml.parse(
-    (await fs.promises.readFile("../chains.yaml")).toString()
+    (await fs.promises.readFile("../chains.yaml")).toString(),
   );
   const chainIds = [];
   for (let protocol of chainConfig["chain-settings"].protocols) {
@@ -147,7 +147,10 @@ async function init() {
       neededChains.push(c[1]);
     }
   }
-  await fs.promises.writeFile("../chains-meta.yaml", yaml.stringify(neededChains));
+  await fs.promises.writeFile(
+    "../chains-meta.yaml",
+    yaml.stringify(neededChains),
+  );
 }
 
 init();
