@@ -1,0 +1,206 @@
+retrayable_errors:
+  - re: "Remote status code: UNAVAILABLE"
+  - re: No response or no available upstream
+  - re: Disconnected from WebSocket
+  - re: Unsupported blockchain
+  - re: No state available for
+  - re: body not found for block
+  - re: does not exist/is not available
+  - re: "HTTP Code: 5"
+  - re: "HTTP Code: 4"
+  - re: "HTTP Code: 429"
+  - re: SSLEngine closed already
+  - re: Connection refused
+  - re: connection refused
+  - re: Remote status code
+  - re: missing trie node
+  - re: is not resolved \[isResolved - false\]
+  - re: ETHBACKENDClient.PendingBlock\(\) error
+  - re: too many requests
+  - re: Too Many Requests
+  - re: Too many requests
+  - re: Connection rate limits exceeded
+  - re: request timed out
+  - re: Connection prematurely closed
+  - re: request beyond head block
+  - re: -32000 - block not found
+  - re: could not find block
+  - re: unknown block
+  - re: header for hash not found
+  - re: Connection reset
+  - re: Your app has exceeded
+  - re: Upstream unavailable
+  - re: request failed or timed out
+  - re: "Invalid JSON structure: never finalized"
+  - re: connection timed out
+  - re: cannot query unfinalized data
+  - re: Rate limit reached
+  - re: Upstream is not available
+  - re: exceeds the configured cap
+  - re: over rate limit
+  - re: exceeded its requests per second capacity
+  - re: has exceeded its concurrent requests capacity
+  - re: connection refused
+  - re: limit exceeded
+  - re: Your app has reached maximum qps limit
+  - re: transaction would cause overdraft
+  - re: excluded from account secondary indexes
+  - re: Unhandled Upstream error
+  - re: finishConnect\(..\) failed
+  - re: queued sub-pool is full
+  - re: invalid chain id, expected
+  - re: code = ResourceExhausted
+  - re: Post "http
+  - re: Invalid JSON
+  - re: Unable to complete request at this time
+  - re: java.nio.channels.ClosedChannelException
+  - re: no available nodes found
+  - re: Error while acquiring from reactor.netty
+  - re: exceeded project rate limit
+  - re: Exceeded the quota usage
+  - re: header not found
+  - re: Pool#acquire\(Duration\) has been pending
+  - re: Pending acquire queue has reached
+  - re: You have reached the maximum CUPS limit
+  - re: credits limited to
+  - re: requests limited to
+  - re: base64 encoded solana_program
+  - re: handshake timed out
+  - re: failed to get balance from state
+  - re: nternal error
+  - re: Source was empty
+  - re: failed to retrieve validator from block proposer
+  - re: 'leveldb: not found"'
+  - re: OPENSSL_internal
+  - re: <html>
+  - re: www.allnodes.com
+  - re: upgrade your plan
+  - re: Block not available for slot
+  - re: L2 finalized block height not
+  - re: decoding block from
+  - re: error creating execution cursor
+  - re: 503 Service Unavailable
+  - re: txpool is full
+  - re: Internal server error
+  - re: internal server error
+  - re: no backends available for method
+  - re: Unsupported method
+  - re: no historical RPC is available
+  - re: we can't execute this request
+  - re: upgrade from discover plan at quicknode.com
+  - re: "pebble: not found"
+  - re: failed to get code
+  - re: Cannot assign requested address
+  - re: request limit reached
+  - re: rate limit exceeded
+  - re: "failed: connection reset by peer"
+  - re: "read: connection reset by peer"
+  - re: 504 Gateway Timeout
+  - re: Request was canceled due to enabled timeout"
+  - re: invalid block range
+  - re: context canceled
+  - re: Method not found
+  - re: failed to load state at height
+  - re: account changes purged
+  - re: failed to get gas price
+  - re: Block status not yet available
+  - re: Receipt not available for
+  - re: quicknode
+  - re: TimeoutException
+  - re: failed to connect to the state
+  - re: could not decode body to rpc response
+  - re: Networking or low-level protocol error
+  - re: blockpi.io
+  - re: ankr.com
+  - re: "rlp: element is larger than containing list"
+  - re: credits limited to
+  - re: 404 Not Found
+  - re: server shutting down
+  - re: <!DOCTYPE html>
+  - re: Public RPC Rate Limit Hit
+  - re: the containing module is disabled
+  - re: historical state not available
+  - re: node does not have console
+  - re: EOF
+  - re: failed to get latest safe block
+  - re: after last accepted block
+  - re: No response for method
+  - re: rate-limited due to unusually high global traffic
+  - re: Block with such an ID doesn't exist yet
+  - re: invalid json response
+  - re: failed to get latest finalized block
+  - re: TxPool Disabled
+  - re: could not create transaction
+  - re: 502 Bad Gateway
+  - re: failed to count transactions
+  - re: "rlp: end of list"
+  - re: failed to get storage value
+  - re: Panic recovery
+  - re: duplicate field `data`
+  - re: rpc method is not whitelisted
+  - re: "rpc error: code = Internal desc = Value missing for hash"
+  - re: "rpc error: code = Internal desc = method handler crashed"
+  - re: "Invalid status code, expected: 200, found:"
+  - re: the method is not allowed
+  - re: Node state is pruned
+  - re: "blockstore get: ipld: could not find"
+  - re: more errors
+  - re: failed to get the finalized block number from ethereum
+  - re: invalid character '<'
+  - re: required historical state unavailable
+  - re: Node responded with non success status code
+  - re: "newestBlock: Block is not available"
+  - re: failed processing responses from providers
+  - re: exceeded request rate limit
+  - re: lava@
+  - re: RequestRateLimitExceeded
+  - re: "unexpected HTTP status code received from server: 502"
+  - re: internal blocking task error
+  - re: event index failed to index tipset
+  - re: "INTERNAL_ERROR: could not replace existing tx"
+  - re: method handler crashed
+  - re: -32000 — context deadline exceeded
+  - re: Rate Limit
+  - re: There are not enough CUPs
+  - re: transaction not found
+  - re: "Invalid param: unrecognized Token program id"
+  - re: execution aborted \(timeout
+  - re: "invalid argument 2: hex number with leading zero digits"
+  - re: SLS is currently disabled
+  - re: replacement transaction underpriced
+  - re: execution timeout
+  - re: rockx.com
+  - re: "ChainException: transaction indexing is in progress"
+  - re: ([a-z0-9]+) could not be found
+  - re: block ([a-z0-9]+) not found
+  - re: Block ([0-9]+) cleaned up, does not exist on node
+  - re: requested to block ([a-z0-9]+) after last accepted block
+  - re: method [A-Za-z0-9_]+ is not available
+  - re: Method [A-Za-z0-9_]+ is not supported
+  - re: Node is behind by ([0-9]+) slots
+  - re: query timeout of ([0-9]+) seconds exceeded
+  - re: height ([0-9]+) is not available
+  - re: .*state at block
+  - re: block not found [a-z0-9]+
+  - re: Slot [0-9]+ was skipped, or missing in long-term storage
+  - re: ^not found$
+  - re: ^Other$
+  - re: ^$
+  - re: failed to apply transaction
+    methods:
+      - eth_createAccessList
+
+retrayable_error_data_errors:
+  - re: Nethermind.Trie.MissingTrieNodeException
+  - re: Nethermind.Trie.TrieException
+  - re: Unable to rent an instance of
+  - re: "DB Not Found Error: BLOCK HEIGHT"
+  - re: Chunk Missing
+
+non_retrayable_errors:
+  - re: execution reverted
+  - re: already known
+  - re: out of gas
+  - re: "ALREADY_EXISTS: already known"
+  - re: nonce too low
+  - re: filter not found
