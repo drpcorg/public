@@ -78,6 +78,12 @@ import Tron from "./Tron.png";
 import Fraxtal from "./Fraxtal.svg";
 import Goat from "./Goat.svg";
 import Metall2 from "./Metall2.svg";
+import BOB from "./Bob.svg";
+import Kroma from "./Kroma.svg";
+import Moonriver from "./Moonriver.svg";
+import Wemix from "./Wemix.svg";
+import Xlayer from "./Xlayer.svg";
+import Snaxchain from "./Snaxchain.svg";
 
 const Icons: Record<string, any> = {
   arbitrum: Arbitrum,
@@ -161,6 +167,12 @@ const Icons: Record<string, any> = {
   "zeta-chain": Zetachain,
   zora: Zora,
   metall2: Metall2,
+  bob: BOB,
+  kroma: Kroma,
+  moonriver: Moonriver,
+  wemix: Wemix,
+  xlayer: Xlayer,
+  snaxchain: Snaxchain,
 };
 
 const DarkIcons: Record<string, any> = {

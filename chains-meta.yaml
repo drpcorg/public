@@ -93,7 +93,7 @@
     decimals: 18
   chain-id: 66
   explorers:
-    - https://www.oklink.com/en/okc
+    - https://www.oklink.com/oktc
 - currency:
     name: BNB Chain Native Token
     symbol: tBNB
@@ -116,7 +116,7 @@
     decimals: 18
   chain-id: 108
   explorers:
-    - https://viewblock.io/thundercore
+    - https://explorer-mainnet.thundercore.com
 - currency:
     name: Fuse
     symbol: FUSE
@@ -551,7 +551,7 @@
     decimals: 18
   chain-id: 34443
   explorers:
-    - https://explorer.mode.network
+    - https://modescan.io
 - currency:
     name: Aleph Zero
     symbol: AZERO
@@ -656,7 +656,7 @@
     decimals: 18
   chain-id: 60808
   explorers:
-    - https://explorer.gobob.xyz
+    - https://3xpl.com/bob
 - currency:
     name: MATIC
     symbol: MATIC
@@ -833,7 +833,7 @@
     decimals: 18
   chain-id: 999999999
   explorers:
-    - https://sepolia.explorer.zora.energy
+    - https://999999999.testnet.routescan.io
 - currency:
     name: Ether
     symbol: ETH
