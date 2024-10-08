@@ -146,7 +146,7 @@ const Icons: Record<string, any> = {
   heco: Heco,
   mode: Mode,
   near: Near,
-  neon: Neon,
+  "neon-evm": Neon,
   playnance: Playnance,
   ronin: Ronin,
   everclear: Everclear,
