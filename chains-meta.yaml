@@ -883,3 +883,10 @@
   explorers:
     - https://testnet.gameswift.io/
   chain-id: 10888
+- currency:
+    name: GOAT Testnet
+    symbol: BTC
+    decimals: 18
+  explorers:
+    - http://explorer.testnet.goat.network/
+  chain-id: 48815
