@@ -1053,6 +1053,12 @@ chain-settings:
           grpcId: 1043
           short-names: [ronin]
           chain-id: 0x7e4
+        - id: Saigon
+          priority: 1
+          code: RONIN_SAIGON
+          grpcId: 10102
+          short-names: [ronin-saigon]
+          chain-id: 0x7e5
     - id: neon-evm
       label: Neon EVM
       type: eth

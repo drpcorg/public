@@ -107,6 +107,17 @@ let manualChains = new Map([
       explorers: ["https://explorer.zircuit.com/"],
     },
   ],
+  [
+    2021,
+    {
+      currency: {
+        name: "Ronin",
+        symbol: "RON",
+        decimals: 18,
+      },
+      explorers: ["https://saigon-app.roninchain.com"],
+    },
+  ],
 ]);
 
 function merge(el) {
@@ -129,7 +140,7 @@ async function init() {
   const response = await fetch("https://chainid.network/chains.json");
   const chains = await response.json();
   const chainConfig = yaml.parse(
-    (await fs.promises.readFile("../chains.yaml")).toString(),
+    (await fs.promises.readFile("../chains.yaml")).toString()
   );
   const chainIds = [];
   for (let protocol of chainConfig["chain-settings"].protocols) {
@@ -139,17 +150,17 @@ async function init() {
   }
   let cids = chains.map((el) => el.chainId);
   const neededChains = chains
-    .filter((el) => chainIds.includes(el.chainId))
+    .filter((el) => {
+      return chainIds.includes(el.chainId) && !manualChains.has(el.chainId);
+    })
     .map((el) => merge(el));
   for (let c of manualChains) {
-    if (!cids.includes(c[0])) {
-      c[1]["chain-id"] = c[0];
-      neededChains.push(c[1]);
-    }
+    c[1]["chain-id"] = c[0];
+    neededChains.push(c[1]);
   }
   await fs.promises.writeFile(
     "../chains-meta.yaml",
-    yaml.stringify(neededChains),
+    yaml.stringify(neededChains)
   );
 }
 
