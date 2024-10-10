@@ -1828,3 +1828,32 @@ chain-settings:
           grpcId: 10099
           short-names: [xlayer-testnet]
           chain-id: 0xC3
+    - id: sei
+      label: Sei
+      type: eth
+      settings:
+        expected-block-time: 200ms
+        options:
+          validate-peers: false
+        lags:
+          syncing: 100
+          lagging: 30
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: SEI_MAINNET
+          grpcId: 1079
+          short-names: [sei]
+          chain-id: 0x531
+        - id: Devnet
+          priority: 2
+          code: SEI_DEVNET
+          grpcId: 10101
+          short-names: [sei-devnet]
+          chain-id: 0xae3f3
+        - id: Testnet
+          priority: 1
+          code: SEI_TESTNET
+          grpcId: 10100
+          short-names: [sei-testnet]
+          chain-id: 0x530

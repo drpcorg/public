@@ -341,6 +341,20 @@
   explorers:
     - https://moonbase.moonscan.io
 - currency:
+    name: Sei
+    symbol: SEI
+    decimals: 18
+  chain-id: 1328
+  explorers:
+    - https://seitrace.com
+- currency:
+    name: Sei
+    symbol: SEI
+    decimals: 18
+  chain-id: 1329
+  explorers:
+    - https://seitrace.com
+- currency:
     name: ETH
     symbol: ETH
     decimals: 18
@@ -747,6 +761,14 @@
   chain-id: 656476
   explorers:
     - https://opencampus-codex.blockscout.com
+- currency:
+    name: Sei
+    symbol: SEI
+    decimals: 18
+  chain-id: 713715
+  explorers:
+    - https://seistream.app
+    - https://seitrace.com
 - currency:
     name: Sepolia Ether
     symbol: ETH
