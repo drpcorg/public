@@ -1452,8 +1452,8 @@ chain-settings:
       settings:
         expected-block-time: 2s
         lags:
-          syncing: 6
-          lagging: 1
+          syncing: 10
+          lagging: 2
       chains:
         - id: Mainnet
           chain-id: osmosis-1
