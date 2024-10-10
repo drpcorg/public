@@ -12,7 +12,7 @@ import Berachain from "./Berachain.svg";
 import Bitcoin from "./Bitcoin.svg";
 import Bittorrent from "./Bittorrent.png";
 import Blast from "./Blast.svg";
-import BOB from "./Bob.svg";
+import BOB from "./BOB.svg";
 import Boba from "./Boba.svg";
 import BSC from "./BSC.svg";
 import Celo from "./Celo.svg";
