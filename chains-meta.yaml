@@ -735,22 +735,6 @@
     - https://seistream.app
     - https://seitrace.com
 - currency:
-    name: Sei
-    symbol: SEI
-    decimals: 18
-  chain-id: 713715
-  explorers:
-    - https://seistream.app
-    - https://seitrace.com
-- currency:
-    name: Sei
-    symbol: SEI
-    decimals: 18
-  chain-id: 713715
-  explorers:
-    - https://seistream.app
-    - https://seitrace.com
-- currency:
     name: Sepolia Ether
     symbol: ETH
     decimals: 18
