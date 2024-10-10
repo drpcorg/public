@@ -1841,6 +1841,7 @@ chain-settings:
         expected-block-time: 200ms
         options:
           validate-peers: false
+          validate-syncing: false # does not support eth_syncing
         lags:
           syncing: 100
           lagging: 30
