@@ -1450,7 +1450,7 @@ chain-settings:
       label: Osmosis
       type: cosmos
       settings:
-        expected-block-time: 6s
+        expected-block-time: 2s
         lags:
           syncing: 6
           lagging: 1
