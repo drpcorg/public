@@ -1804,13 +1804,13 @@ chain-settings:
           code: SNAXCHAIN_MAINNET
           grpcId: 1077
           short-names: [snaxchain]
-          chain-id: 0xed88
+          chain-id: 0x890
         - id: Testnet
           priority: 1
           code: SNAXCHAIN_SEPOLIA
           grpcId: 10098
           short-names: [snaxchain-sepolia]
-          chain-id: 0x890
+          chain-id: 0xed88
     - id: xlayer
       label: XLayer
       type: eth
