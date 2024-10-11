@@ -341,6 +341,20 @@
   explorers:
     - https://moonbase.moonscan.io
 - currency:
+    name: Sei
+    symbol: SEI
+    decimals: 18
+  chain-id: 1328
+  explorers:
+    - https://seitrace.com
+- currency:
+    name: Sei
+    symbol: SEI
+    decimals: 18
+  chain-id: 1329
+  explorers:
+    - https://seitrace.com
+- currency:
     name: ETH
     symbol: ETH
     decimals: 18
@@ -354,13 +368,6 @@
   chain-id: 1750
   explorers:
     - https://explorer.metall2.com
-- currency:
-    name: Ronin
-    symbol: RON
-    decimals: 18
-  chain-id: 2020
-  explorers:
-    - https://app.roninchain.com/
 - currency:
     name: TZERO
     symbol: TZERO
@@ -454,13 +461,6 @@
   chain-id: 6398
   explorers:
     - https://connext-sepolia.blockscout.com
-- currency:
-    name: Zeta
-    symbol: ZETA
-    decimals: 18
-  chain-id: 7000
-  explorers:
-    - https://explorer.zetachain.com/
 - currency:
     name: Zeta
     symbol: ZETA
@@ -613,13 +613,6 @@
   explorers:
     - https://explorer.testnet.zircuit.com
 - currency:
-    name: Zircuit
-    symbol: ETH
-    decimals: 18
-  chain-id: 48900
-  explorers:
-    - https://explorer.zircuit.com/
-- currency:
     name: Islamic Coin
     symbol: ISLMT
     decimals: 18
@@ -687,13 +680,6 @@
   explorers:
     - https://base-sepolia.blockscout.com
 - currency:
-    name: reETH
-    symbol: reETH
-    decimals: 18
-  chain-id: 111188
-  explorers:
-    - https://explorer.re.al
-- currency:
     name: Ether
     symbol: ETH
     decimals: 18
@@ -741,12 +727,13 @@
   explorers:
     - https://scrollscan.com
 - currency:
-    name: EDU
-    symbol: EDU
+    name: Sei
+    symbol: SEI
     decimals: 18
-  chain-id: 656476
+  chain-id: 713715
   explorers:
-    - https://opencampus-codex.blockscout.com
+    - https://seistream.app
+    - https://seitrace.com
 - currency:
     name: Sepolia Ether
     symbol: ETH
@@ -783,20 +770,6 @@
   chain-id: 11155420
   explorers:
     - https://optimism-sepolia.blockscout.com
-- currency:
-    name: ETH
-    symbol: ETH
-    decimals: 18
-  chain-id: 94204209
-  explorers:
-    - https://polygon-blackberry.gelatoscout.com
-- currency:
-    name: ETH
-    symbol: ETH
-    decimals: 18
-  chain-id: 123420111
-  explorers:
-    - https://opcelestia-raspberry.gelatoscout.com
 - currency:
     name: Sepolia Ether
     symbol: ETH
@@ -863,12 +836,22 @@
   explorers:
     - https://explorer.harmony.one/blocks/shard/1
 - currency:
-    name: ETH
-    symbol: ETH
+    name: Ronin
+    symbol: RON
     decimals: 18
-  chain-id: 88153591557
   explorers:
-    - https://arb-blueberry.gelatoscout.com
+    - https://app.roninchain.com/
+  chain-id: 2020
+- explorers:
+    - https://explorer.zetachain.com/
+  chain-id: 7000
+- currency:
+    name: reETH
+    symbol: reETH
+    decimals: 18
+  explorers:
+    - https://explorer.re.al
+  chain-id: 111188
 - currency:
     name: PBG
     symbol: PBG
@@ -877,6 +860,34 @@
     - https://explorer.playblock.io
   chain-id: 1829
 - currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  explorers:
+    - https://opcelestia-raspberry.gelatoscout.com
+  chain-id: 123420111
+- currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  explorers:
+    - https://arb-blueberry.gelatoscout.com
+  chain-id: 88153591557
+- currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  explorers:
+    - https://polygon-blackberry.gelatoscout.com
+  chain-id: 94204209
+- currency:
+    name: EDU
+    symbol: EDU
+    decimals: 18
+  explorers:
+    - https://opencampus-codex.blockscout.com
+  chain-id: 656476
+- currency:
     name: GSWIFT
     symbol: tGS
     decimals: 18
@@ -884,9 +895,16 @@
     - https://testnet.gameswift.io/
   chain-id: 10888
 - currency:
-    name: GOAT Testnet
-    symbol: BTC
+    name: Zircuit
+    symbol: ETH
     decimals: 18
   explorers:
-    - http://explorer.testnet.goat.network/
-  chain-id: 48815
+    - https://explorer.zircuit.com/
+  chain-id: 48900
+- currency:
+    name: Ronin
+    symbol: RON
+    decimals: 18
+  explorers:
+    - https://saigon-app.roninchain.com
+  chain-id: 2021
