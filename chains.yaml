@@ -1864,3 +1864,35 @@ chain-settings:
           grpcId: 10100
           short-names: [sei-testnet]
           chain-id: 0x530
+    - id: sonic
+      label: Sonic
+      type: eth
+      settings:
+        expected-block-time: 300ms
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Testnet
+          priority: 1
+          code: SONIC_TESTNET
+          grpcId: 10103
+          short-names: [sonic-testnet]
+          chain-id: 0xfaa5
+    - id: lens
+      label: Lens Network
+      type: eth
+      settings:
+        expected-block-time: 5s
+        lags:
+          syncing: 70
+          lagging: 50
+        options:
+          validate-peers: false
+      chains:
+        - id: Testnet
+          priority: 1
+          code: LENS_TESTNET
+          grpcId: 10104
+          short-names: [lens-testnet]
+          chain-id: 0x90f7
