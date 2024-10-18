@@ -1864,3 +1864,22 @@ chain-settings:
           grpcId: 10100
           short-names: [sei-testnet]
           chain-id: 0x530
+
+    - id: toncenter
+      label: TonCenter
+      type: ton-center
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 1s
+        lags:
+          syncing: 40
+          lagging: 20
+        fork-choice: quorum
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: TON_CENTER
+          short-names: [toncenter]
+          chain-id: toncenter
+          grpcId: 1080
