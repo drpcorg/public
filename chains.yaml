@@ -1864,7 +1864,6 @@ chain-settings:
           grpcId: 10100
           short-names: [sei-testnet]
           chain-id: 0x530
-
     - id: toncenter
       label: TonCenter
       type: ton-center
