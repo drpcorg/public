@@ -1864,9 +1864,9 @@ chain-settings:
           grpcId: 10100
           short-names: [sei-testnet]
           chain-id: 0x530
-    - id: toncenter
-      label: TonCenter
-      type: ton-center
+    - id: ton
+      label: Ton
+      type: ton
       settings:
         options:
           validate-peers: false
@@ -1878,7 +1878,7 @@ chain-settings:
       chains:
         - id: Mainnet
           priority: 100
-          code: TON_CENTER
-          short-names: [toncenter]
-          chain-id: toncenter
+          code: TON
+          short-names: [ton]
+          chain-id: ton
           grpcId: 1080
