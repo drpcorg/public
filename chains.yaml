@@ -407,7 +407,7 @@ chain-settings:
           short-names: [mantle-sepolia]
           chain-id: 0x138b
     - id: klaytn
-      label: Klaytn
+      label: Kaia
       type: eth
       settings:
         expected-block-time: 1s
