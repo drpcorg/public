@@ -83,6 +83,8 @@ import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
+import Sei from "./Sei.png";
+import Kroma from "./Kroma.svg";
 
 const Icons: Record<string, any> = {
   arbitrum: Arbitrum,
@@ -170,6 +172,8 @@ const Icons: Record<string, any> = {
   wemix: Wemix,
   xlayer: Xlayer,
   snaxchain: Snaxchain,
+  sei: Sei,
+  kroma: Kroma,
 };
 
 const DarkIcons: Record<string, any> = {
