@@ -908,6 +908,13 @@
   explorers:
     - https://saigon-app.roninchain.com
   chain-id: 2021
+- currency:
+    name: GOAT Testnet
+    symbol: BTC
+    decimals: 18
+  explorers:
+    - http://explorer.testnet.goat.network/
+  chain-id: 48815
 -  explorers:
     - https://explorer.solana.com
    chain-id: 900
