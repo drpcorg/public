@@ -38,7 +38,6 @@ import Heco from "./Heco.jpeg";
 import ImmutableZkEvm from "./ImmutableZkEvm.svg";
 import Kava from "./Kava.svg";
 import Klaytn from "./Klaytn.svg";
-import Kroma from "./Kroma.svg";
 import Kusama from "./Kusama.svg";
 import Linea from "./Linea.svg";
 import Lisk from "./Lisk.png";
@@ -67,7 +66,6 @@ import ReAl from "./ReAl.svg";
 import Ronin from "./Ronin.png";
 import Rootstock from "./Rootstock.svg";
 import Scroll from "./Scroll.svg";
-import Sei from "./Sei.png";
 import Snaxchain from "./Snaxchain.svg";
 import Solana from "./Solana.svg";
 import Starknet from "./Starknet.svg";
@@ -172,8 +170,6 @@ const Icons: Record<string, any> = {
   zircuit: Zircuit,
   zksync: Zksync,
   zora: Zora,
-  sei: Sei,
-  kroma: Kroma,
 };
 
 const DarkIcons: Record<string, any> = {
