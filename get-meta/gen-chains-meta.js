@@ -118,6 +118,17 @@ let manualChains = new Map([
       explorers: ["https://saigon-app.roninchain.com"],
     },
   ],
+  [
+    48815,
+    {
+      currency: {
+        name: "GOAT Testnet",
+        symbol: "BTC",
+        decimals: 18,
+      },
+      explorers: ["http://explorer.testnet.goat.network/"],
+    },
+  ],
 ]);
 
 function merge(el) {
