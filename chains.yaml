@@ -1787,7 +1787,7 @@ chain-settings:
           code: GOAT_TESTNET
           grpcId: 10097
           short-names: [goat-testnet]
-          chain-id: 0x929
+          chain-id: 0xbeaf
     - id: snaxchain
       label: Snaxchain
       type: eth
