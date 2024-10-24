@@ -93,7 +93,7 @@
     decimals: 18
   chain-id: 66
   explorers:
-    - https://www.oklink.com/oktc
+    - https://www.oklink.com/en/okc
 - currency:
     name: BNB Chain Native Token
     symbol: tBNB
@@ -116,7 +116,7 @@
     decimals: 18
   chain-id: 108
   explorers:
-    - https://explorer-mainnet.thundercore.com
+    - https://viewblock.io/thundercore
 - currency:
     name: Fuse
     symbol: FUSE
@@ -201,6 +201,7 @@
     symbol: htt
     decimals: 18
   chain-id: 256
+  explorers: null
 - currency:
     name: Ether
     symbol: ETH
@@ -250,12 +251,12 @@
     - https://sepolia.explorer.mode.network
 - currency:
     name: KAIA
-    symbol: KLAY
+    symbol: KAIA
     decimals: 18
   chain-id: 1001
   explorers:
-    - https://baobab.klaytnscope.com
-    - https://baobab.klaytnfinder.io
+    - https://kairos.kaiascope.com
+    - https://kairos.kaiascan.io
 - currency:
     name: BitTorrent
     symbol: BTT
@@ -471,12 +472,12 @@
     - https://zetachain-athens-3.blockscout.com
 - currency:
     name: KAIA
-    symbol: KLAY
+    symbol: KAIA
     decimals: 18
   chain-id: 8217
   explorers:
-    - https://scope.klaytn.com
-    - https://klaytnfinder.io
+    - https://kaiascope.com
+    - https://kaiascan.io
 - currency:
     name: Ether
     symbol: ETH
@@ -551,7 +552,7 @@
     decimals: 18
   chain-id: 34443
   explorers:
-    - https://modescan.io
+    - https://explorer.mode.network
 - currency:
     name: Aleph Zero
     symbol: AZERO
@@ -649,7 +650,7 @@
     decimals: 18
   chain-id: 60808
   explorers:
-    - https://3xpl.com/bob
+    - https://explorer.gobob.xyz
 - currency:
     name: POL
     symbol: POL
@@ -806,21 +807,21 @@
     decimals: 18
   chain-id: 999999999
   explorers:
-    - https://999999999.testnet.routescan.io
+    - https://sepolia.explorer.zora.energy
 - currency:
     name: Ether
     symbol: ETH
     decimals: 18
   chain-id: 1313161554
   explorers:
-    - https://aurorascan.dev
+    - https://explorer.aurora.dev
 - currency:
     name: Ether
     symbol: ETH
     decimals: 18
   chain-id: 1313161555
   explorers:
-    - https://testnet.aurorascan.dev
+    - https://explorer.testnet.aurora.dev
 - currency:
     name: ONE
     symbol: ONE
@@ -834,7 +835,7 @@
     decimals: 18
   chain-id: 1666600001
   explorers:
-    - https://blockhead.info/explorer/harmony-shard1
+    - https://explorer.harmony.one/blocks/shard/1
 - currency:
     name: Ronin
     symbol: RON
@@ -908,63 +909,3 @@
   explorers:
     - https://saigon-app.roninchain.com
   chain-id: 2021
-- currency:
-    name: GOAT Testnet
-    symbol: BTC
-    decimals: 18
-  explorers:
-    - http://explorer.testnet.goat.network/
-  chain-id: 48815
-- explorers:
-    - https://explorer.solana.com
-  chain-id: 900
-- explorers:
-    - https://explorer.solana.com/?cluster=devnet
-  chain-id: 901
-- explorers:
-    - https://starkscan.co
-  chain-id: 23448594291968334
-- explorers:
-    - https://sepolia.starkscan.co
-  chain-id: 393402133025997798000961
-- explorers:
-    - https://axelarscan.io
-  chain-id: axelar-dojo-1
-- explorers:
-    - https://testnet.axelarscan.io
-  chain-id: axelar-testnet-lisbon-3
-- explorers:
-    - https://bitaps.com
-- explorers:
-    - https://tbtc.bitaps.com
-- explorers:
-    - https://atomscan.com
-  chain-id: cosmoshub-4
-- explorers:
-    - https://beaconscan.com
-  chain-id: 393402133025997798000961
-- explorers:
-    - https://holesky.beaconcha.in
-- explorers:
-    - https://sepolia.beaconcha.in
-- explorers:
-    - https://kusama.subscan.io
-  chain-id: Kusama
-- explorers:
-    - https://explorer.near.org
-  chain-id: mainnet
-- explorers:
-    - https://explorer.testnet.near.org
-  chain-id: testnet
-- explorers:
-    - https://neutron.celat.one/neutron-1
-  chain-id: neutron-1
-- explorers:
-    - https://neutron.celat.one/pion-1
-  chain-id: pion-1
-- explorers:
-    - https://polkadot.subscan.io
-  chain-id: Polkadot
-- explorers:
-    - https://explorer.vara-network.io
-  chain-id: Vara Network
