@@ -1772,7 +1772,7 @@ chain-settings:
           short-names: [bob-testnet]
           chain-id: 0xc576d
     - id: goat
-      label: GOAT
+      label: GOAT Network
       type: eth
       settings:
         expected-block-time: 2s
