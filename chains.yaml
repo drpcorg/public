@@ -1874,7 +1874,6 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
-        fork-choice: height
       chains:
         - id: Mainnet
           priority: 100
