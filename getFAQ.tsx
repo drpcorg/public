@@ -247,13 +247,13 @@ export const getFAQ = ({ LinkComponent, siteMap }: IGetFAQ) => {
       ),
     },
     klaytn: {
-      what: `Klaytn RPC enables seamless interactions with the Klaytn blockchain, allowing external applications to access and transact on its network efficiently.`,
-      why: `Klaytn RPC is the key to leveraging Klaytn's high throughput and low latency for robust blockchain applications, making it ideal for enterprise solutions.`,
+      what: `Kaia RPC enables seamless interactions with the Kaia blockchain, allowing external applications to access and transact on its network efficiently.`,
+      why: `Kaia RPC is the key to leveraging Kaia's high throughput and low latency for robust blockchain applications, making it ideal for enterprise solutions.`,
       how: (
         <>
-          Accessing Klaytn RPC is simple with dRPC&lsquo;s endpoints, offering a
-          straightforward way for applications to engage with Klaytn’s
-          blockchain technology. Learn more from dRPC&lsquo;s {DocsLink}.
+          Accessing Kaia RPC is simple with dRPC&lsquo;s endpoints, offering a
+          straightforward way for applications to engage with Kaia’s blockchain
+          technology. Learn more from dRPC&lsquo;s {DocsLink}.
         </>
       ),
     },
@@ -700,322 +700,339 @@ export const getFAQ = ({ LinkComponent, siteMap }: IGetFAQ) => {
         </>
       ),
     },
-      axelar: {
+    axelar: {
       what: `RPC in Axelar facilitates cross-chain communication, allowing external applications to interact with the Axelar blockchain and access its interoperable infrastructure for secure message passing and transactions across multiple networks.`,
       why: `Axelar utilizes RPC to provide seamless access to its cross-chain infrastructure, enabling decentralized applications (dApps) to securely communicate and transfer assets across various blockchain networks, enhancing interoperability.`,
       how: (
         <>
-          To use Axelar RPC, developers connect to an Axelar node through RPC API calls.
-            These calls allow actions such as querying blockchain data, initiating cross-chain transfers,
-            and executing multi-chain transactions, empowering dApps to integrate seamlessly with Axelar's
-            interoperability services.
+          To use Axelar RPC, developers connect to an Axelar node through RPC
+          API calls. These calls allow actions such as querying blockchain data,
+          initiating cross-chain transfers, and executing multi-chain
+          transactions, empowering dApps to integrate seamlessly with Axelar's
+          interoperability services.
         </>
       ),
     },
-        bob: {
+    bob: {
       what: `RPC in GoBob allows external applications to interact with the GoBob blockchain, facilitating data queries and transaction execution on its scalable, Ethereum-compatible infrastructure.`,
       why: `GoBob uses RPC to provide developers with access to its blockchain, enabling efficient communication and interaction with the network, which is optimized for decentralized applications and cross-chain interoperability.`,
       how: (
         <>
-          To use GoBob RPC, developers connect to a GoBob node via RPC API calls.
-            These calls enable querying of blockchain data, execution of transactions,
-            and interaction with smart contracts, fostering integration with GoBob's
-            Ethereum-compatible ecosystem.
+          To use GoBob RPC, developers connect to a GoBob node via RPC API
+          calls. These calls enable querying of blockchain data, execution of
+          transactions, and interaction with smart contracts, fostering
+          integration with GoBob's Ethereum-compatible ecosystem.
         </>
       ),
     },
-        "cosmos-hub": {
+    "cosmos-hub": {
       what: `RPC in Cosmos facilitates communication with the Cosmos Hub, enabling external applications to interact with the network, query data, and execute transactions.`,
       why: `Cosmos uses RPC to provide access to its interoperable blockchain ecosystem, supporting communication and transactions between blockchains in the Cosmos network.`,
-       how: (
-    <>
-      To use Cosmos RPC, you need to send JSON-RPC formatted requests to a
-        Cosmos node, either your own or via a service provider. These requests
-        can be made using tools like cURL or programming libraries in various languages.
-        The node processes the requests and returns data or confirms transactions.
-    </>
-  ),
-        },
-        "eth-beacon-chain": {
+      how: (
+        <>
+          To use Cosmos RPC, you need to send JSON-RPC formatted requests to a
+          Cosmos node, either your own or via a service provider. These requests
+          can be made using tools like cURL or programming libraries in various
+          languages. The node processes the requests and returns data or
+          confirms transactions.
+        </>
+      ),
+    },
+    "eth-beacon-chain": {
       what: `RPC in Beacon Chain facilitates interaction with the Ethereum 2.0 consensus layer, allowing users to query validator data, chain state, and execute staking-related transactions.`,
       why: `Beacon Chain RPC provides external access to the Ethereum 2.0 network, enabling users and validators to interact with the network’s proof-of-stake consensus mechanism.`,
       how: (
         <>
           To use Beacon Chain RPC, you need to send JSON-RPC formatted requests
-            to a Beacon Chain node, either your own or through a service. These
-            requests can be executed using tools like cURL or libraries in various
-            programming languages. The node processes these requests and provides the
-            necessary data or transaction confirmation.
+          to a Beacon Chain node, either your own or through a service. These
+          requests can be executed using tools like cURL or libraries in various
+          programming languages. The node processes these requests and provides
+          the necessary data or transaction confirmation.
         </>
       ),
-        },
-        fraxtal: {
+    },
+    fraxtal: {
       what: `RPC in Fraxtal allows applications to interact with the Fraxtal protocol, enabling stablecoin transactions, data queries, and governance functions.`,
       why: `Fraxtal utilizes RPC to provide external access to its decentralized stablecoin ecosystem, allowing seamless stablecoin minting, redeeming, and participation in governance.`,
-       how: (
+      how: (
         <>
-          To use Frax RPC, you need to send JSON-RPC formatted requests to a Fraxtal
-            node, either your own or via a service provider. These requests can be made
-            using tools like cURL or libraries in various programming languages.
-            The node processes the requests and returns data or confirms transactions.
+          To use Frax RPC, you need to send JSON-RPC formatted requests to a
+          Fraxtal node, either your own or via a service provider. These
+          requests can be made using tools like cURL or libraries in various
+          programming languages. The node processes the requests and returns
+          data or confirms transactions.
         </>
       ),
-        },
-        gameswift: {
+    },
+    gameswift: {
       what: `RPC in GameSwift enables interaction with its blockchain gaming ecosystem, allowing external applications to query data and execute in-game transactions.`,
       why: `GameSwift uses RPC to provide developers with access to its gaming ecosystem, facilitating communication between games and its blockchain infrastructure.`,
       how: (
         <>
-          To use GameSwift RPC, you need to send JSON-RPC formatted requests to a GameSwift
-            node, either your own or via a service provider. These requests can be executed
-            using tools like cURL or libraries in various languages. The node processes these
-            requests and returns data or confirms in-game actions.
+          To use GameSwift RPC, you need to send JSON-RPC formatted requests to
+          a GameSwift node, either your own or via a service provider. These
+          requests can be executed using tools like cURL or libraries in various
+          languages. The node processes these requests and returns data or
+          confirms in-game actions.
         </>
       ),
-        },
-        goat: {
+    },
+    goat: {
       what: `RPC in Goat Network allows communication with the Goat blockchain, enabling external applications to query data and execute transactions efficiently.`,
       why: `Goat Network utilizes RPC to provide external access to its blockchain, supporting various decentralized applications and ecosystem use cases.`,
       how: (
         <>
-          To use Goat RPC, you need to send JSON-RPC formatted requests to
-            a Goat Network node, either your own or via a service provider.
-            You can make these requests using tools like cURL or programming libraries.
-            The node processes these requests and returns the necessary information or
-            confirms transactions.
+          To use Goat RPC, you need to send JSON-RPC formatted requests to a
+          Goat Network node, either your own or via a service provider. You can
+          make these requests using tools like cURL or programming libraries.
+          The node processes these requests and returns the necessary
+          information or confirms transactions.
         </>
       ),
-        },
-        kroma: {
+    },
+    kroma: {
       what: `RPC in Kroma facilitates interaction with its Ethereum Layer 2 solution, allowing external applications to interact with the network, query data, and execute transactions.`,
       why: `Kroma uses RPC to enable access to its Layer 2 network, providing faster and more cost-effective transactions while maintaining Ethereum compatibility.`,
       how: (
         <>
-          To use Kroma RPC, you need to send JSON-RPC formatted requests to a Kroma node,
-            either your own or via a service provider. These requests can be made using
-            tools like cURL or programming libraries. The node processes the requests and
-            returns data or transaction confirmations.
+          To use Kroma RPC, you need to send JSON-RPC formatted requests to a
+          Kroma node, either your own or via a service provider. These requests
+          can be made using tools like cURL or programming libraries. The node
+          processes the requests and returns data or transaction confirmations.
         </>
       ),
     },
-        kusama: {
+    kusama: {
       what: `RPC in Kusama facilitates interaction with the Kusama network, allowing external applications to query data and execute transactions on its experimental, scalable blockchain platform.`,
       why: `Kusama utilizes RPC to provide external access to its network, enabling experimentation with governance, staking, and parachain functionality in a real-world environment.`,
       how: (
         <>
-          To use Kusama RPC, you need to send JSON-RPC formatted requests to a Kusama node,
-            either your own or via a service provider. These requests can be made using tools
-            like cURL or programming libraries. The node processes these requests and returns
-            data or confirms transactions.
+          To use Kusama RPC, you need to send JSON-RPC formatted requests to a
+          Kusama node, either your own or via a service provider. These requests
+          can be made using tools like cURL or programming libraries. The node
+          processes these requests and returns data or confirms transactions.
         </>
       ),
     },
-        metall2: {
+    metall2: {
       what: `RPC in Metall2 facilitates communication with the Metall2 blockchain, allowing external applications to query data and execute transactions.`,
       why: `Metall2 utilizes RPC to provide seamless access to its network, enabling interaction with its secure, scalable blockchain for decentralized applications.`,
       how: (
         <>
-          To use Metall2 RPC, you need to send JSON-RPC formatted requests to a Metall2 node,
-            either your own or via a service provider. These requests can be made using tools
-            like cURL or programming libraries. The node processes the requests and returns data
-            or confirms actions.
+          To use Metall2 RPC, you need to send JSON-RPC formatted requests to a
+          Metall2 node, either your own or via a service provider. These
+          requests can be made using tools like cURL or programming libraries.
+          The node processes the requests and returns data or confirms actions.
         </>
       ),
     },
-        neutron: {
+    neutron: {
       what: `RPC in Neutron facilitates interaction with the Neutron blockchain, enabling external applications to query data and execute transactions within its ecosystem.`,
       why: `Neutron utilizes RPC to provide access to its scalable and interoperable blockchain network, designed to support decentralized applications and cross-chain functionality.`,
       how: (
         <>
-          To use Neutron RPC, you need to send JSON-RPC formatted requests to a Neutron node,
-            either your own or via a service provider. These requests can be executed using
-            tools like cURL or programming libraries in various languages. The node processes
-            these requests and returns the desired data or confirms transactions.
+          To use Neutron RPC, you need to send JSON-RPC formatted requests to a
+          Neutron node, either your own or via a service provider. These
+          requests can be executed using tools like cURL or programming
+          libraries in various languages. The node processes these requests and
+          returns the desired data or confirms transactions.
         </>
       ),
     },
-        "open-campus-codex": {
+    "open-campus-codex": {
       what: `RPC in Open Campus enables interaction with its blockchain-based educational ecosystem, allowing external applications to query data and execute transactions related to decentralized learning.`,
       why: `Open Campus utilizes RPC to provide external access to its blockchain platform, supporting decentralized learning applications and educational content monetization.`,
       how: (
         <>
-          To use Open Campus RPC, you need to send JSON-RPC formatted requests to a node,
-            either your own or via a service provider. These requests can be executed using
-            tools like cURL or programming libraries in various languages. The node processes
-            the requests and provides data or confirms transactions.
-        </>
-      ),
-    },
-        osmosis: {
-      what: `RPC in Osmosis facilitates interaction with the decentralized exchange (DEX) and DeFi ecosystem, allowing external applications to query data and execute trades and liquidity operations.`,
-      why: `Osmosis uses RPC to provide external access to its DEX platform, enabling decentralized trading, liquidity provision, and governance activities within the Cosmos ecosystem.`,
-      how: (
-        <>
-          To use Osmosis RPC, you need to send JSON-RPC formatted requests to an Osmosis node,
-          either your own or via a service provider. These requests can be made using tools like
-          cURL or programming libraries. The node processes the requests and returns data or
-            transaction confirmations.
-        </>
-      ),
-    },
-        polkadot: {
-      what: `RPC in Polkadot allows communication with its scalable, multi-chain network, enabling external applications to interact with parachains, query data, and execute transactions.`,
-      why: `Polkadot utilizes RPC to provide external access to its relay chain and parachain infrastructure, supporting cross-chain functionality and decentralized applications.`,
-      how: (
-        <>
-          To use Polkadot RPC, you need to send JSON-RPC formatted requests to a Polkadot node,
-          either your own or through a service provider. These requests can be made using tools
-          like cURL or programming libraries. The node processes the requests and returns data
+          To use Open Campus RPC, you need to send JSON-RPC formatted requests
+          to a node, either your own or via a service provider. These requests
+          can be executed using tools like cURL or programming libraries in
+          various languages. The node processes the requests and provides data
           or confirms transactions.
         </>
       ),
     },
-        "polygon-blackberry": {
+    osmosis: {
+      what: `RPC in Osmosis facilitates interaction with the decentralized exchange (DEX) and DeFi ecosystem, allowing external applications to query data and execute trades and liquidity operations.`,
+      why: `Osmosis uses RPC to provide external access to its DEX platform, enabling decentralized trading, liquidity provision, and governance activities within the Cosmos ecosystem.`,
+      how: (
+        <>
+          To use Osmosis RPC, you need to send JSON-RPC formatted requests to an
+          Osmosis node, either your own or via a service provider. These
+          requests can be made using tools like cURL or programming libraries.
+          The node processes the requests and returns data or transaction
+          confirmations.
+        </>
+      ),
+    },
+    polkadot: {
+      what: `RPC in Polkadot allows communication with its scalable, multi-chain network, enabling external applications to interact with parachains, query data, and execute transactions.`,
+      why: `Polkadot utilizes RPC to provide external access to its relay chain and parachain infrastructure, supporting cross-chain functionality and decentralized applications.`,
+      how: (
+        <>
+          To use Polkadot RPC, you need to send JSON-RPC formatted requests to a
+          Polkadot node, either your own or through a service provider. These
+          requests can be made using tools like cURL or programming libraries.
+          The node processes the requests and returns data or confirms
+          transactions.
+        </>
+      ),
+    },
+    "polygon-blackberry": {
       what: `RPC in ThirdWeb's Polygon Blackberry enables developers to interact with the Polygon network, facilitating queries and transaction execution on its Ethereum Layer 2 scaling solution.`,
       why: `Polygon Blackberry uses RPC to provide developers with access to Polygon's fast and low-cost infrastructure, supporting decentralized applications with Ethereum compatibility.`,
       how: (
         <>
-          To use Polygon Blackberry RPC, you need to send JSON-RPC formatted requests
-            to a Polygon node, either your own or through thirdweb’s services.
-            These requests can be executed using tools like cURL or programming libraries.
-            The node processes the requests and returns the desired data or confirms actions.
+          To use Polygon Blackberry RPC, you need to send JSON-RPC formatted
+          requests to a Polygon node, either your own or through thirdweb’s
+          services. These requests can be executed using tools like cURL or
+          programming libraries. The node processes the requests and returns the
+          desired data or confirms actions.
         </>
       ),
     },
-        "re.al": {
+    "re.al": {
       what: `RPC in Re.al allows external applications to interact with its blockchain platform, enabling transactions and data queries within its real estate ecosystem.`,
       why: `Re.al uses RPC to provide access to its blockchain, facilitating real estate tokenization, transactions, and governance within a decentralized property ecosystem.`,
       how: (
         <>
-          To use Re.al RPC, you need to send JSON-RPC formatted requests to a Re.al node,
-          either your own or via a service provider. These requests can be made using tools
-          like cURL or programming libraries in various languages. The node processes these
-          requests and provides data or confirms transactions.
+          To use Re.al RPC, you need to send JSON-RPC formatted requests to a
+          Re.al node, either your own or via a service provider. These requests
+          can be made using tools like cURL or programming libraries in various
+          languages. The node processes these requests and provides data or
+          confirms transactions.
         </>
       ),
     },
-        rootstock: {
+    rootstock: {
       what: `RPC in Rootstock enables interaction with its Bitcoin-backed smart contract platform, allowing external applications to query blockchain data and execute decentralized transactions.`,
       why: `Rootstock utilizes RPC to provide developers with access to its smart contract ecosystem, which combines Bitcoin's security with Ethereum-compatible decentralized applications.`,
       how: (
         <>
-          To use Rootstock RPC, you need to send JSON-RPC formatted requests to a Rootstock node,
-          either your own or through a service provider. These requests can be executed using tools
-          like cURL or libraries in various programming languages. The node processes the requests
-          and returns data or confirms actions.
+          To use Rootstock RPC, you need to send JSON-RPC formatted requests to
+          a Rootstock node, either your own or through a service provider. These
+          requests can be executed using tools like cURL or libraries in various
+          programming languages. The node processes the requests and returns
+          data or confirms actions.
         </>
       ),
     },
-        tron: {
+    tron: {
       what: `RPC in Tron enables interaction with its high-performance blockchain, allowing external applications to query data, execute transactions, and interact with decentralized applications (dApps).`,
       why: `Tron uses RPC to provide external access to its scalable network, supporting dApp development, transactions, and digital asset management.`,
       how: (
         <>
-          To use Tron RPC, you need to send JSON-RPC formatted requests to a Tron node,
-          either your own or through a service provider. These requests can be made
-          using tools like cURL or libraries in various programming languages.
-          The node processes the requests and provides data or transaction confirmations.
+          To use Tron RPC, you need to send JSON-RPC formatted requests to a
+          Tron node, either your own or through a service provider. These
+          requests can be made using tools like cURL or libraries in various
+          programming languages. The node processes the requests and provides
+          data or transaction confirmations.
         </>
       ),
     },
-        zircuit: {
+    zircuit: {
       what: `RPC in Zircuit allows external applications to interact with its blockchain ecosystem, facilitating data queries and transaction execution within its decentralized platform.`,
       why: `Zircuit utilizes RPC to provide access to its network, supporting decentralized applications, asset management, and cross-chain interoperability.`,
       how: (
         <>
-          To use Zircuit RPC, you need to send JSON-RPC formatted requests to a Zircuit node,
-          either your own or via a service provider. These requests can be executed using
-          tools like cURL or libraries in various programming languages. The node processes
-          the requests and returns data or confirms actions.
+          To use Zircuit RPC, you need to send JSON-RPC formatted requests to a
+          Zircuit node, either your own or via a service provider. These
+          requests can be executed using tools like cURL or libraries in various
+          programming languages. The node processes the requests and returns
+          data or confirms actions.
         </>
       ),
     },
-        wemix: {
+    wemix: {
       what: `RPC in Wemix enables interaction with its blockchain platform for gaming, allowing external applications to query data, execute transactions, and manage digital assets.`,
       why: `Wemix uses RPC to provide access to its gaming-focused blockchain, supporting decentralized games and token-based economies.`,
       how: (
         <>
-          To use Wemix RPC, you need to send JSON-RPC formatted requests to a Wemix node,
-          either your own or through a service provider. These requests can be executed
-          using tools like cURL or programming libraries in various languages.
-          The node processes the requests and returns data or transaction confirmations.
+          To use Wemix RPC, you need to send JSON-RPC formatted requests to a
+          Wemix node, either your own or through a service provider. These
+          requests can be executed using tools like cURL or programming
+          libraries in various languages. The node processes the requests and
+          returns data or transaction confirmations.
         </>
       ),
     },
-        alephzero: {
+    alephzero: {
       what: `RPC in Aleph Zero allows external applications to interact with its blockchain, enabling data queries, transaction execution, and decentralized application development.`,
       why: `Aleph Zero uses RPC to provide access to its high-performance, privacy-focused network, supporting fast and secure transactions for various use cases.`,
       how: (
         <>
-          To use Aleph Zero RPC, you need to send JSON-RPC formatted requests to an Aleph Zero node,
-            either your own or via a service provider. These requests can be made using tools like
-            cURL or libraries in various programming languages. The node processes these requests
-            and returns data or transaction confirmations.
+          To use Aleph Zero RPC, you need to send JSON-RPC formatted requests to
+          an Aleph Zero node, either your own or via a service provider. These
+          requests can be made using tools like cURL or libraries in various
+          programming languages. The node processes these requests and returns
+          data or transaction confirmations.
         </>
       ),
     },
-        "arb-blueberry": {
+    "arb-blueberry": {
       what: `RPC in Arbitrum Blueberry allows external applications to interact with the Layer 2 network, enabling efficient Ethereum-compatible transactions and data queries.`,
       why: `Arbitrum Blueberry utilizes RPC to provide access to its fast and cost-effective Layer 2 solution, supporting decentralized applications with Ethereum compatibility.`,
       how: (
         <>
-          To use Arbitrum Blueberry RPC, you need to send JSON-RPC formatted requests
-          to an Arbitrum node, either your own or through a service provider such as Sequence.
-          These requests can be executed using tools like cURL or programming libraries in various
-          languages. The node processes the requests and provides the necessary data or confirms actions.
+          To use Arbitrum Blueberry RPC, you need to send JSON-RPC formatted
+          requests to an Arbitrum node, either your own or through a service
+          provider such as Sequence. These requests can be executed using tools
+          like cURL or programming libraries in various languages. The node
+          processes the requests and provides the necessary data or confirms
+          actions.
         </>
       ),
     },
-        everclear: {
+    everclear: {
       what: `RPC in Everclear facilitates interaction with its blockchain network, allowing external applications to query data and execute decentralized transactions.`,
       why: `Everclear uses RPC to provide access to its decentralized platform, enabling seamless interaction with its secure and scalable blockchain ecosystem.`,
       how: (
         <>
-          To use Everclear RPC, you need to send JSON-RPC formatted requests
-          to an Everclear node, either your own or via a service provider. These requests
-          can be executed using tools like cURL or programming libraries. The node processes
-          the requests and returns data or transaction confirmations.
+          To use Everclear RPC, you need to send JSON-RPC formatted requests to
+          an Everclear node, either your own or via a service provider. These
+          requests can be executed using tools like cURL or programming
+          libraries. The node processes the requests and returns data or
+          transaction confirmations.
         </>
       ),
     },
-        "opcelestia-raspberry": {
+    "opcelestia-raspberry": {
       what: `RPC in Opcelestia Raspberry enables external applications to interact with the Opcelestia blockchain, facilitating data queries and transaction execution.`,
       why: `Opcelestia Raspberry utilizes RPC to provide access to its modular blockchain infrastructure, enabling decentralized applications and cross-chain functionality.`,
       how: (
         <>
-          To use Opcelestia RPC, you need to send JSON-RPC formatted requests to a Celestia
-          node via Gelato Scout’s service. These requests can be made using tools like cURL
-          or programming libraries. The node processes these requests and returns data or
-          confirms actions.
+          To use Opcelestia RPC, you need to send JSON-RPC formatted requests to
+          a Celestia node via Gelato Scout’s service. These requests can be made
+          using tools like cURL or programming libraries. The node processes
+          these requests and returns data or confirms actions.
         </>
       ),
     },
-        sei: {
+    sei: {
       what: `RPC in Sei facilitates interaction with its Layer 1 blockchain optimized for high-speed trading, allowing external applications to query data and execute decentralized transactions.`,
       why: `Sei uses RPC to provide access to its fast and low-latency trading infrastructure, supporting decentralized exchanges (DEXs) and other trading applications.`,
       how: (
         <>
-          To use Sei RPC, you need to send JSON-RPC formatted requests to a Sei node,
-          either your own or through a service provider. These requests can be executed
-          using tools like cURL or programming libraries. The node processes the requests
-          and returns data or confirms actions.
+          To use Sei RPC, you need to send JSON-RPC formatted requests to a Sei
+          node, either your own or through a service provider. These requests
+          can be executed using tools like cURL or programming libraries. The
+          node processes the requests and returns data or confirms actions.
         </>
       ),
     },
-        snaxchain: {
+    snaxchain: {
       what: `RPC in SnaxChain facilitates communication with the governance layer of the Synthetix protocol, allowing external applications to query governance data and participate in decision-making processes.`,
       why: `SnaxChain uses RPC to provide access to its governance model, enabling stakeholders to propose, vote, and track protocol changes within the Synthetix ecosystem.`,
       how: (
         <>
-          To use Snaxchain RPC, you need to send JSON-RPC formatted requests to a
-            Synthetix node or via a service provider supporting Snaxchain. These requests
-            can be made using tools like cURL or libraries in various languages.
-            The node processes these requests and returns data or confirms governance-related actions.
+          To use Snaxchain RPC, you need to send JSON-RPC formatted requests to
+          a Synthetix node or via a service provider supporting Snaxchain. These
+          requests can be made using tools like cURL or libraries in various
+          languages. The node processes these requests and returns data or
+          confirms governance-related actions.
         </>
       ),
     },
-
-
   } as Record<string, { what: string; why: string; how?: React.ReactNode }>;
 
   const HowToFAQ = ({ networkName }: { networkName: string }) => (
