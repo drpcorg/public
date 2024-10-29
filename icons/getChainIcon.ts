@@ -85,6 +85,9 @@ import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
+import Lens from "./Lens.png";
+import Ton from "./Ton.png";
+import Sonic from "./Sonic.svg";
 
 const Icons: Record<string, any> = {
   alephzero: AlephZero,
@@ -174,6 +177,9 @@ const Icons: Record<string, any> = {
   zora: Zora,
   sei: Sei,
   kroma: Kroma,
+  ton: Ton,
+  sonic: Sonic,
+  lens: Lens,
 };
 
 const DarkIcons: Record<string, any> = {

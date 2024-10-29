@@ -1033,6 +1033,42 @@ export const getFAQ = ({ LinkComponent, siteMap }: IGetFAQ) => {
         </>
       ),
     },
+    ton: {
+      what: `TON is a community-driven Layer 1 blockchain designed for scalable applications, known for its integration with Telegram and sharded architecture for high transaction throughput.`,
+      why: `TON leverages sharding and fast finality to support various applications, including DeFi, NFTs, and gaming, while offering seamless Web3 integration within the Telegram ecosystem.`,
+      how: (
+        <>
+          To use TON, developers can connect via TON’s developer tools to deploy
+          decentralized applications, benefiting from sharding for scalability and speed.
+          TON also provides support for integration within Telegram,
+          making it easy to reach Telegram's large user base with Web3 features.
+        </>
+      ),
+    },
+    lens: {
+      what: `Lens Protocol is a decentralized social graph built on Polygon, allowing users to own and control their social interactions, profiles, and content across Web3 platforms.`,
+      why: `Lens Protocol enables a creator-first ecosystem where users maintain ownership of their social data, encouraging innovation and cross-platform interoperability for social applications.`,
+      how: (
+        <>
+          Developers and users can interact with Lens Protocol through its APIs and SDKs
+          to create decentralized social applications where users own their profiles and
+          followers. This ensures data portability, allowing users to move their social
+          identity across compatible dApps on Lens.
+        </>
+      ),
+    },
+    sonic: {
+      what: `Sonic Labs is a decentralized platform focused on real-time audio applications, enabling developers and creators to build, share, and monetize interactive audio experiences on blockchain.`,
+      why: `Sonic Labs aims to provide transparent and fair revenue distribution for audio content creators, using blockchain to empower and protect intellectual property in the audio industry.`,
+      how: (
+        <>
+          To interact with Sonic Labs, you can use their developer tools and SDKs
+          to build applications like music streaming, collaborative sound design,
+          and immersive audio experiences. These tools allow integration with blockchain
+          to ensure secure ownership and distribution of royalties.
+        </>
+      ),
+    },
   } as Record<string, { what: string; why: string; how?: React.ReactNode }>;
 
   const HowToFAQ = ({ networkName }: { networkName: string }) => (
