@@ -132,6 +132,11 @@
   explorers:
     - https://hecoinfo.com
 - currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 130
+- currency:
     name: POL
     symbol: POL
     decimals: 18
@@ -201,7 +206,6 @@
     symbol: htt
     decimals: 18
   chain-id: 256
-  explorers: null
 - currency:
     name: Ether
     symbol: ETH
@@ -342,6 +346,14 @@
   explorers:
     - https://moonbase.moonscan.io
 - currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 1301
+  explorers:
+    - https://unichain-sepolia.blockscout.com
+    - https://sepolia.uniscan.xyz
+- currency:
     name: Sei
     symbol: SEI
     decimals: 18
@@ -369,6 +381,13 @@
   chain-id: 1750
   explorers:
     - https://explorer.metall2.com
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 1946
+  explorers:
+    - https://explorer-testnet.soneium.org
 - currency:
     name: TZERO
     symbol: TZERO
@@ -546,6 +565,20 @@
   chain-id: 25327
   explorers:
     - https://scan.everclear.org
+- currency:
+    name: ApeCoin
+    symbol: APE
+    decimals: 18
+  chain-id: 33111
+  explorers:
+    - https://explorer.curtis.apechain.com
+- currency:
+    name: ApeCoin
+    symbol: APE
+    decimals: 18
+  chain-id: 33139
+  explorers:
+    - https://apescan.io
 - currency:
     name: Ether
     symbol: ETH
