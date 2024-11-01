@@ -1913,3 +1913,66 @@ chain-settings:
           grpcId: 10104
           short-names: [lens-testnet]
           chain-id: 0x90f7
+    - id: unichain
+      label: Unichain
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 10
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: UNICHAIN_MAINNET
+          grpcId: 1081
+          short-names: [unichain]
+          chain-id: 0x82
+        - id: Sepolia
+          priority: 1
+          code: UNICHAIN_SEPOLIA
+          grpcId: 10105
+          short-names: [unichain-sepolia]
+          chain-id: 0x515
+    - id: apechain
+      label: Apechain
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 10
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: APECHAIN_MAINNET
+          grpcId: 1082
+          short-names: [apechain]
+          chain-id: 0x8173
+        - id: Curtis
+          priority: 1
+          code: APECHAIN_CURTIS
+          grpcId: 10106
+          short-names: [apechain-curtis]
+          chain-id: 0x8157
+    - id: soneium
+      label: Soneium
+      type: eth
+      settings:
+        expected-block-time: 2s
+        lags:
+          syncing: 10
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Minato
+          priority: 1
+          code: SONEIUM_MINATO
+          grpcId: 10107
+          short-names: [soneium-minato]
+          chain-id: 0x79a
