@@ -1879,7 +1879,7 @@ chain-settings:
           priority: 100
           code: TON
           short-names: [ton]
-          chain-id: ton
+          chain-id: "-239"
           grpcId: 1080
     - id: sonic
       label: Sonic
