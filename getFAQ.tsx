@@ -1069,6 +1069,34 @@ export const getFAQ = ({ LinkComponent, siteMap }: IGetFAQ) => {
         </>
       ),
     },
+    apechain: {
+      what: `ApeChain is a creator-centric blockchain built on Arbitrum Orbit, powered by ApeCoin ($APE) to support applications in gaming, finance, and intellectual property.`,
+      why: `ApeChain aims to enhance Web3 experiences for creators and developers, providing robust infrastructure, financial incentives, and multi-language smart contract support for a more versatile and sustainable ecosystem.`,
+      how: (
+        <>
+          To start with ApeChain, users can utilize the Ape Portal to bridge tokens,
+        swap assets, and convert fiat to ApeCoin. Developers can access
+        ApeChain’s toolkit to build on Arbitrum’s Stylus, which allows for smart
+        contract development in languages like Rust and C++, expanding beyond
+        Solidity to offer broader compatibility.
+        </>
+      ),
+    },
+    unichain: {
+      what: `Unichain is a DeFi-native Ethereum Layer 2 (L2) network developed by Uniswap Labs, designed to serve as the central hub for liquidity across multiple blockchains. It offers faster transactions and significantly reduced fees, enhancing the efficiency of decentralized finance (DeFi) applications.`,
+      why: ` Unichain addresses key challenges in the DeFi space, such as high transaction costs and fragmented liquidity. By providing near-instant transactions and lower fees, it aims to improve user experience and market efficiency. Additionally, Unichain supports seamless cross-chain interoperability, enabling users to access liquidity across various networks without friction.`,
+      how: (
+        <>
+          To engage with Unichain, users can connect their wallets to the network
+        and start transacting with reduced fees and faster confirmation times.
+        Developers can utilize the Unichain Builder Toolkit to deploy smart
+        contracts and create DeFi applications optimized for this L2 environment.
+        Unichain’s integration within the Optimism Superchain facilitates
+        cross-chain interactions, allowing for seamless asset transfers and
+        liquidity access across supported networks.
+        </>
+      ),
+    },
   } as Record<string, { what: string; why: string; how?: React.ReactNode }>;
 
   const HowToFAQ = ({ networkName }: { networkName: string }) => (

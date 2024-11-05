@@ -88,6 +88,8 @@ import Zora from "./Zora.png";
 import Lens from "./Lens.png";
 import Ton from "./Ton.png";
 import Sonic from "./Sonic.svg";
+import Apechain from "./Apechain.png";
+import Unichain from "./Unichain.svg";
 
 const Icons: Record<string, any> = {
   alephzero: AlephZero,
@@ -180,6 +182,9 @@ const Icons: Record<string, any> = {
   ton: Ton,
   sonic: Sonic,
   lens: Lens,
+  apechain: Apechain,
+  unichain: Unichain,
+
 };
 
 const DarkIcons: Record<string, any> = {
