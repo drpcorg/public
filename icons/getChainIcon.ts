@@ -1,4 +1,5 @@
 import AlephZero from "./AlephZero.svg";
+import Apechain from "./Apechain.svg";
 import Arbitrum from "./Arbitrum.svg";
 import ArbitrumNova from "./ArbitrumNova.svg";
 import ArbitrumNovaDark from "./ArbitrumNovaDark.svg";
@@ -40,6 +41,7 @@ import Kava from "./Kava.svg";
 import Klaytn from "./Klaytn.svg";
 import Kroma from "./Kroma.svg";
 import Kusama from "./Kusama.svg";
+import Lens from "./Lens.png";
 import Linea from "./Linea.svg";
 import Lisk from "./Lisk.png";
 import Manta from "./Manta.png";
@@ -70,13 +72,16 @@ import Scroll from "./Scroll.svg";
 import Sei from "./Sei.png";
 import Snaxchain from "./Snaxchain.svg";
 import Solana from "./Solana.svg";
+import Sonic from "./Sonic.svg";
 import Starknet from "./Starknet.svg";
 import Taiko from "./Taiko.jpg";
 import Telos from "./Telos.png";
 import Threshold from "./Threshold.svg";
 import Thundercore from "./Thundercore.png";
+import Ton from "./Ton.png";
 import Tron from "./Tron.png";
 import Umnee from "./Umnee.svg";
+import Unichain from "./Unichain.svg";
 import Vara from "./Vara.svg";
 import Vega from "./Vega.svg";
 import Wemix from "./Wemix.png";
@@ -85,11 +90,6 @@ import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
-import Lens from "./Lens.png";
-import Ton from "./Ton.png";
-import Sonic from "./Sonic.svg";
-import Apechain from "./Apechain.png";
-import Unichain from "./Unichain.svg";
 
 const Icons: Record<string, any> = {
   alephzero: AlephZero,
@@ -184,7 +184,6 @@ const Icons: Record<string, any> = {
   lens: Lens,
   apechain: Apechain,
   unichain: Unichain,
-
 };
 
 const DarkIcons: Record<string, any> = {
