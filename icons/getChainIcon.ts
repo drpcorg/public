@@ -72,6 +72,7 @@ import Scroll from "./Scroll.svg";
 import Sei from "./Sei.png";
 import Snaxchain from "./Snaxchain.svg";
 import Solana from "./Solana.svg";
+import Soneium from "./Soneium.svg";
 import Sonic from "./Sonic.svg";
 import Starknet from "./Starknet.svg";
 import Taiko from "./Taiko.jpg";
@@ -184,6 +185,7 @@ const Icons: Record<string, any> = {
   lens: Lens,
   apechain: Apechain,
   unichain: Unichain,
+  soneium: Soneium,
 };
 
 const DarkIcons: Record<string, any> = {

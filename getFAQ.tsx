@@ -1097,6 +1097,20 @@ export const getFAQ = ({ LinkComponent, siteMap }: IGetFAQ) => {
         </>
       ),
     },
+    soneium: {
+      what: `Soneium is a public blockchain ecosystem developed by Sony Block Solutions Labs, designed to integrate Web3 technologies into daily life by creating an internet where creativity and technology converge. It offers a scalable, secure, and cost-effective environment for developing decentralized applications (dApps) across various sectors, including entertainment, gaming, and finance.`,
+      why: ` Soneium aims to empower developers, creators, and communities by providing the essential tools and infrastructure needed to build innovative projects. By leveraging Sony's vast experience in technology and entertainment, Soneium seeks to bridge the gap between Web2 and Web3, fostering a decentralized world where digital interactions are as impactful as real ones.`,
+      how: (
+        <>
+          To start building on Soneium, developers can access comprehensive
+            documentation and resources available on the official website.
+            The platform supports Ethereum-compatible development, allowing
+            for seamless integration of existing tools and frameworks. Additionally,
+            Soneium offers a testnet environment for developers to experiment
+            and deploy their dApps before moving to the mainnet.
+        </>
+      ),
+    },
   } as Record<string, { what: string; why: string; how?: React.ReactNode }>;
 
   const HowToFAQ = ({ networkName }: { networkName: string }) => (
