@@ -1881,6 +1881,12 @@ chain-settings:
           short-names: [ton]
           chain-id: "-239"
           grpcId: 1080
+        - id: Testnet
+          priority: 1
+          code: TON_TESTNET
+          grpcId: 10108
+          short-names: [ton-testnet]
+          chain-id: "-3"
     - id: sonic
       label: Sonic
       type: eth
