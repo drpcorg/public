@@ -1982,3 +1982,20 @@ chain-settings:
           grpcId: 10107
           short-names: [soneium-minato]
           chain-id: 0x79a
+    - id: zero
+      label: Zero Network
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 10
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ZERO_MAINNET
+          grpcId: 1083
+          short-names: [zero]
+          chain-id: 0x849ea
