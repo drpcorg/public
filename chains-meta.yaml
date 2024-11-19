@@ -761,6 +761,13 @@
   explorers:
     - https://scrollscan.com
 - currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 543210
+  explorers:
+    - https://explorer.zero.network
+- currency:
     name: Sei
     symbol: SEI
     decimals: 18
