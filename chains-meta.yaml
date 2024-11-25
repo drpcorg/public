@@ -136,6 +136,7 @@
     symbol: ETH
     decimals: 18
   chain-id: 130
+  explorers: null
 - currency:
     name: POL
     symbol: POL
@@ -206,6 +207,7 @@
     symbol: htt
     decimals: 18
   chain-id: 256
+  explorers: null
 - currency:
     name: Ether
     symbol: ETH
@@ -587,6 +589,13 @@
   explorers:
     - https://explorer.mode.network
 - currency:
+    name: GRASS
+    symbol: GRASS
+    decimals: 18
+  chain-id: 37111
+  explorers:
+    - https://block-explorer.testnet.lens.dev
+- currency:
     name: Aleph Zero
     symbol: AZERO
     decimals: 18
@@ -624,6 +633,7 @@
     decimals: 18
   chain-id: 43113
   explorers:
+    - https://testnet.snowscan.xyz
     - https://testnet.snowtrace.io
 - currency:
     name: Avalanche
@@ -631,6 +641,7 @@
     decimals: 18
   chain-id: 43114
   explorers:
+    - https://snowscan.xyz
     - https://snowtrace.io
 - currency:
     name: CELO
@@ -690,6 +701,7 @@
     decimals: 18
   chain-id: 80002
   explorers:
+    - https://amoy.polygonscan.com
     - https://www.oklink.com/amoy
 - currency:
     name: BERA Token
@@ -712,6 +724,7 @@
     decimals: 18
   chain-id: 84532
   explorers:
+    - https://sepolia.basescan.org
     - https://base-sepolia.blockscout.com
 - currency:
     name: Ether
@@ -745,6 +758,7 @@
     decimals: 18
   chain-id: 421614
   explorers:
+    - https://sepolia.arbiscan.io
     - https://sepolia-explorer.arbitrum.io
 - currency:
     name: Ether
@@ -810,6 +824,7 @@
     decimals: 18
   chain-id: 11155420
   explorers:
+    - https://sepolia-optimism.etherscan.io
     - https://optimism-sepolia.blockscout.com
 - currency:
     name: Sepolia Ether
@@ -954,5 +969,5 @@
     symbol: BTC
     decimals: 18
   explorers:
-    - http://explorer.testnet.goat.network/
+    - https://explorer.testnet3.goat.network
   chain-id: 48815
