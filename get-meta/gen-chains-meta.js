@@ -126,7 +126,7 @@ let manualChains = new Map([
         symbol: "BTC",
         decimals: 18,
       },
-      explorers: ["http://explorer.testnet.goat.network/"],
+      explorers: ["https://explorer.testnet3.goat.network"],
     },
   ],
 ]);
