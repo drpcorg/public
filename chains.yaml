@@ -1788,6 +1788,12 @@ chain-settings:
           grpcId: 10097
           short-names: [goat-testnet]
           chain-id: 0xbeaf
+        - id: Testnet3
+          priority: 50
+          code: GOAT_TESTNET3
+          grpcId: 10109
+          short-names: [goat-testnet3]
+          chain-id: 0xbeb0
     - id: snaxchain
       label: Snaxchain
       type: eth
