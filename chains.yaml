@@ -1788,6 +1788,12 @@ chain-settings:
           grpcId: 10097
           short-names: [goat-testnet]
           chain-id: 0xbeaf
+        - id: Testnet3
+          priority: 50
+          code: GOAT_TESTNET3
+          grpcId: 10109
+          short-names: [goat-testnet3]
+          chain-id: 0xbeb0
     - id: snaxchain
       label: Snaxchain
       type: eth
@@ -1999,3 +2005,26 @@ chain-settings:
           grpcId: 1083
           short-names: [zero]
           chain-id: 0x849ea
+    - id: worldchain
+      label: Worldchain
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 10
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: WORLDCHAIN_MAINNET
+          grpcId: 1084
+          short-names: [worldchain]
+          chain-id: 0x1e0
+        - id: Sepolia
+          priority: 1
+          code: WORLDCHAIN_SEPOLIA
+          grpcId: 10110
+          short-names: [worldchain-sepolia]
+          chain-id: 0x12c1
