@@ -1103,7 +1103,7 @@ chain-settings:
       label: Boba BNB
       type: eth
       settings:
-        expected-block-time: 5s
+        expected-block-time: 1m
         options:
           validate-peers: false
         lags:
