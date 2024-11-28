@@ -87,6 +87,7 @@ import Vara from "./Vara.svg";
 import Vega from "./Vega.svg";
 import Wemix from "./Wemix.png";
 import Xlayer from "./Xlayer.png";
+import Zero from "./Zero.svg";
 import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
@@ -186,6 +187,7 @@ const Icons: Record<string, any> = {
   apechain: Apechain,
   unichain: Unichain,
   soneium: Soneium,
+  zero: Zero,
 };
 
 const DarkIcons: Record<string, any> = {

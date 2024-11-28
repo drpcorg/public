@@ -1111,6 +1111,22 @@ export const getFAQ = ({ LinkComponent, siteMap }: IGetFAQ) => {
         </>
       ),
     },
+    zero: {
+      what: `Zero Network is a decentralized blockchain ecosystem developed by Zero Labs. It is designed to enhance digital privacy, security, and scalability by leveraging advanced cryptographic technologies. Zero Network provides a robust infrastructure for building and deploying decentralized applications (dApps) across various industries, including finance, healthcare, supply chain management, and entertainment. The platform emphasizes interoperability and user data sovereignty, creating an internet environment where secure and seamless digital interactions are the norm.`,
+      why: `Zero Network aims to address the growing need for secure and private digital interactions in an increasingly interconnected world. By prioritizing privacy-preserving technologies and scalable solutions, Zero Network empowers developers and users to create and engage with applications that maintain data integrity and confidentiality. The platform seeks to bridge the gap between traditional Web2 applications and decentralized Web3 solutions, fostering a trustworthy and efficient digital ecosystem where users have full control over their data.`,
+      how: (
+        <>
+          To start building on Zero Network, developers can access comprehensive
+          documentation and resources available on the official Zero Network website.
+          The platform supports multiple programming languages and offers a variety of
+          SDKs and APIs to streamline the development process. Developers can utilize
+          Zero Network’s testnet environment to experiment and deploy their dApps in a
+          risk-free setting before transitioning to the mainnet. Additionally, Zero Network
+          provides developer tools, such as smart contract templates and integration guides,
+          to facilitate seamless creation and deployment of decentralized applications.
+        </>
+      ),
+    }
   } as Record<string, { what: string; why: string; how?: React.ReactNode }>;
 
   const HowToFAQ = ({ networkName }: { networkName: string }) => (
