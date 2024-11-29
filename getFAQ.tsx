@@ -1126,7 +1126,27 @@ export const getFAQ = ({ LinkComponent, siteMap }: IGetFAQ) => {
           to facilitate seamless creation and deployment of decentralized applications.
         </>
       ),
+    },
+      worldchain: {
+      what: `Worldchain Network is a decentralized blockchain ecosystem developed by World Labs. It is designed to facilitate seamless cross-border transactions and interoperability between different blockchain platforms. Worldchain Network leverages cutting-edge consensus mechanisms and smart contract technologies to ensure high scalability, security, and efficiency. By integrating Web3 solutions into various sectors such as finance, supply chain, and digital identity, Worldchain Network aims to create a unified internet infrastructure where diverse digital interactions and data exchanges can occur transparently and trustlessly. The platform empowers developers and businesses to build innovative decentralized applications (dApps) that operate smoothly across multiple blockchain environments, fostering a truly interconnected digital economy.`,
+
+      why: `Worldchain Network was created to address the challenges of fragmentation and inefficiency in the current blockchain landscape. As the demand for decentralized solutions grows, there is a critical need for a platform that can bridge different blockchain networks, enabling seamless interoperability and cross-chain functionality. Worldchain Network aims to empower businesses and developers by providing the tools and infrastructure necessary to create scalable and secure dApps that can interact with multiple blockchain systems. By fostering interoperability and enhancing transaction efficiency, Worldchain Network seeks to drive the adoption of blockchain technology across various industries, promoting a more connected and efficient digital ecosystem.`,
+
+      how: (
+        <>
+          To start building on Worldchain Network, developers can access comprehensive
+          documentation and resources available on the official Worldchain Network website.
+          The platform supports multiple programming languages and offers a variety of
+          SDKs and APIs to streamline the development process. Developers can utilize
+          Worldchain Network’s testnet environment to experiment and deploy their dApps in a
+          risk-free setting before transitioning to the mainnet. Additionally, Worldchain Network
+          provides developer tools, such as smart contract templates, integration guides, and
+          cross-chain bridges, to facilitate the seamless creation and deployment of decentralized
+          applications.
+        </>
+      ),
     }
+
   } as Record<string, { what: string; why: string; how?: React.ReactNode }>;
 
   const HowToFAQ = ({ networkName }: { networkName: string }) => (
