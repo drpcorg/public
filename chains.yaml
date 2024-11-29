@@ -53,6 +53,8 @@ chain-settings:
           priority: 10
           chain-id: 0xaa36a7
           short-names: [sepolia, sepolia-testnet]
+          settings:
+            mev-critical: false
         - id: Holesky
           code: ETHEREUM_HOLESKY
           grpcId: 10027
@@ -60,6 +62,8 @@ chain-settings:
           call-validate-contract: 0x32268860caac2948ab5ddc7b20db5a420467cf96
           chain-id: 0x4268
           short-names: [holesky, ethereum-holesky]
+          settings:
+            mev-critical: false
     - id: ethereum-classic
       type: eth
       settings:
@@ -121,6 +125,8 @@ chain-settings:
           grpcId: 10048
           chain-id: 0x13882
           short-names: [polygon-amoy]
+          settings:
+            mev-critical: false
     - id: arbitrum
       label: Arbitrum One
       type: eth
