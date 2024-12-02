@@ -92,6 +92,7 @@ import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
+import Worldchain from "./Worldchain.svg";
 
 const Icons: Record<string, any> = {
   alephzero: AlephZero,
@@ -188,6 +189,7 @@ const Icons: Record<string, any> = {
   unichain: Unichain,
   soneium: Soneium,
   zero: Zero,
+  worldchain: Worldchain,
 };
 
 const DarkIcons: Record<string, any> = {
