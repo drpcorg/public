@@ -129,6 +129,28 @@ let manualChains = new Map([
       explorers: ["https://explorer.testnet3.goat.network"],
     },
   ],
+  [
+    388,
+    {
+      currency: {
+        name: "Cronos zkEVM Mainnet",
+        symbol: "zkCRO",
+        decimals: 18,
+      },
+      explorers: ["https://explorer.zkevm.cronos.org/"],
+    },
+  ],
+  [
+    240,
+    {
+      currency: {
+        name: "Cronos zkEVM Testnet",
+        symbol: "zkTCRO",
+        decimals: 18,
+      },
+      explorers: ["https://explorer.zkevm.cronos.org/testnet/"],
+    },
+  ]
 ]);
 
 function merge(el) {

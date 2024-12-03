@@ -971,3 +971,17 @@
   explorers:
     - https://explorer.testnet3.goat.network
   chain-id: 48815
+- currency:
+    name: Cronos zkEVM Mainnet
+    symbol: zkCRO
+    decimals: 18
+  explorers:
+    - https://explorer.zkevm.cronos.org/
+  chain-id: 388
+- currency:
+    name: Cronos zkEVM Testnet
+    symbol: zkTCRO
+    decimals: 18
+  explorers:
+    - https://explorer.zkevm.cronos.org/testnet/
+  chain-id: 240
