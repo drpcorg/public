@@ -2034,3 +2034,26 @@ chain-settings:
           grpcId: 10110
           short-names: [worldchain-sepolia]
           chain-id: 0x12c1
+    - id: cronos-zkevm
+      label: Cronos zkEVM
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 10
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: CRONOS_ZKEVM_MAINNET
+          grpcId: 1085
+          short-names: [cronos-zkevm]
+          chain-id: 0x904
+        - id: Testnet
+          priority: 1
+          code: CRONOS_ZKEVM_TESTNET
+          grpcId: 10111
+          short-names: [cronos-zkevm-testnet]
+          chain-id: 0x576
