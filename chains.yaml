@@ -2050,10 +2050,10 @@ chain-settings:
           code: CRONOS_ZKEVM_MAINNET
           grpcId: 1085
           short-names: [cronos-zkevm]
-          chain-id: 0x904
+          chain-id: 0x184
         - id: Testnet
           priority: 1
           code: CRONOS_ZKEVM_TESTNET
           grpcId: 10111
           short-names: [cronos-zkevm-testnet]
-          chain-id: 0x576
+          chain-id: 0xf0
