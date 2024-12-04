@@ -1145,7 +1145,22 @@ export const getFAQ = ({ LinkComponent, siteMap }: IGetFAQ) => {
           applications.
         </>
       ),
-    }
+    },
+  "cronos-zkevm": {
+  what: `Cronos zkEVM is a layer-2 scaling solution developed by the Cronos ecosystem, utilizing zero-knowledge rollup technology to enhance blockchain scalability, security, and efficiency. It is fully compatible with the Ethereum Virtual Machine (EVM), enabling seamless deployment and execution of Ethereum-based smart contracts and decentralized applications (dApps) without modifications. By leveraging advanced zero-knowledge proofs, Cronos zkEVM ensures high transaction throughput and low costs while maintaining robust security standards.`,
+
+  why: `Cronos zkEVM was created to address the scalability and interoperability challenges faced by blockchain networks. As the demand for decentralized applications grows, there is a need for a solution that can handle a higher volume of transactions efficiently while ensuring security and compatibility with existing Ethereum-based projects. Cronos zkEVM bridges these gaps by providing a scalable infrastructure that supports seamless cross-chain interactions, enabling developers and businesses to build and expand their dApps within a unified and efficient blockchain ecosystem.`,
+
+  how: (
+    <>
+    To use Cronos zkEVM RPC, you need to send JSON-RPC formatted requests to
+      the node, either your own or via a service dRPC. These
+      requests can be made using tools like cURL or programming libraries in
+      various languages. The node then processes these requests and returns the
+      desired information or confirmation of actions performed.
+    </>
+  ),
+}
 
   } as Record<string, { what: string; why: string; how?: React.ReactNode }>;
 

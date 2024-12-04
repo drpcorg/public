@@ -93,6 +93,7 @@ import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
 import Worldchain from "./Worldchain.svg";
+import Cronoszkevm from "./Cronos-zkevm.svg";
 
 const Icons: Record<string, any> = {
   alephzero: AlephZero,
@@ -190,6 +191,7 @@ const Icons: Record<string, any> = {
   soneium: Soneium,
   zero: Zero,
   worldchain: Worldchain,
+  "cronos-zkevm": Cronoszkevm,
 };
 
 const DarkIcons: Record<string, any> = {
