@@ -135,7 +135,7 @@ settings:
 
 Icons are stored in the `/icons` directory. To add a new icon, place a `.svg` or `.png` file into the `/icons` folder. Ensure the filename corresponds to the identifier for the protocol.
 
-Next, register the icon in the Icons map within the `/icons/getChainIcon.ts` file.
+Next, register the icon in the Icons map within the `/icons/icons.ts` file.
 
 **Example:**
 
