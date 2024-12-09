@@ -2057,3 +2057,24 @@ chain-settings:
           grpcId: 10111
           short-names: [cronos-zkevm-testnet]
           chain-id: 0xf0
+    - id: viction
+      label: Viction
+      type: eth
+      settings:
+        expected-block-time: 2s
+        lags:
+          syncing: 10
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: VICTION_MAINNET
+          grpcId: 1086
+          short-names: [viction]
+          chain-id: 0x58
+        - id: Testnet
+          priority: 1
+          code: VICTION_TESTNET
+          grpcId: 10112
+          short-names: [viction-testnet]
+          chain-id: 0x59

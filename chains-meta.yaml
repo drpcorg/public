@@ -985,3 +985,17 @@
   explorers:
     - https://explorer.zkevm.cronos.org/testnet/
   chain-id: 240
+- currency:
+    name: Viction
+    symbol: VIC
+    decimals: 18
+  chain-id: 0x58
+  explorers:
+    - https://www.vicscan.xyz/
+- currency:
+    name: Viction Testnet
+    symbol: VIC
+    decimals: 18
+  chain-id: 0x59
+  explorers:
+    - https://testnet.vicscan.xyz
