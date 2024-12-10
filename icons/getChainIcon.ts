@@ -21,6 +21,7 @@ import CeloDark from "./CeloDark.svg";
 import Core from "./Core.png";
 import CosmosHub from "./CosmosHub.svg";
 import Cronos from "./Cronos.svg";
+import Cronoszkevm from "./Cronos-zkevm.svg";
 import Dymension from "./Dymension.png";
 import Ethereum from "./Ethereum.svg";
 import Everclear from "./Everclear.png";
@@ -85,18 +86,17 @@ import Umnee from "./Umnee.svg";
 import Unichain from "./Unichain.svg";
 import Vara from "./Vara.svg";
 import Vega from "./Vega.svg";
+import Viction from "./Viction.svg";
 import Wemix from "./Wemix.png";
+import Worldchain from "./Worldchain.svg";
 import Xlayer from "./Xlayer.png";
 import Zero from "./Zero.svg";
 import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
-import Worldchain from "./Worldchain.svg";
-import Cronoszkevm from "./Cronos-zkevm.svg";
-import Viction from "./Viction.svg";
 
-const Icons: Record<string, any> = {
+export const Icons: Record<string, any> = {
   alephzero: AlephZero,
   arbitrum: Arbitrum,
   "arb-blueberry": Arbitrum,
@@ -196,7 +196,7 @@ const Icons: Record<string, any> = {
   viction: Viction,
 };
 
-const DarkIcons: Record<string, any> = {
+export const DarkIcons: Record<string, any> = {
   "arbitrum-nova": ArbitrumNovaDark,
   base: BaseDark,
   celo: CeloDark,
