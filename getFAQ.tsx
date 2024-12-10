@@ -1153,11 +1153,27 @@ export const getFAQ = ({ LinkComponent, siteMap }: IGetFAQ) => {
 
   how: (
     <>
-    To use Cronos zkEVM RPC, you need to send JSON-RPC formatted requests to
+      To use Cronos zkEVM RPC, you need to send JSON-RPC formatted requests to
       the node, either your own or via a service dRPC. These
       requests can be made using tools like cURL or programming libraries in
       various languages. The node then processes these requests and returns the
       desired information or confirmation of actions performed.
+    </>
+  ),
+},
+viction: {
+  what: `Viction is a people-centric layer-1 blockchain designed to make Web3 more accessible and secure. It features zero-gas transactions, enhanced security, and scalability. Utilizing a Proof-of-Stake (PoS) consensus mechanism with 150 masternodes, Viction ensures stable operations, while advanced techniques such as double validation and smart contract staking enhance its security and efficiency. Fully compatible with the Ethereum Virtual Machine (EVM), Viction supports seamless deployment of Ethereum-based smart contracts and decentralized applications (dApps).`,
+
+  why: `Viction was created to address the challenges of accessibility, scalability, and high gas fees in the blockchain ecosystem. By offering zero-gas transactions and robust security, Viction removes barriers to entry for developers and users, making Web3 more inclusive. Its compatibility with the EVM further enables developers to migrate existing projects effortlessly, fostering broader adoption and innovation within the blockchain space.`,
+
+  how: (
+    <>
+        To use Viction's RPC, developers need to send JSON-RPC formatted
+        requests to the blockchain node, which can be either self-hosted
+        or accessed through a service like dRPC. These requests, made using
+        tools such as cURL or programming libraries, allow interactions with
+        the blockchain, including querying data or executing transactions,
+        with responses confirming the actions or providing the requested information
     </>
   ),
 }
