@@ -94,6 +94,7 @@ import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
 import Worldchain from "./Worldchain.svg";
 import Cronoszkevm from "./Cronos-zkevm.svg";
+import Viction from "./Viction.svg";
 
 const Icons: Record<string, any> = {
   alephzero: AlephZero,
@@ -192,6 +193,7 @@ const Icons: Record<string, any> = {
   zero: Zero,
   worldchain: Worldchain,
   "cronos-zkevm": Cronoszkevm,
+  viction: Viction,
 };
 
 const DarkIcons: Record<string, any> = {
