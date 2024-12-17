@@ -1902,12 +1902,18 @@ chain-settings:
           syncing: 40
           lagging: 20
       chains:
-        - id: Testnet
+        - id: Blaze Testnet
           priority: 1
           code: SONIC_TESTNET
           grpcId: 10103
-          short-names: [sonic-testnet]
-          chain-id: 0xfaa5
+          short-names: [sonic-testnet, sonic-blaze-testnet]
+          chain-id: 0xdede
+        - id: Mainnet
+          priority: 100
+          code: SONIC_MAINNET
+          grpcId: 1087
+          short-names: [sonic]
+          chain-id: 0x92
     - id: lens
       label: Lens Network
       type: eth
