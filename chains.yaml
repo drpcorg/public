@@ -1788,12 +1788,6 @@ chain-settings:
           syncing: 40
           lagging: 20
       chains:
-        - id: Testnet
-          priority: 1
-          code: GOAT_TESTNET
-          grpcId: 10097
-          short-names: [goat-testnet]
-          chain-id: 0xbeaf
         - id: Testnet3
           priority: 50
           code: GOAT_TESTNET3
