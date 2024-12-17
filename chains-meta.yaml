@@ -999,3 +999,17 @@
   chain-id: 0x59
   explorers:
     - https://testnet.vicscan.xyz
+- currency:
+    name: Sonic Blaze Testnet
+    symbol: S
+    decimals: 18
+  chain-id: 0xdede
+  explorers:
+    - https://testnet.sonicscan.org
+- currency:
+    name: Sonic Mainnet
+    symbol: S
+    decimals: 18
+  chain-id: 0x92
+  explorers:
+    - https://sonicscan.org
