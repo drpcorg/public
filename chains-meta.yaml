@@ -972,6 +972,13 @@
     - https://explorer.testnet3.goat.network
   chain-id: 48815
 - currency:
+    name: GOAT Mainnet Alpha
+    symbol: BTC
+    decimals: 18
+  explorers:
+    - https://explorer.goat.network
+  chain-id: 2345
+- currency:
     name: Cronos zkEVM Mainnet
     symbol: zkCRO
     decimals: 18
