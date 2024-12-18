@@ -1794,6 +1794,12 @@ chain-settings:
           grpcId: 10109
           short-names: [goat-testnet3]
           chain-id: 0xbeb0
+        - id: Mainnet Alpha
+          priority: 100
+          code: GOAT_MAINNET_ALPHA
+          grpcId: 1075
+          short-names: [goat-mainnet-alpha]
+          chain-id: 0x929
     - id: snaxchain
       label: Snaxchain
       type: eth
