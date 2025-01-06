@@ -2084,3 +2084,18 @@ chain-settings:
           grpcId: 10112
           short-names: [viction-testnet]
           chain-id: 0x59
+    - id: 0g
+      label: 0G
+      type: eth
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Newton Testnet
+          priority: 10
+          code: 0G_NEWTON_TESTNET
+          grpcId: 10113
+          short-names: [0g-newton-testnet]
+          chain-id: 0x40d8
