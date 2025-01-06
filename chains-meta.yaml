@@ -552,6 +552,13 @@
   explorers:
     - https://explorer.testnet.immutable.com
 - currency:
+    name: A0GI
+    symbol: A0GI
+    decimals: 18
+  chain-id: 16600
+  explorers:
+    - https://chainscan-newton.0g.ai
+- currency:
     name: Testnet ETH
     symbol: ETH
     decimals: 18
