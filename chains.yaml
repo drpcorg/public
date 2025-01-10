@@ -2143,5 +2143,5 @@ chain-settings:
           priority: 1
           code: SUPERSEED_SEPOLIA
           grpcId: 10115
-          short-names: [superseed-sepolia]
+          short-names: [ink-sepolia]
           chain-id: 0xba5ed
