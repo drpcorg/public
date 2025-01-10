@@ -469,6 +469,13 @@
   explorers:
     - https://explorer.sepolia.mantle.xyz
 - currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 5330
+  explorers:
+    - https://explorer.superseed.xyz
+- currency:
     name: BNB Chain Native Token
     symbol: tBNB
     decimals: 18
@@ -665,6 +672,13 @@
   explorers:
     - https://explorer.testnet.zircuit.com
 - currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 53302
+  explorers:
+    - https://sepolia-explorer.superseed.xyz
+- currency:
     name: Islamic Coin
     symbol: ISLMT
     decimals: 18
@@ -678,6 +692,13 @@
   chain-id: 56288
   explorers:
     - https://bobascan.com
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 57073
+  explorers:
+    - https://explorer.inkonchain.com
 - currency:
     name: Linea Ether
     symbol: ETH
@@ -796,6 +817,13 @@
   explorers:
     - https://seistream.app
     - https://seitrace.com
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 763373
+  explorers:
+    - https://explorer-sepolia.inkonchain.com
 - currency:
     name: Sepolia Ether
     symbol: ETH

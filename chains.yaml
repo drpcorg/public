@@ -2099,3 +2099,49 @@ chain-settings:
           grpcId: 10113
           short-names: [0g-newton-testnet]
           chain-id: 0x40d8
+    - id: superseed
+      label: Superseed
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: SUPERSEED_MAINNET
+          grpcId: 1088
+          short-names: [superseed]
+          chain-id: 0x14d2
+        - id: Sepolia
+          priority: 1
+          code: SUPERSEED_SEPOLIA
+          grpcId: 10114
+          short-names: [superseed-sepolia]
+          chain-id: 0xd036
+    - id: ink
+      label: Ink
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: INK_MAINNET
+          grpcId: 1089
+          short-names: [ink]
+          chain-id: 0xdef1
+        - id: Sepolia
+          priority: 1
+          code: INK_SEPOLIA
+          grpcId: 10115
+          short-names: [ink-sepolia]
+          chain-id: 0xba5ed
