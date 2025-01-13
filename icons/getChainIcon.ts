@@ -95,6 +95,10 @@ import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
+import Superseed from "./Superseed.png",
+import Ink from "./Ink.svg",
+import Zerog from "./Zerog.svg",
+
 
 export const Icons: Record<string, any> = {
   alephzero: AlephZero,
@@ -194,6 +198,9 @@ export const Icons: Record<string, any> = {
   worldchain: Worldchain,
   "cronos-zkevm": Cronoszkevm,
   viction: Viction,
+  ink: Ink,
+  superseed: Superseed,
+  "0g": Zerog,
 };
 
 export const DarkIcons: Record<string, any> = {

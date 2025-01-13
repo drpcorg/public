@@ -1176,6 +1176,54 @@ viction: {
         with responses confirming the actions or providing the requested information
     </>
   ),
+},
+  superseed: {
+  what: `Superseed provides not just capital but also hands-on expertise to help startups grow and achieve their first million in revenue. With a portfolio of over 25 B2B software companies, Superseed drives innovation in the automation space.`,
+
+  why: `Superseed was established to address the funding and mentorship gaps faced by early-stage startups in the B2B automation sector. By leveraging the founders' entrepreneurial experience, the firm supports startups in building scalable solutions and navigating the challenges of achieving product-market fit and growth.`,
+
+  how: (
+    <>
+        To use Superseed's RPC, developers need to send JSON-RPC formatted
+        requests to the blockchain node, which can be either self-hosted
+        or accessed through a service like dRPC. These requests, made using
+        tools such as cURL or programming libraries, allow interactions with
+        the blockchain, including querying data or executing transactions,
+        with responses confirming the actions or providing the requested information
+    </>
+  ),
+},
+  ink: {
+  what: `Ink is a Layer 2 (L2) blockchain built on Optimism's Superchain, designed to enhance decentralized finance (DeFi) experiences with minimal gas fees, sub-second block times, and advanced security. Fully EVM-compatible, Ink enables seamless deployment of Ethereum-based smart contracts and decentralized applications (dApps) without modifications.`,
+
+  why: `Ink was created to address the limitations of traditional blockchain networks, such as high gas fees and slow transactions. By providing a scalable, secure, and low-cost solution, Ink aims to accelerate DeFi adoption and foster innovation while promoting interoperability within the Ethereum ecosystem.`,
+
+  how: (
+    <>
+        To use Ink's RPC, developers need to send JSON-RPC formatted
+        requests to the blockchain node, which can be either self-hosted
+        or accessed through a service like dRPC. These requests, made using
+        tools such as cURL or programming libraries, allow interactions with
+        the blockchain, including querying data or executing transactions,
+        with responses confirming the actions or providing the requested information
+    </>
+  ),
+},
+    "0g": {
+  what: `0G is a decentralized AI Operating System (dAIOS) that offers a modular blockchain infrastructure tailored for AI and Web3 applications. It features components like 0G Storage for decentralized storage, 0G DA for scalable data availability, 0G Compute for AI processing, and 0G Chain, an EVM-compatible Layer 1 blockchain optimized for data-heavy applications.`,
+
+  why: `0G was developed to address the limitations of centralized AI systems, such as lack of transparency, data ownership issues, and scalability constraints. By decentralizing AI infrastructure, 0G aims to make AI a public good, ensuring users retain control over their data and fostering innovation through transparent, community-governed ecosystems.`,
+
+  how: (
+    <>
+        To use 0g's RPC, developers need to send JSON-RPC formatted
+        requests to the blockchain node, which can be either self-hosted
+        or accessed through a service like dRPC. These requests, made using
+        tools such as cURL or programming libraries, allow interactions with
+        the blockchain, including querying data or executing transactions,
+        with responses confirming the actions or providing the requested information
+    </>
+  ),
 }
 
   } as Record<string, { what: string; why: string; how?: React.ReactNode }>;
