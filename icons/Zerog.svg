@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 244 120">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        clip-path: url(#clippath-1);
+      }
+
+      .cls-4 {
+        clip-path: url(#clippath-3);
+      }
+
+      .cls-5 {
+        clip-path: url(#clippath-2);
+      }
+
+      .cls-6 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <clipPath id="clippath">
+      <path class="cls-1" d="M244,63c-1.5,31.3-27.4,56.2-59,56.2s-59.1-26.5-59.1-59.1S152.3,1,185,1s55.9,23.3,58.8,53.2h-26.8c-2.8-15.1-16-26.6-32-26.6s-32.5,14.6-32.5,32.5,14.6,32.5,32.5,32.5,25.6-8.6,30.3-20.7h-45.1v-8.9h73.8Z"/>
+    </clipPath>
+    <clipPath id="clippath-1">
+      <path class="cls-1" d="M67.9-9h108.2c37.7,0,68.3,30.6,68.3,68.3s-30.6,68.3-68.3,68.3h-108.2C30.2,127.5-.4,97-.4,59.3S30.2-9,67.9-9Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient" x1="241.2" y1="94.6" x2="-4.2" y2="29.8" gradientTransform="translate(0 122.4) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffdb3b"/>
+      <stop offset=".2" stop-color="#ff6270"/>
+      <stop offset=".4" stop-color="#ff1ce6"/>
+      <stop offset=".6" stop-color="#b14eff"/>
+      <stop offset=".8" stop-color="#3badff"/>
+      <stop offset="1" stop-color="#6be5ff"/>
+    </linearGradient>
+    <clipPath id="clippath-2">
+      <path class="cls-1" d="M19.5,103.7c23.2,21,59.1,20.3,81.4-2,23.1-23.1,23.1-60.5,0-83.6-23.1-23.1-60.5-23.1-83.6,0-21.7,21.7-23,56-4,79.2l19-19c-8.7-12.7-7.5-30.1,3.8-41.4,12.7-12.7,33.3-12.7,46,0,12.7,12.7,12.7,33.3,0,46-9.7,9.7-24.1,12-36,6.8l31.9-31.9-6.3-6.3-52.2,52.2Z"/>
+    </clipPath>
+    <clipPath id="clippath-3">
+      <path class="cls-1" d="M67.9-9h108.2c37.7,0,68.3,30.6,68.3,68.3s-30.6,68.3-68.3,68.3h-108.2C30.2,127.5-.4,97-.4,59.3S30.2-9,67.9-9Z"/>
+    </clipPath>
+  </defs>
+  <!-- Generator: Adobe Illustrator 28.7.1, SVG Export Plug-In . SVG Version: 1.2.0 Build 142)  -->
+  <g>
+    <g id="Layer_1">
+      <g>
+        <g class="cls-6">
+          <g class="cls-3">
+            <path class="cls-2" d="M67.9-9h108.2c37.7,0,68.3,30.6,68.3,68.3h0c0,37.7-30.6,68.3-68.3,68.3h-108.2C30.2,127.5-.4,97-.4,59.3H-.4C-.4,21.6,30.2-9,67.9-9Z"/>
+          </g>
+        </g>
+        <g class="cls-5">
+          <g class="cls-4">
+            <path class="cls-2" d="M67.9-9h108.2c37.7,0,68.3,30.6,68.3,68.3h0c0,37.7-30.6,68.3-68.3,68.3h-108.2C30.2,127.5-.4,97-.4,59.3H-.4C-.4,21.6,30.2-9,67.9-9Z"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
