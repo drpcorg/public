@@ -38,6 +38,7 @@ import Haqq from "./Haqq.svg";
 import Harmony from "./Harmony.svg";
 import Heco from "./Heco.jpeg";
 import ImmutableZkEvm from "./ImmutableZkEvm.svg";
+import Ink from "./Ink.svg";
 import Kava from "./Kava.svg";
 import Klaytn from "./Klaytn.svg";
 import Kroma from "./Kroma.svg";
@@ -76,6 +77,7 @@ import Solana from "./Solana.svg";
 import Soneium from "./Soneium.svg";
 import Sonic from "./Sonic.svg";
 import Starknet from "./Starknet.svg";
+import Superseed from "./Superseed.png";
 import Taiko from "./Taiko.jpg";
 import Telos from "./Telos.png";
 import Threshold from "./Threshold.svg";
@@ -91,14 +93,11 @@ import Wemix from "./Wemix.png";
 import Worldchain from "./Worldchain.svg";
 import Xlayer from "./Xlayer.png";
 import Zero from "./Zero.svg";
+import Zerog from "./Zerog.svg";
 import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
-import Superseed from "./Superseed.png",
-import Ink from "./Ink.svg",
-import Zerog from "./Zerog.svg",
-
 
 export const Icons: Record<string, any> = {
   alephzero: AlephZero,
