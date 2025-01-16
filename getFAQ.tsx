@@ -1058,7 +1058,7 @@ export const getFAQ = ({ LinkComponent, siteMap }: IGetFAQ) => {
       ),
     },
     sonic: {
-      what: `Sonic Labs is a decentralized platform focused on real-time audio applications, enabling developers and creators to build, share, and monetize interactive audio experiences on blockchain.`,
+      what: `Sonic is a high-performance EVM-compatible layer-1 blockchain offering 10,000 TPS, sub-second finality, staking, governance, and robust incentives, while providing seamless Ethereum liquidity through a secure gateway.`,
       why: `Sonic Labs aims to provide transparent and fair revenue distribution for audio content creators, using blockchain to empower and protect intellectual property in the audio industry.`,
       how: (
         <>
