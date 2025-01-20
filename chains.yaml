@@ -2196,6 +2196,8 @@ chain-settings:
       type: eth
       settings:
         expected-block-time: 200ms
+        options:
+          validate-peers: false
         lags:
           syncing: 100
           lagging: 30
@@ -2217,6 +2219,8 @@ chain-settings:
       type: eth
       settings:
         expected-block-time: 200ms
+        options:
+          validate-peers: false
         lags:
           syncing: 100
           lagging: 30
