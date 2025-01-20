@@ -136,7 +136,13 @@
     symbol: ETH
     decimals: 18
   chain-id: 130
-  explorers: null
+- currency:
+    name: HashKey EcoPoints
+    symbol: HSK
+    decimals: 18
+  chain-id: 133
+  explorers:
+    - https://hashkeychain-testnet-explorer.alt.technology
 - currency:
     name: POL
     symbol: POL
@@ -152,6 +158,14 @@
   chain-id: 169
   explorers:
     - https://pacific-explorer.manta.network
+- currency:
+    name: HashKey EcoPoints
+    symbol: HSK
+    decimals: 18
+  chain-id: 177
+  explorers:
+    - https://hashkey.blockscout.com
+    - https://explorer.hsk.xyz
 - currency:
     name: X Layer Global Utility Token in testnet
     symbol: OKB
@@ -255,6 +269,13 @@
   chain-id: 919
   explorers:
     - https://sepolia.explorer.mode.network
+    - https://testnet.modescan.io
+- currency:
+    name: HYPE
+    symbol: HYPE
+    decimals: 18
+  chain-id: 998
+  explorers: []
 - currency:
     name: KAIA
     symbol: KAIA
@@ -369,6 +390,15 @@
   chain-id: 1329
   explorers:
     - https://seitrace.com
+- currency:
+    name: Gravity
+    symbol: G
+    decimals: 18
+  chain-id: 1625
+  explorers:
+    - https://explorer.gravity.xyz
+    - https://gscan.xyz
+    - https://www.oklink.com/gravity-alpha
 - currency:
     name: ETH
     symbol: ETH
@@ -538,6 +568,13 @@
     - https://blockscout.chiadochain.net
     - https://gnosis-chiado.blockscout.com
 - currency:
+    name: ETH
+    symbol: ETH
+    decimals: 18
+  chain-id: 11124
+  explorers:
+    - https://sepolia.abscan.org
+- currency:
     name: Islamic Coin
     symbol: ISLM
     decimals: 18
@@ -558,6 +595,13 @@
   chain-id: 13473
   explorers:
     - https://explorer.testnet.immutable.com
+- currency:
+    name: Sepolia Gravity
+    symbol: G
+    decimals: 18
+  chain-id: 13505
+  explorers:
+    - https://explorer-sepolia.gravity.xyz
 - currency:
     name: A0GI
     symbol: A0GI
@@ -581,6 +625,13 @@
   chain-id: 25327
   explorers:
     - https://scan.everclear.org
+- currency:
+    name: Bitcoin
+    symbol: BTC
+    decimals: 18
+  chain-id: 31611
+  explorers:
+    - https://explorer.test.mezo.org
 - currency:
     name: ApeCoin
     symbol: APE
@@ -755,6 +806,13 @@
     - https://sepolia.basescan.org
     - https://base-sepolia.blockscout.com
 - currency:
+    name: Plume Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 98865
+  explorers:
+    - https://explorer.plumenetwork.xyz
+- currency:
     name: Ether
     symbol: ETH
     decimals: 18
@@ -861,6 +919,12 @@
   explorers:
     - https://sepolia-optimism.etherscan.io
     - https://optimism-sepolia.blockscout.com
+- currency:
+    name: Plume Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 161221135
+  explorers: []
 - currency:
     name: Sepolia Ether
     symbol: ETH
