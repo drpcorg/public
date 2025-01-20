@@ -2145,3 +2145,148 @@ chain-settings:
           grpcId: 10115
           short-names: [ink-sepolia]
           chain-id: 0xba5ed
+    - id: abstract
+      label: Abstract
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ABSTRACT_MAINNET
+          grpcId: 1090
+          short-names: [abstract]
+          chain-id: 0xab5
+        - id: Sepolia
+          priority: 1
+          code: ABSTRACT_SEPOLIA
+          grpcId: 10116
+          short-names: [abstract-sepolia]
+          chain-id: 0x2b74
+    - id: hashkey
+      label: HashKey
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: HASHKEY_MAINNET
+          grpcId: 1091
+          short-names: [hashkey]
+          chain-id: 0xb1
+        - id: Testnet
+          priority: 1
+          code: HASHKEY_TESTNET
+          grpcId: 10117
+          short-names: [hashkey-testnet]
+          chain-id: 0x85
+    - id: gravity
+      label: Gravity Alpha
+      type: eth
+      settings:
+        expected-block-time: 200ms
+        lags:
+          syncing: 100
+          lagging: 30
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: GRAVITY_ALPHA_MAINNET
+          grpcId: 1092
+          short-names: [gravity-alpha]
+          chain-id: 0x659
+        - id: Sepolia
+          priority: 1
+          code: GRAVITY_ALPHA_SEPOLIA
+          grpcId: 10118
+          short-names: [gravity-alpha-sepolia]
+          chain-id: 0x34c1
+    - id: hyperliquid
+      label: HyperLiquid
+      type: eth
+      settings:
+        expected-block-time: 200ms
+        lags:
+          syncing: 100
+          lagging: 30
+      chains:
+        - id: Testnet
+          priority: 1
+          code: HYPERLIQUID_TESTNET
+          grpcId: 10119
+          short-names: [hyperliquid-testnet]
+          chain-id: 0x3e6
+    - id: merlin
+      label: Merlin
+      type: eth
+      settings:
+        expected-block-time: 3s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: MERLIN_MAINNET
+          grpcId: 1093
+          short-names: [merlin]
+          chain-id: 0x1068
+        - id: Testnet
+          priority: 1
+          code: MERLIN_TESTNET
+          grpcId: 10120
+          short-names: [merlin-testnet]
+          chain-id: 0xa7b14
+    - id: mezo
+      label: Mezo
+      type: eth
+      settings:
+        expected-block-time: 3s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Testnet
+          priority: 1
+          code: MEZO_TESTNET
+          grpcId: 10121
+          short-names: [mezo-testnet]
+          chain-id: 0x7b7b
+    - id: plume
+      label: Plume
+      type: eth
+      settings:
+        expected-block-time: 30s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: PLUME_MAINNET
+          grpcId: 1094
+          short-names: [plume]
+          chain-id: 0x18231
+        - id: Testnet
+          priority: 1
+          code: PLUME_TESTNET
+          grpcId: 10123
+          short-names: [plume-testnet]
+          chain-id: 0x99c0a0f
