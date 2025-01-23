@@ -4,18 +4,14 @@
     decimals: 18
   chain-id: 1
   explorers:
-    - https://etherscan.io
     - https://eth.blockscout.com
-    - https://ethereum.dex.guru
 - currency:
     name: Ether
     symbol: ETH
     decimals: 18
   chain-id: 10
   explorers:
-    - https://optimistic.etherscan.io
     - https://optimism.blockscout.com
-    - https://optimism.dex.guru
 - currency:
     name: ThunderCore Testnet Token
     symbol: TST
@@ -107,9 +103,7 @@
     decimals: 18
   chain-id: 100
   explorers:
-    - https://gnosisscan.io
     - https://gnosis.blockscout.com
-    - https://gnosis.dex.guru
 - currency:
     name: ThunderCore Token
     symbol: TT
@@ -149,8 +143,7 @@
     decimals: 18
   chain-id: 137
   explorers:
-    - https://polygonscan.com
-    - https://polygon.dex.guru
+    - https://polygon.blockscout.com
 - currency:
     name: Ether
     symbol: ETH
@@ -235,26 +228,21 @@
     decimals: 18
   chain-id: 300
   explorers:
-    - https://sepolia.explorer.zksync.io
+    - https://zksync-sepolia.blockscout.com
 - currency:
     name: filecoin
     symbol: FIL
     decimals: 18
   chain-id: 314
   explorers:
-    - https://filfox.info/en
-    - https://beryx.zondax.ch
-    - https://explorer.glif.io
-    - https://dev.storage
-    - https://filscan.io
-    - https://filscout.io/en
+    - https://filecoin.blockscout.com
 - currency:
     name: Ether
     symbol: ETH
     decimals: 18
   chain-id: 324
   explorers:
-    - https://explorer.zksync.io
+    - https://zksync.blockscout.com
 - currency:
     name: Cronos Test Coin
     symbol: TCRO
@@ -268,8 +256,7 @@
     decimals: 18
   chain-id: 919
   explorers:
-    - https://sepolia.explorer.mode.network
-    - https://testnet.modescan.io
+    - https://modescan.io
 - currency:
     name: HYPE
     symbol: HYPE
@@ -311,7 +298,7 @@
     decimals: 18
   chain-id: 1101
   explorers:
-    - https://zkevm.polygonscan.com
+    - https://zkevm.blockscout.com
 - currency:
     name: WEMIX
     symbol: WEMIX
@@ -375,7 +362,6 @@
   chain-id: 1301
   explorers:
     - https://unichain-sepolia.blockscout.com
-    - https://sepolia.uniscan.xyz
 - currency:
     name: Sei
     symbol: SEI
@@ -419,7 +405,7 @@
     decimals: 18
   chain-id: 1946
   explorers:
-    - https://explorer-testnet.soneium.org
+    - https://soneium-minato.blockscout.com
 - currency:
     name: TZERO
     symbol: TZERO
@@ -526,7 +512,6 @@
     decimals: 18
   chain-id: 7001
   explorers:
-    - https://athens.explorer.zetachain.com
     - https://zetachain-athens-3.blockscout.com
 - currency:
     name: KAIA
@@ -542,9 +527,7 @@
     decimals: 18
   chain-id: 8453
   explorers:
-    - https://basescan.org
     - https://base.blockscout.com
-    - https://base.dex.guru
 - currency:
     name: test-Evmos
     symbol: tEVMOS
@@ -615,9 +598,7 @@
     decimals: 18
   chain-id: 17000
   explorers:
-    - https://holesky.beaconcha.in
-    - https://holesky.otterscan.io
-    - https://holesky.etherscan.io
+    - https://eth-holesky.blockscout.com
 - currency:
     name: ETH
     symbol: ETH
@@ -673,17 +654,14 @@
     decimals: 18
   chain-id: 42161
   explorers:
-    - https://arbiscan.io
-    - https://explorer.arbitrum.io
-    - https://arbitrum.dex.guru
+    - https://arbitrum.blockscout.com
 - currency:
     name: Ether
     symbol: ETH
     decimals: 18
   chain-id: 42170
   explorers:
-    - https://nova-explorer.arbitrum.io
-    - https://nova.dex.guru
+    - https://arbitrum-nova.blockscout.com
 - currency:
     name: CELO
     symbol: CELO
@@ -714,7 +692,7 @@
     decimals: 18
   chain-id: 44787
   explorers:
-    - https://alfajores.celoscan.io
+    - https://celo-alfajores.blockscout.com
 - currency:
     name: ETH
     symbol: ETH
@@ -795,15 +773,13 @@
     decimals: 18
   chain-id: 81457
   explorers:
-    - https://blastscan.io
-    - https://blastexplorer.io
+    - https://blast.blockscout.com
 - currency:
     name: Sepolia Ether
     symbol: ETH
     decimals: 18
   chain-id: 84532
   explorers:
-    - https://sepolia.basescan.org
     - https://base-sepolia.blockscout.com
 - currency:
     name: Plume Ether
@@ -844,8 +820,7 @@
     decimals: 18
   chain-id: 421614
   explorers:
-    - https://sepolia.arbiscan.io
-    - https://sepolia-explorer.arbitrum.io
+    - https://arbitrum-sepolia.blockscout.com
 - currency:
     name: Ether
     symbol: ETH
@@ -909,15 +884,13 @@
     decimals: 18
   chain-id: 11155111
   explorers:
-    - https://sepolia.etherscan.io
-    - https://sepolia.otterscan.io
+    - https://eth-sepolia.blockscout.com
 - currency:
     name: Sepolia Ether
     symbol: ETH
     decimals: 18
   chain-id: 11155420
   explorers:
-    - https://sepolia-optimism.etherscan.io
     - https://optimism-sepolia.blockscout.com
 - currency:
     name: Plume Sepolia Ether
@@ -931,14 +904,13 @@
     decimals: 18
   chain-id: 168587773
   explorers:
-    - https://testnet.blastscan.io
+    - https://blast-testnet.blockscout.com
 - currency:
     name: Neon
     symbol: NEON
     decimals: 18
   chain-id: 245022926
   explorers:
-    - https://devnet.neonscan.org
     - https://neon-devnet.blockscout.com
 - currency:
     name: Neon
@@ -946,7 +918,6 @@
     decimals: 18
   chain-id: 245022934
   explorers:
-    - https://neonscan.org
     - https://neon.blockscout.com
 - currency:
     name: Tron
@@ -998,7 +969,7 @@
     - https://app.roninchain.com/
   chain-id: 2020
 - explorers:
-    - https://explorer.zetachain.com/
+    - https://zetachain.blockscout.com
   chain-id: 7000
 - currency:
     name: reETH

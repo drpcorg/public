@@ -150,6 +150,137 @@ let manualChains = new Map([
       },
       explorers: ["https://explorer.zkevm.cronos.org/testnet/"],
     },
+    137,
+    {
+      currency: {
+        name: "POL",
+        symbol: "POL",
+        decimals: 18,
+      },
+      explorers: ["https://polygon.blockscout.com"],
+    },
+    300,
+    {
+      currency: {
+        name: "Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://zksync-sepolia.blockscout.com"],
+    },
+    314,
+    {
+      currency: {
+        name: "filecoin",
+        symbol: "FIL",
+        decimals: 18,
+      },
+      explorers: ["https://filecoin.blockscout.com"],
+    },
+    324,
+    {
+      currency: {
+        name: "Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://zksync.blockscout.com"],
+    },
+    1101,
+    {
+      currency: {
+        name: "Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://zkevm.blockscout.com"],
+    },
+    1946,
+    {
+      currency: {
+        name: "Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://soneium-minato.blockscout.com"],
+    },
+    17000,
+    {
+      currency: {
+        name: "Testnet ETH",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://eth-holesky.blockscout.com"],
+    },
+    42161,
+    {
+      currency: {
+        name: "Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://arbitrum.blockscout.com"],
+    },
+    42170,
+    {
+      currency: {
+        name: "Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://arbitrum-nova.blockscout.com"],
+    },
+    44787,
+    {
+      currency: {
+        name: "CELO",
+        symbol: "CELO",
+        decimals: 18,
+      },
+      explorers: ["https://celo-alfajores.blockscout.com"],
+    },
+    81457,
+    {
+      currency: {
+        name: "Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://blast.blockscout.com"],
+    },
+    421614,
+    {
+      currency: {
+        name: "Sepolia Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://arbitrum-sepolia.blockscout.com"],
+    },
+     11155111,
+    {
+      currency: {
+        name: "Sepolia Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://eth-sepolia.blockscout.com"],
+    },
+    168587773,
+    {
+      currency: {
+        name: "Sepolia Ether",
+        symbol: "ETH",
+        decimals: 18,
+      },
+      explorers: ["https://blast-testnet.blockscout.com"],
+    },
+    7000,
+    {
+      explorers: ["https://zetachain.blockscout.com"],
+    },
+
   ]
 ]);
 
