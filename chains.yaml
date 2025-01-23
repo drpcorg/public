@@ -2294,3 +2294,20 @@ chain-settings:
           grpcId: 10123
           short-names: [plume-testnet]
           chain-id: 0x99c0a0f
+    - id: monad
+      label: Monad
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Testnet
+          priority: 1
+          code: MONAD_TESTNET
+          grpcId: 10124
+          short-names: [monad-testnet]
+          chain-id: 0x279f
