@@ -968,9 +968,9 @@ chain-settings:
           grpcId: 1056
           short-names: [lisk, lisk-mainnet]
           chain-id: 0x46f
-        - id: Testnet
+        - id: Sepolia
           priority: 1
-          code: LISTK_TESTNET
+          code: LISK_SEPOLIA
           grpcId: 10050
           short-names: [lisk-sepolia, lisk-testnet]
           chain-id: 0x106a
