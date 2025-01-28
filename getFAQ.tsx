@@ -1224,7 +1224,24 @@ viction: {
         with responses confirming the actions or providing the requested information
     </>
   ),
+},
+monad: {
+  what: "Monad is a high-performance Layer 1 blockchain built to maximize speed, efficiency, and scalability for Web3 applications. It leverages pipelined execution, parallel processing, and speculative execution to deliver superior transaction throughput while maintaining full EVM compatibility for seamless deployment of Ethereum-based smart contracts and dApps.",
+
+  why: "Monad was created to overcome the inefficiencies of existing blockchains by significantly improving transaction speeds, reducing latency, and lowering fees. Its advanced execution model ensures optimal performance for DeFi, gaming, and large-scale dApps while maintaining decentralization and security.",
+
+  how: (
+    <>
+        To interact with Monad's network, developers can send JSON-RPC
+        requests to its blockchain node, either self-hosted or via a
+        third-party provider. Using tools like cURL or Web3 libraries,
+        these requests facilitate transactions, contract interactions,
+        and data queries, with responses confirming execution or
+        retrieving necessary blockchain information.
+    </>
+  )
 }
+
 
   } as Record<string, { what: string; why: string; how?: React.ReactNode }>;
 

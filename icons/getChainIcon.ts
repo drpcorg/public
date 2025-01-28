@@ -98,6 +98,7 @@ import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
+import Monad from "./Monad";
 
 export const Icons: Record<string, any> = {
   alephzero: AlephZero,
@@ -200,6 +201,7 @@ export const Icons: Record<string, any> = {
   ink: Ink,
   superseed: Superseed,
   "0g": Zerog,
+  monad: Monad,
 };
 
 export const DarkIcons: Record<string, any> = {
