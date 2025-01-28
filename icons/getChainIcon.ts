@@ -52,6 +52,7 @@ import MantleDark from "./MantleDark.svg";
 import Metall2 from "./Metall2.svg";
 import Metis from "./Metis.svg";
 import Mode from "./Mode.svg";
+import Monad from "./Monad.svg";
 import Moonbeam from "./Moonbeam.svg";
 import Moonriver from "./Moonriver.svg";
 import Near from "./Near.svg";
@@ -98,7 +99,6 @@ import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
-import Monad from "./Monad";
 
 export const Icons: Record<string, any> = {
   alephzero: AlephZero,
