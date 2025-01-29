@@ -1,3 +1,4 @@
+import Abstract from "./Abstract.svg";
 import AlephZero from "./AlephZero.svg";
 import Apechain from "./Apechain.svg";
 import Arbitrum from "./Arbitrum.svg";
@@ -202,6 +203,7 @@ export const Icons: Record<string, any> = {
   superseed: Superseed,
   "0g": Zerog,
   monad: Monad,
+  abstract: Abstract,
 };
 
 export const DarkIcons: Record<string, any> = {
