@@ -486,11 +486,11 @@ chain-settings:
       label: Moonriver
       type: eth
       settings:
-        expected-block-time: 12s
+        expected-block-time: 6s
         allow-pruning-requirement: true
         lags:
-          syncing: 6
-          lagging: 1
+          syncing: 15
+          lagging: 10
       chains:
         - id: Moonriver
           priority: 50
