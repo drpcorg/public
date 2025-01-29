@@ -1240,7 +1240,21 @@ monad: {
         retrieving necessary blockchain information.
     </>
   )
+},
+abstract: {
+  what: "Abstract is a modular blockchain designed to simplify Web3 development by offering an intuitive execution layer with built-in account abstraction. It enables seamless smart contract interactions, programmable wallets, and enhanced user experience while maintaining full EVM compatibility.",
+  why: "Abstract was created to eliminate the complexities of blockchain interactions by enabling smoother user onboarding, gasless transactions, and enhanced security through account abstraction. By streamlining Web3 development, Abstract empowers developers to build scalable and user-friendly decentralized applications (dApps).",
+  how: (
+    <>
+        To interact with Abstract, developers can send JSON-RPC requests
+        to its blockchain node, either self-hosted or via a provider.
+        Using tools like cURL or Web3 libraries, these requests facilitate
+        contract interactions, transactions, and account management, ensuring
+        a seamless experience for both developers and users.
+    </>
+  )
 }
+
 
 
   } as Record<string, { what: string; why: string; how?: React.ReactNode }>;
