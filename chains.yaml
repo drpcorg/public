@@ -467,8 +467,8 @@ chain-settings:
         expected-block-time: 6s
         allow-pruning-requirement: true
         lags:
-          syncing: 10
-          lagging: 5
+          syncing: 15
+          lagging: 10
       chains:
         - id: Mainnet
           priority: 100
