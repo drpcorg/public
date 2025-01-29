@@ -1994,6 +1994,12 @@ chain-settings:
         options:
           validate-peers: false
       chains:
+        - id: Mainnet
+          priority: 100
+          code: SONEIUM_MAINNET
+          grpcId: 1095
+          short-names: [soneium]
+          chain-id: 0x74c
         - id: Minato
           priority: 1
           code: SONEIUM_MINATO
