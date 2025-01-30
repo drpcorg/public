@@ -2317,3 +2317,66 @@ chain-settings:
           grpcId: 10124
           short-names: [monad-testnet]
           chain-id: 0x279f
+    - id: dogecoin
+      label: Dogecoin
+      type: bitcoin
+      settings:
+        expected-block-time: 1m
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          chain-id: 0x0
+          short-names: [dogecoin]
+          code: DOGECOIN_MAINNET
+          grpcId: 1096
+        - id: Testnet
+          priority: 1
+          chain-id: 0x0
+          short-names: [dogecoin-testnet]
+          code: DOGECOIN_TESTNET
+          grpcId: 10125
+    - id: litecoin
+      label: Litecoin
+      type: bitcoin
+      settings:
+        expected-block-time: 3m
+        lags:
+          syncing: 5
+          lagging: 2
+      chains:
+        - id: Mainnet
+          priority: 100
+          chain-id: 0x0
+          short-names: [litecoin]
+          code: LITECOIN_MAINNET
+          grpcId: 1097
+        - id: Testnet
+          priority: 1
+          chain-id: 0x0
+          short-names: [litecoin-testnet]
+          code: LITECOIN_TESTNET
+          grpcId: 10126
+    - id: bitcoin-cash
+      label: Bitcoin cash
+      type: bitcoin
+      settings:
+        expected-block-time: 10m
+        lags:
+          syncing: 3
+          lagging: 1
+      chains:
+        - id: Mainnet
+          priority: 100
+          chain-id: 0x0
+          short-names: [bitcoin-cash]
+          code: BITCOIN_CASH_MAINNET
+          grpcId: 1098
+        - id: Testnet
+          priority: 1
+          chain-id: 0x0
+          short-names: [bitcoin-cash-testnet]
+          code: BITCOIN_CASH_TESTNET
+          grpcId: 10127
