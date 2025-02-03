@@ -922,6 +922,12 @@ chain-settings:
           syncing: 40
           lagging: 20
       chains:
+        - id: Mainnet
+          priority: 100
+          code: BERACHAIN_MAINNET
+          short-names: [berachain]
+          chain-id: 0x138de
+          grpcId: 1099
         - id: bArtio
           priority: 10
           code: BERACHAIN_BARTIO
