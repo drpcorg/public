@@ -35,6 +35,7 @@ import Fuse from "./Fuse.png";
 import GameSwift from "./GameSwift.png";
 import Gnosis from "./Gnosis.svg";
 import Goat from "./Goat.svg";
+import Hashkey from "./Hashkey.svg";
 import Haqq from "./Haqq.svg";
 import Harmony from "./Harmony.svg";
 import Heco from "./Heco.jpeg";
@@ -50,8 +51,10 @@ import Lisk from "./Lisk.png";
 import Manta from "./Manta.png";
 import Mantle from "./Mantle.svg";
 import MantleDark from "./MantleDark.svg";
+import Merlin from "./Merlin.png";
 import Metall2 from "./Metall2.svg";
 import Metis from "./Metis.svg";
+import Mezo from "./Mezo.svg";
 import Mode from "./Mode.svg";
 import Monad from "./Monad.svg";
 import Moonbeam from "./Moonbeam.svg";
@@ -204,6 +207,9 @@ export const Icons: Record<string, any> = {
   "0g": Zerog,
   monad: Monad,
   abstract: Abstract,
+  hashkey: Hashkey,
+  merlin: Merlin,
+  mezo: Mezo,
 };
 
 export const DarkIcons: Record<string, any> = {

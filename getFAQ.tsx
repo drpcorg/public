@@ -1253,7 +1253,48 @@ abstract: {
         a seamless experience for both developers and users.
     </>
   )
-}
+},
+  merlin: {
+  what: "Merlin Chain is a Bitcoin Layer 2 network that enhances the Bitcoin ecosystem by providing fast, low-cost transactions with full EVM compatibility. Using Zero-Knowledge Rollups (ZK-Rollups), it enables smart contracts, DeFi, and NFT functionalities while ensuring security and decentralization.",
+  why: "Merlin Chain was created to expand Bitcoin’s utility beyond simple transactions by enabling smart contract capabilities, DeFi integration, and NFT support. It bridges BTC into an efficient Layer 2 environment, providing a scalable and secure infrastructure for next-generation Bitcoin applications.",
+  how: (
+    <>
+        To interact with Merlin Chain, developers can send JSON-RPC requests
+        to its blockchain node, either self-hosted or through a provider.
+        Using Web3 libraries or cURL, these requests allow seamless interactions
+        with smart contracts, transactions, and asset bridging between Bitcoin
+        and Merlin's Layer 2 ecosystem.
+    </>
+  )
+},
+  mezo: {
+  what: "Mezo is a Bitcoin Layer 2 economic layer designed to enhance Bitcoin’s scalability and utility by enabling fast, low-cost transactions and decentralized financial services. Fully EVM-compatible, it allows seamless deployment of smart contracts and dApps while leveraging tBTC for Bitcoin interoperability.",
+  why: "Mezo was created to overcome Bitcoin’s scalability limitations and transform it into a yield-generating asset. By introducing a decentralized bridging system and a Proof of HODL consensus mechanism, Mezo empowers users to securely stake Bitcoin and participate in a dynamic financial ecosystem.",
+  how: (
+    <>
+        To interact with Mezo, developers can send JSON-RPC requests to its
+        blockchain node, either self-hosted or through a provider. Using Web3
+        libraries or cURL, these requests facilitate smart contract execution,
+        transactions, and Bitcoin tokenization within the Mezo ecosystem.
+    </>
+  )
+},
+  hashkey: {
+  what: "HashKey Chain is an EVM-compatible blockchain designed to support Web3 applications with scalability, security, and interoperability. It provides developers with a robust infrastructure for deploying smart contracts and decentralized applications (dApps).",
+  why: "HashKey Chain was created to enhance the Web3 ecosystem by offering a scalable and efficient blockchain network. It enables seamless integration with Ethereum-based applications, providing a secure environment for DeFi, NFTs, and enterprise use cases.",
+  how: (
+    <>
+        To interact with HashKey Chain, developers can send JSON-RPC requests
+        to its blockchain node, either self-hosted or via a provider. Using Web3
+        libraries or cURL, these requests enable contract execution, transactions,
+        and data retrieval within the HashKey ecosystem.
+    </>
+  )
+},
+
+
+
+
 
 
 
