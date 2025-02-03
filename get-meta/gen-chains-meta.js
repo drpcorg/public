@@ -280,7 +280,14 @@ let manualChains = new Map([
     {
       explorers: ["https://zetachain.blockscout.com"],
     },
-
+  4200,
+    {
+      explorers: ["https://scan.merlinchain.io"],
+    },
+    686868,
+    {
+      explorers: ["https://testnet-scan.merlinchain.io"],
+    }
   ]
 ]);
 
