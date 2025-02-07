@@ -2386,3 +2386,25 @@ chain-settings:
           short-names: [bitcoin-cash-testnet]
           code: BITCOIN_CASH_TESTNET
           grpcId: 10127
+    - id: ripple
+      label: Ripple
+      type: ripple
+      settings:
+        fork-choice: quorum
+        expected-block-time: 4s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: RIPPLE_MAINNET
+          grpcId: 1100
+          short-names: [ ripple ]
+          chain-id: 0
+        - id: Testnet
+          priority: 5
+          code: RIPPLE_TESTNET
+          grpcId: 10128
+          short-names: [ ripple-testnet ]
+          chain-id: 1
