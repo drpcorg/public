@@ -2391,26 +2391,20 @@ chain-settings:
       type: ripple
       settings:
         fork-choice: quorum
-        expected-block-time: 1s
+        expected-block-time: 4s
         lags:
-          syncing: 40
-          lagging: 20
+          syncing: 10
+          lagging: 5
       chains:
         - id: Mainnet
           priority: 100
           code: RIPPLE_MAINNET
-          grpcId: 2050
+          grpcId: 1100
           short-names: [ ripple ]
-          chain-id: 1
+          chain-id: 0
         - id: Testnet
           priority: 5
           code: RIPPLE_TESTNET
-          grpcId: 20064
+          grpcId: 10128
           short-names: [ ripple-testnet ]
-          chain-id: 1
-        - id: Betanet
-          priority: 1
-          code: RIPPLE_BETANET
-          grpcId: 20065
-          short-names: [ ripple-betanet ]
           chain-id: 1
