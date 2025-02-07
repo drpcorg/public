@@ -768,6 +768,13 @@
   explorers:
     - https://bartio.beratrail.io
 - currency:
+    name: BERA Token
+    symbol: BERA
+    decimals: 18
+  chain-id: 80094
+  explorers:
+    - https://berascan.com/
+- currency:
     name: Ether
     symbol: ETH
     decimals: 18
