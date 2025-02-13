@@ -4,8 +4,3 @@ rules:
       - ethereum
     blacklist:
       - v2.40.0
-  - client: erigon
-    networks:
-      - polygon
-    blacklist:
-      - 3.00.0
