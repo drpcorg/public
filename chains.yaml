@@ -2408,3 +2408,26 @@ chain-settings:
           grpcId: 10128
           short-names: [ ripple-testnet ]
           chain-id: 1
+    - id: swell
+      label: Swell
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: SWELL_MAINNET
+          grpcId: 1101
+          short-names: [ swell ]
+          chain-id: 0x783
+        - id: Testnet
+          priority: 5
+          code: SWELL_TESTNET
+          grpcId: 10129
+          short-names: [ swell-testnet ]
+          chain-id: 0x784
