@@ -83,6 +83,7 @@ import Soneium from "./Soneium.svg";
 import Sonic from "./Sonic.svg";
 import Starknet from "./Starknet.svg";
 import Superseed from "./Superseed.png";
+import Swell from "./Swell.svg";
 import Taiko from "./Taiko.jpg";
 import Telos from "./Telos.png";
 import Threshold from "./Threshold.svg";
@@ -210,6 +211,7 @@ export const Icons: Record<string, any> = {
   hashkey: Hashkey,
   merlin: Merlin,
   mezo: Mezo,
+  swell: Swell,
 };
 
 export const DarkIcons: Record<string, any> = {
