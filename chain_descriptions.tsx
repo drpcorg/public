@@ -173,4 +173,5 @@ export const CHAIN_DESCRIPTION = {
   hashkey:
     "HashKey Chain is an EVM-compatible blockchain designed to provide a scalable, secure, and efficient infrastructure for Web3 applications. It enables seamless deployment of smart contracts and decentralized applications (dApps) while ensuring interoperability with Ethereum. Built for enterprises, DeFi, and NFTs, HashKey Chain offers a robust ecosystem with low fees, high performance, and a developer-friendly environment.",
   swell: "The restaking chain, powered by Proof of Restake.",
+  ripple: "Ripple Chain is a  blockchain designed for efficient cross-border payments and asset tokenization. Built on the XRP Ledger (XRPL), it provides low-cost transactions, high scalability, and advanced programmability through native smart contract support. ",
 };
