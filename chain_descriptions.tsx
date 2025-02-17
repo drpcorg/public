@@ -172,6 +172,6 @@ export const CHAIN_DESCRIPTION = {
   mezo: "Mezo is a Bitcoin Layer 2 (L2) economic layer designed to enhance Bitcoin's scalability and utility by providing a faster, cost-effective platform for decentralized applications (dApps) and financial services. Fully compatible with the Ethereum Virtual Machine (EVM), Mezo enables seamless deployment of smart contracts and dApps, thereby expanding Bitcoin's functionality beyond simple transactions.",
   hashkey:
     "HashKey Chain is an EVM-compatible blockchain designed to provide a scalable, secure, and efficient infrastructure for Web3 applications. It enables seamless deployment of smart contracts and decentralized applications (dApps) while ensuring interoperability with Ethereum. Built for enterprises, DeFi, and NFTs, HashKey Chain offers a robust ecosystem with low fees, high performance, and a developer-friendly environment.",
-  swell: "The restaking chain, powered by Proof of Restake.",
+  swell: "Swell is a decentralized liquid staking protocol designed to maximize Ethereum staking rewards while maintaining liquidity. By allowing users to stake ETH and receive liquid staking tokens (LSTs), it enables seamless participation in DeFi without locking assets.",
   ripple: "Ripple Chain is a  blockchain designed for efficient cross-border payments and asset tokenization. Built on the XRP Ledger (XRPL), it provides low-cost transactions, high scalability, and advanced programmability through native smart contract support. ",
 };
