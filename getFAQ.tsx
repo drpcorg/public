@@ -1291,6 +1291,31 @@ abstract: {
     </>
   )
 },
+swell: {
+  what: "Swell is a decentralized liquid staking protocol designed to optimize Ethereum staking rewards while maintaining liquidity. It enables users to stake ETH and receive liquid staking tokens (LSTs), which can be utilized across DeFi applications.",
+  why: "Swell was created to simplify and enhance Ethereum staking by providing a non-custodial, high-yield solution. It allows users to earn staking rewards while maintaining access to their capital, fostering a more efficient and flexible DeFi ecosystem.",
+  how: (
+    <>
+        To interact with Swell, users can stake ETH through the Swell platform
+        and receive liquid staking tokens. These tokens can be used within the
+        DeFi ecosystem for lending, trading, or additional yield opportunities,
+        all while continuing to earn staking rewards.
+    </>
+  )
+},
+ripple: {
+  what: "Ripple Chain is a blockchain designed for fast and cost-efficient cross-border payments and asset tokenization. Built on the XRP Ledger (XRPL), it offers high scalability, low transaction fees, and native smart contract functionality.",
+  why: "Ripple Chain was developed to provide a seamless and efficient solution for global payments, tokenized assets, and financial applications.",
+  how: (
+    <>
+        To interact with Ripple Chain, developers can use the XRPL JSON-RPC API
+        to communicate with the network. By sending requests through a self-hosted
+        node or a public provider, users can execute transactions, manage assets,
+        and retrieve blockchain data efficiently.
+    </>
+  )
+},
+
 
 
 

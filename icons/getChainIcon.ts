@@ -73,6 +73,7 @@ import Polygon from "./Polygon.svg";
 import Pyth from "./Pyth.svg";
 import Quicksilver from "./Quicksilver.svg";
 import ReAl from "./ReAl.svg";
+import Ripple from "./Ripple.svg";
 import Ronin from "./Ronin.png";
 import Rootstock from "./Rootstock.svg";
 import Scroll from "./Scroll.svg";
@@ -171,6 +172,7 @@ export const Icons: Record<string, any> = {
   pyth: Pyth,
   quicksilver: Quicksilver,
   real: ReAl,
+  ripple: Ripple,
   ronin: Ronin,
   rootstock: Rootstock,
   scroll: Scroll,
