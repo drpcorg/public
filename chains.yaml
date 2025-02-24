@@ -1586,6 +1586,12 @@ chain-settings:
           short-names: [zircuit-testnet]
           chain-id: 0xbf03
           grpcId: 10088
+        - id: Garfield
+          priority: 11
+          code: ZIRCUIT_GARFIELD
+          short-names: [zircuit-garfield-testnet, zircuit-garfield]
+          chain-id: 0xbf02
+          grpcId: 10130
     - id: avail
       label: Avail
       type: polkadot
