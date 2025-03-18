@@ -50,7 +50,7 @@ chain-settings:
         - id: Sepolia
           code: SEPOLIA
           grpcId: 10008
-          priority: 10
+          priority: 5
           chain-id: 0xaa36a7
           short-names: [sepolia, sepolia-testnet]
           settings:
@@ -58,10 +58,18 @@ chain-settings:
         - id: Holesky
           code: ETHEREUM_HOLESKY
           grpcId: 10027
-          priority: 5
+          priority: 10
           call-validate-contract: 0x32268860caac2948ab5ddc7b20db5a420467cf96
           chain-id: 0x4268
           short-names: [holesky, ethereum-holesky]
+          settings:
+            mev-critical: false
+        - id: Hoodi
+          code: ETHEREUM_HOODI
+          grpcId: 10131
+          priority: 15
+          chain-id: 0x88bb0
+          short-names: [hoodi, ethereum-hoodi]
           settings:
             mev-critical: false
     - id: ethereum-classic
@@ -934,6 +942,12 @@ chain-settings:
           short-names: [bartio, berachain-bartio]
           chain-id: 0x138d4
           grpcId: 10047
+        - id: Bepolia
+          priority: 10
+          code: BERACHAIN_BEPOLIA
+          short-names: [berachain-bepolia]
+          chain-id: 0x138c5
+          grpcId: 10133
     - id: blast
       label: Blast
       type: eth
@@ -1396,15 +1410,21 @@ chain-settings:
         - id: Sepolia
           code: SEPOLIA_BEACON_CHAIN
           grpcId: 10070
-          priority: 10
+          priority: 5
           chain-id: 0x0
           short-names: [eth-beacon-chain-sepolia]
         - id: Holesky
           code: HOLESKY_BEACON_CHAIN
           grpcId: 10071
-          priority: 5
+          priority: 10
           chain-id: 0x0
           short-names: [eth-beacon-chain-holesky]
+        - id: Hoodi
+          code: HOODI_BEACON_CHAIN
+          grpcId: 10132
+          priority: 15
+          chain-id: 0x0
+          short-names: [eth-beacon-chain-hoodi]
     - id: real
       label: re.al
       type: eth
