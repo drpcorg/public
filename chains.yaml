@@ -2269,6 +2269,12 @@ chain-settings:
           syncing: 100
           lagging: 30
       chains:
+        - id: Mainnet
+          priority: 100
+          code: HYPERLIQUID_MAINNET
+          grpcId: 1103
+          short-names: [hyperliquid]
+          chain-id: 0x3e7
         - id: Testnet
           priority: 1
           code: HYPERLIQUID_TESTNET
