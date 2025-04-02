@@ -1315,6 +1315,19 @@ ripple: {
     </>
   )
 },
+hyperliquid: {
+  what: "HyperLiquid is a custom-built Layer 1 blockchain optimized for high-speed, low-latency decentralized trading. It combines an on-chain order book with the HyperEVM to support a wide range of decentralized applications (dApps) and financial instruments.",
+  why: "HyperLiquid was developed to address the limitations of existing decentralized exchanges by providing a scalable and efficient platform for trading. Its integration of the HyperEVM allows for the creation of complex financial applications and smart contracts directly on its Layer 1 blockchain. ",
+  how: (
+    <>
+        HyperLiquid operates using its proprietary HyperBFT consensus mechanism,
+        ensuring fast and secure transaction processing. The HyperEVM is embedded
+        within the blockchain, allowing developers to deploy Ethereum-compatible smart
+        contracts that can interact directly with HyperLiquid's native components, such
+        as its on-chain order books.
+    </>
+  )
+},
 
 
 

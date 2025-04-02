@@ -39,6 +39,7 @@ import Haqq from "./Haqq.svg";
 import Harmony from "./Harmony.svg";
 import Hashkey from "./Hashkey.svg";
 import Heco from "./Heco.jpeg";
+import Hyperliquid from "./Hyperliquid.svg";
 import ImmutableZkEvm from "./ImmutableZkEvm.svg";
 import Ink from "./Ink.svg";
 import Kava from "./Kava.svg";
@@ -214,6 +215,7 @@ export const Icons: Record<string, any> = {
   merlin: Merlin,
   mezo: Mezo,
   swell: Swell,
+  hyperliquid: Hyperliquid,
 };
 
 export const DarkIcons: Record<string, any> = {
