@@ -2473,7 +2473,8 @@ chain-settings:
       label: Kadena
       type: kadena
       settings:
-        expected-block-time: 10s
+        fork-choice: height
+        expected-block-time: 3s
         options:
           validate-peers: false
         lags:
