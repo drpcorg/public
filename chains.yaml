@@ -2471,3 +2471,27 @@ chain-settings:
           grpcId: 10129
           short-names: [ swell-testnet ]
           chain-id: 0x784
+    - id: kadena
+      label: Kadena
+      type: kadena
+      settings:
+        fork-choice: height
+        expected-block-time: 3s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: KADENA_MAINNET
+          grpcId: 1104
+          short-names: [ kadena ]
+          chain-id: mainnet
+        - id: Testnet
+          priority: 5
+          code: KADENA_TESTNET
+          grpcId: 10134
+          short-names: [ kadena-testnet ]
+          chain-id: testnet
