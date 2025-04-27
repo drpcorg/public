@@ -2508,7 +2508,7 @@ chain-settings:
       chains:
         - id: Ozean Poseidon Testnet
           priority: 5
-          code: OZEAN_TESTNET
+          code: OZEAN_POSEIDON_TESTNET
           grpcId: 10135
-          short-names: [ ozean-testnet ]
-          chain-id: 0x77c55a
+          short-names: [ ozean-poseidon-testnet ]
+          chain-id: 0x7ca7
