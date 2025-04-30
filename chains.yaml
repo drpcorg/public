@@ -2145,6 +2145,12 @@ chain-settings:
           grpcId: 10113
           short-names: [0g-newton-testnet]
           chain-id: 0x40d8
+        - id: Galileo Testnet
+          priority: 10
+          code: 0G_GALILEO_TESTNET
+          grpcId: 10136
+          short-names: [0g-galileo-testnet]
+          chain-id: 0x138D7
     - id: superseed
       label: Superseed
       type: eth
