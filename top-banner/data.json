@@ -1,6 +1,6 @@
 {
-  "title": "NEW!",
-  "text": "MEV Protection just landed on Solana endpoints!",
+  "title": "NEW: MEV Protection + swQoS on Solana RPCs",
+  "text": "— Stop sandwich attacks at the RPC layer.",
   "buttonText": "Get Endpoint",
   "buttonLink": null
 }
