@@ -593,8 +593,8 @@
   explorers:
     - https://chainscan-newton.0g.ai
 - currency:
-    name: A0GI
-    symbol: A0GI
+    name: 0G-Galileo-Testnet
+    symbol: OG
     decimals: 18
     chain-id: 80087
     explorers:
