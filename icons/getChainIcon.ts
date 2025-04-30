@@ -68,6 +68,7 @@ import OpBNB from "./OpBNB.svg";
 import OpenCampusCodex from "./OpenCampusCodex.svg";
 import Optimism from "./Optimism.svg";
 import Osmosis from "./Osmosis.svg";
+import Ozean from "./Ozean.svg";
 import Playnance from "./Playnance.jpeg";
 import Polkadot from "./Polkadot.svg";
 import Polygon from "./Polygon.svg";
@@ -106,6 +107,7 @@ import Zetachain from "./Zetachain.png";
 import Zircuit from "./Zircuit.svg";
 import Zksync from "./Zksync.svg";
 import Zora from "./Zora.png";
+
 
 export const Icons: Record<string, any> = {
   alephzero: AlephZero,
@@ -216,6 +218,7 @@ export const Icons: Record<string, any> = {
   mezo: Mezo,
   swell: Swell,
   hyperliquid: Hyperliquid,
+  ozean: Ozean,
 };
 
 export const DarkIcons: Record<string, any> = {
