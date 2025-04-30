@@ -1,6 +1,6 @@
 {
-  "title": "NEW: MEV Protection on Solana RPCs",
-  "text": "— Stop sandwich attacks at the RPC layer.",
+  "title": "NEW: MEV Protection + swQoS on Solana RPCs",
+  "text": " — Stop sandwich attacks at the RPC layer.",
   "buttonText": "Get Endpoint",
   "buttonLink": null
 }
