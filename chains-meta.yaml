@@ -593,6 +593,13 @@
   explorers:
     - https://chainscan-newton.0g.ai
 - currency:
+    name: A0GI
+    symbol: A0GI
+    decimals: 18
+    chain-id: 80087
+    explorers:
+      - https://chainscan-galileo.0g.ai
+- currency:
     name: Testnet ETH
     symbol: ETH
     decimals: 18
