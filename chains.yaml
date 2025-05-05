@@ -73,9 +73,14 @@ chain-settings:
           settings:
             mev-critical: false
     - id: ethereum-classic
+      label: Ethereum Classic
       type: eth
       settings:
         disabled: true
+        expected-block-time: 12s
+        lags:
+          syncing: 6
+          lagging: 1
       chains:
         - id: mainnet
           short-names: [ethereum-classic, etc]
@@ -83,6 +88,7 @@ chain-settings:
           net-version: 1
           code: ETC
           grpcId: 101
+          priority: 100
     - id: fantom
       label: Fantom
       type: eth
@@ -253,6 +259,7 @@ chain-settings:
           grpcId: 1008
           short-names: [arbitrum-nova]
           chain-id: 0xa4ba
+          priority: 100
     - id: zksync
       label: zkSync Era
       type: eth
@@ -973,6 +980,7 @@ chain-settings:
           short-names: [blast-sepolia]
           chain-id: 0xa0c71fd
           grpcId: 10049
+          priority: 10
     - id: lisk
       label: Lisk
       type: eth
@@ -1644,9 +1652,9 @@ chain-settings:
         options:
           validate-peers: false
         expected-block-time: 2s
-      lags:
-        syncing: 10
-        lagging: 5
+        lags:
+          syncing: 10
+          lagging: 5
       chains:
         - id: Testnet
           priority: 1

@@ -1,0 +1,7 @@
+rules: list(include('rule'))
+
+---
+rule:
+  client: str()
+  networks: list(str())
+  blacklist: list(str())

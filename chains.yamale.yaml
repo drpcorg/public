@@ -1,0 +1,51 @@
+version: str()
+
+chain-settings:
+  default:
+    expected-block-time: str()
+    lags:
+      syncing: int()
+      lagging: int()
+  protocols: list(include('protocol'))
+
+---
+protocol:
+  id: str()
+  label: str()
+  type: str()
+  settings: include('settings')
+  chains: list(include('chain'))
+
+---
+settings:
+  currency: str(required=False)
+  expected-block-time: str()
+  lags: include('lags')
+  options: include('options', required=False)
+  allow-pruning-requirement: bool(required=False)
+  fork-choice: regex('^quorum$|^height$', required=False)
+  mev-critical: bool(required=False)
+  disabled: bool(required=False)
+
+---
+lags:
+  syncing: int()
+  lagging: int()
+
+---
+options:
+  validate-peers: bool(required=False)
+  validate-syncing: bool(required=False)
+
+---
+chain:
+  id: str()
+  priority: int()
+  chain-id: any(int(), str())
+  short-names: list(str())
+  code: str()
+  grpcId: int()
+  gas-price-condition: list(str(), required=False)
+  call-validate-contract: int(required=False)
+  net-version: int(required=False)
+  settings: map(str(), any(), required=False)

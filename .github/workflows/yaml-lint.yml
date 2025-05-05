@@ -3,7 +3,6 @@ name: YAML Lint
 
 on:
   push:
-  pull_request:
 
 jobs:
   lint:
@@ -18,4 +17,7 @@ jobs:
           pip install yamale
 
       - name: 🧹 Run yamale validation
-        run: yamale -s chains-meta.yamale.yaml chains-meta.yaml
+        run: |
+          yamale -s chains-meta.yamale.yaml chains-meta.yaml
+          yamale -s compatible-clients.yamale.yaml compatible-clients.yaml
+          yamale -s chains.yamale.yaml chains.yaml
