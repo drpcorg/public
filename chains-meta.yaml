@@ -596,9 +596,9 @@
     name: 0G-Galileo-Testnet
     symbol: OG
     decimals: 18
-    chain-id: 80087
-    explorers:
-      - https://chainscan-galileo.0g.ai
+  chain-id: 80087
+  explorers:
+    - https://chainscan-galileo.0g.ai
 - currency:
     name: Testnet ETH
     symbol: ETH
@@ -982,7 +982,11 @@
   explorers:
     - https://app.roninchain.com/
   chain-id: 2020
-- explorers:
+- currency:
+    name: ZetaChain
+    symbol: ZETA
+    decimals: 18
+  explorers:
     - https://zetachain.blockscout.com
   chain-id: 7000
 - currency:

@@ -1,0 +1,10 @@
+list(include('item'))
+
+---
+item:
+  currency:
+    name: str()
+    symbol: str()
+    decimals: int()
+  chain-id: int()
+  explorers: list(str(), required=False)
