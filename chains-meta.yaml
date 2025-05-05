@@ -596,9 +596,9 @@
     name: 0G-Galileo-Testnet
     symbol: OG
     decimals: 18
-    chain-id: 80087
-    explorers:
-      - https://chainscan-galileo.0g.ai
+  chain-id: 80087
+  explorers:
+    - https://chainscan-galileo.0g.ai
 - currency:
     name: Testnet ETH
     symbol: ETH
