@@ -2142,6 +2142,8 @@ chain-settings:
       label: 0G
       type: eth
       settings:
+        options:
+          validate-peers: false
         expected-block-time: 6s
         lags:
           syncing: 10
