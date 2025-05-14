@@ -193,7 +193,7 @@ chain-settings:
       label: BNB Smart Chain
       type: eth
       settings:
-        expected-block-time: 3s
+        expected-block-time: 1500ms
         allow-pruning-requirement: true
         mev-critical: true
         lags:
@@ -457,7 +457,7 @@ chain-settings:
       settings:
         options:
           validate-peers: false
-        expected-block-time: 5s
+        expected-block-time: 1s
         allow-pruning-requirement: true
         lags:
           syncing: 10
@@ -587,7 +587,7 @@ chain-settings:
       label: opBNB
       type: eth
       settings:
-        expected-block-time: 1s
+        expected-block-time: 500ms
         options:
           validate-peers: false
         lags:
