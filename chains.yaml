@@ -2160,7 +2160,7 @@ chain-settings:
           code: 0G_GALILEO_TESTNET
           grpcId: 10136
           short-names: [0g-galileo-testnet]
-          chain-id: 0x138D7
+          chain-id: 0x40D9
     - id: superseed
       label: Superseed
       type: eth
