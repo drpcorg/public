@@ -36,6 +36,7 @@ lags:
 options:
   validate-peers: bool(required=False)
   validate-syncing: bool(required=False)
+  disable-liveness-subscription-validation: bool(required=False)
 
 ---
 chain:

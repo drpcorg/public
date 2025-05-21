@@ -1542,6 +1542,7 @@ chain-settings:
       settings:
         options:
           validate-peers: false
+          disable-liveness-subscription-validation: true
         expected-block-time: 45s
         lags:
           syncing: 6
