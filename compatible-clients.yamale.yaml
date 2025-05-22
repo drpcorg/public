@@ -3,5 +3,5 @@ rules: list(include('rule'))
 ---
 rule:
   client: str()
-  networks: list(str())
+  networks: list(str(), required=False)
   blacklist: list(str())
