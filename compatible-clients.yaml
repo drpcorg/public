@@ -4,3 +4,8 @@ rules:
       - ethereum
     blacklist:
       - v2.40.0
+  - client: reth
+    blacklist:
+      - v1.4.0
+      - v1.4.1
+      - v1.4.2
