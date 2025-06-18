@@ -2139,6 +2139,21 @@ chain-settings:
           grpcId: 10112
           short-names: [viction-testnet]
           chain-id: 0x59
+    - id: megaeth
+      label: megaETH
+      type: eth
+      settings:
+        expected-block-time: 10ms
+        lags:
+          syncing: 80
+          lagging: 40
+      chains:
+        - id: MegaETH Testnet
+          priority: 10
+          code: MEGAETH_TESTNET
+          grpcId: 10137
+          short-names: [megaeth-testnet]
+          chain-id: 0x18c6
     - id: 0g
       label: 0G
       type: eth

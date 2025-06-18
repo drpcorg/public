@@ -1115,3 +1115,10 @@
   chain-id: 0x77c55a
   explorers:
     - https://ozonescan.org/
+- currency:
+    name: MEGA Testnet Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 0x18c6
+  explorers:
+    - https://megaexplorer.xyz
