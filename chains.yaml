@@ -2143,7 +2143,7 @@ chain-settings:
       label: megaETH
       type: eth
       settings:
-        expected-block-time: 10ms
+        expected-block-time: 1s
         lags:
           syncing: 80
           lagging: 40
