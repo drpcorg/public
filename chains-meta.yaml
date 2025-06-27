@@ -621,6 +621,13 @@
   explorers:
     - https://explorer.test.mezo.org
 - currency:
+    name: Bitcoin
+    symbol: BTC
+    decimals: 18
+  chain-id: 31612
+  explorers:
+    - https://explorer.mezo.org
+- currency:
     name: ApeCoin
     symbol: APE
     decimals: 18
