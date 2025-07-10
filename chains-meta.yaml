@@ -1122,3 +1122,17 @@
   chain-id: 0x18c6
   explorers:
     - https://megaexplorer.xyz
+- currency:
+    name: Hemi Mainnet
+    symbol: ETH
+    decimals: 18
+  chain-id: 0xa867
+  explorers:
+    - https://explorer.hemi.xyz
+- currency:
+    name: Hemi Testnet
+    symbol: ETH
+    decimals: 18
+  chain-id: 0xb56c7
+  explorers:
+    - https://testnet.explorer.hemi.xyz
