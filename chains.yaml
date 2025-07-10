@@ -2544,3 +2544,26 @@ chain-settings:
           grpcId: 10135
           short-names: [ ozean-poseidon-testnet ]
           chain-id: 0x7ca7
+    - id: hemi
+      label: Hemi
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 10
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: HEMI_MAINNET
+          grpcId: 1105
+          short-names: [ hemi ]
+          chain-id: 0xa867
+        - id: Testnet
+          priority: 5
+          code: HEMI_TESTNET
+          grpcId: 10138
+          short-names: [ hemi-testnet ]
+          chain-id: 0xb56c7
