@@ -197,8 +197,8 @@ chain-settings:
         allow-pruning-requirement: true
         mev-critical: true
         lags:
-          syncing: 40
-          lagging: 20
+          syncing: 100
+          lagging: 50
       chains:
         - id: Mainnet
           priority: 100
@@ -2472,13 +2472,13 @@ chain-settings:
           priority: 100
           code: RIPPLE_MAINNET
           grpcId: 1100
-          short-names: [ ripple ]
+          short-names: [ripple]
           chain-id: 0
         - id: Testnet
           priority: 5
           code: RIPPLE_TESTNET
           grpcId: 10128
-          short-names: [ ripple-testnet ]
+          short-names: [ripple-testnet]
           chain-id: 1
     - id: swell
       label: Swell
@@ -2495,13 +2495,13 @@ chain-settings:
           priority: 100
           code: SWELL_MAINNET
           grpcId: 1101
-          short-names: [ swell ]
+          short-names: [swell]
           chain-id: 0x783
         - id: Testnet
           priority: 5
           code: SWELL_TESTNET
           grpcId: 10129
-          short-names: [ swell-testnet ]
+          short-names: [swell-testnet]
           chain-id: 0x784
     - id: kadena
       label: Kadena
@@ -2519,13 +2519,13 @@ chain-settings:
           priority: 100
           code: KADENA_MAINNET
           grpcId: 1104
-          short-names: [ kadena ]
+          short-names: [kadena]
           chain-id: mainnet
         - id: Testnet
           priority: 5
           code: KADENA_TESTNET
           grpcId: 10134
-          short-names: [ kadena-testnet ]
+          short-names: [kadena-testnet]
           chain-id: testnet
     - id: ozean
       label: Ozean
@@ -2542,7 +2542,7 @@ chain-settings:
           priority: 5
           code: OZEAN_POSEIDON_TESTNET
           grpcId: 10135
-          short-names: [ ozean-poseidon-testnet ]
+          short-names: [ozean-poseidon-testnet]
           chain-id: 0x7ca7
     - id: hemi
       label: Hemi
@@ -2559,11 +2559,11 @@ chain-settings:
           priority: 100
           code: HEMI_MAINNET
           grpcId: 1105
-          short-names: [ hemi ]
+          short-names: [hemi]
           chain-id: 0xa867
         - id: Testnet
           priority: 5
           code: HEMI_TESTNET
           grpcId: 10138
-          short-names: [ hemi-testnet ]
+          short-names: [hemi-testnet]
           chain-id: 0xb56c7
