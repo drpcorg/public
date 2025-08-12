@@ -1204,6 +1204,7 @@ chain-settings:
       settings:
         options:
           validate-peers: false
+          disable-log-index-validation: true
         expected-block-time: 6s
         lags:
           syncing: 40
