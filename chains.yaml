@@ -475,6 +475,12 @@ chain-settings:
           grpcId: 10028
           short-names: [celo-alfajores]
           chain-id: 0xaef3
+        - id: Sepolia
+          priority: 10
+          code: CELO_SEPOLIA
+          grpcId: 10139
+          short-names: [celo-sepolia]
+          chain-id: 0xaa044c
     - id: moonbeam
       label: Moonbeam
       type: eth
