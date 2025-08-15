@@ -701,6 +701,13 @@
   explorers:
     - https://celo-alfajores.blockscout.com
 - currency:
+    name: CELO
+    symbol: CELO
+    decimals: 18
+  chain-id: 11142220
+  explorers:
+    - https://celo-sepolia.blockscout.com
+- currency:
     name: ETH
     symbol: ETH
     decimals: 18
