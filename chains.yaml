@@ -1987,6 +1987,8 @@ chain-settings:
           grpcId: 10104
           short-names: [lens-testnet]
           chain-id: 0x90f7
+          settings:
+            expected-block-time: 1m
         - id: Mainnet
           priority: 100
           code: LENS_MAINNET
