@@ -2555,7 +2555,7 @@ chain-settings:
       label: Hemi
       type: eth
       settings:
-        expected-block-time: 1s
+        expected-block-time: 12s
         lags:
           syncing: 10
           lagging: 20
