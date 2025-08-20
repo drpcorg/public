@@ -1228,6 +1228,8 @@ chain-settings:
           grpcId: 10087
           short-names: [zeta-chain-testnet, athens]
           chain-id: 0x1b59
+          settings:
+            fork-tolerance: 1
     - id: bittorrent
       label: BitTorrent
       type: eth
