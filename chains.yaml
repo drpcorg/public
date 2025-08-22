@@ -1962,15 +1962,15 @@ chain-settings:
       chains:
         - id: Blaze Testnet
           priority: 1
-          code: SONIC_BLAZE_TESTNET
+          code: SONIC_TESTNET
           grpcId: 10103
-          short-names: [sonic-blaze-testnet]
+          short-names: [sonic-testnet, sonic-blaze-testnet]
           chain-id: 0xdede
         - id: Testnet
           priority: 1
-          code: SONIC_TESTNET
+          code: SONIC_TESTNET_V2
           grpcId: 10140
-          short-names: [sonic-testnet]
+          short-names: [sonic-testnet-v2]
           chain-id: 0x3909
         - id: Mainnet
           priority: 100
