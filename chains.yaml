@@ -2601,10 +2601,10 @@ chain-settings:
           code: GNOSIS_BEACON_CHAIN
           grpcId: 1106
           short-names: [gnosis-beacon-chain]
-          chain-id: 0x64
+          chain-id: 0x0
         - id: Chiado
           priority: 1
           code: GNOSIS_CHIADO_BEACON_CHAIN
           grpcId: 10141
           short-names: [gnosis-chiado-beacon-chain]
-          chain-id: 0x27d8
+          chain-id: 0x0
