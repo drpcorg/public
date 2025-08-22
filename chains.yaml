@@ -2584,3 +2584,27 @@ chain-settings:
           grpcId: 10138
           short-names: [hemi-testnet]
           chain-id: 0xb56c7
+    - id: gnosis-beacon-chain
+      label: Gnosis Beacon Chain
+      type: eth-beacon-chain
+      settings:
+        expected-block-time: 6s
+        allow-pruning-requirement: true
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: GNOSIS_BEACON_CHAIN
+          grpcId: 1106
+          short-names: [gnosis-beacon-chain]
+          chain-id: 0x64
+        - id: Chiado
+          priority: 1
+          code: GNOSIS_CHIADO_BEACON_CHAIN
+          grpcId: 10141
+          short-names: [gnosis-chiado-beacon-chain]
+          chain-id: 0x27d8
