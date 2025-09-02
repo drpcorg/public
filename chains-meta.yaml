@@ -803,12 +803,12 @@
   explorers:
     - https://base-sepolia.blockscout.com
 - currency:
-    name: Plume Ether
-    symbol: ETH
+    name: Plume
+    symbol: PLUME
     decimals: 18
-  chain-id: 98865
+  chain-id: 98866
   explorers:
-    - https://explorer.plumenetwork.xyz
+    - https://explorer.plume.org/
 - currency:
     name: Ether
     symbol: ETH
