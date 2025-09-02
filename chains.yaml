@@ -2376,7 +2376,7 @@ chain-settings:
       label: Plume
       type: eth
       settings:
-        expected-block-time: 30s
+        expected-block-time: 400ms
         options:
           validate-peers: false
         lags:
@@ -2388,7 +2388,7 @@ chain-settings:
           code: PLUME_MAINNET
           grpcId: 1094
           short-names: [plume]
-          chain-id: 0x18231
+          chain-id: 0x18232
         - id: Testnet
           priority: 1
           code: PLUME_TESTNET
