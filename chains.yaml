@@ -2406,6 +2406,12 @@ chain-settings:
           syncing: 10
           lagging: 5
       chains:
+        - id: Mainnet
+          priority: 100
+          code: MONAD_MAINNET
+          grpcId: 1107
+          short-names: [ monad-mainnet ]
+          chain-id: 0x8f
         - id: Testnet
           priority: 1
           code: MONAD_TESTNET
