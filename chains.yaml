@@ -2614,3 +2614,20 @@ chain-settings:
           grpcId: 10141
           short-names: [gnosis-chiado-beacon-chain]
           chain-id: 0x0
+    - id: shibarium
+      label: Shibarium
+      type: eth
+      settings:
+        expected-block-time: 5s
+        lags:
+          syncing: 20
+          lagging: 10
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: SHIBARIUM_MAINNET
+          grpcId: 1108
+          short-names: [shibarium]
+          chain-id: 0x6d
