@@ -1143,3 +1143,10 @@
   chain-id: 0xb56c7
   explorers:
     - https://testnet.explorer.hemi.xyz
+- currency:
+    name: BONE Shibarium
+    symbol: BONE
+    decimals: 18
+  chain-id: 109
+  explorers:
+    - https://www.shibariumscan.io
