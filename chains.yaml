@@ -1222,6 +1222,7 @@ chain-settings:
           grpcId: 1045
           short-names: [zeta-chain, zeta-chain-mainnet]
           chain-id: 0x1b58
+          net-version: 262144
         - id: Testnet
           priority: 1
           code: ZETA_CHAIN_TESTNET
