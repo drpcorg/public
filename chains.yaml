@@ -2632,3 +2632,26 @@ chain-settings:
           grpcId: 1108
           short-names: [shibarium]
           chain-id: 0x6d
+    - id: plasma
+      label: Plasma
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 40
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: PLASMA_MAINNET
+          grpcId: 1109
+          short-names: [plasma]
+          chain-id: 0x2611
+        - id: Testnet
+          priority: 1
+          code: PLASMA_TESTNET
+          grpcId: 10142
+          short-names: [plasma-testnet]
+          chain-id: 0x2612
