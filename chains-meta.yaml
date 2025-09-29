@@ -1150,3 +1150,17 @@
   chain-id: 109
   explorers:
     - https://www.shibariumscan.io
+- currency:
+    name: Katana
+    symbol: ETH
+    decimals: 18
+  chain-id: 0xb67d2
+  explorers:
+    - https://explorer.katanarpc.com
+- currency:
+    name: Katana Testnet
+    symbol: ETH
+    decimals: 18
+  chain-id: 0x1f977
+  explorers:
+    - https://explorer.tatara.katana.network
