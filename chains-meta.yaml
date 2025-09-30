@@ -820,6 +820,14 @@
     name: Ether
     symbol: ETH
     decimals: 18
+  chain-id: 167012
+  explorers:
+    - https://hoodi.taikoscan.io
+    - https://blockscout.hoodi.taiko.xyz 
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
   chain-id: 167009
   explorers:
     - https://blockscoutapi.hekla.taiko.xyz
@@ -1161,6 +1169,6 @@
     name: Katana Testnet
     symbol: ETH
     decimals: 18
-  chain-id: 0x1f977
+  chain-id: 0xb405d
   explorers:
-    - https://explorer.tatara.katana.network
+    - https://bokuto.katanascan.com/

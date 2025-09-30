@@ -814,6 +814,14 @@ chain-settings:
           short-names: [taiko, taiko-mainnet]
           chain-id: 0x28c58
           grpcId: 1058
+        - id: Hoodi
+          priority: 30
+          code: TAIKO_HOODI
+          short-names: [taiko-hoodi]
+          chain-id: 0x28c64
+          grpcId: 10144
+          settings:
+            expected-block-time: 30s
         - id: Hekla
           priority: 20
           code: TAIKO_HEKLA
@@ -2677,4 +2685,4 @@ chain-settings:
           code: KATANA_TESTNET
           grpcId: 10143
           short-names: [katana-testnet]
-          chain-id: 0x1f977
+          chain-id: 0xb405d
