@@ -2686,3 +2686,26 @@ chain-settings:
           grpcId: 10143
           short-names: [katana-testnet]
           chain-id: 0xb405d
+    - id: sophon
+      label: Sophon
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 40
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: SOPHON_MAINNET
+          grpcId: 1111
+          short-names: [sophon]
+          chain-id: 0xc3b8
+        - id: Testnet
+          priority: 1
+          code: SOPHON_TESTNET
+          grpcId: 10144
+          short-names: [sophon-testnet]
+          chain-id: 0x1fa72e78

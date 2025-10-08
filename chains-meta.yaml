@@ -1172,3 +1172,17 @@
   chain-id: 0xb405d
   explorers:
     - https://bokuto.katanascan.com/
+- currency:
+    name: Sophon
+    symbol: SOPH
+    decimals: 18
+  chain-id: 0xc3b8
+  explorers:
+    - https://sophscan.xyz
+- currency:
+    name: Sophon Testnet
+    symbol: SOPH
+    decimals: 18
+  chain-id: 0x1fa72e78
+  explorers:
+    - https://testnet.sophscan.xyz
