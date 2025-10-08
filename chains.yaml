@@ -2686,3 +2686,26 @@ chain-settings:
           grpcId: 10143
           short-names: [katana-testnet]
           chain-id: 0xb405d
+    - id: doma
+      label: Doma
+      type: eth
+      settings:
+        expected-block-time: 2s
+        lags:
+          syncing: 40
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: DOMA_MAINNET
+          grpcId: 1111
+          short-names: [doma]
+          chain-id: 0x17cc5
+        - id: Testnet
+          priority: 1
+          code: DOMA_TESTNET
+          grpcId: 10145
+          short-names: [doma-testnet]
+          chain-id: 0x17cc4
