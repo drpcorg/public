@@ -2709,3 +2709,26 @@ chain-settings:
           grpcId: 10145
           short-names: [doma-testnet]
           chain-id: 0x17cc4
+    - id: sophon
+      label: Sophon
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 40
+          lagging: 20
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: SOPHON_MAINNET
+          grpcId: 1112
+          short-names: [sophon]
+          chain-id: 0xc3b8
+        - id: Testnet
+          priority: 1
+          code: SOPHON_TESTNET
+          grpcId: 10146
+          short-names: [sophon-testnet]
+          chain-id: 0x1fa72e78
