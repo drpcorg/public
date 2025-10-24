@@ -10,3 +10,8 @@ rules:
       - v1.4.0
       - v1.4.1
       - v1.4.2
+  - client: reth
+    networks:
+      - bsc
+    blacklist:
+      - v1.6.0
