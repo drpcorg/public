@@ -2732,3 +2732,20 @@ chain-settings:
           grpcId: 10146
           short-names: [sophon-testnet]
           chain-id: 0x1fa72e78
+    - id: arc
+      label: Arc
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Testnet
+          priority: 1
+          code: CHAIN_ARC__TESTNET
+          grpcId: 10147
+          chain-id: 0x4cef52
+          short-names: [arc-testnet]
