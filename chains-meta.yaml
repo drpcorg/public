@@ -1186,3 +1186,9 @@
   chain-id: 0x1fa72e78
   explorers:
     - https://testnet.sophscan.xyz
+- currency:
+    name: USDC
+    symbol: USDC
+    decimals: 18
+  chain-id: 5042002
+  explorers: []
