@@ -818,7 +818,7 @@ chain-settings:
           priority: 30
           code: TAIKO_HOODI
           short-names: [taiko-hoodi]
-          chain-id: 0x28c64
+          chain-id: 0x28c65
           grpcId: 10144
           settings:
             expected-block-time: 30s

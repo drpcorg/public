@@ -820,7 +820,7 @@
     name: Ether
     symbol: ETH
     decimals: 18
-  chain-id: 167012
+  chain-id: 167013
   explorers:
     - https://hoodi.taikoscan.io
     - https://blockscout.hoodi.taiko.xyz 
