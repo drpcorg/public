@@ -193,7 +193,7 @@ chain-settings:
       label: BNB Smart Chain
       type: eth
       settings:
-        expected-block-time: 1500ms
+        expected-block-time: 750ms
         allow-pruning-requirement: true
         mev-critical: true
         lags:
