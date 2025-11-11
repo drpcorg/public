@@ -1192,3 +1192,38 @@
     decimals: 18
   chain-id: 5042002
   explorers: []
+- currency:
+    name: XRP
+    symbol: XRP
+    decimals: 18
+  chain-id: 1440002
+  explorers:
+    - https://explorer.xrplevm.org
+- currency:
+    name: XRP
+    symbol: XRP
+    decimals: 18
+  chain-id: 1449000
+  explorers:
+    - https://explorer.testnet.xrplevm.org
+- currency:
+    name: Bitcoin
+    symbol: BTC
+    decimals: 18
+  chain-id: 31612
+  explorers:
+    - https://explorer.mezo.org
+- currency:
+    name: IoTeX
+    symbol: IOTX
+    decimals: 18
+  chain-id: 4689
+  explorers:
+    - https://iotexscan.io
+- currency:
+    name: IoTeX
+    symbol: IOTX
+    decimals: 18
+  chain-id: 4690
+  explorers:
+    - https://testnet.iotexscan.io
