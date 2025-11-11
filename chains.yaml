@@ -2191,6 +2191,12 @@ chain-settings:
           syncing: 10
           lagging: 5
       chains:
+        - id: Mainnet
+          priority: 100
+          code: 0G_MAINNET
+          grpcId: 1114
+          short-names: [0g-mainnet]
+          chain-id: 0x4115
         - id: Newton Testnet
           priority: 10
           code: 0G_NEWTON_TESTNET
@@ -2749,3 +2755,114 @@ chain-settings:
           grpcId: 10147
           chain-id: 0x4cef52
           short-names: [arc-testnet]
+    - id: dogeos
+      label: DogeOS
+      type: eth
+      settings:
+        expected-block-time: 3s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Testnet
+          priority: 10
+          code: DOGEOS_TESTNET
+          grpcId: 10150
+          chain-id: 0x5fdaf3
+          short-names: [dogeos-testnet]
+    - id: somnia
+      label: Somnia
+      type: eth
+      settings:
+        expected-block-time: 100ms
+        lags:
+          syncing: 80
+          lagging: 40
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: SOMNIA_MAINNET
+          grpcId: 1115
+          chain-id: 0x13a7
+          short-names: [somnia]
+        - id: Testnet
+          priority: 10
+          code: SOMNIA_TESTNET
+          grpcId: 10148
+          chain-id: 0xc488
+          short-names: [somnia-testnet]
+    - id: bittensor
+      label: Bittensor
+      type: eth
+      settings:
+        expected-block-time: 12s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 2
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: BITTENSOR_MAINNET
+          grpcId: 1116
+          chain-id: 0x3c4
+          short-names: [bittensor]
+        - id: Testnet
+          priority: 10
+          code: BITTENSOR_TESTNET
+          grpcId: 10149
+          chain-id: 0x3b1
+          short-names: [bittensor-testnet]
+    - id: iotex
+      label: IoTeX
+      type: eth
+      settings:
+        expected-block-time: 2.5s
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: IOTEX_MAINNET
+          grpcId: 1117
+          chain-id: 0x1251
+          short-names: [iotex]
+        - id: Testnet
+          priority: 10
+          code: IOTEX_TESTNET
+          grpcId: 10151
+          chain-id: 0x1252
+          short-names: [iotex-testnet]
+    - id: xrpl
+      label: XRPL
+      type: eth
+      settings:
+        expected-block-time: 4s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: XRPL_MAINNET
+          grpcId: 1118
+          chain-id: 0x15f900
+          short-names: [xrpl]
+        - id: Testnet
+          priority: 10
+          code: XRPL_TESTNET
+          grpcId: 10152
+          chain-id: 0x161c28
+          short-names: [xrpl-testnet]
+        - id: Devnet
+          priority: 1
+          code: XRPL_DEVNET
+          grpcId: 10153
+          chain-id: 0x15f902
+          short-names: [xrpl-devnet]
