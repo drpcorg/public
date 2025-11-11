@@ -2381,6 +2381,12 @@ chain-settings:
           syncing: 10
           lagging: 5
       chains:
+        - id: Mainnet
+          priority: 100
+          code: MEZO_MAINNET
+          grpcId: 1119
+          short-names: [mezo]
+          chain-id: 0x7b7c
         - id: Testnet
           priority: 1
           code: MEZO_TESTNET
