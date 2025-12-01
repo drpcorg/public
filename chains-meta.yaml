@@ -452,7 +452,7 @@
     name: Frax Ether
     symbol: frxETH
     decimals: 18
-  chain-id: 2522
+  chain-id: 2523
   explorers:
     - https://holesky.fraxscan.com
 - currency:
