@@ -454,7 +454,7 @@
     decimals: 18
   chain-id: 2523
   explorers:
-    - https://holesky.fraxscan.com
+    - https://hoodi.fraxscan.com
 - currency:
     name: Fantom
     symbol: FTM
@@ -823,7 +823,7 @@
   chain-id: 167013
   explorers:
     - https://hoodi.taikoscan.io
-    - https://blockscout.hoodi.taiko.xyz 
+    - https://blockscout.hoodi.taiko.xyz
 - currency:
     name: Ether
     symbol: ETH

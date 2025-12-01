@@ -1679,7 +1679,7 @@ chain-settings:
           priority: 1
           code: FRAXTAL_TESTNET
           short-names: [fraxtal-testnet]
-          chain-id: 0x9da
+          chain-id: 0x9db
           grpcId: 10090
         - id: Mainnet
           priority: 100
@@ -2431,7 +2431,7 @@ chain-settings:
           priority: 100
           code: MONAD_MAINNET
           grpcId: 1107
-          short-names: [ monad-mainnet ]
+          short-names: [monad-mainnet]
           chain-id: 0x8f
         - id: Testnet
           priority: 1
