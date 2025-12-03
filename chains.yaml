@@ -830,6 +830,7 @@ chain-settings:
           grpcId: 10080
           settings:
             expected-block-time: 30s
+            disabled: true
     - id: okt
       label: OKT Chain
       type: eth
