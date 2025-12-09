@@ -1304,7 +1304,7 @@ chain-settings:
           code: CORE_TESTNET
           grpcId: 10062
           short-names: [core-testnet]
-          chain-id: 0x45b
+          chain-id: 0x45a
     - id: telos
       label: Telos
       type: eth
