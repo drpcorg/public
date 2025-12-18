@@ -1901,13 +1901,13 @@ chain-settings:
           code: XLAYER_MAINNET
           grpcId: 1078
           short-names: [xlayer]
-          chain-id: 0xC4
+          chain-id: 0xc4
         - id: Testnet
           priority: 1
           code: XLAYER_TESTNET
           grpcId: 10099
           short-names: [xlayer-testnet]
-          chain-id: 0xC3
+          chain-id: 0xc3
     - id: sei
       label: Sei
       type: eth
