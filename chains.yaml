@@ -1907,7 +1907,7 @@ chain-settings:
           code: XLAYER_TESTNET
           grpcId: 10099
           short-names: [xlayer-testnet]
-          chain-id: 0xc3
+          chain-id: 0x7a0
     - id: sei
       label: Sei
       type: eth
