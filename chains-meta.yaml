@@ -1227,3 +1227,10 @@
   chain-id: 4690
   explorers:
     - https://testnet.iotexscan.io
+- currency:
+    name: USD
+    symbol: USD
+    decimals: 18
+  chain-id: 42429
+  explorers:
+    - https://explore.tempo.xyz/
