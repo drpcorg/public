@@ -163,7 +163,7 @@
     name: X Layer Global Utility Token in testnet
     symbol: OKB
     decimals: 18
-  chain-id: 195
+  chain-id: 1952
   explorers:
     - https://www.oklink.com/xlayer-test
 - currency:
