@@ -2873,3 +2873,21 @@ chain-settings:
           grpcId: 10153
           chain-id: 0x15f902
           short-names: [xrpl-devnet]
+    - id: tempo
+      label: Tempo
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Testnet
+          priority: 10
+          code: TEMPO_TESTNET
+          grpcId: 10154
+          chain-id: 0xa5bd
+          short-names: [tempo-testnet]
+
