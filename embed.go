@@ -15,8 +15,8 @@ func GetChainConfig() []byte {
 	return chainConfig
 }
 func GetChainMeta() []byte {
-	return chainConfig
+	return chainMeta
 }
 func GetCompatibleClients() []byte {
-	return chainConfig
+	return compatibleClients
 }
