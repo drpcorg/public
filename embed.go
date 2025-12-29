@@ -1,4 +1,4 @@
-package emerald_grpc
+package public
 
 import _ "embed"
 
