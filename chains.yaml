@@ -2890,4 +2890,511 @@ chain-settings:
           grpcId: 10154
           chain-id: 0xa5bd
           short-names: [tempo-testnet]
-
+    - id: xdc
+      label: XDC
+      type: eth
+      settings:
+        expected-block-time: 2.5s
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: XDC_MAINNET
+          grpcId: 1120
+          chain-id: 0x32
+          short-names: [xdc]
+        - id: Testnet
+          priority: 10
+          code: XDC_TESTNET
+          grpcId: 10155
+          chain-id: 0x33
+          short-names: [xdc-testnet]
+    - id: creditcoin
+      label: Creditcoin
+      type: eth
+      settings:
+        expected-block-time: 15s
+        lags:
+          syncing: 6
+          lagging: 1
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: CREDITCOIN_MAINNET
+          grpcId: 1121
+          chain-id: 0x18e8e
+          short-names: [creditcoin]
+        - id: Testnet
+          priority: 10
+          code: CREDITCOIN_TESTNET
+          grpcId: 10156
+          chain-id: 0x18e8f
+          short-names: [creditcoin-testnet]
+        - id: Devnet
+          priority: 1
+          code: CREDITCOIN_DEVNET
+          grpcId: 10157
+          chain-id: 0x18e90
+          short-names: [creditcoin-devnet]
+    - id: flare
+      label: Flare
+      type: eth
+      settings:
+        expected-block-time: 1.5s
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: FLARE_MAINNET
+          grpcId: 1122
+          chain-id: 0xe
+          short-names: [flare]
+        - id: Testnet
+          priority: 10
+          code: FLARE_TESTNET
+          grpcId: 10158
+          chain-id: 0x72
+          short-names: [flare-testnet]
+    - id: oasys
+      label: Oasys
+      type: eth
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 15
+          lagging: 3
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: OASYS_MAINNET
+          grpcId: 1123
+          chain-id: 0xf8
+          short-names: [oasys]
+        - id: Testnet
+          priority: 10
+          code: OASYS_TESTNET
+          grpcId: 10159
+          chain-id: 0x249c
+          short-names: [oasys-testnet]
+    - id: songbird
+      label: Songbird
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: SONGBIRD_MAINNET
+          grpcId: 1124
+          chain-id: 0x13
+          short-names: [songbird]
+        - id: Testnet
+          priority: 10
+          code: SONGBIRD_TESTNET
+          grpcId: 10160
+          chain-id: 0x10
+          short-names: [songbird-testnet]
+    - id: story
+      label: Story
+      type: eth
+      settings:
+        expected-block-time: 2.5s
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: STORY_MAINNET
+          grpcId: 1125
+          chain-id: 0x5ea
+          short-names: [story]
+        - id: Testnet
+          priority: 10
+          code: STORY_TESTNET
+          grpcId: 10161
+          chain-id: 0x5e9
+          short-names: [story-testnet]
+        - id: Aeneid
+          priority: 10
+          code: STORY_AENEID_TESTNET
+          grpcId: 10162
+          chain-id: 0x523
+          short-names: [story-aeneid-testnet]
+    - id: vechain
+      label: VeChain
+      type: eth
+      settings:
+        expected-block-time: 10s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: VECHAIN_MAINNET
+          grpcId: 1126
+          chain-id: 0x186a9
+          short-names: [vechain]
+        - id: Testnet
+          priority: 10
+          code: VECHAIN_TESTNET
+          grpcId: 10163
+          chain-id: 0x186aa
+          short-names: [vechain-testnet]
+    - id: babylon
+      label: Babylon
+      type: cosmos
+      settings:
+        expected-block-time: 10s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          chain-id: bbn-1
+          short-names: [babylon]
+          code: BABYLON_MAINNET
+          grpcId: 1128
+          priority: 100
+        - id: Testnet
+          chain-id: bbn-test-6
+          short-names: [babylon-testnet]
+          code: BABYLON_TESTNET
+          grpcId: 10166
+          priority: 10
+    - id: agoric
+      label: Agoric
+      type: cosmos
+      settings:
+        expected-block-time: 5s
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          chain-id: agoric-3
+          short-names: [agoric]
+          code: AGORIC_MAINNET
+          grpcId: 1129
+          priority: 100
+    - id: coreum
+      label: Coreum
+      type: cosmos
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          chain-id: coreum-mainnet-1
+          short-names: [coreum]
+          code: COREUM_MAINNET
+          grpcId: 1130
+          priority: 100
+        - id: Testnet
+          chain-id: coreum-testnet-1
+          short-names: [coreum-testnet]
+          code: COREUM_TESTNET
+          grpcId: 10167
+          priority: 10
+    - id: fetchai
+      label: FetchAI
+      type: cosmos
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 15
+          lagging: 3
+      chains:
+        - id: Mainnet
+          chain-id: fetchhub-4
+          short-names: [fetch-ai]
+          code: FETCH_AI_MAINNET
+          grpcId: 1131
+          priority: 100
+    - id: provenance
+      label: Provenance
+      type: cosmos
+      settings:
+        expected-block-time: 5s
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          chain-id: pio-mainnet-1
+          short-names: [provenance]
+          code: PROVENANCE_MAINNET
+          grpcId: 1132
+          priority: 100
+    - id: initia
+      label: Initia
+      type: cosmos
+      settings:
+        expected-block-time: 2s
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          chain-id: interwoven-1
+          short-names: [initia]
+          code: INITIA_MAINNET
+          grpcId: 1133
+          priority: 100
+    - id: injective
+      label: Injective
+      type: cosmos
+      settings:
+        expected-block-time: 700ms
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          chain-id: injective-1
+          short-names: [injective]
+          code: INJECTIVE_MAINNET
+          grpcId: 1134
+          priority: 100
+        - id: Testnet
+          chain-id: injective-888
+          short-names: [injective-testnet]
+          code: INJECTIVE_TESTNET
+          grpcId: 10171
+          priority: 10
+    - id: mantra
+      label: Mantra
+      type: cosmos
+      settings:
+        expected-block-time: 3s
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          chain-id: mantra-1
+          short-names: [mantra]
+          code: MANTRA_MAINNET
+          grpcId: 1135
+          priority: 100
+    - id: bitcoinsv
+      label: BitcoinSV
+      type: bitcoin
+      settings:
+        expected-block-time: 1m
+        lags:
+          syncing: 6
+          lagging: 1
+      chains:
+        - id: Mainnet
+          priority: 100
+          chain-id: 0x0
+          short-names: [bitcoinsv]
+          code: BITCOINSV_MAINNET
+          grpcId: 1136
+        - id: Testnet
+          priority: 1
+          chain-id: 0x0
+          short-names: [bitcoinsv-testnet]
+          code: BITCOINSV_TESTNET
+          grpcId: 10173
+    - id: dash
+      label: Dash
+      type: bitcoin
+      settings:
+        expected-block-time: 1m
+        lags:
+          syncing: 6
+          lagging: 1
+      chains:
+        - id: Mainnet
+          priority: 100
+          chain-id: 0x0
+          short-names: [dash]
+          code: DASH_MAINNET
+          grpcId: 1137
+        - id: Testnet
+          priority: 1
+          chain-id: 0x0
+          short-names: [dash-testnet]
+          code: DASH_TESTNET
+          grpcId: 10174
+    - id: digibyte
+      label: Digibyte
+      type: bitcoin
+      settings:
+        expected-block-time: 15s
+        lags:
+          syncing: 6
+          lagging: 1
+      chains:
+        - id: Mainnet
+          priority: 100
+          chain-id: 0x0
+          short-names: [digibyte]
+          code: DIGIBYTE_MAINNET
+          grpcId: 1138
+        - id: Testnet
+          priority: 1
+          chain-id: 0x0
+          short-names: [digibyte-testnet]
+          code: DIGIBYTE_TESTNET
+          grpcId: 10175
+    - id: verge
+      label: Verge
+      type: bitcoin
+      settings:
+        expected-block-time: 30s
+        lags:
+          syncing: 6
+          lagging: 1
+      chains:
+        - id: Mainnet
+          priority: 100
+          chain-id: 0x0
+          short-names: [verge]
+          code: VERGE_MAINNET
+          grpcId: 1139
+        - id: Testnet
+          priority: 1
+          chain-id: 0x0
+          short-names: [verge-testnet]
+          code: VERGE_TESTNET
+          grpcId: 10176
+    - id: zcash
+      label: Zcash
+      type: bitcoin
+      settings:
+        expected-block-time: 75s
+        lags:
+          syncing: 6
+          lagging: 1
+      chains:
+        - id: Mainnet
+          priority: 100
+          chain-id: 0x0
+          short-names: [zcash]
+          code: ZCASH_MAINNET
+          grpcId: 1140
+        - id: Testnet
+          priority: 1
+          chain-id: 0x0
+          short-names: [zcash-testnet]
+          code: ZCASH_TESTNET
+          grpcId: 10177
+    - id: polymesh
+      label: Polymesh
+      type: polkadot
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: POLYMESH_MAINNET
+          short-names: [polymesh]
+          chain-id: Polymesh Mainnet
+          grpcId: 1141
+        - id: Testnet
+          priority: 1
+          code: POLYMESH_TESTNET
+          short-names: [polymesh-testnet]
+          chain-id: Polymesh Testnet
+          grpcId: 10178
+    - id: westend
+      label: Westend
+      type: polkadot
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: WESTEND_MAINNET
+          short-names: [westend]
+          chain-id: Westend
+          grpcId: 1143
+    - id: westend-asset-hub
+      label: Westend Asset Hub
+      type: polkadot
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: WESTEND_ASSETHUB_MAINNET
+          short-names: [westend-asset-hub]
+          chain-id: Westend Asset Hub
+          grpcId: 1144
+    - id: paseo
+      label: Paseo
+      type: polkadot
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: PASEO_MAINNET
+          short-names: [paseo]
+          chain-id: Paseo
+          grpcId: 1145
+    - id: paseo-asset-hub
+      label: Paseo Asset Hub
+      type: polkadot
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: PASEO_ASSETHUB_MAINNET
+          short-names: [paseo-asset-hub]
+          chain-id: Paseo Asset Hub
+          grpcId: 1146
+    - id: zkverify
+      label: ZkVerify
+      type: polkadot
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ZKVERIFY_MAINNET
+          short-names: [zkverify]
+          chain-id: ZkVerify Mainnet
+          grpcId: 1142
+        - id: Testnet
+          priority: 1
+          code: ZKVERIFY_TESTNET
+          short-names: [zkverify-testnet]
+          chain-id: ZkVerify Testnet
+          grpcId: 10183
