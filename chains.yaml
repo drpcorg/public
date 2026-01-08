@@ -3377,6 +3377,21 @@ chain-settings:
           short-names: [paseo-asset-hub]
           chain-id: Paseo Asset Hub
           grpcId: 1146
+    - id: polkadot-asset-hub
+      label: Polkadot Asset Hub
+      type: polkadot
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: POLKADOT_ASSETHUB_MAINNET
+          short-names: [polkadot-asset-hub]
+          chain-id: Polkadot Asset Hub
+          grpcId: 1147
     - id: zkverify
       label: ZkVerify
       type: polkadot
