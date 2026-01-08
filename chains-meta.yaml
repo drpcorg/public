@@ -1234,3 +1234,62 @@
   chain-id: 42429
   explorers:
     - https://explore.tempo.xyz/
+- currency:
+    name: XinFin
+    symbol: XDC
+    decimals: 18
+  chain-id: 50
+  explorers:
+    - https://xdcscan.com
+    - https://xdcscan.io
+- currency:
+    name: XinFin
+    symbol: TXDC
+    decimals: 18
+  chain-id: 51
+  explorers:
+    - https://testnet.xdcscan.com
+    - https://apothem.xdcscan.io
+- currency:
+    name: Flare
+    symbol: FLR
+    decimals: 18
+  chain-id: 14
+  explorers:
+    - https://flare-explorer.flare.network
+    - https://mainnet.flarescan.com
+- currency:
+    name: OAS
+    symbol: OAS
+    decimals: 18
+  chain-id: 248
+  explorers:
+    - https://explorer.oasys.games
+- currency:
+    name: IP Token
+    symbol: IP
+    decimals: 18
+  chain-id: 1315
+  explorers:
+    - https://aeneid.storyscan.xyz
+- currency:
+    name: IP
+    symbol: IP
+    decimals: 18
+  chain-id: 1513
+  explorers:
+    - https://testnet.storyscan.xyz
+- currency:
+    name: IP Token
+    symbol: IP
+    decimals: 18
+  chain-id: 1514
+  explorers:
+    - https://mainnet.storyscan.xyz
+- currency:
+    name: OAS
+    symbol: OAS
+    decimals: 18
+  chain-id: 9372
+  explorers:
+    - https://explorer.testnet.oasys.games
