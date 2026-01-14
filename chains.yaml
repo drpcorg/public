@@ -2446,8 +2446,8 @@ chain-settings:
       settings:
         expected-block-time: 1m
         lags:
-          syncing: 18
-          lagging: 9
+          syncing: 10
+          lagging: 5
       chains:
         - id: Mainnet
           priority: 100
@@ -2461,6 +2461,11 @@ chain-settings:
           short-names: [dogecoin-testnet]
           code: DOGECOIN_TESTNET
           grpcId: 10125
+          settings:
+            expected-block-time: 1s
+            lags:
+              syncing: 40
+              lagging: 20
     - id: litecoin
       label: Litecoin
       type: bitcoin
