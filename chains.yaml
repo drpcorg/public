@@ -2446,8 +2446,8 @@ chain-settings:
       settings:
         expected-block-time: 1m
         lags:
-          syncing: 10
-          lagging: 5
+          syncing: 18
+          lagging: 9
       chains:
         - id: Mainnet
           priority: 100
