@@ -2895,6 +2895,12 @@ chain-settings:
           grpcId: 10154
           chain-id: 0xa5bd
           short-names: [tempo-testnet]
+        - id: Moderato Testnet
+          priority: 20
+          code: TEMPO_MODERATO_TESTNET
+          grpcId: 10184
+          chain-id: 0xa5bf
+          short-names: [tempo-moderato-testnet]        
     - id: xdc
       label: XDC
       type: eth
