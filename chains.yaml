@@ -20,7 +20,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           chain-id: 0x0
-          short-names: [bitcoin, btc]
+          short-names: [bitcoin, btc, bitcoin-mainnet]
           code: BTC
           grpcId: 1
         - id: Testnet
@@ -42,7 +42,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: 0x1
-          short-names: [ethereum, eth, homestead]
+          short-names: [ethereum, eth, homestead, ethereum-mainnet]
           code: ETH
           grpcId: 100
           priority: 100
@@ -83,7 +83,7 @@ chain-settings:
           lagging: 1
       chains:
         - id: mainnet
-          short-names: [ethereum-classic, etc]
+          short-names: [ethereum-classic, etc, ethereum-classic-mainnet]
           chain-id: 0x3d
           net-version: 1
           code: ETC
@@ -103,7 +103,7 @@ chain-settings:
       chains:
         - id: Mainnet
           priority: 100
-          short-names: [fantom]
+          short-names: [fantom, fantom-mainnet]
           code: FTM
           grpcId: 102
           chain-id: 0xfa
@@ -132,7 +132,7 @@ chain-settings:
           code: POLYGON
           grpcId: 1002
           chain-id: 0x89
-          short-names: [polygon, matic]
+          short-names: [polygon, matic, polygon-mainnet]
         - id: Amoy
           priority: 10
           code: POLYGON_POS_AMOY
@@ -157,7 +157,7 @@ chain-settings:
           priority: 100
           code: ARBITRUM
           grpcId: 1004
-          short-names: [arbitrum, arb]
+          short-names: [arbitrum, arb, arbitrum-mainnet]
           chain-id: 0xa4b1
         - id: Sepolia
           priority: 10
@@ -181,7 +181,7 @@ chain-settings:
           priority: 100
           code: OPTIMISM
           grpcId: 1005
-          short-names: [optimism]
+          short-names: [optimism, optimism-mainnet]
           chain-id: 0xa
         - id: Sepolia
           priority: 10
@@ -205,7 +205,7 @@ chain-settings:
           code: BSC
           grpcId: 1006
           chain-id: 0x38
-          short-names: [bsc, binance, bnb-smart-chain]
+          short-names: [bsc, binance, bnb-smart-chain, bsc-mainnet]
           gas-price-condition:
             - ne 3000000000
             - ne 5000000000
@@ -232,7 +232,7 @@ chain-settings:
           priority: 100
           code: POLYGON_ZKEVM
           grpcId: 1007
-          short-names: [polygon-zkevm]
+          short-names: [polygon-zkevm, polygon-zkevm-mainnet]
           chain-id: 0x44d
         - id: Cardona
           priority: 2
@@ -277,7 +277,7 @@ chain-settings:
           code: ZKSYNC
           grpcId: 1009
           chain-id: 0x144
-          short-names: [zksync]
+          short-names: [zksync, zksync-mainnet]
         - id: Sepolia
           priority: 1
           code: ZKS_SEPOLIA
@@ -300,7 +300,7 @@ chain-settings:
           priority: 100
           code: BASE
           grpcId: 1010
-          short-names: [base]
+          short-names: [base, base-mainnet]
           chain-id: 0x2105
         - id: Sepolia
           priority: 2
@@ -324,7 +324,7 @@ chain-settings:
           grpcId: 1011
           gas-price-condition:
             - ne 1000000000 # misconfiguration in official docs
-          short-names: [linea]
+          short-names: [linea, linea-mainnet]
           chain-id: 0xe708
         - id: Sepolia
           priority: 2
@@ -348,7 +348,7 @@ chain-settings:
           priority: 100
           code: GNOSIS
           grpcId: 1012
-          short-names: [gnosis]
+          short-names: [gnosis, gnosis-mainnet]
           chain-id: 0x64
         - id: Chiado
           priority: 1
@@ -372,7 +372,7 @@ chain-settings:
           priority: 100
           code: AVALANCHE
           grpcId: 1013
-          short-names: [avalanche]
+          short-names: [avalanche, avalanche-mainnet]
           chain-id: 0xa86a
         - id: Fuji
           priority: 1
@@ -395,7 +395,7 @@ chain-settings:
           priority: 100
           code: AURORA
           grpcId: 1015
-          short-names: [aurora]
+          short-names: [aurora, aurora-mainnet]
           chain-id: 0x4e454152
         - id: Testnet
           priority: 1
@@ -419,7 +419,7 @@ chain-settings:
           priority: 100
           code: MANTLE
           grpcId: 1017
-          short-names: [mantle]
+          short-names: [mantle, mantle-mainnet]
           chain-id: 0x1388
         - id: Sepolia
           priority: 10
@@ -443,7 +443,7 @@ chain-settings:
           priority: 100
           code: KLAYTN
           grpcId: 1018
-          short-names: [klaytn, kaia]
+          short-names: [klaytn, kaia, klaytn-mainnet]
           chain-id: 0x2019
         - id: Baobab
           priority: 1
@@ -467,7 +467,7 @@ chain-settings:
           priority: 100
           code: CELO
           grpcId: 1019
-          short-names: [celo]
+          short-names: [celo, celo-mainnet]
           chain-id: 0xa4ec
         - id: Alfajores
           priority: 1
@@ -495,7 +495,7 @@ chain-settings:
           priority: 100
           code: MOONBEAM
           grpcId: 1020
-          short-names: [moonbeam]
+          short-names: [moonbeam, moonbeam-mainnet]
           chain-id: 0x504
         - id: Moonbase Alpha
           priority: 1
@@ -517,7 +517,7 @@ chain-settings:
           priority: 50
           code: MOONRIVER
           grpcId: 1021
-          short-names: [moonriver]
+          short-names: [moonriver, moonbase-mainnet]
           chain-id: 0x505
     - id: scroll
       label: Scroll
@@ -540,7 +540,7 @@ chain-settings:
           priority: 100
           code: SCROLL_MAINNET
           grpcId: 1016
-          short-names: [scroll]
+          short-names: [scroll, scroll-mainnet]
           chain-id: 0x82750
     - id: cronos
       label: Cronos
@@ -556,7 +556,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: CRONOS_MAINNET
-          short-names: [cronos]
+          short-names: [cronos, cronos-mainnet]
           chain-id: 0x19
           grpcId: 1022
         - id: Testnet
@@ -580,7 +580,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: METIS_MAINNET
-          short-names: [metis]
+          short-names: [metis, metis-mainnet]
           chain-id: 0x440
           grpcId: 1023
         - id: Sepolia
@@ -603,7 +603,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: OPBNB_MAINNET
-          short-names: [opbnb]
+          short-names: [opbnb, opbnb-mainnet]
           chain-id: 0xcc
           grpcId: 1024
         - id: Testnet
@@ -627,7 +627,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: KAVA_MAINNET
-          short-names: [kava]
+          short-names: [kava, kava-mainnet]
           chain-id: 0x8ae
           grpcId: 1025
           gas-price-condition:
@@ -651,7 +651,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: STARKNET_MAINNET
-          short-names: [starknet]
+          short-names: [starknet, starknet-mainnet]
           chain-id: 0x534e5f4d41494e
           grpcId: 1014
         - id: Sepolia
@@ -674,7 +674,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: IMMUTABLE_ZKEVM_MAINNET
-          short-names: [immutable-zkevm]
+          short-names: [immutable-zkevm, immutable-zkevm-mainnet]
           chain-id: 0x343b
           grpcId: 1036
         - id: Testnet
@@ -698,7 +698,7 @@ chain-settings:
         - id: Mainnet
           priority: 1
           code: VARA_MAINNET
-          short-names: [vara]
+          short-names: [vara, vara-mainnet]
           chain-id: Vara Network
           grpcId: 1027
         - id: Testnet
@@ -722,7 +722,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: SOLANA_MAINNET
-          short-names: [solana]
+          short-names: [solana, solana-mainnet]
           chain-id: 0x0
           grpcId: 1028
         - id: Testnet
@@ -749,7 +749,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: HAQQ_MAINNET
-          short-names: [haqq]
+          short-names: [haqq, haqq-mainnet]
           chain-id: 0x2be3
           grpcId: 1029
         - id: Testnet
@@ -772,7 +772,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: FILECOIN_MAINNET
-          short-names: [filecoin]
+          short-names: [filecoin, filecoin-mainnet]
           chain-id: 0x13a
           grpcId: 1030
         - id: Calibration Testnet
@@ -794,7 +794,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: FUSE_MAINNET
-          short-names: [fuse]
+          short-names: [fuse, fuse-mainnet]
           chain-id: 0x7a
           grpcId: 1031
     - id: taiko
@@ -843,7 +843,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: OKTC_MAINNET
-          short-names: [oktc]
+          short-names: [oktc, okt-mainnet]
           chain-id: 0x42
           grpcId: 1032
         - id: Testnet
@@ -890,7 +890,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: ALEPHZERO_MAINNET
-          short-names: [alephzero]
+          short-names: [alephzero, alephzero-mainnet]
           chain-id: 0xa1ef
           grpcId: 1070
         - id: Sepolia
@@ -913,7 +913,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: EVERCLEAR_MAINNET
-          short-names: [everclear]
+          short-names: [everclear, everclear-mainnet]
           chain-id: 0x62ef
           grpcId: 1076
         - id: Sepolia
@@ -934,13 +934,13 @@ chain-settings:
         - id: Mainnet Shard 0
           priority: 100
           code: HARMONY_MAINNET_SHARD_0
-          short-names: [harmony-0]
+          short-names: [harmony-0, harmony-mainnet-0]
           chain-id: 0x63564c40
           grpcId: 1034
         - id: Mainnet Shard 1
           priority: 10
           code: HARMONY_MAINNET_SHARD_1
-          short-names: [harmony-1]
+          short-names: [harmony-1, harmony-mainnet-1]
           chain-id: 0x63564c41
           grpcId: 1035
     - id: berachain
@@ -957,7 +957,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: BERACHAIN_MAINNET
-          short-names: [berachain]
+          short-names: [berachain, berachain-mainnet]
           chain-id: 0x138de
           grpcId: 1099
         - id: bArtio
@@ -987,7 +987,7 @@ chain-settings:
         - id: Mainnet
           code: BLAST_MAINNET
           priority: 100
-          short-names: [blast]
+          short-names: [blast, blast-mainnet]
           chain-id: 0x13e31
           grpcId: 1051
         - id: Sepolia
@@ -1034,7 +1034,7 @@ chain-settings:
           priority: 100
           code: ZORA_MAINNET
           grpcId: 1037
-          short-names: [zora]
+          short-names: [zora, zora-mainnet]
           chain-id: 0x76adf1
         - id: Sepolia
           priority: 10
@@ -1057,7 +1057,7 @@ chain-settings:
           priority: 100
           code: MODE_MAINNET
           grpcId: 1038
-          short-names: [mode]
+          short-names: [mode, mode-mainnet]
           chain-id: 0x868b
         - id: Testnet
           priority: 1
@@ -1079,7 +1079,7 @@ chain-settings:
           priority: 100
           code: EVMOS_MAINNET
           grpcId: 1039
-          short-names: [evmos]
+          short-names: [evmos, evmos-mainnet]
           chain-id: 0x2329
         - id: Testnet
           priority: 1
@@ -1102,7 +1102,7 @@ chain-settings:
           priority: 100
           code: RONIN_MAINNET
           grpcId: 1043
-          short-names: [ronin]
+          short-names: [ronin, ronin-mainnet]
           chain-id: 0x7e4
         - id: Saigon
           priority: 1
@@ -1125,7 +1125,7 @@ chain-settings:
           priority: 100
           code: NEON_EVM_MAINNET
           grpcId: 1040
-          short-names: [neon-evm]
+          short-names: [neon-evm, neon-evm-mainnet]
           chain-id: 0xe9ac0d6
         - id: Devnet
           priority: 1
@@ -1148,7 +1148,7 @@ chain-settings:
           priority: 100
           code: BOBA_ETHEREUM_MAINNET
           grpcId: 1041
-          short-names: [boba-eth]
+          short-names: [boba-eth, boba-eth-mainnet]
           chain-id: 0x120
     - id: boba-bnb
       label: Boba BNB
@@ -1165,7 +1165,7 @@ chain-settings:
           priority: 100
           code: BOBA_BNB_MAINNET
           grpcId: 1044
-          short-names: [boba-bnb]
+          short-names: [boba-bnb, boba-bnb-mainnet]
           chain-id: 0xdbe0
     - id: heco
       label: Heco
@@ -1182,7 +1182,7 @@ chain-settings:
           priority: 100
           code: HECO_MAINNET
           grpcId: 1042
-          short-names: [heco]
+          short-names: [heco, heco-mainnet]
           chain-id: 0x80
         - id: Testnet
           priority: 1
@@ -1205,7 +1205,7 @@ chain-settings:
           priority: 100
           code: PLAYNANCE_MAINNET
           grpcId: 1054
-          short-names: [playnance]
+          short-names: [playnance, playnance-mainnet]
           chain-id: 0x725
         - id: Testnet
           priority: 10
@@ -1255,7 +1255,7 @@ chain-settings:
           priority: 100
           code: BITTORRENT_MAINNET
           grpcId: 1046
-          short-names: [bittorrent]
+          short-names: [bittorrent, bittorrent-mainnet]
           chain-id: 0xc7
         - id: Testnet
           priority: 1
@@ -1276,7 +1276,7 @@ chain-settings:
           priority: 100
           code: THUNDERCORE_MAINNET
           grpcId: 1047
-          short-names: [thundercore]
+          short-names: [thundercore, thundercore-mainnet]
           chain-id: 0x6c
         - id: Testnet
           priority: 1
@@ -1297,7 +1297,7 @@ chain-settings:
           priority: 100
           code: CORE_MAINNET
           grpcId: 1048
-          short-names: [core]
+          short-names: [core, core-mainnet]
           chain-id: 0x45c
         - id: Testnet
           priority: 1
@@ -1320,7 +1320,7 @@ chain-settings:
           priority: 100
           code: TELOS_MAINNET
           grpcId: 1049
-          short-names: [telos]
+          short-names: [telos, telos-mainnet]
           chain-id: 0x28
         - id: Testnet
           priority: 1
@@ -1341,7 +1341,7 @@ chain-settings:
           priority: 100
           code: NEAR_MAINNET
           grpcId: 1050
-          short-names: [near]
+          short-names: [near, near-mainnet]
           chain-id: mainnet
         - id: Testnet
           priority: 5
@@ -1419,7 +1419,7 @@ chain-settings:
           priority: 100
           code: DYMENSION_MAINNET
           grpcId: 1052
-          short-names: [dymension]
+          short-names: [dymension, dymension-mainnet]
           chain-id: 0x44c
     - id: eth-beacon-chain
       label: Ethereum Beacon Chain
@@ -1432,7 +1432,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: 0x0
-          short-names: [eth-beacon-chain]
+          short-names: [eth-beacon-chain, eth-beacon-chain-mainnet]
           code: ETH_BEACON_CHAIN
           grpcId: 1053
           priority: 100
@@ -1469,7 +1469,7 @@ chain-settings:
           priority: 100
           code: REAL_MAINNET
           grpcId: 1055
-          short-names: [real]
+          short-names: [real, real-mainnet]
           chain-id: 0x1b254
     - id: cosmos-hub
       label: Cosmos Hub
@@ -1482,7 +1482,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: cosmoshub-4
-          short-names: [cosmos-hub]
+          short-names: [cosmos-hub, cosmos-hub-mainnet]
           code: COSMOS_HUB
           grpcId: 1057
           priority: 100
@@ -1503,7 +1503,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: axelar-dojo-1
-          short-names: [axelar]
+          short-names: [axelar, axelar-mainnet]
           code: AXELAR
           grpcId: 1059
           priority: 100
@@ -1524,7 +1524,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: osmosis-1
-          short-names: [osmosis]
+          short-names: [osmosis, osmosis-mainnet]
           code: OSMOSIS
           grpcId: 1060
           priority: 100
@@ -1545,7 +1545,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: neutron-1
-          short-names: [neutron]
+          short-names: [neutron, neutron-mainnet]
           code: NEUTRON
           grpcId: 1061
           priority: 100
@@ -1627,7 +1627,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: ZIRCUIT_MAINNET
-          short-names: [zircuit-mainnet]
+          short-names: [zircuit-mainnet, zircuit]
           chain-id: 0xbf04
           grpcId: 1063
         - id: Testnet
@@ -1656,7 +1656,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: AVAIL_MAINNET
-          short-names: [avail]
+          short-names: [avail, avail-mainnet]
           chain-id: Avail Network
           grpcId: 1064
         - id: Testnet
@@ -1685,7 +1685,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: FRAXTAL_MAINNET
-          short-names: [fraxtal]
+          short-names: [fraxtal, fraxtal-mainnet]
           chain-id: 0xfc
           grpcId: 1065
     - id: tron
@@ -1702,7 +1702,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: TRON_MAINNET
-          short-names: [tron]
+          short-names: [tron, tron-mainnet]
           chain-id: 0x2b6653dc
           grpcId: 1066
         - id: Shasta
@@ -1727,7 +1727,7 @@ chain-settings:
           priority: 100
           code: KROMA_MAINNET
           grpcId: 1068
-          short-names: [kroma]
+          short-names: [kroma, kroma-mainnet]
           chain-id: 0xff
         - id: Sepolia
           priority: 1
@@ -1751,7 +1751,7 @@ chain-settings:
           priority: 100
           code: WEMIX_MAINNET
           grpcId: 1069
-          short-names: [wemix]
+          short-names: [wemix, wemix-mainnet]
           chain-id: 0x457
         - id: Testnet
           priority: 1
@@ -1773,7 +1773,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: POLKADOT_MAINNET
-          short-names: [polkadot]
+          short-names: [polkadot, polkadot-mainnet]
           chain-id: Polkadot
           grpcId: 1071
     - id: kusama
@@ -1790,7 +1790,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: KUSAMA_MAINNET
-          short-names: [kusama]
+          short-names: [kusama, kusama-mainnet]
           chain-id: Kusama
           grpcId: 1072
     - id: metall2
@@ -1808,7 +1808,7 @@ chain-settings:
           priority: 100
           code: METAL_L2_MAINNET
           grpcId: 1073
-          short-names: [metall2]
+          short-names: [metall2, metall2-mainnet]
           chain-id: 0x6d6
         - id: Testnet
           priority: 1
@@ -1831,7 +1831,7 @@ chain-settings:
           priority: 100
           code: BOB_MAINNET
           grpcId: 1074
-          short-names: [bob]
+          short-names: [bob, bob-mainnet]
           chain-id: 0xed88
         - id: Testnet
           priority: 1
@@ -1877,7 +1877,7 @@ chain-settings:
           priority: 100
           code: SNAXCHAIN_MAINNET
           grpcId: 1077
-          short-names: [snaxchain]
+          short-names: [snaxchain, snaxchain-mainnet]
           chain-id: 0x890
         - id: Testnet
           priority: 1
@@ -1900,7 +1900,7 @@ chain-settings:
           priority: 100
           code: XLAYER_MAINNET
           grpcId: 1078
-          short-names: [xlayer]
+          short-names: [xlayer, xlayer-mainnet]
           chain-id: 0xc4
         - id: Testnet
           priority: 1
@@ -1924,7 +1924,7 @@ chain-settings:
           priority: 100
           code: SEI_MAINNET
           grpcId: 1079
-          short-names: [sei]
+          short-names: [sei, sei-mainnet]
           chain-id: 0x531
         - id: Devnet
           priority: 2
@@ -1952,7 +1952,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: TON
-          short-names: [ton]
+          short-names: [ton, ton-mainnet]
           chain-id: "-239"
           grpcId: 1080
         - id: Testnet
@@ -1986,7 +1986,7 @@ chain-settings:
           priority: 100
           code: SONIC_MAINNET
           grpcId: 1087
-          short-names: [sonic]
+          short-names: [sonic, sonic-mainnet]
           chain-id: 0x92
     - id: lens
       label: Lens Network
@@ -2028,7 +2028,7 @@ chain-settings:
           priority: 100
           code: UNICHAIN_MAINNET
           grpcId: 1081
-          short-names: [unichain]
+          short-names: [unichain, unichain-mainnet]
           chain-id: 0x82
         - id: Sepolia
           priority: 1
@@ -2051,7 +2051,7 @@ chain-settings:
           priority: 100
           code: APECHAIN_MAINNET
           grpcId: 1082
-          short-names: [apechain]
+          short-names: [apechain, apechain-mainnet]
           chain-id: 0x8173
         - id: Curtis
           priority: 1
@@ -2074,7 +2074,7 @@ chain-settings:
           priority: 100
           code: SONEIUM_MAINNET
           grpcId: 1095
-          short-names: [soneium]
+          short-names: [soneium, soneium-mainnet]
           chain-id: 0x74c
         - id: Minato
           priority: 1
@@ -2097,7 +2097,7 @@ chain-settings:
           priority: 100
           code: ZERO_MAINNET
           grpcId: 1083
-          short-names: [zero]
+          short-names: [zero, zero-mainnet]
           chain-id: 0x849ea
     - id: worldchain
       label: Worldchain
@@ -2114,7 +2114,7 @@ chain-settings:
           priority: 100
           code: WORLDCHAIN_MAINNET
           grpcId: 1084
-          short-names: [worldchain]
+          short-names: [worldchain, worldchain-mainnet]
           chain-id: 0x1e0
         - id: Sepolia
           priority: 1
@@ -2137,7 +2137,7 @@ chain-settings:
           priority: 100
           code: CRONOS_ZKEVM_MAINNET
           grpcId: 1085
-          short-names: [cronos-zkevm]
+          short-names: [cronos-zkevm, cronos-zkevm-mainnet]
           chain-id: 0x184
         - id: Testnet
           priority: 1
@@ -2158,7 +2158,7 @@ chain-settings:
           priority: 100
           code: VICTION_MAINNET
           grpcId: 1086
-          short-names: [viction]
+          short-names: [viction, viction-mainnet]
           chain-id: 0x58
         - id: Testnet
           priority: 1
@@ -2196,7 +2196,7 @@ chain-settings:
           priority: 100
           code: 0G_MAINNET
           grpcId: 1114
-          short-names: [0g-mainnet]
+          short-names: [0g-mainnet, 0g]
           chain-id: 0x4115
         - id: Newton Testnet
           priority: 10
@@ -2225,7 +2225,7 @@ chain-settings:
           priority: 100
           code: SUPERSEED_MAINNET
           grpcId: 1088
-          short-names: [superseed]
+          short-names: [superseed, superseed-mainnet]
           chain-id: 0x14d2
         - id: Sepolia
           priority: 1
@@ -2248,7 +2248,7 @@ chain-settings:
           priority: 100
           code: INK_MAINNET
           grpcId: 1089
-          short-names: [ink]
+          short-names: [ink, ink-mainnet]
           chain-id: 0xdef1
         - id: Sepolia
           priority: 1
@@ -2271,7 +2271,7 @@ chain-settings:
           priority: 100
           code: ABSTRACT_MAINNET
           grpcId: 1090
-          short-names: [abstract]
+          short-names: [abstract, abstract-mainnet]
           chain-id: 0xab5
         - id: Sepolia
           priority: 1
@@ -2294,7 +2294,7 @@ chain-settings:
           priority: 100
           code: HASHKEY_MAINNET
           grpcId: 1091
-          short-names: [hashkey]
+          short-names: [hashkey, hashkey-mainnet]
           chain-id: 0xb1
         - id: Testnet
           priority: 1
@@ -2317,7 +2317,7 @@ chain-settings:
           priority: 100
           code: GRAVITY_ALPHA_MAINNET
           grpcId: 1092
-          short-names: [gravity-alpha]
+          short-names: [gravity-alpha, gravity-alpha-mainnet]
           chain-id: 0x659
         - id: Sepolia
           priority: 1
@@ -2340,7 +2340,7 @@ chain-settings:
           priority: 100
           code: HYPERLIQUID_MAINNET
           grpcId: 1103
-          short-names: [hyperliquid]
+          short-names: [hyperliquid, hyperliquid-mainnet]
           chain-id: 0x3e7
         - id: Testnet
           priority: 1
@@ -2363,7 +2363,7 @@ chain-settings:
           priority: 100
           code: MERLIN_MAINNET
           grpcId: 1093
-          short-names: [merlin]
+          short-names: [merlin, merlin-mainnet]
           chain-id: 0x1068
         - id: Testnet
           priority: 1
@@ -2386,7 +2386,7 @@ chain-settings:
           priority: 100
           code: MEZO_MAINNET
           grpcId: 1119
-          short-names: [mezo]
+          short-names: [mezo, mezo-mainnet]
           chain-id: 0x7b7c
         - id: Testnet
           priority: 1
@@ -2409,7 +2409,7 @@ chain-settings:
           priority: 100
           code: PLUME_MAINNET
           grpcId: 1094
-          short-names: [plume]
+          short-names: [plume, plume-mainnet]
           chain-id: 0x18232
         - id: Testnet
           priority: 1
@@ -2432,7 +2432,7 @@ chain-settings:
           priority: 100
           code: MONAD_MAINNET
           grpcId: 1107
-          short-names: [monad-mainnet]
+          short-names: [monad-mainnet, monad]
           chain-id: 0x8f
         - id: Testnet
           priority: 1
@@ -2452,7 +2452,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           chain-id: 0x0
-          short-names: [dogecoin]
+          short-names: [dogecoin, dogecoin-mainnet]
           code: DOGECOIN_MAINNET
           grpcId: 1096
         - id: Testnet
@@ -2478,7 +2478,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           chain-id: 0x0
-          short-names: [litecoin]
+          short-names: [litecoin, litecoin-mainnet]
           code: LITECOIN_MAINNET
           grpcId: 1097
         - id: Testnet
@@ -2499,7 +2499,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           chain-id: 0x0
-          short-names: [bitcoin-cash]
+          short-names: [bitcoin-cash, bitcoin-cash-mainnet]
           code: BITCOIN_CASH_MAINNET
           grpcId: 1098
         - id: Testnet
@@ -2522,7 +2522,7 @@ chain-settings:
           priority: 100
           code: RIPPLE_MAINNET
           grpcId: 1100
-          short-names: [ripple]
+          short-names: [ripple, ripple-mainnet]
           chain-id: 0
         - id: Testnet
           priority: 5
@@ -2545,7 +2545,7 @@ chain-settings:
           priority: 100
           code: SWELL_MAINNET
           grpcId: 1101
-          short-names: [swell]
+          short-names: [swell, swell-mainnet]
           chain-id: 0x783
         - id: Testnet
           priority: 5
@@ -2569,7 +2569,7 @@ chain-settings:
           priority: 100
           code: KADENA_MAINNET
           grpcId: 1104
-          short-names: [kadena]
+          short-names: [kadena, kadena-mainnet]
           chain-id: mainnet
         - id: Testnet
           priority: 5
@@ -2609,7 +2609,7 @@ chain-settings:
           priority: 100
           code: HEMI_MAINNET
           grpcId: 1105
-          short-names: [hemi]
+          short-names: [hemi, hemi-mainnet]
           chain-id: 0xa867
         - id: Testnet
           priority: 5
@@ -2633,7 +2633,7 @@ chain-settings:
           priority: 100
           code: GNOSIS_BEACON_CHAIN
           grpcId: 1106
-          short-names: [gnosis-beacon-chain]
+          short-names: [gnosis-beacon-chain, gnosis-beacon-chain-mainnet]
           chain-id: 0x0
         - id: Chiado
           priority: 1
@@ -2656,7 +2656,7 @@ chain-settings:
           priority: 100
           code: SHIBARIUM_MAINNET
           grpcId: 1108
-          short-names: [shibarium]
+          short-names: [shibarium, shibarium-mainnet]
           chain-id: 0x6d
     - id: plasma
       label: Plasma
@@ -2673,7 +2673,7 @@ chain-settings:
           priority: 100
           code: PLASMA_MAINNET
           grpcId: 1109
-          short-names: [plasma]
+          short-names: [plasma, plasma-mainnet]
           chain-id: 0x2611
         - id: Testnet
           priority: 1
@@ -2696,7 +2696,7 @@ chain-settings:
           priority: 100
           code: KATANA_MAINNET
           grpcId: 1110
-          short-names: [katana]
+          short-names: [katana, katana-mainnet]
           chain-id: 0xb67d2
         - id: Testnet
           priority: 1
@@ -2719,7 +2719,7 @@ chain-settings:
           priority: 100
           code: DOMA_MAINNET
           grpcId: 1111
-          short-names: [doma]
+          short-names: [doma, doma-mainnet]
           chain-id: 0x17cc5
         - id: Testnet
           priority: 1
@@ -2742,7 +2742,7 @@ chain-settings:
           priority: 100
           code: SOPHON_MAINNET
           grpcId: 1112
-          short-names: [sophon]
+          short-names: [sophon, sophon-mainnet]
           chain-id: 0xc3b8
         - id: Testnet
           priority: 1
@@ -2798,7 +2798,7 @@ chain-settings:
           code: SOMNIA_MAINNET
           grpcId: 1115
           chain-id: 0x13a7
-          short-names: [somnia]
+          short-names: [somnia, somnia-mainnet]
         - id: Testnet
           priority: 10
           code: SOMNIA_TESTNET
@@ -2821,7 +2821,7 @@ chain-settings:
           code: BITTENSOR_MAINNET
           grpcId: 1116
           chain-id: 0x3c4
-          short-names: [bittensor]
+          short-names: [bittensor, bittensor-mainnet]
         - id: Testnet
           priority: 10
           code: BITTENSOR_TESTNET
@@ -2842,7 +2842,7 @@ chain-settings:
           code: IOTEX_MAINNET
           grpcId: 1117
           chain-id: 0x1251
-          short-names: [iotex]
+          short-names: [iotex, iotex-mainnet]
         - id: Testnet
           priority: 10
           code: IOTEX_TESTNET
@@ -2865,7 +2865,7 @@ chain-settings:
           code: XRPL_MAINNET
           grpcId: 1118
           chain-id: 0x15f900
-          short-names: [xrpl]
+          short-names: [xrpl, xrpl-mainnet]
         - id: Testnet
           priority: 10
           code: XRPL_TESTNET
@@ -2915,7 +2915,7 @@ chain-settings:
           code: XDC_MAINNET
           grpcId: 1120
           chain-id: 0x32
-          short-names: [xdc]
+          short-names: [xdc, xdc-mainnet]
         - id: Testnet
           priority: 10
           code: XDC_TESTNET
@@ -2936,7 +2936,7 @@ chain-settings:
           code: CREDITCOIN_MAINNET
           grpcId: 1121
           chain-id: 0x18e8e
-          short-names: [creditcoin]
+          short-names: [creditcoin, creditcoin-mainnet]
         - id: Testnet
           priority: 10
           code: CREDITCOIN_TESTNET
@@ -2963,7 +2963,7 @@ chain-settings:
           code: FLARE_MAINNET
           grpcId: 1122
           chain-id: 0xe
-          short-names: [flare]
+          short-names: [flare, flare-mainnet]
         - id: Testnet
           priority: 10
           code: FLARE_TESTNET
@@ -2984,7 +2984,7 @@ chain-settings:
           code: OASYS_MAINNET
           grpcId: 1123
           chain-id: 0xf8
-          short-names: [oasys]
+          short-names: [oasys, oasys-mainnet]
         - id: Testnet
           priority: 10
           code: OASYS_TESTNET
@@ -3007,7 +3007,7 @@ chain-settings:
           code: SONGBIRD_MAINNET
           grpcId: 1124
           chain-id: 0x13
-          short-names: [songbird]
+          short-names: [songbird, songbird-mainnet]
         - id: Testnet
           priority: 10
           code: SONGBIRD_TESTNET
@@ -3028,7 +3028,7 @@ chain-settings:
           code: STORY_MAINNET
           grpcId: 1125
           chain-id: 0x5ea
-          short-names: [story]
+          short-names: [story, story-mainnet]
         - id: Testnet
           priority: 10
           code: STORY_TESTNET
@@ -3057,7 +3057,7 @@ chain-settings:
           code: VECHAIN_MAINNET
           grpcId: 1126
           chain-id: 0x186a9
-          short-names: [vechain]
+          short-names: [vechain, vechain-mainnet]
         - id: Testnet
           priority: 10
           code: VECHAIN_TESTNET
@@ -3075,7 +3075,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: bbn-1
-          short-names: [babylon]
+          short-names: [babylon, babylon-mainnet]
           code: BABYLON_MAINNET
           grpcId: 1128
           priority: 100
@@ -3096,7 +3096,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: agoric-3
-          short-names: [agoric]
+          short-names: [agoric, agoric-mainnet]
           code: AGORIC_MAINNET
           grpcId: 1129
           priority: 100
@@ -3111,7 +3111,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: coreum-mainnet-1
-          short-names: [coreum]
+          short-names: [coreum, coreum-mainnet]
           code: COREUM_MAINNET
           grpcId: 1130
           priority: 100
@@ -3132,7 +3132,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: fetchhub-4
-          short-names: [fetch-ai]
+          short-names: [fetch-ai, fetch-ai-mainnet]
           code: FETCH_AI_MAINNET
           grpcId: 1131
           priority: 100
@@ -3147,7 +3147,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: pio-mainnet-1
-          short-names: [provenance]
+          short-names: [provenance, provenance-mainnet]
           code: PROVENANCE_MAINNET
           grpcId: 1132
           priority: 100
@@ -3162,7 +3162,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: interwoven-1
-          short-names: [initia]
+          short-names: [initia, initia-mainnet]
           code: INITIA_MAINNET
           grpcId: 1133
           priority: 100
@@ -3177,7 +3177,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: injective-1
-          short-names: [injective]
+          short-names: [injective, injective-mainnet]
           code: INJECTIVE_MAINNET
           grpcId: 1134
           priority: 100
@@ -3198,7 +3198,7 @@ chain-settings:
       chains:
         - id: Mainnet
           chain-id: mantra-1
-          short-names: [mantra]
+          short-names: [mantra, mantra-mainnet]
           code: MANTRA_MAINNET
           grpcId: 1135
           priority: 100
@@ -3214,7 +3214,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           chain-id: 0x0
-          short-names: [bitcoinsv]
+          short-names: [bitcoinsv, bitcoinsv-mainnet]
           code: BITCOINSV_MAINNET
           grpcId: 1136
         - id: Testnet
@@ -3235,7 +3235,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           chain-id: 0x0
-          short-names: [dash]
+          short-names: [dash, dash-mainnet]
           code: DASH_MAINNET
           grpcId: 1137
         - id: Testnet
@@ -3256,7 +3256,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           chain-id: 0x0
-          short-names: [digibyte]
+          short-names: [digibyte, digibyte-mainnet]
           code: DIGIBYTE_MAINNET
           grpcId: 1138
         - id: Testnet
@@ -3277,7 +3277,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           chain-id: 0x0
-          short-names: [verge]
+          short-names: [verge, verge-mainnet]
           code: VERGE_MAINNET
           grpcId: 1139
         - id: Testnet
@@ -3298,7 +3298,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           chain-id: 0x0
-          short-names: [zcash]
+          short-names: [zcash, zcash-mainnet]
           code: ZCASH_MAINNET
           grpcId: 1140
         - id: Testnet
@@ -3319,7 +3319,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: POLYMESH_MAINNET
-          short-names: [polymesh]
+          short-names: [polymesh, polymesh-mainnet]
           chain-id: Polymesh Mainnet
           grpcId: 1141
         - id: Testnet
@@ -3340,7 +3340,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: WESTEND_MAINNET
-          short-names: [westend]
+          short-names: [westend, westend-mainnet]
           chain-id: Westend
           grpcId: 1143
     - id: westend-asset-hub
@@ -3355,7 +3355,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: WESTEND_ASSETHUB_MAINNET
-          short-names: [westend-asset-hub]
+          short-names: [westend-asset-hub, westend-asset-hub-mainnet]
           chain-id: Westend Asset Hub
           grpcId: 1144
     - id: paseo
@@ -3370,7 +3370,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: PASEO_MAINNET
-          short-names: [paseo]
+          short-names: [paseo, paseo-mainnet]
           chain-id: Paseo
           grpcId: 1145
     - id: paseo-asset-hub
@@ -3385,7 +3385,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: PASEO_ASSETHUB_MAINNET
-          short-names: [paseo-asset-hub]
+          short-names: [paseo-asset-hub, paseo-asset-hub-mainnet]
           chain-id: Paseo Asset Hub
           grpcId: 1146
     - id: polkadot-asset-hub
@@ -3400,7 +3400,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: POLKADOT_ASSETHUB_MAINNET
-          short-names: [polkadot-asset-hub]
+          short-names: [polkadot-asset-hub, polkadot-asset-hub-mainnet]
           chain-id: Polkadot Asset Hub
           grpcId: 1147
     - id: zkverify
@@ -3415,7 +3415,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: ZKVERIFY_MAINNET
-          short-names: [zkverify]
+          short-names: [zkverify, zkverify-mainnet]
           chain-id: ZkVerify Mainnet
           grpcId: 1142
         - id: Testnet
