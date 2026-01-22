@@ -145,6 +145,7 @@ chain-settings:
       label: Arbitrum One
       type: eth
       settings:
+        mev-critical: true
         expected-block-time: 260ms
         allow-pruning-requirement: true
         options:
@@ -165,6 +166,8 @@ chain-settings:
           grpcId: 10051
           short-names: [arbitrum-sepolia]
           chain-id: 0x66eee
+          settings:
+            mev-critical: false
     - id: optimism
       label: Optimism
       type: eth
