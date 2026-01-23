@@ -2178,11 +2178,23 @@ chain-settings:
           syncing: 80
           lagging: 40
       chains:
+        - id: Mainnet
+          priority: 100
+          code: MEGAETH_MAINNET
+          grpcId: 1148
+          short-names: [megaeth]
+          chain-id: 0x10e6
         - id: MegaETH Testnet
+          priority: 50
+          code: MEGAETH_TESTNET_V2
+          grpcId: 10185
+          short-names: [megaeth-testnet]
+          chain-id: 0x18c7
+        - id: MegaETH Testnet Deprecated
           priority: 10
           code: MEGAETH_TESTNET
           grpcId: 10137
-          short-names: [megaeth-testnet]
+          short-names: [megaeth-deprecated]
           chain-id: 0x18c6
     - id: 0g
       label: 0G
