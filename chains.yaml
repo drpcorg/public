@@ -1870,10 +1870,10 @@ chain-settings:
           lower-bounds:
             tx:
               block: 1
-              hash: "0x38ec0570c848e1314ef1a52115eb8f86bb1827680a4c185112b8074e440b3ca8"
+              hash: "0x278bcb7c2d58e950f299650d75716031029a8a62582b7da397778b9a8282b482"
             receipts:
               block: 1
-              hash: "0x38ec0570c848e1314ef1a52115eb8f86bb1827680a4c185112b8074e440b3ca8"
+              hash: "0x278bcb7c2d58e950f299650d75716031029a8a62582b7da397778b9a8282b482"
         - id: Mainnet
           priority: 100
           code: FRAXTAL_MAINNET
@@ -1883,10 +1883,10 @@ chain-settings:
           lower-bounds:
             tx:
               block: 1
-              hash: "0x278bcb7c2d58e950f299650d75716031029a8a62582b7da397778b9a8282b482"
+              hash: "0x38ec0570c848e1314ef1a52115eb8f86bb1827680a4c185112b8074e440b3ca8"
             receipts:
               block: 1
-              hash: "0x278bcb7c2d58e950f299650d75716031029a8a62582b7da397778b9a8282b482"
+              hash: "0x38ec0570c848e1314ef1a52115eb8f86bb1827680a4c185112b8074e440b3ca8"
     - id: tron
       label: Tron
       type: eth
