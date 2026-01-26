@@ -47,6 +47,13 @@ chain-settings:
           grpcId: 100
           priority: 100
           call-validate-contract: 0x32268860cAAc2948Ab5DdC7b20db5a420467Cf96
+          lower-bounds:
+            tx:
+              block: 46147
+              hash: "0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060"
+            receipts:
+              block: 46147
+              hash: "0x5c504ed432cb51138bcf09aa5e8a410dd4a1e204ef84bfed1be16dfba1b22060"
         - id: Sepolia
           code: SEPOLIA
           grpcId: 10008
@@ -62,6 +69,13 @@ chain-settings:
           call-validate-contract: 0x32268860caac2948ab5ddc7b20db5a420467cf96
           chain-id: 0x4268
           short-names: [holesky, ethereum-holesky]
+          lower-bounds:
+            tx:
+              block: 3
+              hash: "0xc2956d73fe07401fe41e196b22aad3aba48f65cd5a0da29eb2181567f83eaa57"
+            receipts:
+              block: 3
+              hash: "0xc2956d73fe07401fe41e196b22aad3aba48f65cd5a0da29eb2181567f83eaa57"
           settings:
             mev-critical: false
         - id: Hoodi
@@ -70,6 +84,13 @@ chain-settings:
           priority: 15
           chain-id: 0x88bb0
           short-names: [hoodi, ethereum-hoodi]
+          lower-bounds:
+            tx:
+              block: 2
+              hash: "0xc2b93508112a135ac771f3209aa8e58ad3d24ec7345bfe927c9266fc3ff43982"
+            receipts:
+              block: 2
+              hash: "0xc2b93508112a135ac771f3209aa8e58ad3d24ec7345bfe927c9266fc3ff43982"
           settings:
             mev-critical: false
     - id: ethereum-classic
@@ -160,12 +181,26 @@ chain-settings:
           grpcId: 1004
           short-names: [arbitrum, arb, arbitrum-mainnet]
           chain-id: 0xa4b1
+          lower-bounds:
+            tx:
+              block: 2
+              hash: "0x5f20ff43e91a85334d4b4d876089ab06270fd636c2d7033c2edbd51f503e2e86"
+            receipts:
+              block: 2
+              hash: "0x5f20ff43e91a85334d4b4d876089ab06270fd636c2d7033c2edbd51f503e2e86"
         - id: Sepolia
           priority: 10
           code: ARBITRUM_SEPOLIA
           grpcId: 10051
           short-names: [arbitrum-sepolia]
           chain-id: 0x66eee
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x873c5ee3092c40336006808e249293bf5f4cb3235077a74cac9cafa7cf73cb8b"
+            receipts:
+              block: 1
+              hash: "0x873c5ee3092c40336006808e249293bf5f4cb3235077a74cac9cafa7cf73cb8b"
           settings:
             mev-critical: false
     - id: optimism
@@ -186,12 +221,26 @@ chain-settings:
           grpcId: 1005
           short-names: [optimism, optimism-mainnet]
           chain-id: 0xa
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x5e77a04531c7c107af1882d76cbff9486d0a9aa53701c30888509d4f5f2b003a"
+            receipts:
+              block: 1
+              hash: "0x5e77a04531c7c107af1882d76cbff9486d0a9aa53701c30888509d4f5f2b003a"
         - id: Sepolia
           priority: 10
           code: OPTIMISM_SEPOLIA
           grpcId: 10038
           short-names: [optimism-sepolia]
           chain-id: 0xaa37dc
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x99f3bd4742b3e0fc9958775035a74f9453005abbac5294a6c39aa8b2a9ef6aa1"
+            receipts:
+              block: 1
+              hash: "0x99f3bd4742b3e0fc9958775035a74f9453005abbac5294a6c39aa8b2a9ef6aa1"
     - id: bsc
       label: BNB Smart Chain
       type: eth
@@ -213,12 +262,26 @@ chain-settings:
             - ne 3000000000
             - ne 5000000000
           call-validate-contract: 0x29fa9fc9e0fffec904124d179ddcc41f5528db7c
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0xc02fd5fc71fe8bdc4fec3f97a019a4dc9961eb95e5251c55fcb3da76f5cb5bca"
+            receipts:
+              block: 1
+              hash: "0xc02fd5fc71fe8bdc4fec3f97a019a4dc9961eb95e5251c55fcb3da76f5cb5bca"
         - id: Testnet
           priority: 1
           code: BSC_TESTNET
           grpcId: 10026
           short-names: [bsc-testnet]
           chain-id: 0x61
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0xc9840dec90761416af7a6dad2f26d7d87c273ac50c63e552e76739e19e05bfee"
+            receipts:
+              block: 1
+              hash: "0xc9840dec90761416af7a6dad2f26d7d87c273ac50c63e552e76739e19e05bfee"
     - id: polygon-zkevm
       label: Polygon zkEVM
       type: eth
@@ -281,12 +344,26 @@ chain-settings:
           grpcId: 1009
           chain-id: 0x144
           short-names: [zksync, zksync-mainnet]
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0xec06ab90e8cbada2b205874567504ceed9e005df452a997472823a8b59cb30ec"
+            receipts:
+              block: 1
+              hash: "0xec06ab90e8cbada2b205874567504ceed9e005df452a997472823a8b59cb30ec"
         - id: Sepolia
           priority: 1
           code: ZKS_SEPOLIA
           grpcId: 10046
           chain-id: 0x12c
           short-names: [zksync-sepolia]
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0xf268b33d93368b25ead3f7c8e0eeb2aacc3c09331eeb447df238ada4bf3a94f5"
+            receipts:
+              block: 1
+              hash: "0xf268b33d93368b25ead3f7c8e0eeb2aacc3c09331eeb447df238ada4bf3a94f5"
     - id: base
       label: Base
       type: eth
@@ -305,12 +382,26 @@ chain-settings:
           grpcId: 1010
           short-names: [base, base-mainnet]
           chain-id: 0x2105
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x68736fb400dc3b69ab1c4c2cbe75a600aa7ba7cd8d025797ebd8a0108955c91f"
+            receipts:
+              block: 1
+              hash: "0x68736fb400dc3b69ab1c4c2cbe75a600aa7ba7cd8d025797ebd8a0108955c91f"
         - id: Sepolia
           priority: 2
           code: BASE_SEPOLIA
           grpcId: 10040
           short-names: [base-sepolia]
           chain-id: 0x14a34
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0xf9e8243ffc57f8760d5c72a7e86e3e99d7b6818c3be5f313dc4a00aa20805e84"
+            receipts:
+              block: 1
+              hash: "0xf9e8243ffc57f8760d5c72a7e86e3e99d7b6818c3be5f313dc4a00aa20805e84"
     - id: linea
       label: Linea
       type: eth
@@ -329,12 +420,26 @@ chain-settings:
             - ne 1000000000 # misconfiguration in official docs
           short-names: [linea, linea-mainnet]
           chain-id: 0xe708
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x264da3cb88f2fab9ddcbb789fa5e9ae744b6a786d441515ee976b62daaca84d8"
+            receipts:
+              block: 1
+              hash: "0x264da3cb88f2fab9ddcbb789fa5e9ae744b6a786d441515ee976b62daaca84d8"
         - id: Sepolia
           priority: 2
           code: LINEA_SEPOLIA
           grpcId: 10074
           short-names: [linea-sepolia]
           chain-id: 0xe705
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0xdc5171361b96564a9ad50caa4426bd0f8f1ac926f1ebb15b4f4153d7a5015beb"
+            receipts:
+              block: 1
+              hash: "0xdc5171361b96564a9ad50caa4426bd0f8f1ac926f1ebb15b4f4153d7a5015beb"
     - id: gnosis
       label: Gnosis
       type: eth
@@ -353,12 +458,26 @@ chain-settings:
           grpcId: 1012
           short-names: [gnosis, gnosis-mainnet]
           chain-id: 0x64
+          lower-bounds:
+            tx:
+              block: 27
+              hash: "0x72cfa2e3f138c7ac88adff111667e9236cdd6f693021f2a53ae88ce578c3b1e0"
+            receipts:
+              block: 27
+              hash: "0x72cfa2e3f138c7ac88adff111667e9236cdd6f693021f2a53ae88ce578c3b1e0"
         - id: Chiado
           priority: 1
           code: GNOSIS_CHIADO
           grpcId: 10017
           short-names: [gnosis-chiado]
           chain-id: 0x27d8
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x7c6e15f48f87a6597704414ac586ea38398b153cc688903a43f026ada4acbaaa"
+            receipts:
+              block: 1
+              hash: "0x7c6e15f48f87a6597704414ac586ea38398b153cc688903a43f026ada4acbaaa"
     - id: avalanche
       label: Avalanche
       type: eth
@@ -377,12 +496,26 @@ chain-settings:
           grpcId: 1013
           short-names: [avalanche, avalanche-mainnet]
           chain-id: 0xa86a
+          lower-bounds:
+            tx:
+              block: 2
+              hash: "0x4e8e71cb8fece25ece093e36a60b52a35fb352639b8e237caddbabb3c2caacfb"
+            receipts:
+              block: 2
+              hash: "0x4e8e71cb8fece25ece093e36a60b52a35fb352639b8e237caddbabb3c2caacfb"
         - id: Fuji
           priority: 1
           code: AVALANCHE_FUJI
           grpcId: 10018
           short-names: [avalanche-fuji]
           chain-id: 0xa869
+          lower-bounds:
+            tx:
+              block: 3
+              hash: "0x54e6f689d70169a7cf5923a4e79b959c118e90ac58dc9f9f95aebde581c9e307"
+            receipts:
+              block: 3
+              hash: "0x54e6f689d70169a7cf5923a4e79b959c118e90ac58dc9f9f95aebde581c9e307"
     - id: aurora
       label: Aurora
       type: eth
@@ -539,12 +672,26 @@ chain-settings:
           grpcId: 10025
           short-names: [scroll-sepolia]
           chain-id: 0x8274f
+          lower-bounds:
+            tx:
+              block: 2
+              hash: "0x1fbb0b3bb8e1c30cf627efe462630273c0a70f8979daf8cb89b5f85eeb9b3e85"
+            receipts:
+              block: 2
+              hash: "0x1fbb0b3bb8e1c30cf627efe462630273c0a70f8979daf8cb89b5f85eeb9b3e85"
         - id: Mainnet
           priority: 100
           code: SCROLL_MAINNET
           grpcId: 1016
           short-names: [scroll, scroll-mainnet]
           chain-id: 0x82750
+          lower-bounds:
+            tx:
+              block: 2
+              hash: "0xa2062a4530b194a438bb9f9e87cdce59f70775a52e8336892364445847c43ca2"
+            receipts:
+              block: 2
+              hash: "0xa2062a4530b194a438bb9f9e87cdce59f70775a52e8336892364445847c43ca2"
     - id: cronos
       label: Cronos
       type: eth
@@ -609,12 +756,26 @@ chain-settings:
           short-names: [opbnb, opbnb-mainnet]
           chain-id: 0xcc
           grpcId: 1024
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x83e338c824c76d4d13f1da7da61b4115e2dfd5d6bf74e394c77396b5d263a7af"
+            receipts:
+              block: 1
+              hash: "0x83e338c824c76d4d13f1da7da61b4115e2dfd5d6bf74e394c77396b5d263a7af"
         - id: Testnet
           priority: 1
           code: OPBNB_TESTNET
           short-names: [opbnb-testnet]
           chain-id: 0x15eb
           grpcId: 10032
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x65213846e807e485c9b62c15b3fb47eea19af3b37c650d2d05440e93bd2e5e47"
+            receipts:
+              block: 1
+              hash: "0x65213846e807e485c9b62c15b3fb47eea19af3b37c650d2d05440e93bd2e5e47"
     - id: kava
       label: Kava
       type: eth
@@ -963,6 +1124,13 @@ chain-settings:
           short-names: [berachain, berachain-mainnet]
           chain-id: 0x138de
           grpcId: 1099
+          lower-bounds:
+            tx:
+              block: 938
+              hash: "0x44657c8439ccea06d9b881fbce82a1859d85882453bbbba457b611669608c07e"
+            receipts:
+              block: 938
+              hash: "0x44657c8439ccea06d9b881fbce82a1859d85882453bbbba457b611669608c07e"
         - id: bArtio
           priority: 10
           code: BERACHAIN_BARTIO
@@ -1302,12 +1470,26 @@ chain-settings:
           grpcId: 1048
           short-names: [core, core-mainnet]
           chain-id: 0x45c
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x6cc6b4bf7a68dcb554b94545ebaa339433b6aa04eb005de0d5dda2b5918dc586"
+            receipts:
+              block: 1
+              hash: "0x6cc6b4bf7a68dcb554b94545ebaa339433b6aa04eb005de0d5dda2b5918dc586"
         - id: Testnet
           priority: 1
           code: CORE_TESTNET
           grpcId: 10062
           short-names: [core-testnet]
           chain-id: 0x45a
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x65269c066cdad3fc90a68e73a75e35ef4e7dde8730d6a5cf7e4e37cddafd1bc5"
+            receipts:
+              block: 1
+              hash: "0x65269c066cdad3fc90a68e73a75e35ef4e7dde8730d6a5cf7e4e37cddafd1bc5"
     - id: telos
       label: Telos
       type: eth
@@ -1685,12 +1867,26 @@ chain-settings:
           short-names: [fraxtal-testnet]
           chain-id: 0x9db
           grpcId: 10090
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x38ec0570c848e1314ef1a52115eb8f86bb1827680a4c185112b8074e440b3ca8"
+            receipts:
+              block: 1
+              hash: "0x38ec0570c848e1314ef1a52115eb8f86bb1827680a4c185112b8074e440b3ca8"
         - id: Mainnet
           priority: 100
           code: FRAXTAL_MAINNET
           short-names: [fraxtal, fraxtal-mainnet]
           chain-id: 0xfc
           grpcId: 1065
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x278bcb7c2d58e950f299650d75716031029a8a62582b7da397778b9a8282b482"
+            receipts:
+              block: 1
+              hash: "0x278bcb7c2d58e950f299650d75716031029a8a62582b7da397778b9a8282b482"
     - id: tron
       label: Tron
       type: eth
@@ -1905,12 +2101,26 @@ chain-settings:
           grpcId: 1078
           short-names: [xlayer, xlayer-mainnet]
           chain-id: 0xc4
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x9dd77d9ffd0a502104bee24a831f1330634fab44599520fcd7235cfde07ee8d8"
+            receipts:
+              block: 1
+              hash: "0x9dd77d9ffd0a502104bee24a831f1330634fab44599520fcd7235cfde07ee8d8"
         - id: Testnet
           priority: 1
           code: XLAYER_TESTNET
           grpcId: 10099
           short-names: [xlayer-testnet]
           chain-id: 0x7a0
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x98d9cc56186aa8fe4bc75f9f1dd5befae9a75409a891965b684d104c44e7a2e9"
+            receipts:
+              block: 1
+              hash: "0x98d9cc56186aa8fe4bc75f9f1dd5befae9a75409a891965b684d104c44e7a2e9"
     - id: sei
       label: Sei
       type: eth
@@ -1985,12 +2195,26 @@ chain-settings:
           grpcId: 10140
           short-names: [sonic-testnet-v2]
           chain-id: 0x3909
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x8bf295a118ea3c5fb8e1c2bdefafa15fdbc4864ba530c3b234b9e45a5abf56da"
+            receipts:
+              block: 1
+              hash: "0x8bf295a118ea3c5fb8e1c2bdefafa15fdbc4864ba530c3b234b9e45a5abf56da"
         - id: Mainnet
           priority: 100
           code: SONIC_MAINNET
           grpcId: 1087
           short-names: [sonic, sonic-mainnet]
           chain-id: 0x92
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x1a3f5a6190e10d5cf932252c38296ff98136c7f51cce65138bee8675aff1adf2"
+            receipts:
+              block: 1
+              hash: "0x1a3f5a6190e10d5cf932252c38296ff98136c7f51cce65138bee8675aff1adf2"
     - id: lens
       label: Lens Network
       type: eth
@@ -2033,12 +2257,26 @@ chain-settings:
           grpcId: 1081
           short-names: [unichain, unichain-mainnet]
           chain-id: 0x82
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x7c8342fcc504c5989537b07d5c3a28e96baae087fce5eca1cc96eba10d0e8105"
+            receipts:
+              block: 1
+              hash: "0x7c8342fcc504c5989537b07d5c3a28e96baae087fce5eca1cc96eba10d0e8105"
         - id: Sepolia
           priority: 1
           code: UNICHAIN_SEPOLIA
           grpcId: 10105
           short-names: [unichain-sepolia]
           chain-id: 0x515
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x0dc5360562f462f047b52ca09453e647da709ae29de488d1ef652d7159b099f2"
+            receipts:
+              block: 1
+              hash: "0x0dc5360562f462f047b52ca09453e647da709ae29de488d1ef652d7159b099f2"
     - id: apechain
       label: Apechain
       type: eth
@@ -2056,12 +2294,26 @@ chain-settings:
           grpcId: 1082
           short-names: [apechain, apechain-mainnet]
           chain-id: 0x8173
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x248bdfad26bd0d748a893c8b4cb138a0b921576d4d9ab88e9c04d590c9f2a722"
+            receipts:
+              block: 1
+              hash: "0x248bdfad26bd0d748a893c8b4cb138a0b921576d4d9ab88e9c04d590c9f2a722"
         - id: Curtis
           priority: 1
           code: APECHAIN_CURTIS
           grpcId: 10106
           short-names: [apechain-curtis]
           chain-id: 0x8157
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x0fae9159405e49f2db2b31ea04010eab814b997f33551f21bea7e7d5c149f758"
+            receipts:
+              block: 1
+              hash: "0x0fae9159405e49f2db2b31ea04010eab814b997f33551f21bea7e7d5c149f758"
     - id: soneium
       label: Soneium
       type: eth
@@ -2079,12 +2331,26 @@ chain-settings:
           grpcId: 1095
           short-names: [soneium, soneium-mainnet]
           chain-id: 0x74c
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x600db68a969b1d79f86e100ef98ca5c023aac485d20fd9a062c2bb0e21a2ec91"
+            receipts:
+              block: 1
+              hash: "0x600db68a969b1d79f86e100ef98ca5c023aac485d20fd9a062c2bb0e21a2ec91"
         - id: Minato
           priority: 1
           code: SONEIUM_MINATO
           grpcId: 10107
           short-names: [soneium-minato]
           chain-id: 0x79a
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x93dacd96f305fe6d81db160327b0ba1bc4ff3a2210966d2bda1b7642b5ed0c34"
+            receipts:
+              block: 1
+              hash: "0x93dacd96f305fe6d81db160327b0ba1bc4ff3a2210966d2bda1b7642b5ed0c34"
     - id: zero
       label: Zero Network
       type: eth
@@ -2163,12 +2429,26 @@ chain-settings:
           grpcId: 1086
           short-names: [viction, viction-mainnet]
           chain-id: 0x58
+          lower-bounds:
+            tx:
+              block: 3
+              hash: "0x0aac059c69762c4d278c58e6f5621a3371ff57d43a9e86605523f963c37af4df"
+            receipts:
+              block: 3
+              hash: "0x0aac059c69762c4d278c58e6f5621a3371ff57d43a9e86605523f963c37af4df"
         - id: Testnet
           priority: 1
           code: VICTION_TESTNET
           grpcId: 10112
           short-names: [viction-testnet]
           chain-id: 0x59
+          lower-bounds:
+            tx:
+              block: 3
+              hash: "0xc17b45fd4e61950087ff5fd09a3dac61a77cfe41025c1a42f6b927b27d6bf723"
+            receipts:
+              block: 3
+              hash: "0xc17b45fd4e61950087ff5fd09a3dac61a77cfe41025c1a42f6b927b27d6bf723"
     - id: megaeth
       label: megaETH
       type: eth
@@ -2449,12 +2729,26 @@ chain-settings:
           grpcId: 1107
           short-names: [monad-mainnet, monad]
           chain-id: 0x8f
+          lower-bounds:
+            tx:
+              block: 45216
+              hash: "0xc9b4bbebb2e3c52d70297cfafe4e7726dbcac8d23a41672697028dd0637b2e52"
+            receipts:
+              block: 45216
+              hash: "0xc9b4bbebb2e3c52d70297cfafe4e7726dbcac8d23a41672697028dd0637b2e52"
         - id: Testnet
           priority: 1
           code: MONAD_TESTNET
           grpcId: 10124
           short-names: [monad-testnet]
           chain-id: 0x279f
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x7ba80a48fec9c6d05b07addb7b1c6ad990e518d6335003b575061975c697426e"
+            receipts:
+              block: 1
+              hash: "0x7ba80a48fec9c6d05b07addb7b1c6ad990e518d6335003b575061975c697426e"
     - id: dogecoin
       label: Dogecoin
       type: bitcoin
@@ -2673,6 +2967,13 @@ chain-settings:
           grpcId: 1108
           short-names: [shibarium, shibarium-mainnet]
           chain-id: 0x6d
+          lower-bounds:
+            tx:
+              block: 40374
+              hash: "0x85bfe02c996e6fb8923bfc0c612ebf97af51b16b630fab98488355c0929e7a8a"
+            receipts:
+              block: 40374
+              hash: "0x85bfe02c996e6fb8923bfc0c612ebf97af51b16b630fab98488355c0929e7a8a"
     - id: plasma
       label: Plasma
       type: eth
