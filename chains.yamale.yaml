@@ -51,3 +51,4 @@ chain:
   call-validate-contract: int(required=False)
   net-version: int(required=False)
   settings: map(str(), any(), required=False)
+  lower-bounds: map(str(), any(), required=False)
