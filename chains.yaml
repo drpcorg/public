@@ -97,7 +97,6 @@ chain-settings:
       label: Ethereum Classic
       type: eth
       settings:
-        disabled: true
         expected-block-time: 12s
         lags:
           syncing: 6
