@@ -3205,11 +3205,11 @@ chain-settings:
           lagging: 20
       chains:
         - id: Mainnet
-          priority: 5
+          priority: 100
           code: TEMPO_MAINNET
-          grpcId: 10186
+          grpcId: 1149
           chain-id: 0x1079
-          short-names: [tempo-mainnet]
+          short-names: [tempo-mainnet, tempo]
         - id: Testnet
           priority: 10
           code: TEMPO_TESTNET
