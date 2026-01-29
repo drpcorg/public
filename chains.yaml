@@ -3768,4 +3768,10 @@ chain-settings:
           grpcId: 10186
           chain-id: 0xaa36a7
           short-names: [aztec-testnet]
+        - id: Devnet
+          priority: 1
+          code: AZTEC_DEVNET
+          grpcId: 10187
+          chain-id: 0xaa36a7
+          short-names: [aztec-devnet]
    
