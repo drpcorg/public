@@ -3747,6 +3747,7 @@ chain-settings:
           grpcId: 10183
     - id: aztec
       label: Aztec
+      type: aztec
       settings:
         expected-block-time: 36s
         options:
