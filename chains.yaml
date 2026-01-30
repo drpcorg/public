@@ -3760,18 +3760,18 @@ chain-settings:
         #   priority: 100
         #   code: AZTEC_MAINNET
         #   grpcId: 1150
-        #   chain-id: 0x1
+        #   chain-id: 0x1 # potential breaking change - same id as Eth
         #   short-names: [aztec-mainnet, aztec]
         - id: Testnet
           priority: 10
           code: AZTEC_TESTNET
           grpcId: 10186
-          chain-id: 0xaa36a7
+          chain-id: 0xaa36a7 # potential breaking change - same id as Eth
           short-names: [aztec-testnet]
         - id: Devnet
           priority: 1
           code: AZTEC_DEVNET
           grpcId: 10187
-          chain-id: 0xaa36a7
+          chain-id: 0xaa36a7 # potential breaking change - same id as Eth
           short-names: [aztec-devnet]
    
