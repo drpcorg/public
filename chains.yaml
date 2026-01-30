@@ -3756,12 +3756,12 @@ chain-settings:
           syncing: 40
           lagging: 20
       chains:
-        - id: Mainnet
-          priority: 100
-          code: AZTEC_MAINNET
-          grpcId: 1150
-          chain-id: 0x1
-          short-names: [aztec-mainnet, aztec]
+        # - id: Mainnet
+        #   priority: 100
+        #   code: AZTEC_MAINNET
+        #   grpcId: 1150
+        #   chain-id: 0x1
+        #   short-names: [aztec-mainnet, aztec]
         - id: Testnet
           priority: 10
           code: AZTEC_TESTNET
