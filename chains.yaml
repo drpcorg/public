@@ -3745,33 +3745,33 @@ chain-settings:
           short-names: [zkverify-testnet]
           chain-id: ZkVerify Testnet
           grpcId: 10183
-    - id: aztec
-      label: Aztec
-      type: eth
-      settings:
-        expected-block-time: 36s
-        options:
-          validate-peers: false
-        lags:
-          syncing: 40
-          lagging: 20
-      chains:
+    # - id: aztec
+    #   label: Aztec
+    #   type: eth
+    #   settings:
+    #     expected-block-time: 36s
+    #     options:
+    #       validate-peers: false
+    #     lags:
+    #       syncing: 40
+    #       lagging: 20
+    #   chains:
         # - id: Mainnet
         #   priority: 100
         #   code: AZTEC_MAINNET
         #   grpcId: 1150
         #   chain-id: 0x1 # potential breaking change - same id as Eth
         #   short-names: [aztec-mainnet, aztec]
-        - id: Testnet
-          priority: 10
-          code: AZTEC_TESTNET
-          grpcId: 10186
-          chain-id: 0xaa36a7 # potential breaking change - same id as Eth
-          short-names: [aztec-testnet]
-        - id: Devnet
-          priority: 1
-          code: AZTEC_DEVNET
-          grpcId: 10187
-          chain-id: 0xaa36a7 # potential breaking change - same id as Eth
-          short-names: [aztec-devnet]
+        # - id: Testnet
+        #   priority: 10
+        #   code: AZTEC_TESTNET
+        #   grpcId: 10186
+        #   chain-id: 0xaa36a7 # potential breaking change - same id as Eth
+        #   short-names: [aztec-testnet]
+        # - id: Devnet
+        #   priority: 1
+        #   code: AZTEC_DEVNET
+        #   grpcId: 10187
+        #   chain-id: 0xaa36a7 # potential breaking change - same id as Eth
+        #   short-names: [aztec-devnet]
    
