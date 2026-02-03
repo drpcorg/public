@@ -248,7 +248,7 @@ chain-settings:
         allow-pruning-requirement: true
         mev-critical: true
         lags:
-          syncing: 100
+          syncing: 1000
           lagging: 50
       chains:
         - id: Mainnet
