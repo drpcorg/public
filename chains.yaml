@@ -3749,6 +3749,7 @@ chain-settings:
       label: Aztec
       type: aztec
       settings:
+        fork-choice: height
         expected-block-time: 36s
         options:
           validate-peers: false
