@@ -3775,4 +3775,27 @@ chain-settings:
           grpcId: 10187
           chain-id: 0xaa36a7 # L1 chain id (Ethereum Sepolia)
           short-names: [aztec-devnet]
-   
+    - id: moca
+      label: Moca
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: MOCA_MAINNET
+          short-names: [moca, moca-mainnet]
+          chain-id: 0x8f0
+          grpcId: 1151
+        - id: Testnet
+          priority: 10
+          code: MOCA_TESTNET
+          short-names: [moca-testnet]
+          chain-id: 0x366a8
+          grpcId: 10188
+
