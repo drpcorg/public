@@ -1279,7 +1279,7 @@ chain-settings:
           code: RONIN_SAIGON
           grpcId: 10102
           short-names: [ronin-saigon]
-          chain-id: 0x7e5
+          chain-id: 0x31769
     - id: neon-evm
       label: Neon EVM
       type: eth
