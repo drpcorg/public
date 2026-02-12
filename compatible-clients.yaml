@@ -15,3 +15,8 @@ rules:
       - bsc
     blacklist:
       - "reth/v1.6.0-2a4968e/x86_64-unknown-linux-gnu"
+  - client: reth
+    networks:
+      - base
+    blacklist:
+      - v1.9.3
