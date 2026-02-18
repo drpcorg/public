@@ -3221,7 +3221,7 @@ chain-settings:
           code: TEMPO_MODERATO_TESTNET
           grpcId: 10184
           chain-id: 0xa5bf
-          short-names: [tempo-moderato-testnet]        
+          short-names: [tempo-moderato-testnet]
     - id: xdc
       label: XDC
       type: eth
@@ -3838,3 +3838,26 @@ chain-settings:
           short-names: [flow-testnet]
           chain-id: 0x221
           grpcId: 10189
+    - id: hedera
+      label: Hedera
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: HEDERA_MAINNET
+          short-names: [hedera, hedera-mainnet]
+          chain-id: 0x127
+          grpcId: 1154
+        - id: Testnet
+          priority: 10
+          code: HEDERA_TESTNET
+          short-names: [hedera-testnet]
+          chain-id: 0x128
+          grpcId: 10190

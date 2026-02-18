@@ -1314,3 +1314,17 @@
   chain-id: 545
   explorers:
     - https://evm-testnet.flowscan.io
+- currency:
+    name: HBAR
+    symbol: HBAR
+    decimals: 18
+  chain-id: 295
+  explorers:
+    - https://hashscan.io
+- currency:
+    name: HBAR
+    symbol: HBAR
+    decimals: 18
+  chain-id: 296
+  explorers:
+    - https://hashscan.io/testnet
