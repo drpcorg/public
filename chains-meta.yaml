@@ -1293,3 +1293,10 @@
   chain-id: 9372
   explorers:
     - https://explorer.testnet.oasys.games
+- currency:
+    name: Centrifuge
+    symbol: CFG
+    decimals: 18
+  chain-id: 2031
+  explorers:
+    - https://centrifuge.subscan.io
