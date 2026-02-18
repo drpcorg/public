@@ -3815,3 +3815,26 @@ chain-settings:
           short-names: [centrifuge, centrifuge-mainnet]
           chain-id: 0x7ef
           grpcId: 1152
+    - id: flow
+      label: Flow
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: FLOW_MAINNET
+          short-names: [flow, flow-mainnet]
+          chain-id: 0x2eb
+          grpcId: 1153
+        - id: Testnet
+          priority: 10
+          code: FLOW_TESTNET
+          short-names: [flow-testnet]
+          chain-id: 0x221
+          grpcId: 10189

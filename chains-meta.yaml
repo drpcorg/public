@@ -1300,3 +1300,17 @@
   chain-id: 2031
   explorers:
     - https://centrifuge.subscan.io
+- currency:
+    name: Flow
+    symbol: FLOW
+    decimals: 18
+  chain-id: 747
+  explorers:
+    - https://evm.flowscan.io
+- currency:
+    name: Flow
+    symbol: FLOW
+    decimals: 18
+  chain-id: 545
+  explorers:
+    - https://evm-testnet.flowscan.io
