@@ -137,7 +137,6 @@ chain-settings:
       label: Polygon
       type: eth
       settings:
-        mev-critical: true
         expected-block-time: 2.7s
         allow-pruning-requirement: true
         options:
