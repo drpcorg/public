@@ -1294,13 +1294,6 @@
   explorers:
     - https://explorer.testnet.oasys.games
 - currency:
-    name: Centrifuge
-    symbol: CFG
-    decimals: 18
-  chain-id: 2031
-  explorers:
-    - https://centrifuge.subscan.io
-- currency:
     name: Flow
     symbol: FLOW
     decimals: 18
