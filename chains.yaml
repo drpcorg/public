@@ -3798,23 +3798,6 @@ chain-settings:
           short-names: [moca-testnet]
           chain-id: 0x366a8
           grpcId: 10188
-    - id: centrifuge
-      label: Centrifuge
-      type: eth
-      settings:
-        expected-block-time: 12s
-        options:
-          validate-peers: false
-        lags:
-          syncing: 10
-          lagging: 5
-      chains:
-        - id: Mainnet
-          priority: 100
-          code: CENTRIFUGE_MAINNET
-          short-names: [centrifuge, centrifuge-mainnet]
-          chain-id: 0x7ef
-          grpcId: 1152
     - id: flow
       label: Flow
       type: eth
@@ -3831,7 +3814,7 @@ chain-settings:
           code: FLOW_MAINNET
           short-names: [flow, flow-mainnet]
           chain-id: 0x2eb
-          grpcId: 1153
+          grpcId: 1152
         - id: Testnet
           priority: 10
           code: FLOW_TESTNET
@@ -3854,7 +3837,7 @@ chain-settings:
           code: HEDERA_MAINNET
           short-names: [hedera, hedera-mainnet]
           chain-id: 0x127
-          grpcId: 1154
+          grpcId: 1153
         - id: Testnet
           priority: 10
           code: HEDERA_TESTNET
