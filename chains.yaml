@@ -3179,6 +3179,7 @@ chain-settings:
           code: XRPL_MAINNET
           grpcId: 1118
           chain-id: 0x15f900
+          net-version: 262144
           short-names: [xrpl, xrpl-mainnet]
         - id: Testnet
           priority: 10
