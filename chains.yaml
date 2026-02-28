@@ -2709,7 +2709,7 @@ chain-settings:
           code: PLUME_TESTNET
           grpcId: 10123
           short-names: [plume-testnet]
-          chain-id: 0x99c0a0f
+          chain-id: 0x18233
     - id: monad
       label: Monad
       type: eth
