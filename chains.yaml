@@ -137,6 +137,7 @@ chain-settings:
       label: Polygon
       type: eth
       settings:
+        method-spec: "polygon"
         expected-block-time: 2.7s
         allow-pruning-requirement: true
         options:
@@ -164,6 +165,7 @@ chain-settings:
       label: Arbitrum One
       type: eth
       settings:
+        method-spec: "arbitrum"
         mev-critical: true
         expected-block-time: 260ms
         allow-pruning-requirement: true
@@ -205,6 +207,7 @@ chain-settings:
       label: Optimism
       type: eth
       settings:
+        method-spec: "optimism"
         expected-block-time: 2s
         allow-pruning-requirement: true
         options:
@@ -284,6 +287,7 @@ chain-settings:
       label: Polygon zkEVM
       type: eth
       settings:
+        method-spec: "polygon-zkevm"
         options:
           validate-peers: false
         expected-block-time: 2.7s
@@ -328,6 +332,7 @@ chain-settings:
       label: zkSync Era
       type: eth
       settings:
+        method-spec: "zksync"
         expected-block-time: 5s
         allow-pruning-requirement: true
         lags:
@@ -404,6 +409,7 @@ chain-settings:
       label: Linea
       type: eth
       settings:
+        method-spec: "linea"
         expected-block-time: 12s
         allow-pruning-requirement: true
         lags:
@@ -541,6 +547,7 @@ chain-settings:
       label: Mantle
       type: eth
       settings:
+        method-spec: "mantle"
         expected-block-time: 2s
         allow-pruning-requirement: true
         options:
@@ -565,6 +572,7 @@ chain-settings:
       label: Kaia
       type: eth
       settings:
+        method-spec: "klaytn"
         expected-block-time: 1s
         allow-pruning-requirement: true
         options:
@@ -657,6 +665,7 @@ chain-settings:
       label: Scroll
       type: eth
       settings:
+        method-spec: "scroll"
         expected-block-time: 3s
         options:
           validate-peers: false
@@ -924,6 +933,7 @@ chain-settings:
       label: Filecoin
       type: eth
       settings:
+        method-spec: "filecoin"
         expected-block-time: 1m
         lags:
           syncing: 20
@@ -1098,12 +1108,14 @@ chain-settings:
           code: HARMONY_MAINNET_SHARD_0
           short-names: [harmony-0, harmony-mainnet-0]
           chain-id: 0x63564c40
+          method-spec: "harmony0"
           grpcId: 1034
         - id: Mainnet Shard 1
           priority: 10
           code: HARMONY_MAINNET_SHARD_1
           short-names: [harmony-1, harmony-mainnet-1]
           chain-id: 0x63564c41
+          method-spec: "harmony1"
           grpcId: 1035
     - id: berachain
       label: Berachain
@@ -1742,6 +1754,7 @@ chain-settings:
       label: Rootstock
       type: eth
       settings:
+        method-spec: "rootstock"
         options:
           validate-peers: false
           disable-liveness-subscription-validation: true
@@ -2123,6 +2136,7 @@ chain-settings:
       label: Sei
       type: eth
       settings:
+        method-spec: "sei"
         expected-block-time: 200ms
         options:
           validate-peers: false
@@ -2393,6 +2407,7 @@ chain-settings:
       label: Cronos zkEVM
       type: eth
       settings:
+        method-spec: "cronos-zkevm"
         expected-block-time: 1s
         lags:
           syncing: 10
@@ -2416,6 +2431,7 @@ chain-settings:
       label: Viction
       type: eth
       settings:
+        method-spec: "viction"
         expected-block-time: 2s
         lags:
           syncing: 10
