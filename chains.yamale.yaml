@@ -18,6 +18,7 @@ protocol:
 
 ---
 settings:
+  method-spec: str(required=False)
   currency: str(required=False)
   expected-block-time: str()
   lags: include('lags')
@@ -52,3 +53,4 @@ chain:
   net-version: int(required=False)
   settings: map(str(), any(), required=False)
   lower-bounds: map(str(), any(), required=False)
+  method-spec: str(required=False)
