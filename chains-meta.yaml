@@ -1293,3 +1293,31 @@
   chain-id: 9372
   explorers:
     - https://explorer.testnet.oasys.games
+- currency:
+    name: Flow
+    symbol: FLOW
+    decimals: 18
+  chain-id: 747
+  explorers:
+    - https://evm.flowscan.io
+- currency:
+    name: Flow
+    symbol: FLOW
+    decimals: 18
+  chain-id: 545
+  explorers:
+    - https://evm-testnet.flowscan.io
+- currency:
+    name: HBAR
+    symbol: HBAR
+    decimals: 18
+  chain-id: 295
+  explorers:
+    - https://hashscan.io
+- currency:
+    name: HBAR
+    symbol: HBAR
+    decimals: 18
+  chain-id: 296
+  explorers:
+    - https://hashscan.io/testnet
