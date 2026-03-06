@@ -113,6 +113,7 @@ chain-settings:
       label: Fantom
       type: eth
       settings:
+        method-spec: "fantom"
         expected-block-time: 3s
         allow-pruning-requirement: true
         options:
@@ -3236,7 +3237,7 @@ chain-settings:
           code: TEMPO_MODERATO_TESTNET
           grpcId: 10184
           chain-id: 0xa5bf
-          short-names: [tempo-moderato-testnet]        
+          short-names: [tempo-moderato-testnet]
     - id: xdc
       label: XDC
       type: eth
@@ -3813,4 +3814,3 @@ chain-settings:
           short-names: [moca-testnet]
           chain-id: 0x366a8
           grpcId: 10188
-
