@@ -259,7 +259,7 @@ chain-settings:
           code: BSC
           grpcId: 1006
           chain-id: 0x38
-          short-names: [bsc, binance, bnb-smart-chain, bsc-mainnet]
+          short-names: [bsc, binance, bnb-smart-chain, bsc-mainnet, binance-smart-chain]
           gas-price-condition:
             - ne 3000000000
             - ne 5000000000
@@ -347,7 +347,7 @@ chain-settings:
           code: ZKSYNC
           grpcId: 1009
           chain-id: 0x144
-          short-names: [zksync, zksync-mainnet]
+          short-names: [zksync, zksync-mainnet, zksync-era]
           lower-bounds:
             tx:
               block: 1
@@ -461,7 +461,7 @@ chain-settings:
           priority: 100
           code: GNOSIS
           grpcId: 1012
-          short-names: [gnosis, gnosis-mainnet]
+          short-names: [gnosis, gnosis-mainnet, xdai]
           chain-id: 0x64
           lower-bounds:
             tx:
@@ -738,7 +738,7 @@ chain-settings:
         - id: Mainnet
           priority: 100
           code: METIS_MAINNET
-          short-names: [metis, metis-mainnet]
+          short-names: [metis, metis-mainnet, metis-andromeda]
           chain-id: 0x440
           grpcId: 1023
         - id: Sepolia
@@ -2396,7 +2396,7 @@ chain-settings:
           priority: 100
           code: WORLDCHAIN_MAINNET
           grpcId: 1084
-          short-names: [worldchain, worldchain-mainnet]
+          short-names: [worldchain, worldchain-mainnet, world]
           chain-id: 0x1e0
         - id: Sepolia
           priority: 1
