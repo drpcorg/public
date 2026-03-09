@@ -113,6 +113,7 @@ chain-settings:
       label: Fantom
       type: eth
       settings:
+        method-spec: "fantom"
         expected-block-time: 3s
         allow-pruning-requirement: true
         options:
