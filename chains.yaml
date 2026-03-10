@@ -3815,3 +3815,18 @@ chain-settings:
           chain-id: 0x366a8
           grpcId: 10188
 
+    - id: lambda
+      label: Lambda
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 6
+          lagging: 1
+      chains:
+        - id: Virtual
+          priority: 1
+          code: LAMBDA_VIRTUAL
+          grpcId: 99999
+          short-names: [lambda]
+          chain-id: 0x0
