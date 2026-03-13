@@ -3814,19 +3814,18 @@ chain-settings:
           short-names: [moca-testnet]
           chain-id: 0x366a8
           grpcId: 10188
-
-    - id: lambda
-      label: Lambda
-      type: eth
+    - id: lambda-app
+      label: LambdaApp
+      type: app
       settings:
-        expected-block-time: 1s
+        expected-block-time: 0s
         lags:
-          syncing: 6
-          lagging: 1
+          syncing: 0
+          lagging: 0
       chains:
         - id: Virtual
           priority: 1
           code: LAMBDA_VIRTUAL
-          grpcId: 99999
+          grpcId: 100000
           short-names: [lambda]
           chain-id: 0x0
