@@ -3818,7 +3818,7 @@ chain-settings:
       label: LambdaApp
       type: app
       settings:
-        expected-block-time: 0s
+        expected-block-time: 1s
         lags:
           syncing: 0
           lagging: 0
