@@ -3238,29 +3238,6 @@ chain-settings:
           grpcId: 10184
           chain-id: 0xa5bf
           short-names: [tempo-moderato-testnet] 
-    - id: morph
-      label: Morph
-      type: eth
-      settings:
-        options:
-          validate-peers: false
-        expected-block-time: 150s
-        lags:
-          syncing: 6
-          lagging: 2
-      chains:
-        - id: Mainnet
-          priority: 100
-          code: MORPH_MAINNET
-          short-names: [morph, morph-mainnet]
-          chain-id: 0xB02
-          grpcId: 1152
-        - id: Hoodi
-          priority: 30
-          code: MORPH_HOODI
-          short-names: [morph-hoodi]
-          chain-id: 0xB5E
-          grpcId: 10189
     - id: xdc
       label: XDC
       type: eth
@@ -3852,3 +3829,26 @@ chain-settings:
           grpcId: 100000
           short-names: [lambda]
           chain-id: 0x0
+    - id: morph
+      label: Morph
+      type: eth
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 1s
+        lags:
+          syncing: 6
+          lagging: 2
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: MORPH_MAINNET
+          short-names: [morph, morph-mainnet]
+          chain-id: 0xB02
+          grpcId: 1152
+        - id: Hoodi
+          priority: 30
+          code: MORPH_HOODI
+          short-names: [morph-hoodi]
+          chain-id: 0xB5E
+          grpcId: 10189
