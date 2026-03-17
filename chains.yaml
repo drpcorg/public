@@ -3859,3 +3859,27 @@ chain-settings:
           short-names: [morph-hoodi]
           chain-id: 0xB5E
           grpcId: 10189
+    - id: robinhood
+      label: Robinhood
+      type: eth
+      settings:
+        expected-block-time: 250ms
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Testnet
+          priority: 1
+          code: ROBINHOOD_TESTNET
+          short-names: [robinhood-testnet]
+          chain-id: 0xB626
+          grpcId: 10190
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x66823c78ea5130f01085462fb4ab2c9e3c4903f69d67d43e11aa536f9b28df4a"
+            receipts:
+              block: 1
+              hash: "0x66823c78ea5130f01085462fb4ab2c9e3c4903f69d67d43e11aa536f9b28df4a"
