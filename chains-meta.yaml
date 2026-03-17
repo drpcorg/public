@@ -1293,3 +1293,10 @@
   chain-id: 9372
   explorers:
     - https://explorer.testnet.oasys.games
+- currency:
+    name: Robinhood Testnet
+    symbol: ETH
+    decimals: 18
+  chain-id: 46630
+  explorers:
+    - https://explorer.testnet.chain.robinhood.com
