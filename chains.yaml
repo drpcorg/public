@@ -3859,3 +3859,20 @@ chain-settings:
           short-names: [morph-hoodi]
           chain-id: 0xB5E
           grpcId: 10189
+    - id: tac
+      label: Tac
+      type: eth
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 1s
+        lags:
+          syncing: 6
+          lagging: 2
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: TAC_MAINNET
+          short-names: [tac, tacchain, tac-mainnet]
+          chain-id: 0xef
+          grpcId: 1153
