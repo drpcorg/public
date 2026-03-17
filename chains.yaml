@@ -154,6 +154,13 @@ chain-settings:
           grpcId: 1002
           chain-id: 0x89
           short-names: [polygon, matic, polygon-mainnet]
+          lower-bounds:
+            tx:
+              block: 447
+              hash: 0xf6c3feac09aa84558510f74af0c9bf7fd51ff15f902f68d51592e09cad8896b2
+            receipts:
+              block: 447
+              hash: 0xf6c3feac09aa84558510f74af0c9bf7fd51ff15f902f68d51592e09cad8896b2
         - id: Amoy
           priority: 10
           code: POLYGON_POS_AMOY
