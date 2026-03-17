@@ -3883,3 +3883,26 @@ chain-settings:
             receipts:
               block: 1
               hash: "0x66823c78ea5130f01085462fb4ab2c9e3c4903f69d67d43e11aa536f9b28df4a"
+    - id: tac
+      label: Tac
+      type: eth
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 1s
+        lags:
+          syncing: 6
+          lagging: 2
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: TAC_MAINNET
+          short-names: [tac, tacchain, tac-mainnet]
+          chain-id: 0xef
+          grpcId: 1153
+        - id: SPB
+          priority: 30
+          code: TAC_SPB_TESTNET
+          short-names: [tac-spb, tac-testnet]
+          chain-id: 0x957
+          grpcId: 10191
