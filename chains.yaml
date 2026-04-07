@@ -3906,3 +3906,26 @@ chain-settings:
           short-names: [tac-spb, tac-testnet]
           chain-id: 0x957
           grpcId: 10191
+    - id: tea
+      label: Tea
+      type: eth
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 2s
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: TEA_MAINNET
+          short-names: [tea]
+          chain-id: 0x17ea
+          grpcId: 1154
+        - id: Sepolia
+          priority: 30
+          code: TEA_SEPOLIA
+          short-names: [tea-sepolia]
+          chain-id: 0x27ea
+          grpcId: 10192
