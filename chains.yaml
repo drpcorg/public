@@ -724,6 +724,13 @@ chain-settings:
           short-names: [cronos, cronos-mainnet]
           chain-id: 0x19
           grpcId: 1022
+          lower-bounds:
+            tx:
+              block: 2141
+              hash: "0xe2bc49707042763ad23b5a48e4080def5fc9bafe98d39816ac8be7a240c06cab"
+            receipts:
+              block: 2141
+              hash: "0xe2bc49707042763ad23b5a48e4080def5fc9bafe98d39816ac8be7a240c06cab"
         - id: Testnet
           priority: 1
           code: CRONOS_TESTNET
