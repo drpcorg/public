@@ -1923,6 +1923,13 @@ chain-settings:
           short-names: [tron, tron-mainnet]
           chain-id: 0x2b6653dc
           grpcId: 1066
+          lower-bounds:
+            tx:
+              block: 9997
+              hash: "0x8ff9efc60c4a7a90d9d48ed212ad09864bbf95fef5d487842cb5fa059eaf6f55"
+            receipts:
+              block: 9997
+              hash: "0x8ff9efc60c4a7a90d9d48ed212ad09864bbf95fef5d487842cb5fa059eaf6f55"
         - id: Shasta
           priority: 10
           code: TRON_SHASTA
