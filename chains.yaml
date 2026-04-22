@@ -3943,3 +3943,32 @@ chain-settings:
           short-names: [tea-sepolia]
           chain-id: 0x27ea
           grpcId: 10192
+    - id: algorand
+      label: Algorand
+      type: avm
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 3s
+        lags:
+          syncing: 6
+          lagging: 2
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ALGORAND_MAINNET
+          short-names: [algorand, algorand-mainnet]
+          chain-id: 0x65901
+          grpcId: 1155
+        - id: Testnet
+          priority: 30
+          code: ALGORAND_TESTNET
+          short-names: [algorand-testnet]
+          chain-id: 0x65902
+          grpcId: 10193
+        - id: Betanet
+          priority: 10
+          code: ALGORAND_BETANET
+          short-names: [algorand-betanet]
+          chain-id: 0x65903
+          grpcId: 10194
