@@ -1458,7 +1458,7 @@ chain-settings:
           code: BITTORRENT_TESTNET
           grpcId: 10060
           short-names: [bittorrent-testnet]
-          chain-id: 0x404
+          chain-id: 0x405
     - id: thundercore
       label: Thundercore
       type: eth
