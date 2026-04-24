@@ -3881,3 +3881,26 @@ chain-settings:
           short-names: [algorand-betanet]
           chain-id: 0x65903
           grpcId: 10194
+    - id: orderly
+      label: Orderly
+      type: eth
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 2s
+        lags:
+          syncing: 6
+          lagging: 2
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ORDERLY_MAINNET
+          short-names: [orderly, orderly-mainnet]
+          chain-id: 0x123
+          grpcId: 1156
+        - id: Testnet
+          priority: 30
+          code: ORDERLY_TESTNET
+          short-names: [orderly-testnet]
+          chain-id: 0x116C
+          grpcId: 10195
