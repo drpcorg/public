@@ -3995,3 +3995,21 @@ chain-settings:
           short-names: [orderly-testnet]
           chain-id: 0x116C
           grpcId: 10195
+    - id: abcore
+      label: ABCore
+      type: eth
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 3s
+        lags:
+          syncing: 6
+          lagging: 2
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ABCORE_MAINNET
+          short-names: [abcore, abcore-mainnet]
+          chain-id: 0x9018
+          grpcId: 1157
+       
