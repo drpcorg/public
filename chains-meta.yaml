@@ -1300,3 +1300,10 @@
   chain-id: 46630
   explorers:
     - https://explorer.testnet.chain.robinhood.com
+- currency:
+    name: Bitcoin
+    symbol: BTC
+    decimals: 18
+  chain-id: 223
+  explorers:
+    - https://explorer.bsquared.network
