@@ -4012,4 +4012,20 @@ chain-settings:
           short-names: [abcore, abcore-mainnet]
           chain-id: 0x9018
           grpcId: 1157
-       
+    - id: bsquared
+      label: B² Network
+      type: eth
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 2s
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: BSQUARED_MAINNET
+          short-names: [bsquared, bsquared-mainnet, b2, b2-mainnet]
+          chain-id: 0xdf
+          grpcId: 1158
