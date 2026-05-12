@@ -4033,12 +4033,12 @@ chain-settings:
       label: ADI Network
       type: eth
       settings:
-        expected-block-time: 5s
+        expected-block-time: 10m
         options:
           validate-peers: false
         lags:
-          syncing: 70
-          lagging: 50
+          syncing: 3
+          lagging: 1
       chains:
         - id: Mainnet
           priority: 100
