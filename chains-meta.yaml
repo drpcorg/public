@@ -1321,3 +1321,10 @@
   chain-id: 988
   explorers:
     - https://stablescan.xyz
+- currency:
+    name: USDT0
+    symbol: USDT0
+    decimals: 18
+  chain-id: 2201
+  explorers:
+    - https://testnet.stablescan.xyz

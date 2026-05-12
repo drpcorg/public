@@ -4070,3 +4070,9 @@ chain-settings:
           short-names: [stable, stable-mainnet]
           chain-id: 0x3dc
           grpcId: 1160
+        - id: Testnet
+          priority: 2
+          code: STABLE_TESTNET
+          short-names: [stable-testnet]
+          chain-id: 0x899
+          grpcId: 10196
