@@ -4033,7 +4033,6 @@ chain-settings:
       label: ADI Network
       type: eth
       settings:
-        method-spec: "zksync"
         expected-block-time: 5s
         options:
           validate-peers: false
