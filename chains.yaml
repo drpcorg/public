@@ -4053,3 +4053,20 @@ chain-settings:
             receipts:
               block: 1
               hash: "0x89c5e83206c6cd7669eac32b477a82df34d16e8c1891735da4d2b1b02e2813e3"
+    - id: stable
+      label: Stable
+      type: eth
+      settings:
+        expected-block-time: 700ms
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: STABLE_MAINNET
+          short-names: [stable, stable-mainnet]
+          chain-id: 0x3dc
+          grpcId: 1160

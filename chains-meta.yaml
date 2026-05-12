@@ -1314,3 +1314,10 @@
   chain-id: 36900
   explorers:
     - https://explorer.adifoundation.ai/
+- currency:
+    name: USDT0
+    symbol: USDT0
+    decimals: 18
+  chain-id: 988
+  explorers:
+    - https://stablescan.xyz
