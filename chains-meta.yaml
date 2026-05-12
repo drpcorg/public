@@ -1307,3 +1307,10 @@
   chain-id: 223
   explorers:
     - https://explorer.bsquared.network
+- currency:
+    name: ADI
+    symbol: ADI
+    decimals: 18
+  chain-id: 36900
+  explorers:
+    - https://explorer.adifoundation.ai/
