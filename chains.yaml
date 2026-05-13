@@ -2747,7 +2747,7 @@ chain-settings:
           code: PLUME_TESTNET
           grpcId: 10123
           short-names: [plume-testnet]
-          chain-id: 0x99c0a0f
+          chain-id: 0x18233
     - id: monad
       label: Monad
       type: eth
@@ -4029,3 +4029,50 @@ chain-settings:
           short-names: [bsquared, bsquared-mainnet, b2, b2-mainnet]
           chain-id: 0xdf
           grpcId: 1158
+    - id: adi
+      label: ADI Network
+      type: eth
+      settings:
+        expected-block-time: 10m
+        options:
+          validate-peers: false
+        lags:
+          syncing: 3
+          lagging: 1
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ADI_MAINNET
+          short-names: [adi, adi-mainnet]
+          chain-id: 0x9024
+          grpcId: 1159
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x89c5e83206c6cd7669eac32b477a82df34d16e8c1891735da4d2b1b02e2813e3"
+            receipts:
+              block: 1
+              hash: "0x89c5e83206c6cd7669eac32b477a82df34d16e8c1891735da4d2b1b02e2813e3"
+    - id: stable
+      label: Stable
+      type: eth
+      settings:
+        expected-block-time: 700ms
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: STABLE_MAINNET
+          short-names: [stable, stable-mainnet]
+          chain-id: 0x3dc
+          grpcId: 1160
+        - id: Testnet
+          priority: 2
+          code: STABLE_TESTNET
+          short-names: [stable-testnet]
+          chain-id: 0x899
+          grpcId: 10196

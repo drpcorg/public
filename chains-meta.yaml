@@ -1307,3 +1307,24 @@
   chain-id: 223
   explorers:
     - https://explorer.bsquared.network
+- currency:
+    name: ADI
+    symbol: ADI
+    decimals: 18
+  chain-id: 36900
+  explorers:
+    - https://explorer.adifoundation.ai/
+- currency:
+    name: USDT0
+    symbol: USDT0
+    decimals: 18
+  chain-id: 988
+  explorers:
+    - https://stablescan.xyz
+- currency:
+    name: USDT0
+    symbol: USDT0
+    decimals: 18
+  chain-id: 2201
+  explorers:
+    - https://testnet.stablescan.xyz
