@@ -4076,3 +4076,76 @@ chain-settings:
           short-names: [stable-testnet]
           chain-id: 0x899
           grpcId: 10196
+    - id: jovay
+      label: Jovay
+      type: eth
+      settings:
+        expected-block-time: 3s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: JOVAY_MAINNET
+          short-names: [jovay, jovay-mainnet]
+          chain-id: 0x578227
+          grpcId: 1161
+        - id: Testnet
+          priority: 2
+          code: JOVAY_TESTNET
+          short-names: [jovay-testnet]
+          chain-id: 0x1ed1bf
+          grpcId: 10197
+    - id: pharos
+      label: Pharos
+      type: eth
+      settings:
+        expected-block-time: 1s
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: PHAROS_MAINNET
+          short-names: [pharos, pharos-mainnet]
+          chain-id: 0x688
+          grpcId: 1162
+        - id: Testnet
+          priority: 3
+          code: PHAROS_TESTNET
+          short-names: [pharos-testnet]
+          chain-id: 0xa8230
+          grpcId: 10198
+        - id: Atlantic Testnet
+          priority: 2
+          code: PHAROS_ATLANTIC_TESTNET
+          short-names: [pharos-atlantic-testnet]
+          chain-id: 0xa8231
+          grpcId: 10199
+    - id: edge
+      label: Edge
+      type: eth
+      settings:
+        expected-block-time: 30s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 6
+          lagging: 1
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: EDGE_MAINNET
+          short-names: [edge, edge-mainnet]
+          chain-id: 0xd0f
+          grpcId: 1163
+        - id: Testnet
+          priority: 2
+          code: EDGE_TESTNET
+          short-names: [edge-testnet]
+          chain-id: 0x8297
+          grpcId: 10200
