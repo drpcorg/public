@@ -3113,6 +3113,12 @@ chain-settings:
           syncing: 20
           lagging: 10
       chains:
+        - id: Mainnet
+          priority: 1
+          code: CHAIN_ARC__MAINNET
+          grpcId: 1113
+          chain-id: 0x13b2
+          short-names: [arc, arc-mainnet]
         - id: Testnet
           priority: 1
           code: CHAIN_ARC__TESTNET
