@@ -4099,10 +4099,10 @@ chain-settings:
           short-names: [jovay, jovay-mainnet]
           chain-id: 0x578227
           grpcId: 1161
-        - id: Testnet
+        - id: Sepolia
           priority: 2
-          code: JOVAY_TESTNET
-          short-names: [jovay-testnet]
+          code: JOVAY_SEPOLIA
+          short-names: [jovay-sepolia]
           chain-id: 0x1ed1bf
           grpcId: 10197
     - id: pharos
