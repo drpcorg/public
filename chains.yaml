@@ -3114,7 +3114,7 @@ chain-settings:
           lagging: 10
       chains:
         - id: Mainnet
-          priority: 1
+          priority: 100
           code: CHAIN_ARC__MAINNET
           grpcId: 1113
           chain-id: 0x13b2
