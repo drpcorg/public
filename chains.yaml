@@ -4155,3 +4155,26 @@ chain-settings:
           short-names: [edge-testnet]
           chain-id: 0x8297
           grpcId: 10200
+    - id: botanix
+      label: Botanix
+      type: eth
+      settings:
+        expected-block-time: 6s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: BOTANIX_MAINNET
+          short-names: [botanix, botanix-mainnet]
+          chain-id: 0xe35
+          grpcId: 1164
+        - id: Testnet
+          priority: 2
+          code: BOTANIX_TESTNET
+          short-names: [botanix-testnet]
+          chain-id: 0xe34
+          grpcId: 10201
