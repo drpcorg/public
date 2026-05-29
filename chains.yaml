@@ -3890,6 +3890,12 @@ chain-settings:
           syncing: 40
           lagging: 20
       chains:
+        - id: Mainnet
+          priority: 100
+          code: ROBINHOOD_MAINNET
+          short-names: [robinhood, robinhood-mainnet]
+          chain-id: 0x1237
+          grpcId: 1165
         - id: Testnet
           priority: 1
           code: ROBINHOOD_TESTNET
@@ -4178,3 +4184,27 @@ chain-settings:
           short-names: [botanix-testnet]
           chain-id: 0xe34
           grpcId: 10201
+    - id: kite
+      label: Kite
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: KITE_MAINNET
+          short-names: [kite, kite-mainnet]
+          chain-id: 0x93e
+          grpcId: 1166
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0xc168ecc287ee1549d89aee4fc6857b2e8561dc3508f477e06d91d6f2c5d71703"
+            receipts:
+              block: 1
+              hash: "0xc168ecc287ee1549d89aee4fc6857b2e8561dc3508f477e06d91d6f2c5d71703"

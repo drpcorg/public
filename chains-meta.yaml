@@ -1328,3 +1328,17 @@
   chain-id: 2201
   explorers:
     - https://testnet.stablescan.xyz
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 4663
+  explorers:
+    - https://explorer.chain.robinhood.com
+- currency:
+    name: KITE
+    symbol: KITE
+    decimals: 18
+  chain-id: 2366
+  explorers:
+    - https://kitescan.ai
