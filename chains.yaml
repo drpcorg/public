@@ -2660,6 +2660,7 @@ chain-settings:
       label: HyperLiquid
       type: eth
       settings:
+        method-spec: "hyperliquid"
         expected-block-time: 200ms
         options:
           validate-peers: false
