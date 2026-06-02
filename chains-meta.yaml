@@ -1342,3 +1342,10 @@
   chain-id: 2366
   explorers:
     - https://kitescan.ai
+- currency:
+    name: Humanity
+    symbol: H
+    decimals: 18
+  chain-id: 6985385
+  explorers:
+    - https://explorer.humanity.org

@@ -4209,3 +4209,20 @@ chain-settings:
             receipts:
               block: 1
               hash: "0xc168ecc287ee1549d89aee4fc6857b2e8561dc3508f477e06d91d6f2c5d71703"
+    - id: humanity
+      label: Humanity
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: HUMANITY_MAINNET
+          short-names: [humanity, humanity-mainnet]
+          chain-id: 0x6a96a9
+          grpcId: 1167
