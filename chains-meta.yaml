@@ -1349,3 +1349,10 @@
   chain-id: 6985385
   explorers:
     - https://explorer.humanity.org
+- currency:
+    name: Humanity Testnet
+    symbol: tHP
+    decimals: 18
+  chain-id: 7080969
+  explorers:
+    - https://explorer.humanity.org/testnet

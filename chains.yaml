@@ -4226,3 +4226,9 @@ chain-settings:
           short-names: [humanity, humanity-mainnet]
           chain-id: 0x6a96a9
           grpcId: 1167
+        - id: Testnet
+          priority: 10
+          code: HUMANITY_TESTNET
+          short-names: [humanity-testnet]
+          chain-id: 0x6c0c09
+          grpcId: 10202
