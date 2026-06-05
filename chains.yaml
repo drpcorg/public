@@ -1917,6 +1917,7 @@ chain-settings:
       label: Tron
       type: eth
       settings:
+        method-spec: "tron"
         options:
           validate-peers: false
         expected-block-time: 2s
