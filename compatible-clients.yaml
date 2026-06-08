@@ -21,3 +21,4 @@ rules:
       - eth-beacon-chain-sepolia
     methods:
       - "GET#/eth/v1/beacon/headers/*"
+    blacklist: []
