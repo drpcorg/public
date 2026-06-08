@@ -5,3 +5,4 @@ rule:
   client: str()
   networks: list(str(), required=False)
   blacklist: list(str())
+  methods: list(str(), required=False)
