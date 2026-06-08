@@ -19,6 +19,8 @@ rules:
     networks: 
       - eth-beacon-chain
       - eth-beacon-chain-sepolia
+      - eth-beacon-chain-holesky
+      - eth-beacon-chain-hoodi
     methods:
       - "GET#/eth/v1/beacon/headers/*"
       - "GET#/eth/v1/beacon/light_client/finality_update"
