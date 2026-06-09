@@ -27,6 +27,7 @@ settings:
   fork-choice: regex('^quorum$|^height$', required=False)
   mev-critical: bool(required=False)
   disabled: bool(required=False)
+  fork-tolerance: int(required=False)
 
 ---
 lags:
