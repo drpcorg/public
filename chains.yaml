@@ -2161,6 +2161,7 @@ chain-settings:
       settings:
         method-spec: "sei"
         expected-block-time: 200ms
+        fork-tolerance: 2
         options:
           validate-peers: false
           validate-syncing: false # does not support eth_syncing
