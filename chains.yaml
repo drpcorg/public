@@ -3554,6 +3554,29 @@ chain-settings:
           code: INJECTIVE_TESTNET
           grpcId: 10171
           priority: 10
+    - id: injective-evm
+      label: Injective EVM
+      type: eth
+      settings:
+        expected-block-time: 900ms
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: INJECTIVE_EVM_MAINNET
+          short-names: [injective-evm, injective-evm-mainnet]
+          chain-id: 0x6f0
+          grpcId: 1168
+        - id: Testnet
+          priority: 1
+          code: INJECTIVE_EVM_TESTNET
+          short-names: [injective-evm-testnet]
+          chain-id: 0x59f
+          grpcId: 10203
     - id: mantra
       label: Mantra
       type: cosmos
