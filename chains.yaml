@@ -2112,12 +2112,6 @@ chain-settings:
           grpcId: 1077
           short-names: [snaxchain, snaxchain-mainnet]
           chain-id: 0x890
-        - id: Testnet
-          priority: 1
-          code: SNAXCHAIN_SEPOLIA
-          grpcId: 10098
-          short-names: [snaxchain-sepolia]
-          chain-id: 0xed88
     - id: xlayer
       label: XLayer
       type: eth
