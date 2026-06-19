@@ -2451,6 +2451,8 @@ chain-settings:
       settings:
         method-spec: "viction"
         expected-block-time: 2s
+        support-finalized-block-tag: false
+        support-safe-block-tag: false
         lags:
           syncing: 10
           lagging: 20
