@@ -4230,3 +4230,29 @@ chain-settings:
           short-names: [humanity-testnet]
           chain-id: 0x6c0c09
           grpcId: 10202
+    - id: battlechain
+      label: BattleChain
+      type: eth
+      settings:
+        method-spec: "zksync"
+        expected-block-time: 250ms
+        allow-pruning-requirement: true
+        lags:
+          syncing: 70
+          lagging: 50
+        options:
+          validate-peers: false
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: BATTLECHAIN_MAINNET
+          short-names: [battlechain, battlechain-mainnet]
+          chain-id: 0x272
+          grpcId: 1168
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x8fbda1d247e887141030e1ef1774dcba268180d114d83c9b1e81fa998f880c7f"
+            receipts:
+              block: 1
+              hash: "0x8fbda1d247e887141030e1ef1774dcba268180d114d83c9b1e81fa998f880c7f"
