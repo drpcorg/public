@@ -3985,6 +3985,29 @@ chain-settings:
           short-names: [algorand-betanet]
           chain-id: 0x65903
           grpcId: 10194
+    - id: aptos
+      label: Aptos
+      type: aptos
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 100ms
+        lags:
+          syncing: 60
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: APTOS_MAINNET
+          short-names: [aptos, aptos-mainnet]
+          chain-id: 0x1
+          grpcId: 1168
+        - id: Testnet
+          priority: 30
+          code: APTOS_TESTNET
+          short-names: [aptos-testnet]
+          chain-id: 0x2
+          grpcId: 10203
     - id: orderly
       label: Orderly
       type: eth
