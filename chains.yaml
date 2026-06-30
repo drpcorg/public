@@ -4247,7 +4247,7 @@ chain-settings:
           priority: 100
           code: HUMANITY_MAINNET
           short-names: [humanity, humanity-mainnet]
-          chain-id: 0x6a96a9
+          chain-id: 0xcf8500
           grpcId: 1167
         - id: Testnet
           priority: 10
