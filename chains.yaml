@@ -3989,6 +3989,7 @@ chain-settings:
       label: Aptos
       type: aptos
       settings:
+        fork-choice: height
         options:
           validate-peers: false
         expected-block-time: 100ms
