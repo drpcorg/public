@@ -1356,3 +1356,17 @@
   chain-id: 7080969
   explorers:
     - https://explorer.humanity.org/testnet
+- currency:
+    name: Injective
+    symbol: INJ
+    decimals: 18
+  chain-id: 1776
+  explorers:
+    - https://blockscout.injective.network
+- currency:
+    name: Injective
+    symbol: INJ
+    decimals: 18
+  chain-id: 1439
+  explorers:
+    - https://testnet.blockscout.injective.network
