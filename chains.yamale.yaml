@@ -28,6 +28,8 @@ settings:
   mev-critical: bool(required=False)
   disabled: bool(required=False)
   fork-tolerance: int(required=False)
+  support-finalized-block-tag: bool(required=False)
+  support-safe-block-tag: bool(required=False)
 
 ---
 lags:
