@@ -1356,3 +1356,10 @@
   chain-id: 7080969
   explorers:
     - https://explorer.humanity.org/testnet
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 626
+  explorers:
+    - https://explorer.battlechain.com
