@@ -3842,6 +3842,29 @@ chain-settings:
           short-names: [moca-testnet]
           chain-id: 0x366a8
           grpcId: 10188
+    - id: mova
+      label: Mova
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: MOVA_MAINNET
+          short-names: [mova, mova-mainnet]
+          chain-id: 0xf1cc
+          grpcId: 1170
+        - id: Testnet
+          priority: 10
+          code: MOVA_TESTNET
+          short-names: [mova-testnet, mova-beta]
+          chain-id: 0x2853
+          grpcId: 10205
     - id: lambda-app
       label: LambdaApp
       type: app
