@@ -1918,6 +1918,7 @@ chain-settings:
       type: eth
       settings:
         method-spec: "tron"
+        support-safe-block-tag: false
         options:
           validate-peers: false
         expected-block-time: 2s
