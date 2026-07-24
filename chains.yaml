@@ -4032,6 +4032,29 @@ chain-settings:
           short-names: [aptos-testnet]
           chain-id: 0x2
           grpcId: 10203
+    - id: stellar
+      label: Stellar
+      type: stellar
+      settings:
+        options:
+          validate-peers: false
+        expected-block-time: 5s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: STELLAR_MAINNET
+          short-names: [stellar, stellar-mainnet]
+          chain-id: "Public Global Stellar Network ; September 2015"
+          grpcId: 1169
+        - id: Testnet
+          priority: 30
+          code: STELLAR_TESTNET
+          short-names: [stellar-testnet]
+          chain-id: "Test SDF Network ; September 2015"
+          grpcId: 10204
     - id: orderly
       label: Orderly
       type: eth
