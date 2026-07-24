@@ -4118,6 +4118,7 @@ chain-settings:
       label: Stable
       type: eth
       settings:
+        fork-tolerance: 2
         expected-block-time: 700ms
         options:
           validate-peers: false
