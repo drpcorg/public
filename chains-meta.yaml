@@ -1363,3 +1363,10 @@
   chain-id: 592
   explorers:
     - https://astar.subscan.io
+- currency:
+    name: BTC
+    symbol: BTC
+    decimals: 18
+  chain-id: 200901
+  explorers:
+    - https://www.btrscan.com

@@ -4298,3 +4298,20 @@ chain-settings:
           short-names: [astar, astar-mainnet]
           chain-id: 0x250
           grpcId: 1026
+    - id: bitlayer
+      label: Bitlayer
+      type: eth
+      settings:
+        expected-block-time: 3s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: BITLAYER_MAINNET
+          short-names: [bitlayer, bitlayer-mainnet]
+          chain-id: 0x310c5
+          grpcId: 1169
