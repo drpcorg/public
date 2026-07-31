@@ -1377,3 +1377,31 @@
   chain-id: 42793
   explorers:
     - https://explorer.etherlink.com
+- currency:
+    name: Gas
+    symbol: GAS
+    decimals: 18
+  chain-id: 47763
+  explorers:
+    - https://xexplorer.neo.org
+- currency:
+    name: BTC
+    symbol: BTC
+    decimals: 18
+  chain-id: 200810
+  explorers:
+    - https://testnet.btrscan.com
+- currency:
+    name: tez
+    symbol: XTZ
+    decimals: 18
+  chain-id: 127823
+  explorers:
+    - https://shadownet.explorer.etherlink.com
+- currency:
+    name: Gas
+    symbol: GAS
+    decimals: 18
+  chain-id: 12227332
+  explorers:
+    - https://xt4scan.ngd.network

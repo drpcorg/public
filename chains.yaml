@@ -4315,6 +4315,12 @@ chain-settings:
           short-names: [bitlayer, bitlayer-mainnet]
           chain-id: 0x310c5
           grpcId: 1169
+        - id: Testnet
+          priority: 10
+          code: BITLAYER_TESTNET
+          short-names: [bitlayer-testnet]
+          chain-id: 0x3106a
+          grpcId: 10204
     - id: etherlink
       label: Etherlink
       type: eth
@@ -4332,3 +4338,36 @@ chain-settings:
           short-names: [etherlink, etherlink-mainnet]
           chain-id: 0xa729
           grpcId: 1171
+        - id: Shadownet
+          priority: 10
+          code: ETHERLINK_SHADOWNET
+          short-names: [etherlink-shadownet, etherlink-testnet]
+          chain-id: 0x1f34f
+          grpcId: 10206
+          settings:
+            expected-block-time: 6s
+    - id: neo-x
+      label: Neo X
+      type: eth
+      settings:
+        expected-block-time: 9s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: NEO_X_MAINNET
+          short-names: [neo-x, neo-x-mainnet]
+          chain-id: 0xba93
+          grpcId: 1172
+        - id: Testnet
+          priority: 10
+          code: NEO_X_TESTNET
+          short-names: [neo-x-testnet]
+          chain-id: 0xba9304
+          grpcId: 10207
+          settings:
+            expected-block-time: 5s
