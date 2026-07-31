@@ -4315,3 +4315,20 @@ chain-settings:
           short-names: [bitlayer, bitlayer-mainnet]
           chain-id: 0x310c5
           grpcId: 1169
+    - id: etherlink
+      label: Etherlink
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ETHERLINK_MAINNET
+          short-names: [etherlink, etherlink-mainnet]
+          chain-id: 0xa729
+          grpcId: 1171

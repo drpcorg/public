@@ -1370,3 +1370,10 @@
   chain-id: 200901
   explorers:
     - https://www.btrscan.com
+- currency:
+    name: tez
+    symbol: XTZ
+    decimals: 18
+  chain-id: 42793
+  explorers:
+    - https://explorer.etherlink.com
