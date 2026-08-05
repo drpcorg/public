@@ -4286,6 +4286,7 @@ chain-settings:
       label: Astar
       type: eth
       settings:
+        method-spec: "astar"
         expected-block-time: 10s
         options:
           validate-peers: false
