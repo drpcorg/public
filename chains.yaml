@@ -4412,3 +4412,27 @@ chain-settings:
           short-names: [stellar-testnet]
           chain-id: "Test SDF Network ; September 2015"
           grpcId: 10208
+    - id: celestia
+      label: Celestia
+      type: celestia
+      settings:
+        fork-choice: height
+        options:
+          validate-peers: false
+        expected-block-time: 6s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: CELESTIA_MAINNET
+          short-names: [celestia, celestia-mainnet]
+          chain-id: celestia
+          grpcId: 1175
+        - id: Mocha
+          priority: 30
+          code: CELESTIA_MOCHA
+          short-names: [celestia-mocha, celestia-testnet]
+          chain-id: mocha-4
+          grpcId: 10209
