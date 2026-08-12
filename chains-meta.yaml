@@ -1405,3 +1405,10 @@
   chain-id: 12227332
   explorers:
     - https://xt4scan.ngd.network
+- currency:
+    name: Mova
+    symbol: MOVA
+    decimals: 18
+  chain-id: 61901
+  explorers:
+    - https://scan.movan.movachain.com
