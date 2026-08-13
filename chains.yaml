@@ -4397,8 +4397,8 @@ chain-settings:
           validate-peers: false
         expected-block-time: 5s
         lags:
-          syncing: 10
-          lagging: 5
+          syncing: 20
+          lagging: 10
       chains:
         - id: Mainnet
           priority: 100
