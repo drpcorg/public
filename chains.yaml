@@ -4436,3 +4436,27 @@ chain-settings:
           short-names: [celestia-mocha, celestia-testnet]
           chain-id: mocha-4
           grpcId: 10209
+    - id: sui
+      label: Sui
+      type: sui
+      settings:
+        fork-choice: height
+        options:
+          validate-peers: false
+        expected-block-time: 250ms
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: SUI_MAINNET
+          short-names: [sui, sui-mainnet]
+          chain-id: 4btiuiMPvEENsttpZC7CZ53DruC3MAgfznDbASZ7DR6S
+          grpcId: 1176
+        - id: Testnet
+          priority: 30
+          code: SUI_TESTNET
+          short-names: [sui-testnet]
+          chain-id: 69WiPg3DAQiwdxfncX6wYQ2siKwAe6L9BZthQea3JNMD
+          grpcId: 10210
