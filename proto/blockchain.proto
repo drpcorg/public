@@ -1,0 +1,372 @@
+syntax = "proto3";
+package emerald;
+option java_package = "io.emeraldpay.api.proto";
+import "common.proto";
+
+service Blockchain {
+    rpc SubscribeHead (Chain) returns (stream ChainHead) {}
+
+    rpc NativeCall (NativeCallRequest) returns (stream NativeCallReplyItem) {}
+    rpc NativeSubscribe (NativeSubscribeRequest) returns (stream NativeSubscribeReplyItem) {}
+    rpc SubscribeChainStatus (SubscribeChainStatusRequest) returns (stream SubscribeChainStatusResponse) {}
+
+    rpc Describe (DescribeRequest) returns (DescribeResponse) {}
+    rpc SubscribeStatus (StatusRequest) returns (stream ChainStatus) {}
+    rpc SubscribeNodeStatus(SubscribeNodeStatusRequest) returns (stream NodeStatusResponse) {}
+}
+
+message NativeCallRequest {
+    ChainRef chain = 1;
+    repeated NativeCallItem items = 2;
+    Selector selector = 3;
+    int32 quorum = 4;
+    AvailabilityEnum min_availability = 5;
+    uint32 chunk_size = 6; // in bytes
+    bool sorted = 7;
+}
+
+message NativeCallItem {
+    uint32 id = 1;
+    string method = 3;
+    uint64 nonce = 5;
+    string request_id = 6;
+    repeated Selector selectors = 7;
+    oneof data {
+        bytes payload = 4;
+        RestData rest_data = 8;
+    }
+}
+
+message RestData {
+    bytes payload = 1;
+    repeated string path_params = 2;
+    repeated KeyValue headers = 3;
+    repeated KeyValue query_params = 4;
+}
+
+message KeyValue {
+    string key = 1;
+    string value = 2;
+}
+
+/**
+ * Signature for a response
+ */
+message NativeCallReplySignature {
+    /**
+     * Original nonce value used for the call
+     */
+    uint64 nonce = 1;
+    /**
+     * Signature value
+     */
+    bytes signature = 2;
+    /**
+     * Key Id used for the signing
+     */
+    uint64 key_id = 3;
+    /**
+     * Id of the upstream produced the response
+     * DEPRECATED - now in reply items
+     */
+    string upstream_id = 4 [deprecated=true];
+}
+
+message NativeCallReplyItem {
+    uint32 id = 1;
+    bool succeed = 2;
+    bytes payload = 3;
+    string error_message = 4;
+    /**
+     * Optional signature for the response.
+     * Available only when it's configured at the edge dshackle and nonce is provided wit the request.
+     */
+    NativeCallReplySignature signature = 5;
+    uint32 error_code = 6 [deprecated = true];
+    string upstream_id = 7;
+    string error_data = 8;
+    bool chunked = 9;
+    bool final_chunk = 10;
+    sint32 item_error_code = 11;
+    string upstream_node_version = 12; // a node version where we get a response from
+    FinalizationData finalization = 13;
+    repeated KeyValue response_headers = 14;
+    bytes error_as_is = 15;
+}
+
+message NativeSubscribeRequest {
+    ChainRef chain = 1;
+    string method = 2;
+    bytes payload = 3;
+    Selector selector = 4;
+    uint64 nonce = 5;
+    string subscription_id = 6;
+    string unsubscribe_method = 7;
+}
+
+message NativeSubscribeReplyItem {
+    bytes payload = 1;
+    NativeCallReplySignature signature = 2;
+    string upstream_id = 3;
+    bool heartbeat = 4;
+}
+
+message ChainHead {
+    ChainRef chain = 1;
+    uint64 height = 2;
+    string block_id = 3;
+    uint64 timestamp = 4;
+    bytes weight = 5;
+    uint64 reorg = 6;
+    string parent_block_id = 7;
+    uint64 slot = 8;
+    uint64 current_lower_block = 9 [deprecated = true];
+    uint64 current_lower_slot = 10 [deprecated = true];
+    uint64 current_lower_data_timestamp = 11 [deprecated = true];
+    repeated LowerBound lower_bounds = 12;
+    repeated FinalizationData finalization_data = 13;
+}
+
+message LowerBound {
+    uint64 lower_bound_timestamp = 1;
+    uint64 lower_bound_value = 2;
+    LowerBoundType lower_bound_type = 3;
+}
+
+
+enum LowerBoundType {
+    LOWER_BOUND_UNSPECIFIED = 0;
+    LOWER_BOUND_SLOT = 1;
+    LOWER_BOUND_STATE = 2;
+    LOWER_BOUND_BLOCK = 3;
+    LOWER_BOUND_TX = 4;
+    LOWER_BOUND_LOGS = 5;
+    LOWER_BOUND_TRACE = 6; // trace and debug methods
+    LOWER_BOUND_PROOF = 7;
+    LOWER_BOUND_BLOB = 8; // beacon chain
+    LOWER_BOUND_EPOCH = 9;
+    LOWER_BOUND_RECEIPTS = 10;
+}
+
+message SubscribeNodeStatusRequest {
+    uint64 timespan = 1;
+    // optional param for tracing
+    string trace_id = 2;
+}
+
+message NodeStatusResponse {
+    string nodeId = 1;
+    NodeDescription description = 2;
+    NodeStatus status = 3;
+}
+
+message NodeDescription {
+    ChainRef chain = 1;
+    repeated NodeLabels nodeLabels = 2;
+    repeated string supportedMethods = 3;
+    int32 nodeId = 4;
+    repeated string supportedSubscriptions = 5;
+    BuildInfo node_build_info = 6;
+}
+
+message NodeLabels {
+    repeated Label labels = 1;
+}
+
+message NodeStatus {
+    int64 currentHeight = 1;
+    AvailabilityEnum availability = 2;
+}
+
+message DescribeRequest {
+}
+
+message DescribeResponse {
+    repeated DescribeChain chains = 1;
+    BuildInfo build_info = 2;
+}
+
+message DescribeChain {
+    ChainRef chain = 1;
+    ChainStatus status = 2;
+    repeated NodeDetails nodes = 3;
+
+    /**
+     * List of method available through NativeCall
+     */
+    repeated string supportedMethods = 4;
+    repeated string excludedMethods = 5;
+    repeated Capabilities capabilities = 6;
+    int64 currentHeight = 7;
+
+    /**
+     * List of subscriptions available through NativeSubscribe
+     */
+    repeated string supportedSubscriptions = 8;
+    int64 current_lower_block = 9;
+    int64 current_lower_slot = 10;
+}
+
+message BuildInfo {
+    string version = 1;
+}
+
+message StatusRequest {
+    repeated ChainRef chains = 1;
+}
+
+message ChainStatus {
+    ChainRef chain = 1;
+    AvailabilityEnum availability = 2;
+    uint32 quorum = 3;
+}
+
+message NodeDetails {
+    uint32 quorum = 1;
+    repeated Label labels = 2;
+}
+
+enum Capabilities {
+    CAP_NONE = 0;
+    CAP_CALLS = 1;
+    CAP_BALANCE = 2;
+    CAP_WS_HEAD = 3;
+}
+
+message Label {
+    string name = 1;
+    string value = 2;
+}
+
+message Selector {
+    oneof selector_type {
+        LabelSelector labelSelector = 1;
+        OrSelector orSelector = 2;
+        AndSelector andSelector = 3;
+        NotSelector notSelector = 4;
+        ExistsSelector existsSelector = 5;
+        HeightSelector height_selector = 6;
+        SlotHeightSelector slot_height_selector = 7;
+        LowerHeightSelector lower_height_selector = 8;
+        MinVersionSelector minVersionSelector = 9;
+        MaxVersionSelector maxVersionSelector = 10;
+    }
+
+    bool should_be_forwarded = 100;
+}
+
+enum BlockTag {
+    UNKNOWN = 0;
+    PENDING = 1;
+    LATEST = 2;
+    SAFE = 3;
+    FINALIZED = 4;
+}
+
+message HeightSelector {
+    int64 height = 1 [deprecated = true];
+    oneof heightOrNumber {
+        uint64 number = 2;
+        BlockTag tag = 3;
+    }
+}
+
+message SlotHeightSelector {
+    int64 slotHeight = 1;
+}
+
+message LowerHeightSelector {
+    int64 height = 1;
+    LowerBoundType lower_bound_type = 2;
+    int64 time_offset = 3;
+    int64 height_delta = 4;
+}
+
+message LabelSelector {
+    string name = 1;
+    repeated string value = 2;
+}
+
+message OrSelector {
+    repeated Selector selectors = 1;
+}
+
+message AndSelector {
+    repeated Selector selectors = 1;
+}
+
+message NotSelector {
+    Selector selector = 1;
+}
+
+message MinVersionSelector {
+  string version = 1;
+}
+
+message MaxVersionSelector {
+  string version = 1;
+}
+
+message ExistsSelector {
+    string name = 1;
+}
+
+message SubscribeChainStatusRequest {
+}
+
+message SubscribeChainStatusResponse {
+    ChainDescription chain_description = 1;
+    BuildInfo build_info = 2;
+    bool full_response = 3;
+}
+
+message ChainDescription {
+    ChainRef chain = 1;
+    repeated ChainEvent chain_event = 2;
+}
+
+message HeadEvent {
+    uint64 height = 1;
+    string block_id = 2;
+    uint64 timestamp = 3;
+    bytes weight = 4;
+    string parent_block_id = 5;
+    uint64 slot = 6;
+}
+
+message ChainEvent {
+    oneof chain_event {
+        ChainStatus status = 1;
+        HeadEvent head = 2;
+        SupportedMethodsEvent supported_methods_event = 3;
+        SupportedSubscriptionsEvent supported_subscriptions_event = 4;
+        CapabilitiesEvent capabilities_event = 5;
+        LowerBoundEvent lower_bounds_event = 6;
+        FinalizationDataEvent finalization_data_event = 7;
+        NodeDetailsEvent nodes_event = 8;
+    }
+}
+
+message SupportedMethodsEvent {
+    repeated string methods = 1;
+}
+
+message SupportedSubscriptionsEvent {
+    repeated string subs = 1;
+}
+
+message CapabilitiesEvent {
+    repeated Capabilities capabilities = 1;
+}
+
+message LowerBoundEvent {
+    repeated LowerBound lower_bounds = 1;
+}
+
+message FinalizationDataEvent {
+    repeated FinalizationData finalization_data = 1;
+}
+
+message NodeDetailsEvent {
+    repeated NodeDetails nodes = 1;
+}

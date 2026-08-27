@@ -1,0 +1,60 @@
+syntax = "proto3";
+package emerald.transaction;
+option java_package = "io.emeraldpay.api.proto.transaction";
+import "common.proto";
+import "google/protobuf/wrappers.proto";
+
+enum Direction {
+  EARN = 0;
+  SPEND = 1;
+}
+
+message AddressAmount {
+  SingleAddress address = 1; // optional, could be not set if not defined
+  string amount = 2; // unsigned amount
+}
+
+message BalanceRequest {
+  Asset asset = 1;
+  AnyAddress address = 2;
+}
+
+message BalanceResponse {
+  Asset asset = 1;
+  repeated SingleAddress address = 2;
+  string balance = 3;
+}
+
+message AddressTxRequest {
+  ChainRef blockchain = 1;
+  AnyAddress address = 2;
+  string cursor = 3; // default: empty for no cursor
+  uint32 limit = 4; // default: 0 for no limit
+
+  // For Bitcoin, allows to query all unspent transactions to that address
+  bool only_unspent = 5; // default: false
+}
+
+message AddressTxResponse {
+  ChainRef blockchain = 1;
+  SingleAddress address = 2;
+  google.protobuf.UInt32Value xpub_index = 3; // index of address in xpub if xpub has been requested (optional)
+  string tx_id = 4;
+  BlockInfo block = 5;
+  bool mempool = 6;
+  // N/A for mempool and last blocks (unconfirmed)
+  string cursor = 7; // block height + tx index
+
+  bool removed = 8; // true if transaction is removed from blockchain
+
+  repeated Transfer transfers = 9;
+}
+
+message Transfer {
+  Direction direction = 1; // EARN or SPEND
+  string amount = 2; // unsigned amount
+  string fee = 3; // unsigned amount, currently unimplemented for Bitcoin
+  repeated AddressAmount address_amounts = 4; // counterparty addresses and amounts, single record for ETH
+  repeated uint32 xpub_indexes = 5; // indexes of counterparty addresses in xpub if xpub has been requested
+  string contractAddress = 6; // e.g. ERC-20 token address, optional, empty string for blockchain native token
+}

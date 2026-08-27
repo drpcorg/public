@@ -1,0 +1,15 @@
+syntax = "proto3";
+package emerald;
+option java_package = "io.emeraldpay.api.proto";
+
+service Auth {
+    rpc Authenticate (AuthRequest) returns (AuthResponse) {}
+}
+
+message AuthRequest {
+    string token = 1;
+}
+
+message AuthResponse {
+    string provider_token = 1;
+}

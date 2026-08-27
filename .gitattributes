@@ -1,0 +1,2 @@
+pkg/sui/*.pb.go linguist-generated=true
+pkg/dshackle/*.pb.go linguist-generated=true

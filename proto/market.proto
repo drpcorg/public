@@ -1,0 +1,27 @@
+syntax = "proto3";
+package emerald;
+option java_package = "io.emeraldpay.api.proto";
+
+service Market {
+    rpc GetRates (GetRatesRequest) returns (GetRatesResponse) {}
+}
+
+message GetRatesRequest {
+    repeated Pair pairs = 2;
+}
+
+message Pair {
+    string base = 1;
+    string target = 2;
+}
+
+message GetRatesResponse {
+    repeated Rate rates = 1;
+}
+
+message Rate {
+    string base = 1;
+    string target = 2;
+    string rate = 3;
+}
+

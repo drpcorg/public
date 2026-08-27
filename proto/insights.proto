@@ -1,0 +1,32 @@
+syntax = "proto3";
+package emerald;
+option java_package = "io.emeraldpay.api.proto";
+import "common.proto";
+
+service Insights {
+    rpc GetData (GetDataRequest) returns (GetDataResponse) {}
+
+    rpc GetSummary (GetSummaryRequest) returns (GetSummaryResponse) {}
+}
+
+message GetDataRequest {
+    string id = 1;
+    ChainRef chain = 2;
+    string asset = 3;
+}
+
+message GetDataResponse {
+    bytes data = 1;
+}
+
+message GetSummaryRequest {
+    ChainRef chain = 1;
+}
+
+message GetSummaryResponse {
+    ChainRef chain = 1;
+
+    // avg block time in seconds
+    uint32 blocktime = 2;
+}
+
