@@ -1,0 +1,10 @@
+syntax = "proto3";
+package emerald;
+option java_package = "io.emeraldpay.api.proto";
+import "transaction.message.proto";
+
+service Transaction {
+  rpc GetBalance (transaction.BalanceRequest) returns (stream transaction.BalanceResponse) {}
+  rpc GetAddressTx (transaction.AddressTxRequest) returns (stream transaction.AddressTxResponse) {}
+  rpc SubscribeAddressTx (transaction.AddressTxRequest) returns (stream transaction.AddressTxResponse) {}
+}

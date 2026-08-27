@@ -1,0 +1,30 @@
+name: Run tests
+
+on:
+  workflow_dispatch: null
+  pull_request:
+  push:
+    branches:
+      - main
+
+env:
+  GO_VERSION: "1.27.0"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+        with:
+          submodules: recursive
+          fetch-depth: 1
+
+      - name: Setup Go project
+        uses: ./.github/actions/setup-go-project
+        with:
+          go-version: ${{ env.GO_VERSION }}
+          cache-key-suffix: "test"
+
+      - name: Run tests
+        run: make test

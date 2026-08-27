@@ -1,0 +1,13 @@
+syntax = "proto3";
+package emerald;
+option java_package = "io.emeraldpay.api.proto";
+
+service Monitoring {
+    rpc Ping (PingRequest) returns (PongResponse) {}
+}
+
+message PingRequest {
+}
+
+message PongResponse {
+}
