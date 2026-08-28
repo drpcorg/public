@@ -34,6 +34,7 @@ message NativeCallItem {
     oneof data {
         bytes payload = 4;
         RestData rest_data = 8;
+        GrpcData grpc_data = 9;
     }
 }
 
@@ -42,6 +43,11 @@ message RestData {
     repeated string path_params = 2;
     repeated KeyValue headers = 3;
     repeated KeyValue query_params = 4;
+}
+
+message GrpcData {
+    bytes payload = 1;
+    repeated KeyValue metadata = 2;
 }
 
 message KeyValue {
@@ -92,6 +98,7 @@ message NativeCallReplyItem {
     FinalizationData finalization = 13;
     repeated KeyValue response_headers = 14;
     bytes error_as_is = 15;
+    repeated KeyValue response_trailers = 16;
 }
 
 message NativeSubscribeRequest {
