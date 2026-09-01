@@ -3180,6 +3180,10 @@ chain-settings:
           grpcId: 1116
           chain-id: 0x3c4
           short-names: [bittensor, bittensor-mainnet]
+          lower-bounds:
+            # EVM runtime (spec 210) activated at 4345556, eth data can't exist below
+            state:
+              block: 4345556
         - id: Testnet
           priority: 10
           code: BITTENSOR_TESTNET
