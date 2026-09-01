@@ -1,89 +1,82 @@
 {
   "openrpc": "1.0.0",
   "info": {
-    "title": "Cosmos SDK LCD REST methods",
+    "title": "Cosmos SDK gRPC query methods",
     "version": "1.0.0"
   },
   "spec": {
-    "name": "cosmos-rest",
     "api-connectors": [
-      "rest"
+      "grpc"
     ],
+    "name": "cosmos-grpc",
     "type": "plain"
   },
   "methods": [
     {
-      "name": "GET#/cosmos/base/tendermint/v1beta1/node_info",
+      "name": "/cosmos.base.tendermint.v1beta1.Service/ABCIQuery",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/base/tendermint/v1beta1/syncing",
+      "name": "/cosmos.base.tendermint.v1beta1.Service/GetBlockByHeight",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/base/tendermint/v1beta1/blocks/latest",
+      "name": "/cosmos.base.tendermint.v1beta1.Service/GetLatestBlock",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/base/tendermint/v1beta1/blocks/*",
+      "name": "/cosmos.base.tendermint.v1beta1.Service/GetLatestValidatorSet",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/base/tendermint/v1beta1/validatorsets/latest",
+      "name": "/cosmos.base.tendermint.v1beta1.Service/GetNodeInfo",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/base/tendermint/v1beta1/validatorsets/*",
+      "name": "/cosmos.base.tendermint.v1beta1.Service/GetSyncing",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/base/tendermint/v1beta1/abci_query",
+      "name": "/cosmos.base.tendermint.v1beta1.Service/GetValidatorSetByHeight",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/base/node/v1beta1/config",
+      "name": "/cosmos.base.node.v1beta1.Service/Config",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/base/node/v1beta1/status",
+      "name": "/cosmos.base.node.v1beta1.Service/Status",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/tx/v1beta1/txs",
-      "params": [],
-      "settings": {
-        "cacheable": false
-      }
-    },
-    {
-      "name": "POST#/cosmos/tx/v1beta1/txs",
+      "name": "/cosmos.tx.v1beta1.Service/BroadcastTx",
       "group": "broadcast",
       "params": [],
       "settings": {
@@ -91,980 +84,1029 @@
       }
     },
     {
-      "name": "GET#/cosmos/tx/v1beta1/txs/*",
+      "name": "/cosmos.tx.v1beta1.Service/GetBlockWithTxs",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/tx/v1beta1/txs/block/*",
+      "name": "/cosmos.tx.v1beta1.Service/GetTx",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "POST#/cosmos/tx/v1beta1/simulate",
+      "name": "/cosmos.tx.v1beta1.Service/GetTxsEvent",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "POST#/cosmos/tx/v1beta1/decode",
+      "name": "/cosmos.tx.v1beta1.Service/Simulate",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "POST#/cosmos/tx/v1beta1/encode",
+      "name": "/cosmos.tx.v1beta1.Service/TxDecode",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "POST#/cosmos/tx/v1beta1/decode/amino",
+      "name": "/cosmos.tx.v1beta1.Service/TxDecodeAmino",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "POST#/cosmos/tx/v1beta1/encode/amino",
+      "name": "/cosmos.tx.v1beta1.Service/TxEncode",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/auth/v1beta1/params",
+      "name": "/cosmos.tx.v1beta1.Service/TxEncodeAmino",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/auth/v1beta1/accounts",
+      "name": "/cosmos.auth.v1beta1.Query/Account",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/auth/v1beta1/accounts/*",
+      "name": "/cosmos.auth.v1beta1.Query/AccountAddressByID",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/auth/v1beta1/account_info/*",
+      "name": "/cosmos.auth.v1beta1.Query/AccountInfo",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/auth/v1beta1/address_by_id/*",
+      "name": "/cosmos.auth.v1beta1.Query/Accounts",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/auth/v1beta1/module_accounts",
+      "name": "/cosmos.auth.v1beta1.Query/AddressBytesToString",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/auth/v1beta1/module_accounts/*",
+      "name": "/cosmos.auth.v1beta1.Query/AddressStringToBytes",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/auth/v1beta1/bech32",
+      "name": "/cosmos.auth.v1beta1.Query/Bech32Prefix",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/auth/v1beta1/bech32/*",
+      "name": "/cosmos.auth.v1beta1.Query/ModuleAccountByName",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/authz/v1beta1/grants",
+      "name": "/cosmos.auth.v1beta1.Query/ModuleAccounts",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/authz/v1beta1/grants/granter/*",
+      "name": "/cosmos.auth.v1beta1.Query/Params",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/authz/v1beta1/grants/grantee/*",
+      "name": "/cosmos.authz.v1beta1.Query/GranteeGrants",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/params",
+      "name": "/cosmos.authz.v1beta1.Query/GranterGrants",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/balances/*",
+      "name": "/cosmos.authz.v1beta1.Query/Grants",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/balances/*/by_denom",
+      "name": "/cosmos.bank.v1beta1.Query/AllBalances",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/spendable_balances/*",
+      "name": "/cosmos.bank.v1beta1.Query/Balance",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/spendable_balances/*/by_denom",
+      "name": "/cosmos.bank.v1beta1.Query/DenomMetadata",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/supply",
+      "name": "/cosmos.bank.v1beta1.Query/DenomMetadataByQueryString",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/supply/by_denom",
+      "name": "/cosmos.bank.v1beta1.Query/DenomOwners",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/denoms_metadata",
+      "name": "/cosmos.bank.v1beta1.Query/DenomOwnersByQuery",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/denoms_metadata/*",
+      "name": "/cosmos.bank.v1beta1.Query/DenomsMetadata",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/denoms_metadata_by_query_string",
+      "name": "/cosmos.bank.v1beta1.Query/Params",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/denom_owners/*",
+      "name": "/cosmos.bank.v1beta1.Query/SendEnabled",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/denom_owners_by_query",
+      "name": "/cosmos.bank.v1beta1.Query/SpendableBalanceByDenom",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/bank/v1beta1/send_enabled",
+      "name": "/cosmos.bank.v1beta1.Query/SpendableBalances",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/consensus/v1/params",
+      "name": "/cosmos.bank.v1beta1.Query/SupplyOf",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/distribution/v1beta1/params",
+      "name": "/cosmos.bank.v1beta1.Query/TotalSupply",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/distribution/v1beta1/community_pool",
+      "name": "/cosmos.consensus.v1.Query/Params",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/distribution/v1beta1/validators/*",
+      "name": "/cosmos.distribution.v1beta1.Query/CommunityPool",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/distribution/v1beta1/validators/*/commission",
+      "name": "/cosmos.distribution.v1beta1.Query/DelegationRewards",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/distribution/v1beta1/validators/*/outstanding_rewards",
+      "name": "/cosmos.distribution.v1beta1.Query/DelegationTotalRewards",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/distribution/v1beta1/validators/*/slashes",
+      "name": "/cosmos.distribution.v1beta1.Query/DelegatorValidators",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/distribution/v1beta1/delegators/*/rewards",
+      "name": "/cosmos.distribution.v1beta1.Query/DelegatorWithdrawAddress",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/distribution/v1beta1/delegators/*/rewards/*",
+      "name": "/cosmos.distribution.v1beta1.Query/Params",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/distribution/v1beta1/delegators/*/validators",
+      "name": "/cosmos.distribution.v1beta1.Query/ValidatorCommission",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/distribution/v1beta1/delegators/*/withdraw_address",
+      "name": "/cosmos.distribution.v1beta1.Query/ValidatorDistributionInfo",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/evidence/v1beta1/evidence",
+      "name": "/cosmos.distribution.v1beta1.Query/ValidatorOutstandingRewards",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/evidence/v1beta1/evidence/*",
+      "name": "/cosmos.distribution.v1beta1.Query/ValidatorSlashes",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/feegrant/v1beta1/allowance/*/*",
+      "name": "/cosmos.evidence.v1beta1.Query/AllEvidence",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/feegrant/v1beta1/allowances/*",
+      "name": "/cosmos.evidence.v1beta1.Query/Evidence",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/feegrant/v1beta1/issued/*",
+      "name": "/cosmos.feegrant.v1beta1.Query/Allowance",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1/constitution",
+      "name": "/cosmos.feegrant.v1beta1.Query/Allowances",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1/params/*",
+      "name": "/cosmos.feegrant.v1beta1.Query/AllowancesByGranter",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1/proposals",
+      "name": "/cosmos.gov.v1.Query/Constitution",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1/proposals/*",
+      "name": "/cosmos.gov.v1.Query/Deposit",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1/proposals/*/deposits",
+      "name": "/cosmos.gov.v1.Query/Deposits",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1/proposals/*/deposits/*",
+      "name": "/cosmos.gov.v1.Query/Params",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1/proposals/*/tally",
+      "name": "/cosmos.gov.v1.Query/Proposal",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1/proposals/*/votes",
+      "name": "/cosmos.gov.v1.Query/Proposals",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1/proposals/*/votes/*",
+      "name": "/cosmos.gov.v1.Query/TallyResult",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1beta1/params/*",
+      "name": "/cosmos.gov.v1.Query/Vote",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1beta1/proposals",
+      "name": "/cosmos.gov.v1.Query/Votes",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1beta1/proposals/*",
+      "name": "/cosmos.gov.v1beta1.Query/Deposit",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1beta1/proposals/*/deposits",
+      "name": "/cosmos.gov.v1beta1.Query/Deposits",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1beta1/proposals/*/deposits/*",
+      "name": "/cosmos.gov.v1beta1.Query/Params",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1beta1/proposals/*/tally",
+      "name": "/cosmos.gov.v1beta1.Query/Proposal",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1beta1/proposals/*/votes",
+      "name": "/cosmos.gov.v1beta1.Query/Proposals",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/gov/v1beta1/proposals/*/votes/*",
+      "name": "/cosmos.gov.v1beta1.Query/TallyResult",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/mint/v1beta1/params",
+      "name": "/cosmos.gov.v1beta1.Query/Vote",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/mint/v1beta1/inflation",
+      "name": "/cosmos.gov.v1beta1.Query/Votes",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/mint/v1beta1/annual_provisions",
+      "name": "/cosmos.params.v1beta1.Query/Params",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/params/v1beta1/params",
+      "name": "/cosmos.params.v1beta1.Query/Subspaces",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/params/v1beta1/subspaces",
+      "name": "/cosmos.slashing.v1beta1.Query/Params",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/slashing/v1beta1/params",
+      "name": "/cosmos.slashing.v1beta1.Query/SigningInfo",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/slashing/v1beta1/signing_infos",
+      "name": "/cosmos.slashing.v1beta1.Query/SigningInfos",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/slashing/v1beta1/signing_infos/*",
+      "name": "/cosmos.staking.v1beta1.Query/Delegation",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/params",
+      "name": "/cosmos.staking.v1beta1.Query/DelegatorDelegations",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/pool",
+      "name": "/cosmos.staking.v1beta1.Query/DelegatorUnbondingDelegations",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/historical_info/*",
+      "name": "/cosmos.staking.v1beta1.Query/DelegatorValidator",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/delegations/*",
+      "name": "/cosmos.staking.v1beta1.Query/DelegatorValidators",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/delegators/*/redelegations",
+      "name": "/cosmos.staking.v1beta1.Query/HistoricalInfo",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/delegators/*/unbonding_delegations",
+      "name": "/cosmos.staking.v1beta1.Query/Params",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/delegators/*/validators",
+      "name": "/cosmos.staking.v1beta1.Query/Pool",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/delegators/*/validators/*",
+      "name": "/cosmos.staking.v1beta1.Query/Redelegations",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/validators",
+      "name": "/cosmos.staking.v1beta1.Query/UnbondingDelegation",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/validators/*",
+      "name": "/cosmos.staking.v1beta1.Query/Validator",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/validators/*/delegations",
+      "name": "/cosmos.staking.v1beta1.Query/ValidatorDelegations",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/validators/*/delegations/*",
+      "name": "/cosmos.staking.v1beta1.Query/ValidatorUnbondingDelegations",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/validators/*/delegations/*/unbonding_delegation",
+      "name": "/cosmos.staking.v1beta1.Query/Validators",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/staking/v1beta1/validators/*/unbonding_delegations",
+      "name": "/cosmos.upgrade.v1beta1.Query/AppliedPlan",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/upgrade/v1beta1/authority",
+      "name": "/cosmos.upgrade.v1beta1.Query/Authority",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/upgrade/v1beta1/current_plan",
+      "name": "/cosmos.upgrade.v1beta1.Query/CurrentPlan",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/upgrade/v1beta1/applied_plan/*",
+      "name": "/cosmos.upgrade.v1beta1.Query/ModuleVersions",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/upgrade/v1beta1/module_versions",
+      "name": "/cosmos.upgrade.v1beta1.Query/UpgradedConsensusState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmos/upgrade/v1beta1/upgraded_consensus_state/*",
+      "name": "/cosmwasm.wasm.v1.Query/AllContractState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/params",
+      "name": "/cosmwasm.wasm.v1.Query/BuildAddress",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/code",
+      "name": "/cosmwasm.wasm.v1.Query/Code",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/code/*",
+      "name": "/cosmwasm.wasm.v1.Query/CodeInfo",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/code/*/contracts",
+      "name": "/cosmwasm.wasm.v1.Query/Codes",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/codes/pinned",
+      "name": "/cosmwasm.wasm.v1.Query/ContractHistory",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/contract/build_address",
+      "name": "/cosmwasm.wasm.v1.Query/ContractInfo",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/contract/*",
+      "name": "/cosmwasm.wasm.v1.Query/ContractsByCode",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/contract/*/history",
+      "name": "/cosmwasm.wasm.v1.Query/ContractsByCreator",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/contract/*/state",
+      "name": "/cosmwasm.wasm.v1.Query/Params",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/contract/*/raw/*",
+      "name": "/cosmwasm.wasm.v1.Query/PinnedCodes",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/contract/*/smart/*",
+      "name": "/cosmwasm.wasm.v1.Query/RawContractState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/cosmwasm/wasm/v1/contracts/creator/*",
+      "name": "/cosmwasm.wasm.v1.Query/SmartContractState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/client/v1/params",
+      "name": "/cosmwasm.wasm.v1.Query/WasmLimitsConfig",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/client/v1/client_states",
+      "name": "/ibc.core.client.v1.Query/ClientCreator",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/client/v1/client_states/*",
+      "name": "/ibc.core.client.v1.Query/ClientParams",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/client/v1/client_status/*",
+      "name": "/ibc.core.client.v1.Query/ClientState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/client/v1/consensus_states/*",
+      "name": "/ibc.core.client.v1.Query/ClientStates",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/client/v1/consensus_states/*/heights",
+      "name": "/ibc.core.client.v1.Query/ClientStatus",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/client/v1/consensus_states/*/revision/*/height/*",
+      "name": "/ibc.core.client.v1.Query/ConsensusState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/client/v1/upgraded_client_states",
+      "name": "/ibc.core.client.v1.Query/ConsensusStateHeights",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/client/v1/upgraded_consensus_states",
+      "name": "/ibc.core.client.v1.Query/ConsensusStates",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/connection/v1/params",
+      "name": "/ibc.core.client.v1.Query/UpgradedClientState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/connection/v1/connections",
+      "name": "/ibc.core.client.v1.Query/UpgradedConsensusState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/connection/v1/connections/*",
+      "name": "/ibc.core.client.v1.Query/VerifyMembership",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/connection/v1/connections/*/client_state",
+      "name": "/ibc.core.connection.v1.Query/ClientConnections",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/connection/v1/connections/*/consensus_state/revision/*/height/*",
+      "name": "/ibc.core.connection.v1.Query/Connection",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/connection/v1/client_connections/*",
+      "name": "/ibc.core.connection.v1.Query/ConnectionClientState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/params",
+      "name": "/ibc.core.connection.v1.Query/ConnectionConsensusState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels",
+      "name": "/ibc.core.connection.v1.Query/ConnectionParams",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels/*/ports/*",
+      "name": "/ibc.core.connection.v1.Query/Connections",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels/*/ports/*/client_state",
+      "name": "/ibc.core.channel.v1.Query/Channel",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels/*/ports/*/consensus_state/revision/*/height/*",
+      "name": "/ibc.core.channel.v1.Query/ChannelClientState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels/*/ports/*/next_sequence",
+      "name": "/ibc.core.channel.v1.Query/ChannelConsensusState",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels/*/ports/*/packet_acks/*",
+      "name": "/ibc.core.channel.v1.Query/ChannelParams",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels/*/ports/*/packet_commitments",
+      "name": "/ibc.core.channel.v1.Query/Channels",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels/*/ports/*/packet_commitments/*",
+      "name": "/ibc.core.channel.v1.Query/ConnectionChannels",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels/*/ports/*/packet_commitments/*/unreceived_acks",
+      "name": "/ibc.core.channel.v1.Query/NextSequenceReceive",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels/*/ports/*/packet_commitments/*/unreceived_packets",
+      "name": "/ibc.core.channel.v1.Query/NextSequenceSend",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/channels/*/ports/*/packet_receipts/*",
+      "name": "/ibc.core.channel.v1.Query/PacketAcknowledgement",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/core/channel/v1/connections/*/channels",
+      "name": "/ibc.core.channel.v1.Query/PacketAcknowledgements",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/apps/transfer/v1/params",
+      "name": "/ibc.core.channel.v1.Query/PacketCommitment",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/apps/transfer/v1/denoms",
+      "name": "/ibc.core.channel.v1.Query/PacketCommitments",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/apps/transfer/v1/denoms/*",
+      "name": "/ibc.core.channel.v1.Query/PacketReceipt",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/apps/transfer/v1/denoms/*/total_escrow",
+      "name": "/ibc.core.channel.v1.Query/UnreceivedAcks",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/apps/transfer/v1/denom_traces",
+      "name": "/ibc.core.channel.v1.Query/UnreceivedPackets",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/apps/transfer/v1/denom_traces/*",
+      "name": "/ibc.core.channel.v1.Query/Upgrade",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/apps/transfer/v1/denom_hashes/*",
+      "name": "/ibc.core.channel.v1.Query/UpgradeError",
       "params": [],
       "settings": {
         "cacheable": false
       }
     },
     {
-      "name": "GET#/ibc/apps/transfer/v1/channels/*/ports/*/escrow_address",
+      "name": "/ibc.applications.transfer.v1.Query/Denom",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/ibc.applications.transfer.v1.Query/DenomHash",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/ibc.applications.transfer.v1.Query/DenomTrace",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/ibc.applications.transfer.v1.Query/DenomTraces",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/ibc.applications.transfer.v1.Query/Denoms",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/ibc.applications.transfer.v1.Query/EscrowAddress",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/ibc.applications.transfer.v1.Query/Params",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/ibc.applications.transfer.v1.Query/TotalEscrowForDenom",
       "params": [],
       "settings": {
         "cacheable": false

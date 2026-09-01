@@ -236,7 +236,7 @@ The `specs` package embeds the specs below (see [`pkg/methods/specs/`](../pkg/me
 | `starknet` | `starknet-json-rpc` |
 | `stellar` | `stellar-json-rpc`, `stellar-horizon` |
 | `ton` | `ton-http-v2`, `ton-index-v3` |
-| `cosmos` | `cosmos-tendermint`, `cosmos-rest` |
+| `cosmos` | `cosmos-tendermint`, `cosmos-rest`, `cosmos-grpc` |
 | `sui` | `sui-grpc` |
 | `polkadot` | `polkadot-json-rpc`, `polkadot-websocket` |
 | `astar` | `eth`, `polkadot` |
@@ -253,7 +253,7 @@ Grouped by the transports they declare:
 | `tendermint` | `cosmos-tendermint` |
 | `rest` | `aptos`, `cosmos-rest`, `eth-beacon-chain`, `stellar-horizon`, `ton-http-v2`, `tron-rest` |
 | `rest-indexer` | `ton-index-v3` |
-| `grpc` | `sui-grpc` |
+| `grpc` | `cosmos-grpc`, `sui-grpc` |
 | `rest-additional` | `bitcoin-esplora`, `hyperliquid-rest-additional`, `tron-rest-solidity` |
 
 ## Adding a new method

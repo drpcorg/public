@@ -1,0 +1,55 @@
+# buf v2 generation template for the IBC protos, pinned to an ibc-go release
+# tag. Unlike chain-apis/sui.gen.yaml there is no submodule: the tag in the
+# git_repo input pins the source just as reproducibly, and ibc-go's own
+# buf.yaml resolves the extension protos (gogoproto, amino, cosmos_proto,
+# ics23) that its files import.
+#
+# Message types only, no client stubs - consumers build RequestHolders, they
+# never dial. What this exists for is descriptors: importing the output
+# registers ibc.* in protoregistry.GlobalFiles so a gRPC ingress can answer
+# reflection for the ibc methods declared in specs/cosmos-grpc.json.
+#
+# The M overrides below are the whole reason this is generated rather than
+# taken from buf.build/gen/go/cosmos/ibc: that module ships its own copy of
+# amino.proto and the cosmos.* descriptors, which panics at init against
+# cosmossdk.io/api ("file amino/amino.proto is already registered"). Every
+# file shared with the SDK is redirected at the package that already owns it,
+# so exactly one copy of each ends up in the binary.
+#
+# Inputs are the transitive closure of the four Query services the spec
+# declares. commitment/v1 and v2 are here because channel and connection
+# import them, not because they carry services. The list is fail-closed: a new
+# upstream import shows up as a compile error and gets added consciously.
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/drpcorg/public/pkg
+plugins:
+  - local: ["go", "tool", "protoc-gen-go"]
+    out: pkg
+    opt:
+      - module=github.com/drpcorg/public/pkg
+      - Mamino/amino.proto=cosmossdk.io/api/amino
+      - Mcosmos/base/query/v1beta1/pagination.proto=cosmossdk.io/api/cosmos/base/query/v1beta1
+      - Mcosmos/base/v1beta1/coin.proto=cosmossdk.io/api/cosmos/base/v1beta1
+      - Mcosmos/msg/v1/msg.proto=cosmossdk.io/api/cosmos/msg/v1
+      - Mcosmos/query/v1/query.proto=cosmossdk.io/api/cosmos/query/v1
+      - Mcosmos/upgrade/v1beta1/upgrade.proto=cosmossdk.io/api/cosmos/upgrade/v1beta1
+      - Mcosmos/ics23/v1/proofs.proto=github.com/cosmos/ics23/go
+      - Mcosmos_proto/cosmos.proto=github.com/cosmos/cosmos-proto
+      - Mgogoproto/gogo.proto=github.com/cosmos/gogoproto/gogoproto
+      - Mgoogle/api/annotations.proto=google.golang.org/genproto/googleapis/api/annotations
+      - Mgoogle/api/http.proto=google.golang.org/genproto/googleapis/api/annotations
+inputs:
+  - git_repo: https://github.com/cosmos/ibc-go.git
+    tag: v11.2.0
+    subdir: proto
+    paths:
+      - ibc/applications/transfer/v1
+      - ibc/core/channel/v1
+      - ibc/core/client/v1
+      - ibc/core/commitment/v1
+      - ibc/core/commitment/v2
+      - ibc/core/connection/v1

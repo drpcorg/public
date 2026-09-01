@@ -91,10 +91,12 @@ func TestSuiMethodsAreNotCacheable(t *testing.T) {
 	}
 }
 
+// GetGrpcServices spans every grpc spec, so this asserts the sui half of it;
+// the cosmos half is pinned in TestGetGrpcServicesListsAllCosmosServices.
 func TestGetGrpcServicesListsAllSuiServices(t *testing.T) {
 	require.NoError(t, specs.NewMethodSpecLoader().Load())
 
-	assert.Equal(t, []string{
+	assert.Subset(t, specs.GetGrpcServices(), []string{
 		"sui.rpc.v2.LedgerService",
 		"sui.rpc.v2.MovePackageService",
 		"sui.rpc.v2.NameService",
@@ -102,5 +104,5 @@ func TestGetGrpcServicesListsAllSuiServices(t *testing.T) {
 		"sui.rpc.v2.StateService",
 		"sui.rpc.v2.SubscriptionService",
 		"sui.rpc.v2.TransactionExecutionService",
-	}, specs.GetGrpcServices())
+	})
 }
