@@ -1,7 +1,7 @@
 {
   "openrpc": "1.0.0",
   "info": {
-    "title": "Cosmos SDK chain methods - Tendermint RPC and LCD REST",
+    "title": "Cosmos SDK chain methods - Tendermint RPC, LCD REST and gRPC",
     "version": "1.0.0"
   },
   "spec": {
@@ -10,6 +10,7 @@
   },
   "spec-imports": [
     "cosmos-tendermint",
-    "cosmos-rest"
+    "cosmos-rest",
+    "cosmos-grpc"
   ]
 }

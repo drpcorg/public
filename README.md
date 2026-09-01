@@ -219,6 +219,9 @@ and the generated protobuf types.
 | `github.com/drpcorg/public/pkg/methods` | `specs` | `specs/*.json` (embedded), the loader (`NewMethodSpecLoader().Load()`) and the lookup helpers (`GetSpecMethod`, `IsSubscribeMethod`, …). |
 | `github.com/drpcorg/public/pkg/dshackle` | `dshackle` | Generated message types and gRPC stubs for `blockchain.proto`, `common.proto` and `auth.proto` from `proto/`. |
 | `github.com/drpcorg/public/pkg/sui` | `sui` | Generated `sui.rpc.v2` message types from the `chain-apis/sui` submodule (MystenLabs/sui-apis). Importing it registers the descriptors in `protoregistry.GlobalFiles`. |
+| `github.com/drpcorg/public/pkg/cosmos` | `cosmos` | Blank imports of every package behind `cosmos-grpc` — `cosmossdk.io/api` for `cosmos.*`, plus `pkg/ibc` and `pkg/cosmwasm`. Importing it registers all of their descriptors in `protoregistry.GlobalFiles`. |
+| `github.com/drpcorg/public/pkg/ibc` | per proto package | Generated `ibc.*` message types from `cosmos/ibc-go` (tagged release). Reached through `pkg/cosmos`; import directly only if you need the types. |
+| `github.com/drpcorg/public/pkg/cosmwasm` | per proto package | Generated `cosmwasm.wasm.v1` message types from `CosmWasm/wasmd` (tagged release). Same. |
 
 ## Using it
 
@@ -254,15 +257,18 @@ new chain needs both entries with the same number. Nothing enforces this yet.
 ## Development
 
 ```
-make test               # go test -race -p 8 ./...
-make lint               # golangci-lint run ./...
-make dshackle-proto-gen # regenerate pkg/dshackle from proto/ (needs protoc)
-make sui-proto-gen      # regenerate pkg/sui from chain-apis/sui (needs buf)
+make test                # go test -race -p 8 ./...
+make lint                # golangci-lint run ./...
+make dshackle-proto-gen  # regenerate pkg/dshackle from proto/ (needs protoc)
+make sui-proto-gen       # regenerate pkg/sui from chain-apis/sui (needs buf)
+make ibc-proto-gen       # regenerate pkg/ibc from the pinned ibc-go tag (needs buf)
+make cosmwasm-proto-gen  # regenerate pkg/cosmwasm from the pinned wasmd tag (needs buf)
 ```
 
 Clone with `--recursive` (or run `git submodule update --init`) if you need to
-regenerate the sui protos. Builds and tests use the committed `pkg/sui` and need
-neither `buf` nor the submodule contents.
+regenerate the sui protos; the ibc and cosmwasm templates pull their sources by
+git tag and need network instead. Builds and tests use the committed output and
+need none of it.
 
 ## Releasing
 

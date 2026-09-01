@@ -1,0 +1,34 @@
+# buf v2 generation template for the CosmWasm protos, pinned to a wasmd
+# release tag. Same shape and the same rationale as chain-apis/ibc.gen.yaml -
+# see the comment there for why the shared cosmos/amino/gogoproto files are
+# redirected instead of generated.
+#
+# Only cosmwasm/wasm/v1 is generated: it is the one service
+# specs/cosmos-grpc.json declares, and its closure needs no other wasmd
+# directory.
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/drpcorg/public/pkg
+plugins:
+  - local: ["go", "tool", "protoc-gen-go"]
+    out: pkg
+    opt:
+      - module=github.com/drpcorg/public/pkg
+      - Mamino/amino.proto=cosmossdk.io/api/amino
+      - Mcosmos/base/query/v1beta1/pagination.proto=cosmossdk.io/api/cosmos/base/query/v1beta1
+      - Mcosmos/base/v1beta1/coin.proto=cosmossdk.io/api/cosmos/base/v1beta1
+      - Mcosmos/msg/v1/msg.proto=cosmossdk.io/api/cosmos/msg/v1
+      - Mcosmos/query/v1/query.proto=cosmossdk.io/api/cosmos/query/v1
+      - Mcosmos_proto/cosmos.proto=github.com/cosmos/cosmos-proto
+      - Mgogoproto/gogo.proto=github.com/cosmos/gogoproto/gogoproto
+      - Mgoogle/api/annotations.proto=google.golang.org/genproto/googleapis/api/annotations
+      - Mgoogle/api/http.proto=google.golang.org/genproto/googleapis/api/annotations
+inputs:
+  - git_repo: https://github.com/CosmWasm/wasmd.git
+    tag: v0.70.3
+    subdir: proto
+    paths:
+      - cosmwasm/wasm/v1

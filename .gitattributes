@@ -1,2 +1,4 @@
 pkg/sui/*.pb.go linguist-generated=true
 pkg/dshackle/*.pb.go linguist-generated=true
+pkg/ibc/**/*.pb.go linguist-generated=true
+pkg/cosmwasm/**/*.pb.go linguist-generated=true

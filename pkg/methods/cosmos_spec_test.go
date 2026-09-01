@@ -1,9 +1,11 @@
 package specs_test
 
 import (
+	"slices"
 	"strings"
 	"testing"
 
+	mapset "github.com/deckarep/golang-set/v2"
 	specs "github.com/drpcorg/public/pkg/methods"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
@@ -24,11 +26,11 @@ func TestTendermintIsPreferredOverRest(t *testing.T) {
 	assert.Less(t, specs.JsonRpcConnector, specs.TendermintConnector)
 }
 
-func TestCosmosBundleCarriesBothConnectorFamilies(t *testing.T) {
+func TestCosmosBundleCarriesAllConnectorFamilies(t *testing.T) {
 	require.NoError(t, specs.NewMethodSpecLoader().Load())
 
 	assert.ElementsMatch(t,
-		[]specs.ApiConnectorType{specs.TendermintConnector, specs.RestConnector},
+		[]specs.ApiConnectorType{specs.TendermintConnector, specs.RestConnector, specs.GrpcConnector},
 		specs.GetSpecConnectors("cosmos"),
 	)
 
@@ -44,6 +46,13 @@ func TestCosmosBundleCarriesBothConnectorFamilies(t *testing.T) {
 	restMethods := restOnly[specs.DefaultMethodGroup]
 	assert.Contains(t, restMethods, "GET#/cosmos/bank/v1beta1/params")
 	assert.NotContains(t, restMethods, "status")
+
+	grpcOnly := specs.GetSpecMethodsByConnectors("cosmos", []specs.ApiConnectorType{specs.GrpcConnector})
+	require.NotNil(t, grpcOnly)
+	grpcMethods := grpcOnly[specs.DefaultMethodGroup]
+	assert.Contains(t, grpcMethods, "/cosmos.bank.v1beta1.Query/Params")
+	assert.NotContains(t, grpcMethods, "GET#/cosmos/bank/v1beta1/params")
+	assert.NotContains(t, grpcMethods, "status")
 }
 
 // Every tendermint method is reachable both as a JSON-RPC name and as a URI
@@ -68,7 +77,7 @@ func TestTendermintMethodsAreDeclaredInBothShapes(t *testing.T) {
 func TestCosmosMethodsAreNotCacheable(t *testing.T) {
 	require.NoError(t, specs.NewMethodSpecLoader().Load())
 
-	for _, connectorType := range []specs.ApiConnectorType{specs.TendermintConnector, specs.RestConnector} {
+	for _, connectorType := range []specs.ApiConnectorType{specs.TendermintConnector, specs.RestConnector, specs.GrpcConnector} {
 		groups := specs.GetSpecMethodsByConnectors("cosmos", []specs.ApiConnectorType{connectorType})
 		require.NotEmpty(t, groups[specs.DefaultMethodGroup], "methods for %s", connectorType)
 		for name, method := range groups[specs.DefaultMethodGroup] {
@@ -84,11 +93,12 @@ func TestCosmosBroadcastGroup(t *testing.T) {
 	require.NoError(t, specs.NewMethodSpecLoader().Load())
 
 	broadcastGroup := specs.GetSpecMethodsByConnectors("cosmos", nil)["broadcast"]
-	assert.Len(t, broadcastGroup, 9)
+	assert.Len(t, broadcastGroup, 10)
 
 	for _, name := range []string{
 		"broadcast_tx_sync", "broadcast_tx_async", "broadcast_tx_commit", "broadcast_evidence",
 		"GET#/broadcast_tx_sync", "GET#/broadcast_tx_async", "GET#/broadcast_tx_commit", "GET#/broadcast_evidence",
+		"POST#/cosmos/tx/v1beta1/txs", "/cosmos.tx.v1beta1.Service/BroadcastTx",
 	} {
 		method := specs.GetSpecMethod("cosmos", name)
 		require.NotNil(t, method, name)
@@ -143,4 +153,74 @@ func TestCosmosRestPathMatching(t *testing.T) {
 		assert.Equal(t, c.wantTemplate, template, "template for %s", c.path)
 		assert.Equal(t, c.wantParams, params, "params for %s", c.path)
 	}
+}
+
+// Every cosmos gRPC method is unary: the SDK's Query/Service descriptors
+// declare no client- or server-streaming RPC, so the spec carries no
+// grpc.call-type annotation anywhere and the unary default must hold.
+func TestCosmosGrpcMethodsAreUnary(t *testing.T) {
+	require.NoError(t, specs.NewMethodSpecLoader().Load())
+
+	groups := specs.GetSpecMethodsByConnectors("cosmos", []specs.ApiConnectorType{specs.GrpcConnector})
+	require.NotNil(t, groups)
+	methods := groups[specs.DefaultMethodGroup]
+	require.NotEmpty(t, methods)
+
+	for name, method := range methods {
+		assert.Equal(t, specs.GrpcCallTypeUnary, method.GrpcCallType(), name)
+		assert.False(t, method.IsSubscribe(), "%s must not be routed as a subscription", name)
+		assert.True(t, strings.HasPrefix(name, "/") && strings.Count(name, "/") == 2,
+			"%s must be a full /package.Service/Method name", name)
+	}
+}
+
+// The gRPC ingress serves reflection from GetGrpcServices, so the cosmos half
+// of that list is pinned here. Modules the chains fork (mint - osmosis serves
+// osmosis.mint.v1beta1, celestia serves celestia.mint.v1) and modules no
+// mainnet enables (nft, group, circuit, epochs) are deliberately absent.
+//
+// CosmWasm and IBC are not Cosmos SDK modules but every chain in the bundle
+// runs them, so they are declared here for parity with cosmos-rest.json. A
+// chain that lacks one disables its methods in a per-chain spec, the way
+// viction.json disables eth_getProof.
+func TestGetGrpcServicesListsAllCosmosServices(t *testing.T) {
+	require.NoError(t, specs.NewMethodSpecLoader().Load())
+
+	groups := specs.GetSpecMethodsByConnectors("cosmos", []specs.ApiConnectorType{specs.GrpcConnector})
+	require.NotNil(t, groups)
+
+	services := mapset.NewThreadUnsafeSet[string]()
+	for name := range groups[specs.DefaultMethodGroup] {
+		service, _, found := strings.Cut(strings.TrimPrefix(name, "/"), "/")
+		require.True(t, found, name)
+		services.Add(service)
+	}
+	cosmosServices := services.ToSlice()
+	slices.Sort(cosmosServices)
+
+	// Every one of these is advertised through GetGrpcServices.
+	assert.Subset(t, specs.GetGrpcServices(), cosmosServices)
+	assert.Equal(t, []string{
+		"cosmos.auth.v1beta1.Query",
+		"cosmos.authz.v1beta1.Query",
+		"cosmos.bank.v1beta1.Query",
+		"cosmos.base.node.v1beta1.Service",
+		"cosmos.base.tendermint.v1beta1.Service",
+		"cosmos.consensus.v1.Query",
+		"cosmos.distribution.v1beta1.Query",
+		"cosmos.evidence.v1beta1.Query",
+		"cosmos.feegrant.v1beta1.Query",
+		"cosmos.gov.v1.Query",
+		"cosmos.gov.v1beta1.Query",
+		"cosmos.params.v1beta1.Query",
+		"cosmos.slashing.v1beta1.Query",
+		"cosmos.staking.v1beta1.Query",
+		"cosmos.tx.v1beta1.Service",
+		"cosmos.upgrade.v1beta1.Query",
+		"cosmwasm.wasm.v1.Query",
+		"ibc.applications.transfer.v1.Query",
+		"ibc.core.channel.v1.Query",
+		"ibc.core.client.v1.Query",
+		"ibc.core.connection.v1.Query",
+	}, cosmosServices)
 }
