@@ -36,7 +36,7 @@ const (
 	LowerBoundType_LOWER_BOUND_EPOCH       LowerBoundType = 9
 	LowerBoundType_LOWER_BOUND_RECEIPTS    LowerBoundType = 10
 	// upper bound of the historical proof store (op-reth debug_proofsSyncStatus.latest). Reuses the LowerBound message.
-	LowerBoundType_UPPER_BOUND_PROOF LowerBoundType = 11
+	LowerBoundType_LOWER_BOUND_PROOF_UPPER LowerBoundType = 11
 )
 
 // Enum value maps for LowerBoundType.
@@ -53,7 +53,7 @@ var (
 		8:  "LOWER_BOUND_BLOB",
 		9:  "LOWER_BOUND_EPOCH",
 		10: "LOWER_BOUND_RECEIPTS",
-		11: "UPPER_BOUND_PROOF",
+		11: "LOWER_BOUND_PROOF_UPPER",
 	}
 	LowerBoundType_value = map[string]int32{
 		"LOWER_BOUND_UNSPECIFIED": 0,
@@ -67,7 +67,7 @@ var (
 		"LOWER_BOUND_BLOB":        8,
 		"LOWER_BOUND_EPOCH":       9,
 		"LOWER_BOUND_RECEIPTS":    10,
-		"UPPER_BOUND_PROOF":       11,
+		"LOWER_BOUND_PROOF_UPPER": 11,
 	}
 )
 
@@ -2333,7 +2333,7 @@ func (x *SlotHeightSelector) GetSlotHeight() int64 {
 
 // Matches nodes whose bound of `lower_bound_type` covers `height`.
 // For lower bound types the node must have `lower bound <= height`.
-// For UPPER_BOUND_PROOF the meaning is inverted: the node must have
+// For LOWER_BOUND_PROOF_UPPER the meaning is inverted: the node must have
 // `predicted upper bound >= height`.
 type LowerHeightSelector struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
@@ -3633,7 +3633,7 @@ const file_blockchain_proto_rawDesc = "" +
 	"\x15FinalizationDataEvent\x12F\n" +
 	"\x11finalization_data\x18\x01 \x03(\v2\x19.emerald.FinalizationDataR\x10finalizationData\">\n" +
 	"\x10NodeDetailsEvent\x12*\n" +
-	"\x05nodes\x18\x01 \x03(\v2\x14.emerald.NodeDetailsR\x05nodes*\xa7\x02\n" +
+	"\x05nodes\x18\x01 \x03(\v2\x14.emerald.NodeDetailsR\x05nodes*\xad\x02\n" +
 	"\x0eLowerBoundType\x12\x1b\n" +
 	"\x17LOWER_BOUND_UNSPECIFIED\x10\x00\x12\x14\n" +
 	"\x10LOWER_BOUND_SLOT\x10\x01\x12\x15\n" +
@@ -3646,8 +3646,8 @@ const file_blockchain_proto_rawDesc = "" +
 	"\x10LOWER_BOUND_BLOB\x10\b\x12\x15\n" +
 	"\x11LOWER_BOUND_EPOCH\x10\t\x12\x18\n" +
 	"\x14LOWER_BOUND_RECEIPTS\x10\n" +
-	"\x12\x15\n" +
-	"\x11UPPER_BOUND_PROOF\x10\v*M\n" +
+	"\x12\x1b\n" +
+	"\x17LOWER_BOUND_PROOF_UPPER\x10\v*M\n" +
 	"\fCapabilities\x12\f\n" +
 	"\bCAP_NONE\x10\x00\x12\r\n" +
 	"\tCAP_CALLS\x10\x01\x12\x0f\n" +
