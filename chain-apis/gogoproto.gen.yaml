@@ -1,0 +1,28 @@
+# buf v2 generation template for gogoproto/gogo.proto, pinned to the same
+# release tag as the github.com/cosmos/gogoproto module in go.mod - keep the
+# two in step when bumping.
+#
+# The cosmos descriptor closure imports this file, but the Go package the
+# gogoproto repo ships (github.com/cosmos/gogoproto/gogoproto) is
+# gogo-generated and registers only into gogo's own registry -
+# protoregistry.GlobalFiles never sees the file, so reflection clients that
+# resolve imports one at a time via file_by_filename (Postman does) fail the
+# whole load with "proto: not found". Generating it here puts the one copy
+# into the global registry; pkg/descriptors' TestEveryGrpcImportResolvesByFilename
+# guards the closure. Extension descriptors only, no services.
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/drpcorg/public/pkg
+plugins:
+  - local: ["go", "tool", "protoc-gen-go"]
+    out: pkg
+    opt:
+      - module=github.com/drpcorg/public/pkg
+inputs:
+  - git_repo: https://github.com/cosmos/gogoproto.git
+    tag: v1.7.2
+    paths:
+      - gogoproto

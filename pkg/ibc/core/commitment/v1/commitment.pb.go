@@ -7,8 +7,8 @@
 package commitmentv1
 
 import (
-	_ "github.com/cosmos/gogoproto/gogoproto"
-	_go "github.com/cosmos/ics23/go"
+	_ "github.com/drpcorg/public/pkg/gogoproto"
+	v1 "github.com/drpcorg/public/pkg/ics23/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -123,7 +123,7 @@ func (x *MerklePrefix) GetKeyPrefix() []byte {
 // MerkleProofs are ordered from leaf-to-root
 type MerkleProof struct {
 	state         protoimpl.MessageState `protogen:"open.v1"`
-	Proofs        []*_go.CommitmentProof `protobuf:"bytes,1,rep,name=proofs,proto3" json:"proofs,omitempty"`
+	Proofs        []*v1.CommitmentProof  `protobuf:"bytes,1,rep,name=proofs,proto3" json:"proofs,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -158,7 +158,7 @@ func (*MerkleProof) Descriptor() ([]byte, []int) {
 	return file_ibc_core_commitment_v1_commitment_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *MerkleProof) GetProofs() []*_go.CommitmentProof {
+func (x *MerkleProof) GetProofs() []*v1.CommitmentProof {
 	if x != nil {
 		return x.Proofs
 	}
@@ -194,10 +194,10 @@ func file_ibc_core_commitment_v1_commitment_proto_rawDescGZIP() []byte {
 
 var file_ibc_core_commitment_v1_commitment_proto_msgTypes = make([]protoimpl.MessageInfo, 3)
 var file_ibc_core_commitment_v1_commitment_proto_goTypes = []any{
-	(*MerkleRoot)(nil),          // 0: ibc.core.commitment.v1.MerkleRoot
-	(*MerklePrefix)(nil),        // 1: ibc.core.commitment.v1.MerklePrefix
-	(*MerkleProof)(nil),         // 2: ibc.core.commitment.v1.MerkleProof
-	(*_go.CommitmentProof)(nil), // 3: cosmos.ics23.v1.CommitmentProof
+	(*MerkleRoot)(nil),         // 0: ibc.core.commitment.v1.MerkleRoot
+	(*MerklePrefix)(nil),       // 1: ibc.core.commitment.v1.MerklePrefix
+	(*MerkleProof)(nil),        // 2: ibc.core.commitment.v1.MerkleProof
+	(*v1.CommitmentProof)(nil), // 3: cosmos.ics23.v1.CommitmentProof
 }
 var file_ibc_core_commitment_v1_commitment_proto_depIdxs = []int32{
 	3, // 0: ibc.core.commitment.v1.MerkleProof.proofs:type_name -> cosmos.ics23.v1.CommitmentProof

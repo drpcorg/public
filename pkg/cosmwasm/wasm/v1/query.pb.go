@@ -11,7 +11,7 @@ import (
 	v1beta1 "cosmossdk.io/api/cosmos/base/query/v1beta1"
 	_ "cosmossdk.io/api/cosmos/query/v1"
 	_ "github.com/cosmos/cosmos-proto"
-	_ "github.com/cosmos/gogoproto/gogoproto"
+	_ "github.com/drpcorg/public/pkg/gogoproto"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"

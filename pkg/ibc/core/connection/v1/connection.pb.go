@@ -7,7 +7,7 @@
 package connectionv1
 
 import (
-	_ "github.com/cosmos/gogoproto/gogoproto"
+	_ "github.com/drpcorg/public/pkg/gogoproto"
 	v1 "github.com/drpcorg/public/pkg/ibc/core/commitment/v1"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"

@@ -37,9 +37,9 @@ plugins:
       - Mcosmos/msg/v1/msg.proto=cosmossdk.io/api/cosmos/msg/v1
       - Mcosmos/query/v1/query.proto=cosmossdk.io/api/cosmos/query/v1
       - Mcosmos/upgrade/v1beta1/upgrade.proto=cosmossdk.io/api/cosmos/upgrade/v1beta1
-      - Mcosmos/ics23/v1/proofs.proto=github.com/cosmos/ics23/go
+      - Mcosmos/ics23/v1/proofs.proto=github.com/drpcorg/public/pkg/ics23/v1
       - Mcosmos_proto/cosmos.proto=github.com/cosmos/cosmos-proto
-      - Mgogoproto/gogo.proto=github.com/cosmos/gogoproto/gogoproto
+      - Mgogoproto/gogo.proto=github.com/drpcorg/public/pkg/gogoproto
       - Mgoogle/api/annotations.proto=google.golang.org/genproto/googleapis/api/annotations
       - Mgoogle/api/http.proto=google.golang.org/genproto/googleapis/api/annotations
 inputs:

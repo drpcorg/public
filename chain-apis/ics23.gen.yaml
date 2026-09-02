@@ -1,0 +1,27 @@
+# buf v2 generation template for cosmos/ics23/v1/proofs.proto, pinned to the
+# same release tag as the github.com/cosmos/ics23/go module ibc-go depends on.
+#
+# Same rationale as chain-apis/gogoproto.gen.yaml: the ics23 repo's Go package
+# (github.com/cosmos/ics23/go) is gogo-generated and never reaches
+# protoregistry.GlobalFiles, which breaks file_by_filename reflection for the
+# ibc commitment closure that imports this file. The M override below flattens
+# the output to pkg/ics23/v1 so the Makefile's `gofmt -w pkg/ics23` matches;
+# ibc.gen.yaml redirects its import here. Message descriptors only.
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/drpcorg/public/pkg
+plugins:
+  - local: ["go", "tool", "protoc-gen-go"]
+    out: pkg
+    opt:
+      - module=github.com/drpcorg/public/pkg
+      - Mcosmos/ics23/v1/proofs.proto=github.com/drpcorg/public/pkg/ics23/v1
+inputs:
+  - git_repo: https://github.com/cosmos/ics23.git
+    tag: go/v0.11.0
+    subdir: proto
+    paths:
+      - cosmos/ics23/v1

@@ -23,7 +23,7 @@ plugins:
       - Mcosmos/msg/v1/msg.proto=cosmossdk.io/api/cosmos/msg/v1
       - Mcosmos/query/v1/query.proto=cosmossdk.io/api/cosmos/query/v1
       - Mcosmos_proto/cosmos.proto=github.com/cosmos/cosmos-proto
-      - Mgogoproto/gogo.proto=github.com/cosmos/gogoproto/gogoproto
+      - Mgogoproto/gogo.proto=github.com/drpcorg/public/pkg/gogoproto
       - Mgoogle/api/annotations.proto=google.golang.org/genproto/googleapis/api/annotations
       - Mgoogle/api/http.proto=google.golang.org/genproto/googleapis/api/annotations
 inputs:
