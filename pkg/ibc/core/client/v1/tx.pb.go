@@ -10,7 +10,7 @@ import (
 	_ "cosmossdk.io/api/amino"
 	_ "cosmossdk.io/api/cosmos/msg/v1"
 	v1beta1 "cosmossdk.io/api/cosmos/upgrade/v1beta1"
-	_ "github.com/cosmos/gogoproto/gogoproto"
+	_ "github.com/drpcorg/public/pkg/gogoproto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	anypb "google.golang.org/protobuf/types/known/anypb"

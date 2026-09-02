@@ -8,7 +8,7 @@ package connectionv1
 
 import (
 	v1beta1 "cosmossdk.io/api/cosmos/base/query/v1beta1"
-	_ "github.com/cosmos/gogoproto/gogoproto"
+	_ "github.com/drpcorg/public/pkg/gogoproto"
 	v1 "github.com/drpcorg/public/pkg/ibc/core/client/v1"
 	_ "google.golang.org/genproto/googleapis/api/annotations"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"

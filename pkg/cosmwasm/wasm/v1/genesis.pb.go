@@ -9,7 +9,7 @@ package wasmv1
 import (
 	_ "cosmossdk.io/api/amino"
 	_ "github.com/cosmos/cosmos-proto"
-	_ "github.com/cosmos/gogoproto/gogoproto"
+	_ "github.com/drpcorg/public/pkg/gogoproto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"

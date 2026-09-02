@@ -18,6 +18,19 @@
 //     init against cosmossdk.io/api. The generation templates redirect those
 //     shared files at cosmossdk.io/api instead, so only one copy is linked.
 //
+//   - gogoproto/gogo.proto and cosmos/ics23/v1/proofs.proto come from
+//     pkg/gogoproto and pkg/ics23, which this repository also generates
+//     (make gogoproto-proto-gen, make ics23-proto-gen) and the generated
+//     ibc/cosmwasm code imports. The Go packages their source repos ship
+//     (github.com/cosmos/gogoproto/gogoproto, github.com/cosmos/ics23/go)
+//     cannot serve the purpose: they are gogo-generated and register only
+//     into gogo's own registry, so protoregistry.GlobalFiles never sees the
+//     files. Reflection clients that resolve imports one at a time via
+//     file_by_filename (Postman does) then fail the whole load with
+//     "proto: not found" - even though file_containing_symbol silently skips
+//     missing imports, which is why grpcurl works without them.
+//     pkg/descriptors' TestEveryGrpcImportResolvesByFilename guards this.
+//
 // The import list must stay in step with specs/cosmos-grpc.json; the spec is
 // what GetGrpcServices advertises, and advertising a service whose descriptors
 // are absent makes reflection fail for it. Five methods are knowingly absent -

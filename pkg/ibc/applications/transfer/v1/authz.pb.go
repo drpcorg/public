@@ -9,7 +9,7 @@ package transferv1
 import (
 	v1beta1 "cosmossdk.io/api/cosmos/base/v1beta1"
 	_ "github.com/cosmos/cosmos-proto"
-	_ "github.com/cosmos/gogoproto/gogoproto"
+	_ "github.com/drpcorg/public/pkg/gogoproto"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
