@@ -159,6 +159,14 @@
       "params": []
     },
     {
+      "name": "debug_proofsSyncStatus",
+      "group": "debug",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
       "name": "debug_storageRangeAt",
       "group": "debug",
       "params": []
