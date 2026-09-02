@@ -153,6 +153,8 @@ enum LowerBoundType {
     LOWER_BOUND_BLOB = 8; // beacon chain
     LOWER_BOUND_EPOCH = 9;
     LOWER_BOUND_RECEIPTS = 10;
+    // upper bound of the historical proof store (op-reth debug_proofsSyncStatus.latest). Reuses the LowerBound message.
+    LOWER_BOUND_PROOF_UPPER = 11;
 }
 
 message SubscribeNodeStatusRequest {
@@ -282,6 +284,10 @@ message SlotHeightSelector {
     int64 slotHeight = 1;
 }
 
+// Matches nodes whose bound of `lower_bound_type` covers `height`.
+// For lower bound types the node must have `lower bound <= height`.
+// For LOWER_BOUND_PROOF_UPPER the meaning is inverted: the node must have
+// `predicted upper bound >= height`.
 message LowerHeightSelector {
     int64 height = 1;
     LowerBoundType lower_bound_type = 2;
