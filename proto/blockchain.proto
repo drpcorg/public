@@ -124,7 +124,7 @@ message NativeSubscribeReplyItem {
     string upstream_id = 3;
     bool heartbeat = 4;
     oneof data {
-        GrpcSubResponseData grpc_data = 9;
+        GrpcSubResponseData grpc_data = 5;
     }
 }
 

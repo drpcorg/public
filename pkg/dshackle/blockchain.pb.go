@@ -1117,7 +1117,7 @@ type isNativeSubscribeReplyItem_Data interface {
 }
 
 type NativeSubscribeReplyItem_GrpcData struct {
-	GrpcData *GrpcSubResponseData `protobuf:"bytes,9,opt,name=grpc_data,json=grpcData,proto3,oneof"`
+	GrpcData *GrpcSubResponseData `protobuf:"bytes,5,opt,name=grpc_data,json=grpcData,proto3,oneof"`
 }
 
 func (*NativeSubscribeReplyItem_GrpcData) isNativeSubscribeReplyItem_Data() {}
@@ -3648,7 +3648,7 @@ const file_blockchain_proto_rawDesc = "" +
 	"\vupstream_id\x18\x03 \x01(\tR\n" +
 	"upstreamId\x12\x1c\n" +
 	"\theartbeat\x18\x04 \x01(\bR\theartbeat\x12;\n" +
-	"\tgrpc_data\x18\t \x01(\v2\x1c.emerald.GrpcSubResponseDataH\x00R\bgrpcDataB\x06\n" +
+	"\tgrpc_data\x18\x05 \x01(\v2\x1c.emerald.GrpcSubResponseDataH\x00R\bgrpcDataB\x06\n" +
 	"\x04data\"\xa1\x01\n" +
 	"\x13GrpcSubResponseData\x12-\n" +
 	"\bmetadata\x18\x01 \x03(\v2\x11.emerald.KeyValueR\bmetadata\x12-\n" +
