@@ -4434,7 +4434,7 @@ chain-settings:
           priority: 30
           code: CELESTIA_MOCHA
           short-names: [celestia-mocha, celestia-testnet]
-          chain-id: mocha-4
+          chain-id: mocha-5
           grpcId: 10209
     - id: sui
       label: Sui
