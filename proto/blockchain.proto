@@ -109,6 +109,13 @@ message NativeSubscribeRequest {
     uint64 nonce = 5;
     string subscription_id = 6;
     string unsubscribe_method = 7;
+    oneof data {
+        GrpcSubRequestData grpc_data = 8;
+    }
+}
+
+message GrpcSubRequestData {
+    repeated KeyValue metadata = 1;
 }
 
 message NativeSubscribeReplyItem {
@@ -116,6 +123,16 @@ message NativeSubscribeReplyItem {
     NativeCallReplySignature signature = 2;
     string upstream_id = 3;
     bool heartbeat = 4;
+    oneof data {
+        GrpcSubResponseData grpc_data = 5;
+    }
+}
+
+message GrpcSubResponseData {
+    repeated KeyValue metadata = 1;   // upstream initial metadata, on the first item
+    repeated KeyValue trailers = 2;   // upstream trailers, on the final item
+    bool final = 3;                   // stream ended; payload absent
+    bytes status = 4;                 // serialized google.rpc.Status; empty on a clean end
 }
 
 message ChainHead {
