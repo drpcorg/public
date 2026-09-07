@@ -1770,6 +1770,9 @@ chain-settings:
       type: eth
       settings:
         method-spec: "rootstock"
+        # merge-mined, sibling blocks at the tip are normal and a 1-block lead on
+        # top of "its" sibling looks like a 2-deep branch to QuorumForkChoice
+        fork-tolerance: 2
         options:
           validate-peers: false
           disable-liveness-subscription-validation: true
