@@ -4463,3 +4463,24 @@ chain-settings:
           short-names: [sui-testnet]
           chain-id: 69WiPg3DAQiwdxfncX6wYQ2siKwAe6L9BZthQea3JNMD
           grpcId: 10210
+    - id: gravity-l1
+      label: Gravity
+      type: eth
+      settings:
+        expected-block-time: 200ms
+        lags:
+          syncing: 100
+          lagging: 30
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: GRAVITY_MAINNET
+          grpcId: 1177
+          short-names: [gravity, gravity-mainnet]
+          chain-id: 0x1f019
+        - id: Testnet
+          priority: 10
+          code: GRAVITY_TESTNET
+          grpcId: 10212
+          short-names: [gravity-testnet]
+          chain-id: 0x7695e9
