@@ -3539,7 +3539,7 @@ chain-settings:
       label: Injective
       type: cosmos
       settings:
-        method-spec: "injective"
+        method-spec: "cosmos-evm"
         expected-block-time: 700ms
         lags:
           syncing: 40

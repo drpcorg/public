@@ -225,9 +225,10 @@ func TestGetGrpcServicesListsAllCosmosServices(t *testing.T) {
 	}, cosmosServices)
 }
 
-// Injective serves the EVM JSON-RPC next to the Cosmos endpoints, so its bundle
-// is the union of eth and cosmos. Both halves keep their own behaviour.
-func TestInjectiveBundleCarriesEthAndCosmos(t *testing.T) {
+// Cosmos SDK chains with an EVM module (Injective and the like) serve the EVM
+// JSON-RPC next to the Cosmos endpoints, so the cosmos-evm bundle is the union
+// of eth and cosmos. Both halves keep their own behaviour.
+func TestCosmosEvmBundleCarriesEthAndCosmos(t *testing.T) {
 	require.NoError(t, specs.NewMethodSpecLoader().Load())
 
 	assert.ElementsMatch(t,
@@ -238,26 +239,26 @@ func TestInjectiveBundleCarriesEthAndCosmos(t *testing.T) {
 			specs.RestConnector,
 			specs.GrpcConnector,
 		},
-		specs.GetSpecConnectors("injective"),
+		specs.GetSpecConnectors("cosmos-evm"),
 	)
 
-	ethMethod := specs.GetSpecMethod("injective", "eth_getBalance")
+	ethMethod := specs.GetSpecMethod("cosmos-evm", "eth_getBalance")
 	require.NotNil(t, ethMethod)
 	assert.True(t, ethMethod.IsCacheable())
 
-	tendermintMethod := specs.GetSpecMethod("injective", "status")
+	tendermintMethod := specs.GetSpecMethod("cosmos-evm", "status")
 	require.NotNil(t, tendermintMethod)
 	assert.False(t, tendermintMethod.IsCacheable())
 
-	assert.NotNil(t, specs.GetSpecMethod("injective", "GET#/cosmos/bank/v1beta1/params"))
-	assert.NotNil(t, specs.GetSpecMethod("injective", "/cosmos.bank.v1beta1.Query/Params"))
+	assert.NotNil(t, specs.GetSpecMethod("cosmos-evm", "GET#/cosmos/bank/v1beta1/params"))
+	assert.NotNil(t, specs.GetSpecMethod("cosmos-evm", "/cosmos.bank.v1beta1.Query/Params"))
 
-	jsonRPCOnly := specs.GetSpecMethodsByConnectors("injective", []specs.ApiConnectorType{specs.JsonRpcConnector})
+	jsonRPCOnly := specs.GetSpecMethodsByConnectors("cosmos-evm", []specs.ApiConnectorType{specs.JsonRpcConnector})
 	require.NotNil(t, jsonRPCOnly)
 	assert.Contains(t, jsonRPCOnly[specs.DefaultMethodGroup], "eth_getBalance")
 	assert.NotContains(t, jsonRPCOnly[specs.DefaultMethodGroup], "status")
 
-	tendermintOnly := specs.GetSpecMethodsByConnectors("injective", []specs.ApiConnectorType{specs.TendermintConnector})
+	tendermintOnly := specs.GetSpecMethodsByConnectors("cosmos-evm", []specs.ApiConnectorType{specs.TendermintConnector})
 	require.NotNil(t, tendermintOnly)
 	assert.Contains(t, tendermintOnly[specs.DefaultMethodGroup], "status")
 	assert.NotContains(t, tendermintOnly[specs.DefaultMethodGroup], "eth_getBalance")
