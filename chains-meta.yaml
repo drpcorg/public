@@ -956,6 +956,20 @@
   explorers:
     - https://tronscan.org
 - currency:
+    name: Tron
+    symbol: TRX
+    decimals: 6
+  chain-id: 2494104990
+  explorers:
+    - https://shasta.tronscan.org
+- currency:
+    name: Tron
+    symbol: TRX
+    decimals: 6
+  chain-id: 3448148188
+  explorers:
+    - https://nile.tronscan.org
+- currency:
     name: Sepolia Ether
     symbol: ETH
     decimals: 18
