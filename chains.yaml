@@ -1948,6 +1948,12 @@ chain-settings:
           short-names: [tron-shasta]
           chain-id: 0x94a9059e
           grpcId: 10091
+        - id: Nile
+          priority: 10
+          code: TRON_NILE
+          short-names: [tron-nile]
+          chain-id: 0xcd8690dc
+          grpcId: 10213
     - id: kroma
       label: Kroma
       type: eth
