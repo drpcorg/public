@@ -216,7 +216,7 @@ The resulting `eth` spec carries every method declared by `eth-json-rpc` plus ev
 
 The `tron` bundle is the multi-transport example: it composes `tron-json-rpc` (Ethereum-compatible `/jsonrpc`), `tron-rest` (the canonical `/wallet/*` HTTP API), and `tron-rest-solidity` (a `rest-additional` mirror over `/walletsolidity/*` for confirmed-only reads). The resulting `tron` spec carries methods across all three connectors at once.
 
-A bundle can also import other bundles: `astar` is `["eth", "polkadot"]`, because an Astar node serves the EVM RPC and the substrate RPC from the same endpoint. Both halves keep their own behaviour — the eth methods stay cacheable with their tag parsers, the polkadot methods stay `cacheable: false` — and both subscription families end up in the ws `sub` group. Same-level imports may not define the same method name, so this composition only works because the eth and polkadot method sets are disjoint.
+A bundle can also import other bundles: `astar` is `["eth", "polkadot"]`, because an Astar node serves the EVM RPC and the substrate RPC from the same endpoint. Both halves keep their own behaviour — the eth methods stay cacheable with their tag parsers, the polkadot methods stay `cacheable: false` — and both subscription families end up in the ws `sub` group. Same-level imports may not define the same method name, so this composition only works because the eth and polkadot method sets are disjoint. `injective` is the same shape over `["eth", "cosmos"]`: an Injective node exposes the EVM JSON-RPC alongside the Tendermint RPC, LCD REST and gRPC endpoints.
 
 ## Shipped specs
 
@@ -240,6 +240,7 @@ The `specs` package embeds the specs below (see [`pkg/methods/specs/`](../pkg/me
 | `sui` | `sui-grpc` |
 | `polkadot` | `polkadot-json-rpc`, `polkadot-websocket` |
 | `astar` | `eth`, `polkadot` |
+| `injective` | `eth`, `cosmos` |
 
 ### Plain specs
 

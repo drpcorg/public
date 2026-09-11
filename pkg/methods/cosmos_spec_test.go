@@ -224,3 +224,41 @@ func TestGetGrpcServicesListsAllCosmosServices(t *testing.T) {
 		"ibc.core.connection.v1.Query",
 	}, cosmosServices)
 }
+
+// Injective serves the EVM JSON-RPC next to the Cosmos endpoints, so its bundle
+// is the union of eth and cosmos. Both halves keep their own behaviour.
+func TestInjectiveBundleCarriesEthAndCosmos(t *testing.T) {
+	require.NoError(t, specs.NewMethodSpecLoader().Load())
+
+	assert.ElementsMatch(t,
+		[]specs.ApiConnectorType{
+			specs.JsonRpcConnector,
+			specs.WebsocketConnector,
+			specs.TendermintConnector,
+			specs.RestConnector,
+			specs.GrpcConnector,
+		},
+		specs.GetSpecConnectors("injective"),
+	)
+
+	ethMethod := specs.GetSpecMethod("injective", "eth_getBalance")
+	require.NotNil(t, ethMethod)
+	assert.True(t, ethMethod.IsCacheable())
+
+	tendermintMethod := specs.GetSpecMethod("injective", "status")
+	require.NotNil(t, tendermintMethod)
+	assert.False(t, tendermintMethod.IsCacheable())
+
+	assert.NotNil(t, specs.GetSpecMethod("injective", "GET#/cosmos/bank/v1beta1/params"))
+	assert.NotNil(t, specs.GetSpecMethod("injective", "/cosmos.bank.v1beta1.Query/Params"))
+
+	jsonRPCOnly := specs.GetSpecMethodsByConnectors("injective", []specs.ApiConnectorType{specs.JsonRpcConnector})
+	require.NotNil(t, jsonRPCOnly)
+	assert.Contains(t, jsonRPCOnly[specs.DefaultMethodGroup], "eth_getBalance")
+	assert.NotContains(t, jsonRPCOnly[specs.DefaultMethodGroup], "status")
+
+	tendermintOnly := specs.GetSpecMethodsByConnectors("injective", []specs.ApiConnectorType{specs.TendermintConnector})
+	require.NotNil(t, tendermintOnly)
+	assert.Contains(t, tendermintOnly[specs.DefaultMethodGroup], "status")
+	assert.NotContains(t, tendermintOnly[specs.DefaultMethodGroup], "eth_getBalance")
+}

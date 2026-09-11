@@ -1,0 +1,15 @@
+{
+  "openrpc": "1.0.0",
+  "info": {
+    "title": "Injective methods - Ethereum JSON-RPC and websocket plus Cosmos Tendermint RPC, LCD REST and gRPC",
+    "version": "1.0.0"
+  },
+  "spec": {
+    "name": "injective",
+    "type": "bundle"
+  },
+  "spec-imports": [
+    "eth",
+    "cosmos"
+  ]
+}
