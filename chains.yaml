@@ -3563,6 +3563,7 @@ chain-settings:
           code: INJECTIVE_TESTNET
           grpcId: 10171
           priority: 10
+          net-version: 888
     - id: mantra
       label: Mantra
       type: cosmos
