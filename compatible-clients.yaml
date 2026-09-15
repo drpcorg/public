@@ -20,7 +20,6 @@ rules:
       - eth-beacon-chain
       - eth-beacon-chain-sepolia
       - eth-beacon-chain-holesky
-      - eth-beacon-chain-hoodi
     excluded-methods:
       - "GET#/eth/v1/beacon/headers"
       - "GET#/eth/v1/beacon/headers/*"
