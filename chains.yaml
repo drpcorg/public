@@ -3545,23 +3545,31 @@ chain-settings:
       label: Injective
       type: cosmos
       settings:
+        method-spec: "cosmos-evm"
         expected-block-time: 700ms
         lags:
           syncing: 40
           lagging: 20
       chains:
         - id: Mainnet
+          chain-ids:
+            cosmos: injective-1
+            eth: 0x6f0
           chain-id: injective-1
           short-names: [injective, injective-mainnet]
           code: INJECTIVE_MAINNET
           grpcId: 1134
           priority: 100
         - id: Testnet
+          chain-ids:
+            cosmos: injective-888
+            eth: 0x59f
           chain-id: injective-888
           short-names: [injective-testnet]
           code: INJECTIVE_TESTNET
           grpcId: 10171
           priority: 10
+          net-version: 888
     - id: mantra
       label: Mantra
       type: cosmos

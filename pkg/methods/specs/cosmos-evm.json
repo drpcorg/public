@@ -1,0 +1,15 @@
+{
+  "openrpc": "1.0.0",
+  "info": {
+    "title": "Cosmos EVM chain methods - Ethereum JSON-RPC and websocket plus Cosmos Tendermint RPC, LCD REST and gRPC",
+    "version": "1.0.0"
+  },
+  "spec": {
+    "name": "cosmos-evm",
+    "type": "bundle"
+  },
+  "spec-imports": [
+    "eth",
+    "cosmos"
+  ]
+}

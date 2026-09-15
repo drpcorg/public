@@ -48,6 +48,7 @@ chain:
   id: str()
   priority: int()
   chain-id: any(int(), str())
+  chain-ids: map(str(), any(), required=False)
   short-names: list(str())
   code: str()
   grpcId: int()
