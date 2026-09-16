@@ -205,6 +205,7 @@ const (
 	ChainRef_CHAIN_CELESTIA__MAINNET            ChainRef = 1175
 	ChainRef_CHAIN_SUI__MAINNET                 ChainRef = 1176
 	ChainRef_CHAIN_GRAVITY__MAINNET             ChainRef = 1177
+	ChainRef_CHAIN_PEAQ__MAINNET                ChainRef = 1178
 	// Testnets start with 10_000
 	ChainRef_CHAIN_ETHEREUM__MORDEN                    ChainRef = 10001
 	ChainRef_CHAIN_ETHEREUM__KOVAN                     ChainRef = 10002
@@ -583,6 +584,7 @@ var (
 		1175:   "CHAIN_CELESTIA__MAINNET",
 		1176:   "CHAIN_SUI__MAINNET",
 		1177:   "CHAIN_GRAVITY__MAINNET",
+		1178:   "CHAIN_PEAQ__MAINNET",
 		10001:  "CHAIN_ETHEREUM__MORDEN",
 		10002:  "CHAIN_ETHEREUM__KOVAN",
 		10003:  "CHAIN_BITCOIN__TESTNET",
@@ -956,6 +958,7 @@ var (
 		"CHAIN_CELESTIA__MAINNET":                   1175,
 		"CHAIN_SUI__MAINNET":                        1176,
 		"CHAIN_GRAVITY__MAINNET":                    1177,
+		"CHAIN_PEAQ__MAINNET":                       1178,
 		"CHAIN_ETHEREUM__MORDEN":                    10001,
 		"CHAIN_ETHEREUM__KOVAN":                     10002,
 		"CHAIN_BITCOIN__TESTNET":                    10003,
@@ -1844,7 +1847,7 @@ const file_common_proto_rawDesc = "" +
 	"\ttimestamp\x18\x03 \x01(\x04R\ttimestamp\"Y\n" +
 	"\x10FinalizationData\x12\x16\n" +
 	"\x06height\x18\x01 \x01(\x04R\x06height\x12-\n" +
-	"\x04type\x18\x02 \x01(\x0e2\x19.emerald.FinalizationTypeR\x04type*\xbfU\n" +
+	"\x04type\x18\x02 \x01(\x0e2\x19.emerald.FinalizationTypeR\x04type*\xd9U\n" +
 	"\bChainRef\x12\x15\n" +
 	"\x11CHAIN_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16CHAIN_BITCOIN__MAINNET\x10\x01\x12\x1b\n" +
@@ -2026,7 +2029,8 @@ const file_common_proto_rawDesc = "" +
 	"\x16CHAIN_STELLAR__MAINNET\x10\x96\t\x12\x1c\n" +
 	"\x17CHAIN_CELESTIA__MAINNET\x10\x97\t\x12\x17\n" +
 	"\x12CHAIN_SUI__MAINNET\x10\x98\t\x12\x1b\n" +
-	"\x16CHAIN_GRAVITY__MAINNET\x10\x99\t\x12\x1b\n" +
+	"\x16CHAIN_GRAVITY__MAINNET\x10\x99\t\x12\x18\n" +
+	"\x13CHAIN_PEAQ__MAINNET\x10\x9a\t\x12\x1b\n" +
 	"\x16CHAIN_ETHEREUM__MORDEN\x10\x91N\x12\x1a\n" +
 	"\x15CHAIN_ETHEREUM__KOVAN\x10\x92N\x12\x1b\n" +
 	"\x16CHAIN_BITCOIN__TESTNET\x10\x93N\x12\x1c\n" +
