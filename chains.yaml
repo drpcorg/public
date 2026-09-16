@@ -4500,3 +4500,18 @@ chain-settings:
           grpcId: 10212
           short-names: [gravity-testnet]
           chain-id: 0x7695e9
+    - id: peaq
+      label: Peaq
+      type: eth
+      settings:
+        expected-block-time: 6s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: PEAQ_MAINNET
+          grpcId: 1178
+          short-names: [peaq, peaq-mainnet]
+          chain-id: 0xd0a
