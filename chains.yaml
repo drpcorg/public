@@ -3128,6 +3128,13 @@ chain-settings:
           grpcId: 1113
           chain-id: 0x13b2
           short-names: [arc, arc-mainnet]
+          lower-bounds:
+            receipts:
+              block: 9327
+              hash: "0x6a3a4a9611b221f2c2e187f54308e4049ab0d630aa96cd47573974618eaadb7f"
+            tx:
+              block: 9327
+              hash: "0x6a3a4a9611b221f2c2e187f54308e4049ab0d630aa96cd47573974618eaadb7f"
         - id: Testnet
           priority: 1
           code: CHAIN_ARC__TESTNET
