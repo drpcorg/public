@@ -397,6 +397,36 @@ func TestStellarSpecLoads(t *testing.T) {
 	assert.Empty(t, params)
 }
 
+func TestAlgorandSpecLoads(t *testing.T) {
+	err := specs.NewMethodSpecLoader().Load()
+	assert.NoError(t, err)
+
+	spec := specs.GetSpecMethod("algorand", "getBlock")
+	assert.NotNil(t, spec)
+
+	spec = specs.GetSpecMethod("algorand", "GET#/v2/status")
+	assert.NotNil(t, spec)
+
+	spec = specs.GetSpecMethod("algorand", "eth_call")
+	assert.Nil(t, spec)
+
+	// each API's methods resolve only for upstreams that carry its connector
+	jsonRpcMethods := specs.GetSpecMethodsByConnectors("algorand", []specs.ApiConnectorType{specs.JsonRpcConnector})
+	assert.Contains(t, jsonRpcMethods[specs.DefaultMethodGroup], "getHealth")
+	assert.Contains(t, jsonRpcMethods[specs.DefaultMethodGroup], "sendRawTransaction")
+	assert.NotContains(t, jsonRpcMethods[specs.DefaultMethodGroup], "GET#/health")
+
+	restMethods := specs.GetSpecMethodsByConnectors("algorand", []specs.ApiConnectorType{specs.RestConnector})
+	assert.Contains(t, restMethods[specs.DefaultMethodGroup], "GET#/health")
+	assert.Contains(t, restMethods[specs.DefaultMethodGroup], "POST#/v2/transactions")
+	assert.NotContains(t, restMethods[specs.DefaultMethodGroup], "getHealth")
+
+	template, params, ok := specs.MatchRestMethod("algorand", "GET#/v2/blocks/12345/hash")
+	assert.True(t, ok)
+	assert.Equal(t, "GET#/v2/blocks/*/hash", template)
+	assert.Equal(t, []string{"12345"}, params)
+}
+
 func TestLoadSpecGrpcDefaults(t *testing.T) {
 	err := specs.NewMethodSpecLoaderWithFs(os.DirFS("test_specs/grpc")).Load()
 	assert.NoError(t, err)
