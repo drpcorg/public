@@ -232,6 +232,7 @@ The `specs` package embeds the specs below (see [`pkg/methods/specs/`](../pkg/me
 | `hyperliquid` | `hyperliquid-eth`, `hyperliquid-rest-additional` |
 | `tron` | `tron-json-rpc`, `tron-rest`, `tron-rest-solidity` |
 | `bitcoin` | `bitcoin-json-rpc`, `bitcoin-esplora` |
+| `algorand` | `algorand-json-rpc`, `algorand-rest` |
 | `near` | `near-json-rpc` |
 | `starknet` | `starknet-json-rpc` |
 | `stellar` | `stellar-json-rpc`, `stellar-horizon` |
@@ -249,10 +250,10 @@ Grouped by the transports they declare:
 | `api-connectors` | Specs |
 | --- | --- |
 | `json-rpc`, `websocket` | `arbitrum`, `avail`, `cronos_zkevm`, `eth-json-rpc`, `fantom`, `filecoin`, `harmony_0`, `harmony_1`, `hyperliquid-eth`, `klaytn-json-rpc`, `linea`, `mantle`, `optimism`, `polkadot-json-rpc`, `polygon`, `polygon_zkevm`, `rootstock`, `scroll`, `sei`, `solana-json-rpc`, `viction`, `zk` |
-| `json-rpc` | `algorand`, `aztec`, `bitcoin-json-rpc`, `celestia`, `near-json-rpc`, `starknet-json-rpc`, `stellar-json-rpc`, `tron-json-rpc` |
+| `json-rpc` | `algorand-json-rpc`, `aztec`, `bitcoin-json-rpc`, `celestia`, `near-json-rpc`, `starknet-json-rpc`, `stellar-json-rpc`, `tron-json-rpc` |
 | `websocket` | `eth-websocket`, `klaytn-websocket`, `polkadot-websocket`, `solana-websocket` |
 | `tendermint` | `cosmos-tendermint` |
-| `rest` | `aptos`, `cosmos-rest`, `eth-beacon-chain`, `stellar-horizon`, `ton-http-v2`, `tron-rest` |
+| `rest` | `algorand-rest`, `aptos`, `cosmos-rest`, `eth-beacon-chain`, `stellar-horizon`, `ton-http-v2`, `tron-rest` |
 | `rest-indexer` | `ton-index-v3` |
 | `grpc` | `cosmos-grpc`, `sui-grpc` |
 | `rest-additional` | `bitcoin-esplora`, `hyperliquid-rest-additional`, `tron-rest-solidity` |
