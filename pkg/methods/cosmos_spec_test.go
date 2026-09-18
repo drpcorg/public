@@ -263,3 +263,33 @@ func TestCosmosEvmBundleCarriesEthAndCosmos(t *testing.T) {
 	assert.Contains(t, tendermintOnly[specs.DefaultMethodGroup], "status")
 	assert.NotContains(t, tendermintOnly[specs.DefaultMethodGroup], "eth_getBalance")
 }
+
+// Celestia is a Cosmos SDK chain whose DA node also serves its own JSON-RPC
+// (header.*, blob.*, share.*), so the celestia bundle is the union of
+// celestia-json-rpc and cosmos.
+func TestCelestiaBundleCarriesDaRpcAndCosmos(t *testing.T) {
+	require.NoError(t, specs.NewMethodSpecLoader().Load())
+
+	assert.ElementsMatch(t,
+		[]specs.ApiConnectorType{
+			specs.JsonRpcConnector,
+			specs.TendermintConnector,
+			specs.RestConnector,
+			specs.GrpcConnector,
+		},
+		specs.GetSpecConnectors("celestia"),
+	)
+
+	daMethod := specs.GetSpecMethod("celestia", "header.GetByHeight")
+	require.NotNil(t, daMethod)
+	assert.False(t, daMethod.IsCacheable())
+
+	assert.NotNil(t, specs.GetSpecMethod("celestia", "status"))
+	assert.NotNil(t, specs.GetSpecMethod("celestia", "GET#/cosmos/bank/v1beta1/params"))
+	assert.NotNil(t, specs.GetSpecMethod("celestia", "/cosmos.bank.v1beta1.Query/Params"))
+
+	jsonRPCOnly := specs.GetSpecMethodsByConnectors("celestia", []specs.ApiConnectorType{specs.JsonRpcConnector})
+	require.NotNil(t, jsonRPCOnly)
+	assert.Contains(t, jsonRPCOnly[specs.DefaultMethodGroup], "header.GetByHeight")
+	assert.NotContains(t, jsonRPCOnly[specs.DefaultMethodGroup], "status")
+}
