@@ -174,7 +174,10 @@ func fromMethodData(methodData *MethodData, apiConnectorTypes []ApiConnectorType
 			cacheable = *methodData.Settings.Cacheable
 		}
 		if methodData.Settings.Subscription != nil {
-			sub = methodData.Settings.Subscription
+			sub = new(*methodData.Settings.Subscription)
+			if sub.Type == "" {
+				sub.Type = SubscriptionTypeBase
+			}
 		}
 		enforceIntegrity = methodData.Settings.EnforceIntegrity
 		local = methodData.Settings.Local

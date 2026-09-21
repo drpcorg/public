@@ -1,0 +1,42 @@
+{
+  "openrpc": "1.0.0",
+  "info": {
+    "title": "Celestia DA node websocket subscription methods (go-jsonrpc channels)",
+    "version": "1.0.0"
+  },
+  "spec": {
+    "name": "celestia-websocket",
+    "api-connectors": [
+      "websocket"
+    ],
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "header.Subscribe",
+      "settings": {
+        "cacheable": false,
+        "subscription": {
+          "is-subscribe": true,
+          "type": "channel",
+          "method": "xrpc.ch.val",
+          "unsubscribe-method": "xrpc.cancel"
+        }
+      },
+      "params": []
+    },
+    {
+      "name": "blob.Subscribe",
+      "settings": {
+        "cacheable": false,
+        "subscription": {
+          "is-subscribe": true,
+          "type": "channel",
+          "method": "xrpc.ch.val",
+          "unsubscribe-method": "xrpc.cancel"
+        }
+      },
+      "params": []
+    }
+  ]
+}

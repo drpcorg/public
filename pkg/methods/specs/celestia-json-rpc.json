@@ -228,6 +228,14 @@
         "cacheable": false
       },
       "params": []
+    },
+    {
+      "name": "xrpc.cancel",
+      "settings": {
+        "cacheable": false,
+        "local": true
+      },
+      "params": []
     }
   ]
 }
