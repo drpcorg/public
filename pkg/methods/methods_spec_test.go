@@ -427,6 +427,23 @@ func TestAlgorandSpecLoads(t *testing.T) {
 	assert.Equal(t, []string{"12345"}, params)
 }
 
+func TestAvalancheSpecLoads(t *testing.T) {
+	err := specs.NewMethodSpecLoader().Load()
+	assert.NoError(t, err)
+
+	// avalanche's own extension method is available...
+	spec := specs.GetSpecMethod("avalanche", "eth_baseFee")
+	assert.NotNil(t, spec)
+	assert.False(t, spec.IsCacheable())
+
+	// ...on top of every method the imported `eth` spec already provides.
+	spec = specs.GetSpecMethod("avalanche", "eth_blockNumber")
+	assert.NotNil(t, spec)
+
+	spec = specs.GetSpecMethod("avalanche", "ftm_effectiveBaseFee")
+	assert.Nil(t, spec)
+}
+
 func TestLoadSpecGrpcDefaults(t *testing.T) {
 	err := specs.NewMethodSpecLoaderWithFs(os.DirFS("test_specs/grpc")).Load()
 	assert.NoError(t, err)
