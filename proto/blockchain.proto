@@ -9,6 +9,7 @@ service Blockchain {
     rpc NativeCall (NativeCallRequest) returns (stream NativeCallReplyItem) {}
     rpc NativeSubscribe (NativeSubscribeRequest) returns (stream NativeSubscribeReplyItem) {}
     rpc SubscribeChainStatus (SubscribeChainStatusRequest) returns (stream SubscribeChainStatusResponse) {}
+    rpc SubscribeNodeGroupStatus (SubscribeNodeGroupStatusRequest) returns (stream SubscribeChainStatusResponse) {}
 
     rpc Describe (DescribeRequest) returns (DescribeResponse) {}
     rpc SubscribeStatus (StatusRequest) returns (stream ChainStatus) {}
@@ -343,6 +344,13 @@ message ExistsSelector {
 message SubscribeChainStatusRequest {
 }
 
+// SubscribeNodeGroupStatus streams the same ChainDescription events per node
+// group instead of the merged per-network view: full responses and deltas are
+// tagged with node_group_id, and a group's ChainStatus going unavailable is
+// its removal signal. SubscribeChainStatus is unaffected.
+message SubscribeNodeGroupStatusRequest {
+}
+
 message SubscribeChainStatusResponse {
     ChainDescription chain_description = 1;
     BuildInfo build_info = 2;
@@ -352,6 +360,10 @@ message SubscribeChainStatusResponse {
 message ChainDescription {
     ChainRef chain = 1;
     repeated ChainEvent chain_event = 2;
+    // Opaque node-group id ("<client_type>:<methods_hash8>"), set on
+    // SubscribeNodeGroupStatus streams; always empty on SubscribeChainStatus.
+    // Clients must not parse it.
+    string node_group_id = 3;
 }
 
 message HeadEvent {
