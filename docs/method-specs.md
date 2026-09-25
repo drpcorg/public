@@ -253,7 +253,7 @@ Grouped by the transports they declare:
 
 | `api-connectors` | Specs |
 | --- | --- |
-| `json-rpc`, `websocket` | `arbitrum`, `avail`, `cronos_zkevm`, `eth-json-rpc`, `fantom`, `filecoin`, `harmony_0`, `harmony_1`, `hyperliquid-eth`, `klaytn-json-rpc`, `linea`, `mantle`, `optimism`, `polkadot-json-rpc`, `polygon`, `polygon_zkevm`, `rootstock`, `scroll`, `sei`, `solana-json-rpc`, `viction`, `zk` |
+| `json-rpc`, `websocket` | `arbitrum`, `avail`, `avalanche`, `cronos_zkevm`, `eth-json-rpc`, `fantom`, `filecoin`, `harmony_0`, `harmony_1`, `hyperliquid-eth`, `klaytn-json-rpc`, `linea`, `mantle`, `optimism`, `polkadot-json-rpc`, `polygon`, `polygon_zkevm`, `rootstock`, `scroll`, `sei`, `solana-json-rpc`, `viction`, `zk` |
 | `json-rpc` | `algorand-json-rpc`, `aztec`, `bitcoin-json-rpc`, `celestia-json-rpc`, `near-json-rpc`, `starknet-json-rpc`, `stellar-json-rpc`, `tron-json-rpc` |
 | `websocket` | `celestia-websocket`, `eth-websocket`, `klaytn-websocket`, `polkadot-websocket`, `solana-websocket` |
 | `tendermint` | `cosmos-tendermint` |
