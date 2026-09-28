@@ -506,6 +506,10 @@
         "local": true
       },
       "params": []
+    },
+    {
+      "name": "eth_config",
+      "params": []
     }
   ]
 }
