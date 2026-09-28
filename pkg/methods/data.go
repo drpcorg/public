@@ -102,9 +102,39 @@ type Sticky struct {
 }
 
 type Subscription struct {
-	IsSubscribe bool   `json:"is-subscribe"`
-	Method      string `json:"method"`
-	UnsubMethod string `json:"unsubscribe-method"`
+	IsSubscribe bool             `json:"is-subscribe"`
+	Type        SubscriptionType `json:"type"`
+	Method      string           `json:"method"`
+	UnsubMethod string           `json:"unsubscribe-method"`
+}
+
+// SubscriptionType names the wire model of a subscription: how the subscribe
+// call is acknowledged, how events are framed and what the unsubscribe method
+// takes. Absent in JSON means SubscriptionTypeBase.
+type SubscriptionType string
+
+const (
+	// SubscriptionTypeBase is the JSON-RPC subscription model (eth_subscribe,
+	// Solana and Substrate subscriptions): the ack result is a subscription id,
+	// events are notifications named Subscription.Method with
+	// params.subscription and params.result, and the unsubscribe method takes
+	// the subscription id.
+	SubscriptionTypeBase SubscriptionType = "base"
+	// SubscriptionTypeChannel is the go-jsonrpc channel model (celestia-node):
+	// the ack result is a per-connection channel id, events are xrpc.ch.val
+	// notifications with params [channelId, value], the node closes a channel
+	// with xrpc.ch.close, and the unsubscribe method (xrpc.cancel) takes the id
+	// of the original subscribe request and is never answered.
+	SubscriptionTypeChannel SubscriptionType = "channel"
+)
+
+func (s SubscriptionType) validate() error {
+	switch s {
+	case "", SubscriptionTypeBase, SubscriptionTypeChannel:
+		return nil
+	default:
+		return fmt.Errorf("unknown subscription type - %s", s)
+	}
 }
 
 type ParserReturnType string
@@ -217,6 +247,11 @@ func (m *MethodSettings) validate() error {
 	if m.Sticky != nil {
 		if m.Sticky.CreateSticky && m.Sticky.SendSticky {
 			return errors.New("both 'create-sticky' and 'send-sticky' are enabled")
+		}
+	}
+	if m.Subscription != nil {
+		if err := m.Subscription.Type.validate(); err != nil {
+			return err
 		}
 	}
 	if m.Grpc != nil {

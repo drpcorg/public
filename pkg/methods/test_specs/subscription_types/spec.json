@@ -1,0 +1,47 @@
+{
+  "spec": {
+    "api-connectors": ["websocket"],
+    "name": "test",
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "eth_subscribe",
+      "params": [],
+      "settings": {
+        "cacheable": false,
+        "subscription": {
+          "is-subscribe": true,
+          "method": "eth_subscription",
+          "unsubscribe-method": "eth_unsubscribe"
+        }
+      }
+    },
+    {
+      "name": "chain_subscribeNewHeads",
+      "params": [],
+      "settings": {
+        "cacheable": false,
+        "subscription": {
+          "is-subscribe": true,
+          "type": "base",
+          "method": "chain_newHead",
+          "unsubscribe-method": "chain_unsubscribeNewHeads"
+        }
+      }
+    },
+    {
+      "name": "header.Subscribe",
+      "params": [],
+      "settings": {
+        "cacheable": false,
+        "subscription": {
+          "is-subscribe": true,
+          "type": "channel",
+          "method": "xrpc.ch.val",
+          "unsubscribe-method": "xrpc.cancel"
+        }
+      }
+    }
+  ]
+}

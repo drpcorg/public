@@ -265,14 +265,15 @@ func TestCosmosEvmBundleCarriesEthAndCosmos(t *testing.T) {
 }
 
 // Celestia is a Cosmos SDK chain whose DA node also serves its own JSON-RPC
-// (header.*, blob.*, share.*), so the celestia bundle is the union of
-// celestia-json-rpc and cosmos.
+// (header.*, blob.*, share.*) and websocket subscriptions, so the celestia
+// bundle is the union of celestia-json-rpc, celestia-websocket and cosmos.
 func TestCelestiaBundleCarriesDaRpcAndCosmos(t *testing.T) {
 	require.NoError(t, specs.NewMethodSpecLoader().Load())
 
 	assert.ElementsMatch(t,
 		[]specs.ApiConnectorType{
 			specs.JsonRpcConnector,
+			specs.WebsocketConnector,
 			specs.TendermintConnector,
 			specs.RestConnector,
 			specs.GrpcConnector,

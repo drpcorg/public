@@ -71,7 +71,7 @@ Each method object:
   "local": false,
   "dispatch": "broadcast",
   "sticky": { "send-sticky": false, "create-sticky": false },
-  "subscription": { "is-subscribe": false, "method": "subscribe", "unsubscribe-method": "unsubscribe" },
+  "subscription": { "is-subscribe": false, "type": "base", "method": "subscribe", "unsubscribe-method": "unsubscribe" },
   "grpc": { "call-type": "server-stream-finite" }
 }
 ```
@@ -85,7 +85,10 @@ Each method object:
   - The two flags are mutually exclusive.
 - `subscription` (object) — only relevant on WebSocket-style methods:
   - `is-subscribe: true` — declares this method as a subscription open call.
-  - `method` (string) — for sub helpers; the underlying JSON-RPC method name when it differs from the entry's `name`.
+  - `type` (string) — the wire model of the subscription. **_Default_**: `base`.
+    - `base` — the JSON-RPC subscription model (`eth_subscribe`, Solana and Substrate subscriptions): the ack result is a subscription id, events are notifications named `method` carrying `params.subscription` and `params.result`, and `unsubscribe-method` takes the subscription id.
+    - `channel` — the go-jsonrpc channel model (celestia-node): the ack result is a per-connection channel id, events are `xrpc.ch.val` notifications with `params: [channelId, value]`, the node closes a channel with `xrpc.ch.close`, and `unsubscribe-method` (`xrpc.cancel`) takes the id of the *original subscribe request* and is never answered.
+  - `method` (string) — the notification method name the node emits for this subscription's events (`eth_subscription`, `xrpc.ch.val`).
   - `unsubscribe-method` (string) — the paired unsubscribe method.
 - `dispatch` (string) — optional fan-out execution policy for unary methods. Supported values:
   - `broadcast` — the service sends the same request to every matching available upstream, waits for fan-out to complete, and returns the first successful response in selected-upstream order (not the fastest response). This is intended for transaction propagation methods such as `eth_sendRawTransaction`. If all upstreams fail, the service returns a deterministic upstream/protocol error. It is gated by `chain-defaults.<chain>.dispatch.broadcast`.
@@ -242,7 +245,7 @@ The `specs` package embeds the specs below (see [`pkg/methods/specs/`](../pkg/me
 | `polkadot` | `polkadot-json-rpc`, `polkadot-websocket` |
 | `astar` | `eth`, `polkadot` |
 | `cosmos-evm` | `eth`, `cosmos` |
-| `celestia` | `celestia-json-rpc`, `cosmos` |
+| `celestia` | `celestia-json-rpc`, `celestia-websocket`, `cosmos` |
 
 ### Plain specs
 
@@ -252,7 +255,7 @@ Grouped by the transports they declare:
 | --- | --- |
 | `json-rpc`, `websocket` | `arbitrum`, `avail`, `cronos_zkevm`, `eth-json-rpc`, `fantom`, `filecoin`, `harmony_0`, `harmony_1`, `hyperliquid-eth`, `klaytn-json-rpc`, `linea`, `mantle`, `optimism`, `polkadot-json-rpc`, `polygon`, `polygon_zkevm`, `rootstock`, `scroll`, `sei`, `solana-json-rpc`, `viction`, `zk` |
 | `json-rpc` | `algorand-json-rpc`, `aztec`, `bitcoin-json-rpc`, `celestia-json-rpc`, `near-json-rpc`, `starknet-json-rpc`, `stellar-json-rpc`, `tron-json-rpc` |
-| `websocket` | `eth-websocket`, `klaytn-websocket`, `polkadot-websocket`, `solana-websocket` |
+| `websocket` | `celestia-websocket`, `eth-websocket`, `klaytn-websocket`, `polkadot-websocket`, `solana-websocket` |
 | `tendermint` | `cosmos-tendermint` |
 | `rest` | `algorand-rest`, `aptos`, `cosmos-rest`, `eth-beacon-chain`, `stellar-horizon`, `ton-http-v2`, `tron-rest` |
 | `rest-indexer` | `ton-index-v3` |

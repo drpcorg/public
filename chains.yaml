@@ -3567,6 +3567,7 @@ chain-settings:
           code: INJECTIVE_MAINNET
           grpcId: 1134
           priority: 100
+          net-version: 1
         - id: Testnet
           chain-ids:
             cosmos: injective-888

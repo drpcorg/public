@@ -1,0 +1,22 @@
+{
+  "spec": {
+    "api-connectors": ["websocket"],
+    "name": "test",
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "header.Subscribe",
+      "params": [],
+      "settings": {
+        "cacheable": false,
+        "subscription": {
+          "is-subscribe": true,
+          "type": "stream",
+          "method": "xrpc.ch.val",
+          "unsubscribe-method": "xrpc.cancel"
+        }
+      }
+    }
+  ]
+}
