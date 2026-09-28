@@ -9,7 +9,7 @@ service Blockchain {
     rpc NativeCall (NativeCallRequest) returns (stream NativeCallReplyItem) {}
     rpc NativeSubscribe (NativeSubscribeRequest) returns (stream NativeSubscribeReplyItem) {}
     rpc SubscribeChainStatus (SubscribeChainStatusRequest) returns (stream SubscribeChainStatusResponse) {}
-    rpc SubscribeNodeGroupStatus (SubscribeNodeGroupStatusRequest) returns (stream SubscribeChainStatusResponse) {}
+    rpc SubscribeNodeGroupStatus (SubscribeNodeGroupStatusRequest) returns (stream SubscribeNodeGroupStatusResponse) {}
 
     rpc Describe (DescribeRequest) returns (DescribeResponse) {}
     rpc SubscribeStatus (StatusRequest) returns (stream ChainStatus) {}
@@ -100,6 +100,10 @@ message NativeCallReplyItem {
     repeated KeyValue response_headers = 14;
     bytes error_as_is = 15;
     repeated KeyValue response_trailers = 16;
+    // node group of the upstream that produced this item, at the level the
+    // request's node_group selector addressed (GROUPS without one); empty when
+    // no upstream was involved
+    string node_group_id = 17;
 }
 
 message NativeSubscribeRequest {
@@ -127,6 +131,8 @@ message NativeSubscribeReplyItem {
     oneof data {
         GrpcSubResponseData grpc_data = 5;
     }
+    // same as NativeCallReplyItem.node_group_id, for the upstream in upstream_id
+    string node_group_id = 6;
 }
 
 message GrpcSubResponseData {
@@ -344,11 +350,34 @@ message ExistsSelector {
 message SubscribeChainStatusRequest {
 }
 
+// How finely SubscribeNodeGroupStatus splits the upstreams of a chain.
+enum SeparationLevel {
+    // treated as SEPARATION_GROUPS, so an empty request keeps its meaning
+    SEPARATION_UNSPECIFIED = 0;
+    // one group per routing-label set
+    SEPARATION_LABELS = 1;
+    // one group per (routing-label set, call-method set)
+    SEPARATION_GROUPS = 2;
+    // one group per upstream
+    SEPARATION_FULL = 3;
+}
+
 // SubscribeNodeGroupStatus streams the same ChainDescription events per node
 // group instead of the merged per-network view: full responses and deltas are
 // tagged with node_group_id, and a group's ChainStatus going unavailable is
 // its removal signal. SubscribeChainStatus is unaffected.
 message SubscribeNodeGroupStatusRequest {
+    // chains to stream; empty = every chain
+    repeated ChainRef chains = 1;
+    // a server that does not know the level fails the call with InvalidArgument
+    SeparationLevel level = 2;
+}
+
+// One flush window of the node-group stream.
+message SubscribeNodeGroupStatusResponse {
+    repeated SubscribeChainStatusResponse items = 1;
+    // the level the server applied
+    SeparationLevel level = 2;
 }
 
 message SubscribeChainStatusResponse {
@@ -360,8 +389,8 @@ message SubscribeChainStatusResponse {
 message ChainDescription {
     ChainRef chain = 1;
     repeated ChainEvent chain_event = 2;
-    // Opaque node-group id ("<client_type>:<methods_hash8>"), set on
-    // SubscribeNodeGroupStatus streams; always empty on SubscribeChainStatus.
+    // Opaque node-group id, unique per chain within one server and level; set
+    // on SubscribeNodeGroupStatus streams, always empty on SubscribeChainStatus.
     // Clients must not parse it.
     string node_group_id = 3;
 }

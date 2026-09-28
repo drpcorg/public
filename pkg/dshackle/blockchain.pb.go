@@ -201,6 +201,63 @@ func (BlockTag) EnumDescriptor() ([]byte, []int) {
 	return file_blockchain_proto_rawDescGZIP(), []int{2}
 }
 
+// How finely SubscribeNodeGroupStatus splits the upstreams of a chain.
+type SeparationLevel int32
+
+const (
+	// treated as SEPARATION_GROUPS, so an empty request keeps its meaning
+	SeparationLevel_SEPARATION_UNSPECIFIED SeparationLevel = 0
+	// one group per routing-label set
+	SeparationLevel_SEPARATION_LABELS SeparationLevel = 1
+	// one group per (routing-label set, call-method set)
+	SeparationLevel_SEPARATION_GROUPS SeparationLevel = 2
+	// one group per upstream
+	SeparationLevel_SEPARATION_FULL SeparationLevel = 3
+)
+
+// Enum value maps for SeparationLevel.
+var (
+	SeparationLevel_name = map[int32]string{
+		0: "SEPARATION_UNSPECIFIED",
+		1: "SEPARATION_LABELS",
+		2: "SEPARATION_GROUPS",
+		3: "SEPARATION_FULL",
+	}
+	SeparationLevel_value = map[string]int32{
+		"SEPARATION_UNSPECIFIED": 0,
+		"SEPARATION_LABELS":      1,
+		"SEPARATION_GROUPS":      2,
+		"SEPARATION_FULL":        3,
+	}
+)
+
+func (x SeparationLevel) Enum() *SeparationLevel {
+	p := new(SeparationLevel)
+	*p = x
+	return p
+}
+
+func (x SeparationLevel) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (SeparationLevel) Descriptor() protoreflect.EnumDescriptor {
+	return file_blockchain_proto_enumTypes[3].Descriptor()
+}
+
+func (SeparationLevel) Type() protoreflect.EnumType {
+	return &file_blockchain_proto_enumTypes[3]
+}
+
+func (x SeparationLevel) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use SeparationLevel.Descriptor instead.
+func (SeparationLevel) EnumDescriptor() ([]byte, []int) {
+	return file_blockchain_proto_rawDescGZIP(), []int{3}
+}
+
 type NativeCallRequest struct {
 	state           protoimpl.MessageState `protogen:"open.v1"`
 	Chain           ChainRef               `protobuf:"varint,1,opt,name=chain,proto3,enum=emerald.ChainRef" json:"chain,omitempty"`
@@ -707,8 +764,12 @@ type NativeCallReplyItem struct {
 	ResponseHeaders     []*KeyValue       `protobuf:"bytes,14,rep,name=response_headers,json=responseHeaders,proto3" json:"response_headers,omitempty"`
 	ErrorAsIs           []byte            `protobuf:"bytes,15,opt,name=error_as_is,json=errorAsIs,proto3" json:"error_as_is,omitempty"`
 	ResponseTrailers    []*KeyValue       `protobuf:"bytes,16,rep,name=response_trailers,json=responseTrailers,proto3" json:"response_trailers,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	// node group of the upstream that produced this item, at the level the
+	// request's node_group selector addressed (GROUPS without one); empty when
+	// no upstream was involved
+	NodeGroupId   string `protobuf:"bytes,17,opt,name=node_group_id,json=nodeGroupId,proto3" json:"node_group_id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
 }
 
 func (x *NativeCallReplyItem) Reset() {
@@ -852,6 +913,13 @@ func (x *NativeCallReplyItem) GetResponseTrailers() []*KeyValue {
 		return x.ResponseTrailers
 	}
 	return nil
+}
+
+func (x *NativeCallReplyItem) GetNodeGroupId() string {
+	if x != nil {
+		return x.NodeGroupId
+	}
+	return ""
 }
 
 type NativeSubscribeRequest struct {
@@ -1029,7 +1097,9 @@ type NativeSubscribeReplyItem struct {
 	// Types that are valid to be assigned to Data:
 	//
 	//	*NativeSubscribeReplyItem_GrpcData
-	Data          isNativeSubscribeReplyItem_Data `protobuf_oneof:"data"`
+	Data isNativeSubscribeReplyItem_Data `protobuf_oneof:"data"`
+	// same as NativeCallReplyItem.node_group_id, for the upstream in upstream_id
+	NodeGroupId   string `protobuf:"bytes,6,opt,name=node_group_id,json=nodeGroupId,proto3" json:"node_group_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -1106,6 +1176,13 @@ func (x *NativeSubscribeReplyItem) GetGrpcData() *GrpcSubResponseData {
 		}
 	}
 	return nil
+}
+
+func (x *NativeSubscribeReplyItem) GetNodeGroupId() string {
+	if x != nil {
+		return x.NodeGroupId
+	}
+	return ""
 }
 
 type isNativeSubscribeReplyItem_Data interface {
@@ -2926,7 +3003,11 @@ func (*SubscribeChainStatusRequest) Descriptor() ([]byte, []int) {
 // tagged with node_group_id, and a group's ChainStatus going unavailable is
 // its removal signal. SubscribeChainStatus is unaffected.
 type SubscribeNodeGroupStatusRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// chains to stream; empty = every chain
+	Chains []ChainRef `protobuf:"varint,1,rep,packed,name=chains,proto3,enum=emerald.ChainRef" json:"chains,omitempty"`
+	// a server that does not know the level fails the call with InvalidArgument
+	Level         SeparationLevel `protobuf:"varint,2,opt,name=level,proto3,enum=emerald.SeparationLevel" json:"level,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2961,6 +3042,74 @@ func (*SubscribeNodeGroupStatusRequest) Descriptor() ([]byte, []int) {
 	return file_blockchain_proto_rawDescGZIP(), []int{38}
 }
 
+func (x *SubscribeNodeGroupStatusRequest) GetChains() []ChainRef {
+	if x != nil {
+		return x.Chains
+	}
+	return nil
+}
+
+func (x *SubscribeNodeGroupStatusRequest) GetLevel() SeparationLevel {
+	if x != nil {
+		return x.Level
+	}
+	return SeparationLevel_SEPARATION_UNSPECIFIED
+}
+
+// One flush window of the node-group stream.
+type SubscribeNodeGroupStatusResponse struct {
+	state protoimpl.MessageState          `protogen:"open.v1"`
+	Items []*SubscribeChainStatusResponse `protobuf:"bytes,1,rep,name=items,proto3" json:"items,omitempty"`
+	// the level the server applied
+	Level         SeparationLevel `protobuf:"varint,2,opt,name=level,proto3,enum=emerald.SeparationLevel" json:"level,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *SubscribeNodeGroupStatusResponse) Reset() {
+	*x = SubscribeNodeGroupStatusResponse{}
+	mi := &file_blockchain_proto_msgTypes[39]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *SubscribeNodeGroupStatusResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*SubscribeNodeGroupStatusResponse) ProtoMessage() {}
+
+func (x *SubscribeNodeGroupStatusResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_blockchain_proto_msgTypes[39]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use SubscribeNodeGroupStatusResponse.ProtoReflect.Descriptor instead.
+func (*SubscribeNodeGroupStatusResponse) Descriptor() ([]byte, []int) {
+	return file_blockchain_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *SubscribeNodeGroupStatusResponse) GetItems() []*SubscribeChainStatusResponse {
+	if x != nil {
+		return x.Items
+	}
+	return nil
+}
+
+func (x *SubscribeNodeGroupStatusResponse) GetLevel() SeparationLevel {
+	if x != nil {
+		return x.Level
+	}
+	return SeparationLevel_SEPARATION_UNSPECIFIED
+}
+
 type SubscribeChainStatusResponse struct {
 	state            protoimpl.MessageState `protogen:"open.v1"`
 	ChainDescription *ChainDescription      `protobuf:"bytes,1,opt,name=chain_description,json=chainDescription,proto3" json:"chain_description,omitempty"`
@@ -2972,7 +3121,7 @@ type SubscribeChainStatusResponse struct {
 
 func (x *SubscribeChainStatusResponse) Reset() {
 	*x = SubscribeChainStatusResponse{}
-	mi := &file_blockchain_proto_msgTypes[39]
+	mi := &file_blockchain_proto_msgTypes[40]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -2984,7 +3133,7 @@ func (x *SubscribeChainStatusResponse) String() string {
 func (*SubscribeChainStatusResponse) ProtoMessage() {}
 
 func (x *SubscribeChainStatusResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_blockchain_proto_msgTypes[39]
+	mi := &file_blockchain_proto_msgTypes[40]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -2997,7 +3146,7 @@ func (x *SubscribeChainStatusResponse) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SubscribeChainStatusResponse.ProtoReflect.Descriptor instead.
 func (*SubscribeChainStatusResponse) Descriptor() ([]byte, []int) {
-	return file_blockchain_proto_rawDescGZIP(), []int{39}
+	return file_blockchain_proto_rawDescGZIP(), []int{40}
 }
 
 func (x *SubscribeChainStatusResponse) GetChainDescription() *ChainDescription {
@@ -3025,8 +3174,8 @@ type ChainDescription struct {
 	state      protoimpl.MessageState `protogen:"open.v1"`
 	Chain      ChainRef               `protobuf:"varint,1,opt,name=chain,proto3,enum=emerald.ChainRef" json:"chain,omitempty"`
 	ChainEvent []*ChainEvent          `protobuf:"bytes,2,rep,name=chain_event,json=chainEvent,proto3" json:"chain_event,omitempty"`
-	// Opaque node-group id ("<client_type>:<methods_hash8>"), set on
-	// SubscribeNodeGroupStatus streams; always empty on SubscribeChainStatus.
+	// Opaque node-group id, unique per chain within one server and level; set
+	// on SubscribeNodeGroupStatus streams, always empty on SubscribeChainStatus.
 	// Clients must not parse it.
 	NodeGroupId   string `protobuf:"bytes,3,opt,name=node_group_id,json=nodeGroupId,proto3" json:"node_group_id,omitempty"`
 	unknownFields protoimpl.UnknownFields
@@ -3035,7 +3184,7 @@ type ChainDescription struct {
 
 func (x *ChainDescription) Reset() {
 	*x = ChainDescription{}
-	mi := &file_blockchain_proto_msgTypes[40]
+	mi := &file_blockchain_proto_msgTypes[41]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3047,7 +3196,7 @@ func (x *ChainDescription) String() string {
 func (*ChainDescription) ProtoMessage() {}
 
 func (x *ChainDescription) ProtoReflect() protoreflect.Message {
-	mi := &file_blockchain_proto_msgTypes[40]
+	mi := &file_blockchain_proto_msgTypes[41]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3060,7 +3209,7 @@ func (x *ChainDescription) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChainDescription.ProtoReflect.Descriptor instead.
 func (*ChainDescription) Descriptor() ([]byte, []int) {
-	return file_blockchain_proto_rawDescGZIP(), []int{40}
+	return file_blockchain_proto_rawDescGZIP(), []int{41}
 }
 
 func (x *ChainDescription) GetChain() ChainRef {
@@ -3098,7 +3247,7 @@ type HeadEvent struct {
 
 func (x *HeadEvent) Reset() {
 	*x = HeadEvent{}
-	mi := &file_blockchain_proto_msgTypes[41]
+	mi := &file_blockchain_proto_msgTypes[42]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3110,7 +3259,7 @@ func (x *HeadEvent) String() string {
 func (*HeadEvent) ProtoMessage() {}
 
 func (x *HeadEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_blockchain_proto_msgTypes[41]
+	mi := &file_blockchain_proto_msgTypes[42]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3123,7 +3272,7 @@ func (x *HeadEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use HeadEvent.ProtoReflect.Descriptor instead.
 func (*HeadEvent) Descriptor() ([]byte, []int) {
-	return file_blockchain_proto_rawDescGZIP(), []int{41}
+	return file_blockchain_proto_rawDescGZIP(), []int{42}
 }
 
 func (x *HeadEvent) GetHeight() uint64 {
@@ -3187,7 +3336,7 @@ type ChainEvent struct {
 
 func (x *ChainEvent) Reset() {
 	*x = ChainEvent{}
-	mi := &file_blockchain_proto_msgTypes[42]
+	mi := &file_blockchain_proto_msgTypes[43]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3199,7 +3348,7 @@ func (x *ChainEvent) String() string {
 func (*ChainEvent) ProtoMessage() {}
 
 func (x *ChainEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_blockchain_proto_msgTypes[42]
+	mi := &file_blockchain_proto_msgTypes[43]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3212,7 +3361,7 @@ func (x *ChainEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use ChainEvent.ProtoReflect.Descriptor instead.
 func (*ChainEvent) Descriptor() ([]byte, []int) {
-	return file_blockchain_proto_rawDescGZIP(), []int{42}
+	return file_blockchain_proto_rawDescGZIP(), []int{43}
 }
 
 func (x *ChainEvent) GetChainEvent() isChainEvent_ChainEvent {
@@ -3355,7 +3504,7 @@ type SupportedMethodsEvent struct {
 
 func (x *SupportedMethodsEvent) Reset() {
 	*x = SupportedMethodsEvent{}
-	mi := &file_blockchain_proto_msgTypes[43]
+	mi := &file_blockchain_proto_msgTypes[44]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3367,7 +3516,7 @@ func (x *SupportedMethodsEvent) String() string {
 func (*SupportedMethodsEvent) ProtoMessage() {}
 
 func (x *SupportedMethodsEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_blockchain_proto_msgTypes[43]
+	mi := &file_blockchain_proto_msgTypes[44]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3380,7 +3529,7 @@ func (x *SupportedMethodsEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SupportedMethodsEvent.ProtoReflect.Descriptor instead.
 func (*SupportedMethodsEvent) Descriptor() ([]byte, []int) {
-	return file_blockchain_proto_rawDescGZIP(), []int{43}
+	return file_blockchain_proto_rawDescGZIP(), []int{44}
 }
 
 func (x *SupportedMethodsEvent) GetMethods() []string {
@@ -3399,7 +3548,7 @@ type SupportedSubscriptionsEvent struct {
 
 func (x *SupportedSubscriptionsEvent) Reset() {
 	*x = SupportedSubscriptionsEvent{}
-	mi := &file_blockchain_proto_msgTypes[44]
+	mi := &file_blockchain_proto_msgTypes[45]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3411,7 +3560,7 @@ func (x *SupportedSubscriptionsEvent) String() string {
 func (*SupportedSubscriptionsEvent) ProtoMessage() {}
 
 func (x *SupportedSubscriptionsEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_blockchain_proto_msgTypes[44]
+	mi := &file_blockchain_proto_msgTypes[45]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3424,7 +3573,7 @@ func (x *SupportedSubscriptionsEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use SupportedSubscriptionsEvent.ProtoReflect.Descriptor instead.
 func (*SupportedSubscriptionsEvent) Descriptor() ([]byte, []int) {
-	return file_blockchain_proto_rawDescGZIP(), []int{44}
+	return file_blockchain_proto_rawDescGZIP(), []int{45}
 }
 
 func (x *SupportedSubscriptionsEvent) GetSubs() []string {
@@ -3443,7 +3592,7 @@ type CapabilitiesEvent struct {
 
 func (x *CapabilitiesEvent) Reset() {
 	*x = CapabilitiesEvent{}
-	mi := &file_blockchain_proto_msgTypes[45]
+	mi := &file_blockchain_proto_msgTypes[46]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3455,7 +3604,7 @@ func (x *CapabilitiesEvent) String() string {
 func (*CapabilitiesEvent) ProtoMessage() {}
 
 func (x *CapabilitiesEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_blockchain_proto_msgTypes[45]
+	mi := &file_blockchain_proto_msgTypes[46]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3468,7 +3617,7 @@ func (x *CapabilitiesEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use CapabilitiesEvent.ProtoReflect.Descriptor instead.
 func (*CapabilitiesEvent) Descriptor() ([]byte, []int) {
-	return file_blockchain_proto_rawDescGZIP(), []int{45}
+	return file_blockchain_proto_rawDescGZIP(), []int{46}
 }
 
 func (x *CapabilitiesEvent) GetCapabilities() []Capabilities {
@@ -3487,7 +3636,7 @@ type LowerBoundEvent struct {
 
 func (x *LowerBoundEvent) Reset() {
 	*x = LowerBoundEvent{}
-	mi := &file_blockchain_proto_msgTypes[46]
+	mi := &file_blockchain_proto_msgTypes[47]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3499,7 +3648,7 @@ func (x *LowerBoundEvent) String() string {
 func (*LowerBoundEvent) ProtoMessage() {}
 
 func (x *LowerBoundEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_blockchain_proto_msgTypes[46]
+	mi := &file_blockchain_proto_msgTypes[47]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3512,7 +3661,7 @@ func (x *LowerBoundEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use LowerBoundEvent.ProtoReflect.Descriptor instead.
 func (*LowerBoundEvent) Descriptor() ([]byte, []int) {
-	return file_blockchain_proto_rawDescGZIP(), []int{46}
+	return file_blockchain_proto_rawDescGZIP(), []int{47}
 }
 
 func (x *LowerBoundEvent) GetLowerBounds() []*LowerBound {
@@ -3531,7 +3680,7 @@ type FinalizationDataEvent struct {
 
 func (x *FinalizationDataEvent) Reset() {
 	*x = FinalizationDataEvent{}
-	mi := &file_blockchain_proto_msgTypes[47]
+	mi := &file_blockchain_proto_msgTypes[48]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3543,7 +3692,7 @@ func (x *FinalizationDataEvent) String() string {
 func (*FinalizationDataEvent) ProtoMessage() {}
 
 func (x *FinalizationDataEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_blockchain_proto_msgTypes[47]
+	mi := &file_blockchain_proto_msgTypes[48]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3556,7 +3705,7 @@ func (x *FinalizationDataEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use FinalizationDataEvent.ProtoReflect.Descriptor instead.
 func (*FinalizationDataEvent) Descriptor() ([]byte, []int) {
-	return file_blockchain_proto_rawDescGZIP(), []int{47}
+	return file_blockchain_proto_rawDescGZIP(), []int{48}
 }
 
 func (x *FinalizationDataEvent) GetFinalizationData() []*FinalizationData {
@@ -3575,7 +3724,7 @@ type NodeDetailsEvent struct {
 
 func (x *NodeDetailsEvent) Reset() {
 	*x = NodeDetailsEvent{}
-	mi := &file_blockchain_proto_msgTypes[48]
+	mi := &file_blockchain_proto_msgTypes[49]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -3587,7 +3736,7 @@ func (x *NodeDetailsEvent) String() string {
 func (*NodeDetailsEvent) ProtoMessage() {}
 
 func (x *NodeDetailsEvent) ProtoReflect() protoreflect.Message {
-	mi := &file_blockchain_proto_msgTypes[48]
+	mi := &file_blockchain_proto_msgTypes[49]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -3600,7 +3749,7 @@ func (x *NodeDetailsEvent) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use NodeDetailsEvent.ProtoReflect.Descriptor instead.
 func (*NodeDetailsEvent) Descriptor() ([]byte, []int) {
-	return file_blockchain_proto_rawDescGZIP(), []int{48}
+	return file_blockchain_proto_rawDescGZIP(), []int{49}
 }
 
 func (x *NodeDetailsEvent) GetNodes() []*NodeDetails {
@@ -3652,7 +3801,7 @@ const file_blockchain_proto_rawDesc = "" +
 	"\tsignature\x18\x02 \x01(\fR\tsignature\x12\x15\n" +
 	"\x06key_id\x18\x03 \x01(\x04R\x05keyId\x12#\n" +
 	"\vupstream_id\x18\x04 \x01(\tB\x02\x18\x01R\n" +
-	"upstreamId\"\x96\x05\n" +
+	"upstreamId\"\xba\x05\n" +
 	"\x13NativeCallReplyItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x18\n" +
 	"\asucceed\x18\x02 \x01(\bR\asucceed\x12\x18\n" +
@@ -3674,7 +3823,8 @@ const file_blockchain_proto_rawDesc = "" +
 	"\ffinalization\x18\r \x01(\v2\x19.emerald.FinalizationDataR\ffinalization\x12<\n" +
 	"\x10response_headers\x18\x0e \x03(\v2\x11.emerald.KeyValueR\x0fresponseHeaders\x12\x1e\n" +
 	"\verror_as_is\x18\x0f \x01(\fR\terrorAsIs\x12>\n" +
-	"\x11response_trailers\x18\x10 \x03(\v2\x11.emerald.KeyValueR\x10responseTrailers\"\xd4\x02\n" +
+	"\x11response_trailers\x18\x10 \x03(\v2\x11.emerald.KeyValueR\x10responseTrailers\x12\"\n" +
+	"\rnode_group_id\x18\x11 \x01(\tR\vnodeGroupId\"\xd4\x02\n" +
 	"\x16NativeSubscribeRequest\x12'\n" +
 	"\x05chain\x18\x01 \x01(\x0e2\x11.emerald.ChainRefR\x05chain\x12\x16\n" +
 	"\x06method\x18\x02 \x01(\tR\x06method\x12\x18\n" +
@@ -3686,14 +3836,15 @@ const file_blockchain_proto_rawDesc = "" +
 	"\tgrpc_data\x18\b \x01(\v2\x1b.emerald.GrpcSubRequestDataH\x00R\bgrpcDataB\x06\n" +
 	"\x04data\"C\n" +
 	"\x12GrpcSubRequestData\x12-\n" +
-	"\bmetadata\x18\x01 \x03(\v2\x11.emerald.KeyValueR\bmetadata\"\xf9\x01\n" +
+	"\bmetadata\x18\x01 \x03(\v2\x11.emerald.KeyValueR\bmetadata\"\x9d\x02\n" +
 	"\x18NativeSubscribeReplyItem\x12\x18\n" +
 	"\apayload\x18\x01 \x01(\fR\apayload\x12?\n" +
 	"\tsignature\x18\x02 \x01(\v2!.emerald.NativeCallReplySignatureR\tsignature\x12\x1f\n" +
 	"\vupstream_id\x18\x03 \x01(\tR\n" +
 	"upstreamId\x12\x1c\n" +
 	"\theartbeat\x18\x04 \x01(\bR\theartbeat\x12;\n" +
-	"\tgrpc_data\x18\x05 \x01(\v2\x1c.emerald.GrpcSubResponseDataH\x00R\bgrpcDataB\x06\n" +
+	"\tgrpc_data\x18\x05 \x01(\v2\x1c.emerald.GrpcSubResponseDataH\x00R\bgrpcData\x12\"\n" +
+	"\rnode_group_id\x18\x06 \x01(\tR\vnodeGroupIdB\x06\n" +
 	"\x04data\"\xa1\x01\n" +
 	"\x13GrpcSubResponseData\x12-\n" +
 	"\bmetadata\x18\x01 \x03(\v2\x11.emerald.KeyValueR\bmetadata\x12-\n" +
@@ -3821,8 +3972,13 @@ const file_blockchain_proto_rawDesc = "" +
 	"\aversion\x18\x01 \x01(\tR\aversion\"$\n" +
 	"\x0eExistsSelector\x12\x12\n" +
 	"\x04name\x18\x01 \x01(\tR\x04name\"\x1d\n" +
-	"\x1bSubscribeChainStatusRequest\"!\n" +
-	"\x1fSubscribeNodeGroupStatusRequest\"\xbe\x01\n" +
+	"\x1bSubscribeChainStatusRequest\"|\n" +
+	"\x1fSubscribeNodeGroupStatusRequest\x12)\n" +
+	"\x06chains\x18\x01 \x03(\x0e2\x11.emerald.ChainRefR\x06chains\x12.\n" +
+	"\x05level\x18\x02 \x01(\x0e2\x18.emerald.SeparationLevelR\x05level\"\x8f\x01\n" +
+	" SubscribeNodeGroupStatusResponse\x12;\n" +
+	"\x05items\x18\x01 \x03(\v2%.emerald.SubscribeChainStatusResponseR\x05items\x12.\n" +
+	"\x05level\x18\x02 \x01(\x0e2\x18.emerald.SeparationLevelR\x05level\"\xbe\x01\n" +
 	"\x1cSubscribeChainStatusResponse\x12F\n" +
 	"\x11chain_description\x18\x01 \x01(\v2\x19.emerald.ChainDescriptionR\x10chainDescription\x121\n" +
 	"\n" +
@@ -3888,15 +4044,20 @@ const file_blockchain_proto_rawDesc = "" +
 	"\n" +
 	"\x06LATEST\x10\x02\x12\b\n" +
 	"\x04SAFE\x10\x03\x12\r\n" +
-	"\tFINALIZED\x10\x042\xab\x05\n" +
+	"\tFINALIZED\x10\x04*p\n" +
+	"\x0fSeparationLevel\x12\x1a\n" +
+	"\x16SEPARATION_UNSPECIFIED\x10\x00\x12\x15\n" +
+	"\x11SEPARATION_LABELS\x10\x01\x12\x15\n" +
+	"\x11SEPARATION_GROUPS\x10\x02\x12\x13\n" +
+	"\x0fSEPARATION_FULL\x10\x032\xaf\x05\n" +
 	"\n" +
 	"Blockchain\x127\n" +
 	"\rSubscribeHead\x12\x0e.emerald.Chain\x1a\x12.emerald.ChainHead\"\x000\x01\x12J\n" +
 	"\n" +
 	"NativeCall\x12\x1a.emerald.NativeCallRequest\x1a\x1c.emerald.NativeCallReplyItem\"\x000\x01\x12Y\n" +
 	"\x0fNativeSubscribe\x12\x1f.emerald.NativeSubscribeRequest\x1a!.emerald.NativeSubscribeReplyItem\"\x000\x01\x12g\n" +
-	"\x14SubscribeChainStatus\x12$.emerald.SubscribeChainStatusRequest\x1a%.emerald.SubscribeChainStatusResponse\"\x000\x01\x12o\n" +
-	"\x18SubscribeNodeGroupStatus\x12(.emerald.SubscribeNodeGroupStatusRequest\x1a%.emerald.SubscribeChainStatusResponse\"\x000\x01\x12A\n" +
+	"\x14SubscribeChainStatus\x12$.emerald.SubscribeChainStatusRequest\x1a%.emerald.SubscribeChainStatusResponse\"\x000\x01\x12s\n" +
+	"\x18SubscribeNodeGroupStatus\x12(.emerald.SubscribeNodeGroupStatusRequest\x1a).emerald.SubscribeNodeGroupStatusResponse\"\x000\x01\x12A\n" +
 	"\bDescribe\x12\x18.emerald.DescribeRequest\x1a\x19.emerald.DescribeResponse\"\x00\x12C\n" +
 	"\x0fSubscribeStatus\x12\x16.emerald.StatusRequest\x1a\x14.emerald.ChainStatus\"\x000\x01\x12[\n" +
 	"\x13SubscribeNodeStatus\x12#.emerald.SubscribeNodeStatusRequest\x1a\x1b.emerald.NodeStatusResponse\"\x000\x01B\x19\n" +
@@ -3914,162 +4075,168 @@ func file_blockchain_proto_rawDescGZIP() []byte {
 	return file_blockchain_proto_rawDescData
 }
 
-var file_blockchain_proto_enumTypes = make([]protoimpl.EnumInfo, 3)
-var file_blockchain_proto_msgTypes = make([]protoimpl.MessageInfo, 49)
+var file_blockchain_proto_enumTypes = make([]protoimpl.EnumInfo, 4)
+var file_blockchain_proto_msgTypes = make([]protoimpl.MessageInfo, 50)
 var file_blockchain_proto_goTypes = []any{
-	(LowerBoundType)(0),                     // 0: emerald.LowerBoundType
-	(Capabilities)(0),                       // 1: emerald.Capabilities
-	(BlockTag)(0),                           // 2: emerald.BlockTag
-	(*NativeCallRequest)(nil),               // 3: emerald.NativeCallRequest
-	(*NativeCallItem)(nil),                  // 4: emerald.NativeCallItem
-	(*RestData)(nil),                        // 5: emerald.RestData
-	(*GrpcData)(nil),                        // 6: emerald.GrpcData
-	(*KeyValue)(nil),                        // 7: emerald.KeyValue
-	(*NativeCallReplySignature)(nil),        // 8: emerald.NativeCallReplySignature
-	(*NativeCallReplyItem)(nil),             // 9: emerald.NativeCallReplyItem
-	(*NativeSubscribeRequest)(nil),          // 10: emerald.NativeSubscribeRequest
-	(*GrpcSubRequestData)(nil),              // 11: emerald.GrpcSubRequestData
-	(*NativeSubscribeReplyItem)(nil),        // 12: emerald.NativeSubscribeReplyItem
-	(*GrpcSubResponseData)(nil),             // 13: emerald.GrpcSubResponseData
-	(*ChainHead)(nil),                       // 14: emerald.ChainHead
-	(*LowerBound)(nil),                      // 15: emerald.LowerBound
-	(*SubscribeNodeStatusRequest)(nil),      // 16: emerald.SubscribeNodeStatusRequest
-	(*NodeStatusResponse)(nil),              // 17: emerald.NodeStatusResponse
-	(*NodeDescription)(nil),                 // 18: emerald.NodeDescription
-	(*NodeLabels)(nil),                      // 19: emerald.NodeLabels
-	(*NodeStatus)(nil),                      // 20: emerald.NodeStatus
-	(*DescribeRequest)(nil),                 // 21: emerald.DescribeRequest
-	(*DescribeResponse)(nil),                // 22: emerald.DescribeResponse
-	(*DescribeChain)(nil),                   // 23: emerald.DescribeChain
-	(*BuildInfo)(nil),                       // 24: emerald.BuildInfo
-	(*StatusRequest)(nil),                   // 25: emerald.StatusRequest
-	(*ChainStatus)(nil),                     // 26: emerald.ChainStatus
-	(*NodeDetails)(nil),                     // 27: emerald.NodeDetails
-	(*Label)(nil),                           // 28: emerald.Label
-	(*Selector)(nil),                        // 29: emerald.Selector
-	(*HeightSelector)(nil),                  // 30: emerald.HeightSelector
-	(*SlotHeightSelector)(nil),              // 31: emerald.SlotHeightSelector
-	(*LowerHeightSelector)(nil),             // 32: emerald.LowerHeightSelector
-	(*LabelSelector)(nil),                   // 33: emerald.LabelSelector
-	(*OrSelector)(nil),                      // 34: emerald.OrSelector
-	(*AndSelector)(nil),                     // 35: emerald.AndSelector
-	(*NotSelector)(nil),                     // 36: emerald.NotSelector
-	(*MinVersionSelector)(nil),              // 37: emerald.MinVersionSelector
-	(*MaxVersionSelector)(nil),              // 38: emerald.MaxVersionSelector
-	(*ExistsSelector)(nil),                  // 39: emerald.ExistsSelector
-	(*SubscribeChainStatusRequest)(nil),     // 40: emerald.SubscribeChainStatusRequest
-	(*SubscribeNodeGroupStatusRequest)(nil), // 41: emerald.SubscribeNodeGroupStatusRequest
-	(*SubscribeChainStatusResponse)(nil),    // 42: emerald.SubscribeChainStatusResponse
-	(*ChainDescription)(nil),                // 43: emerald.ChainDescription
-	(*HeadEvent)(nil),                       // 44: emerald.HeadEvent
-	(*ChainEvent)(nil),                      // 45: emerald.ChainEvent
-	(*SupportedMethodsEvent)(nil),           // 46: emerald.SupportedMethodsEvent
-	(*SupportedSubscriptionsEvent)(nil),     // 47: emerald.SupportedSubscriptionsEvent
-	(*CapabilitiesEvent)(nil),               // 48: emerald.CapabilitiesEvent
-	(*LowerBoundEvent)(nil),                 // 49: emerald.LowerBoundEvent
-	(*FinalizationDataEvent)(nil),           // 50: emerald.FinalizationDataEvent
-	(*NodeDetailsEvent)(nil),                // 51: emerald.NodeDetailsEvent
-	(ChainRef)(0),                           // 52: emerald.ChainRef
-	(AvailabilityEnum)(0),                   // 53: emerald.AvailabilityEnum
-	(*FinalizationData)(nil),                // 54: emerald.FinalizationData
-	(*Chain)(nil),                           // 55: emerald.Chain
+	(LowerBoundType)(0),                      // 0: emerald.LowerBoundType
+	(Capabilities)(0),                        // 1: emerald.Capabilities
+	(BlockTag)(0),                            // 2: emerald.BlockTag
+	(SeparationLevel)(0),                     // 3: emerald.SeparationLevel
+	(*NativeCallRequest)(nil),                // 4: emerald.NativeCallRequest
+	(*NativeCallItem)(nil),                   // 5: emerald.NativeCallItem
+	(*RestData)(nil),                         // 6: emerald.RestData
+	(*GrpcData)(nil),                         // 7: emerald.GrpcData
+	(*KeyValue)(nil),                         // 8: emerald.KeyValue
+	(*NativeCallReplySignature)(nil),         // 9: emerald.NativeCallReplySignature
+	(*NativeCallReplyItem)(nil),              // 10: emerald.NativeCallReplyItem
+	(*NativeSubscribeRequest)(nil),           // 11: emerald.NativeSubscribeRequest
+	(*GrpcSubRequestData)(nil),               // 12: emerald.GrpcSubRequestData
+	(*NativeSubscribeReplyItem)(nil),         // 13: emerald.NativeSubscribeReplyItem
+	(*GrpcSubResponseData)(nil),              // 14: emerald.GrpcSubResponseData
+	(*ChainHead)(nil),                        // 15: emerald.ChainHead
+	(*LowerBound)(nil),                       // 16: emerald.LowerBound
+	(*SubscribeNodeStatusRequest)(nil),       // 17: emerald.SubscribeNodeStatusRequest
+	(*NodeStatusResponse)(nil),               // 18: emerald.NodeStatusResponse
+	(*NodeDescription)(nil),                  // 19: emerald.NodeDescription
+	(*NodeLabels)(nil),                       // 20: emerald.NodeLabels
+	(*NodeStatus)(nil),                       // 21: emerald.NodeStatus
+	(*DescribeRequest)(nil),                  // 22: emerald.DescribeRequest
+	(*DescribeResponse)(nil),                 // 23: emerald.DescribeResponse
+	(*DescribeChain)(nil),                    // 24: emerald.DescribeChain
+	(*BuildInfo)(nil),                        // 25: emerald.BuildInfo
+	(*StatusRequest)(nil),                    // 26: emerald.StatusRequest
+	(*ChainStatus)(nil),                      // 27: emerald.ChainStatus
+	(*NodeDetails)(nil),                      // 28: emerald.NodeDetails
+	(*Label)(nil),                            // 29: emerald.Label
+	(*Selector)(nil),                         // 30: emerald.Selector
+	(*HeightSelector)(nil),                   // 31: emerald.HeightSelector
+	(*SlotHeightSelector)(nil),               // 32: emerald.SlotHeightSelector
+	(*LowerHeightSelector)(nil),              // 33: emerald.LowerHeightSelector
+	(*LabelSelector)(nil),                    // 34: emerald.LabelSelector
+	(*OrSelector)(nil),                       // 35: emerald.OrSelector
+	(*AndSelector)(nil),                      // 36: emerald.AndSelector
+	(*NotSelector)(nil),                      // 37: emerald.NotSelector
+	(*MinVersionSelector)(nil),               // 38: emerald.MinVersionSelector
+	(*MaxVersionSelector)(nil),               // 39: emerald.MaxVersionSelector
+	(*ExistsSelector)(nil),                   // 40: emerald.ExistsSelector
+	(*SubscribeChainStatusRequest)(nil),      // 41: emerald.SubscribeChainStatusRequest
+	(*SubscribeNodeGroupStatusRequest)(nil),  // 42: emerald.SubscribeNodeGroupStatusRequest
+	(*SubscribeNodeGroupStatusResponse)(nil), // 43: emerald.SubscribeNodeGroupStatusResponse
+	(*SubscribeChainStatusResponse)(nil),     // 44: emerald.SubscribeChainStatusResponse
+	(*ChainDescription)(nil),                 // 45: emerald.ChainDescription
+	(*HeadEvent)(nil),                        // 46: emerald.HeadEvent
+	(*ChainEvent)(nil),                       // 47: emerald.ChainEvent
+	(*SupportedMethodsEvent)(nil),            // 48: emerald.SupportedMethodsEvent
+	(*SupportedSubscriptionsEvent)(nil),      // 49: emerald.SupportedSubscriptionsEvent
+	(*CapabilitiesEvent)(nil),                // 50: emerald.CapabilitiesEvent
+	(*LowerBoundEvent)(nil),                  // 51: emerald.LowerBoundEvent
+	(*FinalizationDataEvent)(nil),            // 52: emerald.FinalizationDataEvent
+	(*NodeDetailsEvent)(nil),                 // 53: emerald.NodeDetailsEvent
+	(ChainRef)(0),                            // 54: emerald.ChainRef
+	(AvailabilityEnum)(0),                    // 55: emerald.AvailabilityEnum
+	(*FinalizationData)(nil),                 // 56: emerald.FinalizationData
+	(*Chain)(nil),                            // 57: emerald.Chain
 }
 var file_blockchain_proto_depIdxs = []int32{
-	52, // 0: emerald.NativeCallRequest.chain:type_name -> emerald.ChainRef
-	4,  // 1: emerald.NativeCallRequest.items:type_name -> emerald.NativeCallItem
-	29, // 2: emerald.NativeCallRequest.selector:type_name -> emerald.Selector
-	53, // 3: emerald.NativeCallRequest.min_availability:type_name -> emerald.AvailabilityEnum
-	29, // 4: emerald.NativeCallItem.selectors:type_name -> emerald.Selector
-	5,  // 5: emerald.NativeCallItem.rest_data:type_name -> emerald.RestData
-	6,  // 6: emerald.NativeCallItem.grpc_data:type_name -> emerald.GrpcData
-	7,  // 7: emerald.RestData.headers:type_name -> emerald.KeyValue
-	7,  // 8: emerald.RestData.query_params:type_name -> emerald.KeyValue
-	7,  // 9: emerald.GrpcData.metadata:type_name -> emerald.KeyValue
-	8,  // 10: emerald.NativeCallReplyItem.signature:type_name -> emerald.NativeCallReplySignature
-	54, // 11: emerald.NativeCallReplyItem.finalization:type_name -> emerald.FinalizationData
-	7,  // 12: emerald.NativeCallReplyItem.response_headers:type_name -> emerald.KeyValue
-	7,  // 13: emerald.NativeCallReplyItem.response_trailers:type_name -> emerald.KeyValue
-	52, // 14: emerald.NativeSubscribeRequest.chain:type_name -> emerald.ChainRef
-	29, // 15: emerald.NativeSubscribeRequest.selector:type_name -> emerald.Selector
-	11, // 16: emerald.NativeSubscribeRequest.grpc_data:type_name -> emerald.GrpcSubRequestData
-	7,  // 17: emerald.GrpcSubRequestData.metadata:type_name -> emerald.KeyValue
-	8,  // 18: emerald.NativeSubscribeReplyItem.signature:type_name -> emerald.NativeCallReplySignature
-	13, // 19: emerald.NativeSubscribeReplyItem.grpc_data:type_name -> emerald.GrpcSubResponseData
-	7,  // 20: emerald.GrpcSubResponseData.metadata:type_name -> emerald.KeyValue
-	7,  // 21: emerald.GrpcSubResponseData.trailers:type_name -> emerald.KeyValue
-	52, // 22: emerald.ChainHead.chain:type_name -> emerald.ChainRef
-	15, // 23: emerald.ChainHead.lower_bounds:type_name -> emerald.LowerBound
-	54, // 24: emerald.ChainHead.finalization_data:type_name -> emerald.FinalizationData
+	54, // 0: emerald.NativeCallRequest.chain:type_name -> emerald.ChainRef
+	5,  // 1: emerald.NativeCallRequest.items:type_name -> emerald.NativeCallItem
+	30, // 2: emerald.NativeCallRequest.selector:type_name -> emerald.Selector
+	55, // 3: emerald.NativeCallRequest.min_availability:type_name -> emerald.AvailabilityEnum
+	30, // 4: emerald.NativeCallItem.selectors:type_name -> emerald.Selector
+	6,  // 5: emerald.NativeCallItem.rest_data:type_name -> emerald.RestData
+	7,  // 6: emerald.NativeCallItem.grpc_data:type_name -> emerald.GrpcData
+	8,  // 7: emerald.RestData.headers:type_name -> emerald.KeyValue
+	8,  // 8: emerald.RestData.query_params:type_name -> emerald.KeyValue
+	8,  // 9: emerald.GrpcData.metadata:type_name -> emerald.KeyValue
+	9,  // 10: emerald.NativeCallReplyItem.signature:type_name -> emerald.NativeCallReplySignature
+	56, // 11: emerald.NativeCallReplyItem.finalization:type_name -> emerald.FinalizationData
+	8,  // 12: emerald.NativeCallReplyItem.response_headers:type_name -> emerald.KeyValue
+	8,  // 13: emerald.NativeCallReplyItem.response_trailers:type_name -> emerald.KeyValue
+	54, // 14: emerald.NativeSubscribeRequest.chain:type_name -> emerald.ChainRef
+	30, // 15: emerald.NativeSubscribeRequest.selector:type_name -> emerald.Selector
+	12, // 16: emerald.NativeSubscribeRequest.grpc_data:type_name -> emerald.GrpcSubRequestData
+	8,  // 17: emerald.GrpcSubRequestData.metadata:type_name -> emerald.KeyValue
+	9,  // 18: emerald.NativeSubscribeReplyItem.signature:type_name -> emerald.NativeCallReplySignature
+	14, // 19: emerald.NativeSubscribeReplyItem.grpc_data:type_name -> emerald.GrpcSubResponseData
+	8,  // 20: emerald.GrpcSubResponseData.metadata:type_name -> emerald.KeyValue
+	8,  // 21: emerald.GrpcSubResponseData.trailers:type_name -> emerald.KeyValue
+	54, // 22: emerald.ChainHead.chain:type_name -> emerald.ChainRef
+	16, // 23: emerald.ChainHead.lower_bounds:type_name -> emerald.LowerBound
+	56, // 24: emerald.ChainHead.finalization_data:type_name -> emerald.FinalizationData
 	0,  // 25: emerald.LowerBound.lower_bound_type:type_name -> emerald.LowerBoundType
-	18, // 26: emerald.NodeStatusResponse.description:type_name -> emerald.NodeDescription
-	20, // 27: emerald.NodeStatusResponse.status:type_name -> emerald.NodeStatus
-	52, // 28: emerald.NodeDescription.chain:type_name -> emerald.ChainRef
-	19, // 29: emerald.NodeDescription.nodeLabels:type_name -> emerald.NodeLabels
-	24, // 30: emerald.NodeDescription.node_build_info:type_name -> emerald.BuildInfo
-	28, // 31: emerald.NodeLabels.labels:type_name -> emerald.Label
-	53, // 32: emerald.NodeStatus.availability:type_name -> emerald.AvailabilityEnum
-	23, // 33: emerald.DescribeResponse.chains:type_name -> emerald.DescribeChain
-	24, // 34: emerald.DescribeResponse.build_info:type_name -> emerald.BuildInfo
-	52, // 35: emerald.DescribeChain.chain:type_name -> emerald.ChainRef
-	26, // 36: emerald.DescribeChain.status:type_name -> emerald.ChainStatus
-	27, // 37: emerald.DescribeChain.nodes:type_name -> emerald.NodeDetails
+	19, // 26: emerald.NodeStatusResponse.description:type_name -> emerald.NodeDescription
+	21, // 27: emerald.NodeStatusResponse.status:type_name -> emerald.NodeStatus
+	54, // 28: emerald.NodeDescription.chain:type_name -> emerald.ChainRef
+	20, // 29: emerald.NodeDescription.nodeLabels:type_name -> emerald.NodeLabels
+	25, // 30: emerald.NodeDescription.node_build_info:type_name -> emerald.BuildInfo
+	29, // 31: emerald.NodeLabels.labels:type_name -> emerald.Label
+	55, // 32: emerald.NodeStatus.availability:type_name -> emerald.AvailabilityEnum
+	24, // 33: emerald.DescribeResponse.chains:type_name -> emerald.DescribeChain
+	25, // 34: emerald.DescribeResponse.build_info:type_name -> emerald.BuildInfo
+	54, // 35: emerald.DescribeChain.chain:type_name -> emerald.ChainRef
+	27, // 36: emerald.DescribeChain.status:type_name -> emerald.ChainStatus
+	28, // 37: emerald.DescribeChain.nodes:type_name -> emerald.NodeDetails
 	1,  // 38: emerald.DescribeChain.capabilities:type_name -> emerald.Capabilities
-	52, // 39: emerald.StatusRequest.chains:type_name -> emerald.ChainRef
-	52, // 40: emerald.ChainStatus.chain:type_name -> emerald.ChainRef
-	53, // 41: emerald.ChainStatus.availability:type_name -> emerald.AvailabilityEnum
-	28, // 42: emerald.NodeDetails.labels:type_name -> emerald.Label
-	33, // 43: emerald.Selector.labelSelector:type_name -> emerald.LabelSelector
-	34, // 44: emerald.Selector.orSelector:type_name -> emerald.OrSelector
-	35, // 45: emerald.Selector.andSelector:type_name -> emerald.AndSelector
-	36, // 46: emerald.Selector.notSelector:type_name -> emerald.NotSelector
-	39, // 47: emerald.Selector.existsSelector:type_name -> emerald.ExistsSelector
-	30, // 48: emerald.Selector.height_selector:type_name -> emerald.HeightSelector
-	31, // 49: emerald.Selector.slot_height_selector:type_name -> emerald.SlotHeightSelector
-	32, // 50: emerald.Selector.lower_height_selector:type_name -> emerald.LowerHeightSelector
-	37, // 51: emerald.Selector.minVersionSelector:type_name -> emerald.MinVersionSelector
-	38, // 52: emerald.Selector.maxVersionSelector:type_name -> emerald.MaxVersionSelector
+	54, // 39: emerald.StatusRequest.chains:type_name -> emerald.ChainRef
+	54, // 40: emerald.ChainStatus.chain:type_name -> emerald.ChainRef
+	55, // 41: emerald.ChainStatus.availability:type_name -> emerald.AvailabilityEnum
+	29, // 42: emerald.NodeDetails.labels:type_name -> emerald.Label
+	34, // 43: emerald.Selector.labelSelector:type_name -> emerald.LabelSelector
+	35, // 44: emerald.Selector.orSelector:type_name -> emerald.OrSelector
+	36, // 45: emerald.Selector.andSelector:type_name -> emerald.AndSelector
+	37, // 46: emerald.Selector.notSelector:type_name -> emerald.NotSelector
+	40, // 47: emerald.Selector.existsSelector:type_name -> emerald.ExistsSelector
+	31, // 48: emerald.Selector.height_selector:type_name -> emerald.HeightSelector
+	32, // 49: emerald.Selector.slot_height_selector:type_name -> emerald.SlotHeightSelector
+	33, // 50: emerald.Selector.lower_height_selector:type_name -> emerald.LowerHeightSelector
+	38, // 51: emerald.Selector.minVersionSelector:type_name -> emerald.MinVersionSelector
+	39, // 52: emerald.Selector.maxVersionSelector:type_name -> emerald.MaxVersionSelector
 	2,  // 53: emerald.HeightSelector.tag:type_name -> emerald.BlockTag
 	0,  // 54: emerald.LowerHeightSelector.lower_bound_type:type_name -> emerald.LowerBoundType
-	29, // 55: emerald.OrSelector.selectors:type_name -> emerald.Selector
-	29, // 56: emerald.AndSelector.selectors:type_name -> emerald.Selector
-	29, // 57: emerald.NotSelector.selector:type_name -> emerald.Selector
-	43, // 58: emerald.SubscribeChainStatusResponse.chain_description:type_name -> emerald.ChainDescription
-	24, // 59: emerald.SubscribeChainStatusResponse.build_info:type_name -> emerald.BuildInfo
-	52, // 60: emerald.ChainDescription.chain:type_name -> emerald.ChainRef
-	45, // 61: emerald.ChainDescription.chain_event:type_name -> emerald.ChainEvent
-	26, // 62: emerald.ChainEvent.status:type_name -> emerald.ChainStatus
-	44, // 63: emerald.ChainEvent.head:type_name -> emerald.HeadEvent
-	46, // 64: emerald.ChainEvent.supported_methods_event:type_name -> emerald.SupportedMethodsEvent
-	47, // 65: emerald.ChainEvent.supported_subscriptions_event:type_name -> emerald.SupportedSubscriptionsEvent
-	48, // 66: emerald.ChainEvent.capabilities_event:type_name -> emerald.CapabilitiesEvent
-	49, // 67: emerald.ChainEvent.lower_bounds_event:type_name -> emerald.LowerBoundEvent
-	50, // 68: emerald.ChainEvent.finalization_data_event:type_name -> emerald.FinalizationDataEvent
-	51, // 69: emerald.ChainEvent.nodes_event:type_name -> emerald.NodeDetailsEvent
-	1,  // 70: emerald.CapabilitiesEvent.capabilities:type_name -> emerald.Capabilities
-	15, // 71: emerald.LowerBoundEvent.lower_bounds:type_name -> emerald.LowerBound
-	54, // 72: emerald.FinalizationDataEvent.finalization_data:type_name -> emerald.FinalizationData
-	27, // 73: emerald.NodeDetailsEvent.nodes:type_name -> emerald.NodeDetails
-	55, // 74: emerald.Blockchain.SubscribeHead:input_type -> emerald.Chain
-	3,  // 75: emerald.Blockchain.NativeCall:input_type -> emerald.NativeCallRequest
-	10, // 76: emerald.Blockchain.NativeSubscribe:input_type -> emerald.NativeSubscribeRequest
-	40, // 77: emerald.Blockchain.SubscribeChainStatus:input_type -> emerald.SubscribeChainStatusRequest
-	41, // 78: emerald.Blockchain.SubscribeNodeGroupStatus:input_type -> emerald.SubscribeNodeGroupStatusRequest
-	21, // 79: emerald.Blockchain.Describe:input_type -> emerald.DescribeRequest
-	25, // 80: emerald.Blockchain.SubscribeStatus:input_type -> emerald.StatusRequest
-	16, // 81: emerald.Blockchain.SubscribeNodeStatus:input_type -> emerald.SubscribeNodeStatusRequest
-	14, // 82: emerald.Blockchain.SubscribeHead:output_type -> emerald.ChainHead
-	9,  // 83: emerald.Blockchain.NativeCall:output_type -> emerald.NativeCallReplyItem
-	12, // 84: emerald.Blockchain.NativeSubscribe:output_type -> emerald.NativeSubscribeReplyItem
-	42, // 85: emerald.Blockchain.SubscribeChainStatus:output_type -> emerald.SubscribeChainStatusResponse
-	42, // 86: emerald.Blockchain.SubscribeNodeGroupStatus:output_type -> emerald.SubscribeChainStatusResponse
-	22, // 87: emerald.Blockchain.Describe:output_type -> emerald.DescribeResponse
-	26, // 88: emerald.Blockchain.SubscribeStatus:output_type -> emerald.ChainStatus
-	17, // 89: emerald.Blockchain.SubscribeNodeStatus:output_type -> emerald.NodeStatusResponse
-	82, // [82:90] is the sub-list for method output_type
-	74, // [74:82] is the sub-list for method input_type
-	74, // [74:74] is the sub-list for extension type_name
-	74, // [74:74] is the sub-list for extension extendee
-	0,  // [0:74] is the sub-list for field type_name
+	30, // 55: emerald.OrSelector.selectors:type_name -> emerald.Selector
+	30, // 56: emerald.AndSelector.selectors:type_name -> emerald.Selector
+	30, // 57: emerald.NotSelector.selector:type_name -> emerald.Selector
+	54, // 58: emerald.SubscribeNodeGroupStatusRequest.chains:type_name -> emerald.ChainRef
+	3,  // 59: emerald.SubscribeNodeGroupStatusRequest.level:type_name -> emerald.SeparationLevel
+	44, // 60: emerald.SubscribeNodeGroupStatusResponse.items:type_name -> emerald.SubscribeChainStatusResponse
+	3,  // 61: emerald.SubscribeNodeGroupStatusResponse.level:type_name -> emerald.SeparationLevel
+	45, // 62: emerald.SubscribeChainStatusResponse.chain_description:type_name -> emerald.ChainDescription
+	25, // 63: emerald.SubscribeChainStatusResponse.build_info:type_name -> emerald.BuildInfo
+	54, // 64: emerald.ChainDescription.chain:type_name -> emerald.ChainRef
+	47, // 65: emerald.ChainDescription.chain_event:type_name -> emerald.ChainEvent
+	27, // 66: emerald.ChainEvent.status:type_name -> emerald.ChainStatus
+	46, // 67: emerald.ChainEvent.head:type_name -> emerald.HeadEvent
+	48, // 68: emerald.ChainEvent.supported_methods_event:type_name -> emerald.SupportedMethodsEvent
+	49, // 69: emerald.ChainEvent.supported_subscriptions_event:type_name -> emerald.SupportedSubscriptionsEvent
+	50, // 70: emerald.ChainEvent.capabilities_event:type_name -> emerald.CapabilitiesEvent
+	51, // 71: emerald.ChainEvent.lower_bounds_event:type_name -> emerald.LowerBoundEvent
+	52, // 72: emerald.ChainEvent.finalization_data_event:type_name -> emerald.FinalizationDataEvent
+	53, // 73: emerald.ChainEvent.nodes_event:type_name -> emerald.NodeDetailsEvent
+	1,  // 74: emerald.CapabilitiesEvent.capabilities:type_name -> emerald.Capabilities
+	16, // 75: emerald.LowerBoundEvent.lower_bounds:type_name -> emerald.LowerBound
+	56, // 76: emerald.FinalizationDataEvent.finalization_data:type_name -> emerald.FinalizationData
+	28, // 77: emerald.NodeDetailsEvent.nodes:type_name -> emerald.NodeDetails
+	57, // 78: emerald.Blockchain.SubscribeHead:input_type -> emerald.Chain
+	4,  // 79: emerald.Blockchain.NativeCall:input_type -> emerald.NativeCallRequest
+	11, // 80: emerald.Blockchain.NativeSubscribe:input_type -> emerald.NativeSubscribeRequest
+	41, // 81: emerald.Blockchain.SubscribeChainStatus:input_type -> emerald.SubscribeChainStatusRequest
+	42, // 82: emerald.Blockchain.SubscribeNodeGroupStatus:input_type -> emerald.SubscribeNodeGroupStatusRequest
+	22, // 83: emerald.Blockchain.Describe:input_type -> emerald.DescribeRequest
+	26, // 84: emerald.Blockchain.SubscribeStatus:input_type -> emerald.StatusRequest
+	17, // 85: emerald.Blockchain.SubscribeNodeStatus:input_type -> emerald.SubscribeNodeStatusRequest
+	15, // 86: emerald.Blockchain.SubscribeHead:output_type -> emerald.ChainHead
+	10, // 87: emerald.Blockchain.NativeCall:output_type -> emerald.NativeCallReplyItem
+	13, // 88: emerald.Blockchain.NativeSubscribe:output_type -> emerald.NativeSubscribeReplyItem
+	44, // 89: emerald.Blockchain.SubscribeChainStatus:output_type -> emerald.SubscribeChainStatusResponse
+	43, // 90: emerald.Blockchain.SubscribeNodeGroupStatus:output_type -> emerald.SubscribeNodeGroupStatusResponse
+	23, // 91: emerald.Blockchain.Describe:output_type -> emerald.DescribeResponse
+	27, // 92: emerald.Blockchain.SubscribeStatus:output_type -> emerald.ChainStatus
+	18, // 93: emerald.Blockchain.SubscribeNodeStatus:output_type -> emerald.NodeStatusResponse
+	86, // [86:94] is the sub-list for method output_type
+	78, // [78:86] is the sub-list for method input_type
+	78, // [78:78] is the sub-list for extension type_name
+	78, // [78:78] is the sub-list for extension extendee
+	0,  // [0:78] is the sub-list for field type_name
 }
 
 func init() { file_blockchain_proto_init() }
@@ -4105,7 +4272,7 @@ func file_blockchain_proto_init() {
 		(*HeightSelector_Number)(nil),
 		(*HeightSelector_Tag)(nil),
 	}
-	file_blockchain_proto_msgTypes[42].OneofWrappers = []any{
+	file_blockchain_proto_msgTypes[43].OneofWrappers = []any{
 		(*ChainEvent_Status)(nil),
 		(*ChainEvent_Head)(nil),
 		(*ChainEvent_SupportedMethodsEvent)(nil),
@@ -4120,8 +4287,8 @@ func file_blockchain_proto_init() {
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_blockchain_proto_rawDesc), len(file_blockchain_proto_rawDesc)),
-			NumEnums:      3,
-			NumMessages:   49,
+			NumEnums:      4,
+			NumMessages:   50,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
