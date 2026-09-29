@@ -2969,19 +2969,21 @@ func (x *SubscribeUpstreamStatusRequest) GetChains() []ChainRef {
 	return nil
 }
 
-// The upstreams of one chain. Every response lists all of them: an upstream
-// missing from a response is gone.
+// The upstreams of one chain. A full response lists and describes all of them,
+// so an upstream missing from it is gone; the first response of a chain is
+// full, and so is one every resync interval. Any other response is a delta:
+// only the upstreams that are new or changed, and the ids of those removed.
 type SubscribeUpstreamStatusResponse struct {
-	state     protoimpl.MessageState `protogen:"open.v1"`
-	Chain     ChainRef               `protobuf:"varint,1,opt,name=chain,proto3,enum=emerald.ChainRef" json:"chain,omitempty"`
-	Upstreams []*UpstreamStatus      `protobuf:"bytes,2,rep,name=upstreams,proto3" json:"upstreams,omitempty"`
-	// full responses describe every upstream; the first response of a chain is
-	// full, and so is one every resync interval
-	FullResponse bool `protobuf:"varint,3,opt,name=full_response,json=fullResponse,proto3" json:"full_response,omitempty"`
+	state        protoimpl.MessageState `protogen:"open.v1"`
+	Chain        ChainRef               `protobuf:"varint,1,opt,name=chain,proto3,enum=emerald.ChainRef" json:"chain,omitempty"`
+	Upstreams    []*UpstreamStatus      `protobuf:"bytes,2,rep,name=upstreams,proto3" json:"upstreams,omitempty"`
+	FullResponse bool                   `protobuf:"varint,3,opt,name=full_response,json=fullResponse,proto3" json:"full_response,omitempty"`
 	// set on full responses
-	BuildInfo     *BuildInfo `protobuf:"bytes,4,opt,name=build_info,json=buildInfo,proto3" json:"build_info,omitempty"`
-	unknownFields protoimpl.UnknownFields
-	sizeCache     protoimpl.SizeCache
+	BuildInfo *BuildInfo `protobuf:"bytes,4,opt,name=build_info,json=buildInfo,proto3" json:"build_info,omitempty"`
+	// deltas only: upstreams gone since the previous response
+	RemovedUpstreamIds []string `protobuf:"bytes,5,rep,name=removed_upstream_ids,json=removedUpstreamIds,proto3" json:"removed_upstream_ids,omitempty"`
+	unknownFields      protoimpl.UnknownFields
+	sizeCache          protoimpl.SizeCache
 }
 
 func (x *SubscribeUpstreamStatusResponse) Reset() {
@@ -3038,6 +3040,13 @@ func (x *SubscribeUpstreamStatusResponse) GetFullResponse() bool {
 func (x *SubscribeUpstreamStatusResponse) GetBuildInfo() *BuildInfo {
 	if x != nil {
 		return x.BuildInfo
+	}
+	return nil
+}
+
+func (x *SubscribeUpstreamStatusResponse) GetRemovedUpstreamIds() []string {
+	if x != nil {
+		return x.RemovedUpstreamIds
 	}
 	return nil
 }
@@ -3966,13 +3975,14 @@ const file_blockchain_proto_rawDesc = "" +
 	"\x04name\x18\x01 \x01(\tR\x04name\"\x1d\n" +
 	"\x1bSubscribeChainStatusRequest\"K\n" +
 	"\x1eSubscribeUpstreamStatusRequest\x12)\n" +
-	"\x06chains\x18\x01 \x03(\x0e2\x11.emerald.ChainRefR\x06chains\"\xd9\x01\n" +
+	"\x06chains\x18\x01 \x03(\x0e2\x11.emerald.ChainRefR\x06chains\"\x8b\x02\n" +
 	"\x1fSubscribeUpstreamStatusResponse\x12'\n" +
 	"\x05chain\x18\x01 \x01(\x0e2\x11.emerald.ChainRefR\x05chain\x125\n" +
 	"\tupstreams\x18\x02 \x03(\v2\x17.emerald.UpstreamStatusR\tupstreams\x12#\n" +
 	"\rfull_response\x18\x03 \x01(\bR\ffullResponse\x121\n" +
 	"\n" +
-	"build_info\x18\x04 \x01(\v2\x12.emerald.BuildInfoR\tbuildInfo\"\xbe\x01\n" +
+	"build_info\x18\x04 \x01(\v2\x12.emerald.BuildInfoR\tbuildInfo\x120\n" +
+	"\x14removed_upstream_ids\x18\x05 \x03(\tR\x12removedUpstreamIds\"\xbe\x01\n" +
 	"\x0eUpstreamStatus\x12\x1f\n" +
 	"\vupstream_id\x18\x01 \x01(\tR\n" +
 	"upstreamId\x12,\n" +

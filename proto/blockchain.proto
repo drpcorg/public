@@ -352,16 +352,18 @@ message SubscribeUpstreamStatusRequest {
     repeated ChainRef chains = 1;
 }
 
-// The upstreams of one chain. Every response lists all of them: an upstream
-// missing from a response is gone.
+// The upstreams of one chain. A full response lists and describes all of them,
+// so an upstream missing from it is gone; the first response of a chain is
+// full, and so is one every resync interval. Any other response is a delta:
+// only the upstreams that are new or changed, and the ids of those removed.
 message SubscribeUpstreamStatusResponse {
     ChainRef chain = 1;
     repeated UpstreamStatus upstreams = 2;
-    // full responses describe every upstream; the first response of a chain is
-    // full, and so is one every resync interval
     bool full_response = 3;
     // set on full responses
     BuildInfo build_info = 4;
+    // deltas only: upstreams gone since the previous response
+    repeated string removed_upstream_ids = 5;
 }
 
 message UpstreamStatus {
