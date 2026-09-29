@@ -370,6 +370,9 @@ message SubscribeUpstreamStatusResponse {
 }
 
 message UpstreamStatus {
+    // Runtime index embedded in sticky/filter handles. Consumers use it only
+    // to find the owning upstream/group; upstream_id remains the routing pin.
+    string upstream_index = 5;
     // the id NativeCallReplyItem.upstream_id names this upstream by; a
     // label selector with name "upstream_id" pins a request to these upstreams
     string upstream_id = 1;
