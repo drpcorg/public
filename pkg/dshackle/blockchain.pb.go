@@ -707,8 +707,11 @@ type NativeCallReplyItem struct {
 	ResponseHeaders     []*KeyValue       `protobuf:"bytes,14,rep,name=response_headers,json=responseHeaders,proto3" json:"response_headers,omitempty"`
 	ErrorAsIs           []byte            `protobuf:"bytes,15,opt,name=error_as_is,json=errorAsIs,proto3" json:"error_as_is,omitempty"`
 	ResponseTrailers    []*KeyValue       `protobuf:"bytes,16,rep,name=response_trailers,json=responseTrailers,proto3" json:"response_trailers,omitempty"`
-	unknownFields       protoimpl.UnknownFields
-	sizeCache           protoimpl.SizeCache
+	// set on an error the serving upstream (or the pin) caused rather than the
+	// request: another upstream may answer the same request
+	NodeLevelError bool `protobuf:"varint,17,opt,name=node_level_error,json=nodeLevelError,proto3" json:"node_level_error,omitempty"`
+	unknownFields  protoimpl.UnknownFields
+	sizeCache      protoimpl.SizeCache
 }
 
 func (x *NativeCallReplyItem) Reset() {
@@ -852,6 +855,13 @@ func (x *NativeCallReplyItem) GetResponseTrailers() []*KeyValue {
 		return x.ResponseTrailers
 	}
 	return nil
+}
+
+func (x *NativeCallReplyItem) GetNodeLevelError() bool {
+	if x != nil {
+		return x.NodeLevelError
+	}
+	return false
 }
 
 type NativeSubscribeRequest struct {
@@ -3055,12 +3065,15 @@ type UpstreamStatus struct {
 	state protoimpl.MessageState `protogen:"open.v1"`
 	// the id NativeCallReplyItem.upstream_id names this upstream by; a
 	// label selector with name "upstream_id" pins a request to these upstreams
-	UpstreamId string       `protobuf:"bytes,1,opt,name=upstream_id,json=upstreamId,proto3" json:"upstream_id,omitempty"`
-	Status     *ChainStatus `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
-	Head       *HeadEvent   `protobuf:"bytes,3,opt,name=head,proto3" json:"head,omitempty"`
+	UpstreamId string `protobuf:"bytes,1,opt,name=upstream_id,json=upstreamId,proto3" json:"upstream_id,omitempty"`
+	// a listed upstream always carries its current status, and its head once it
+	// has one
+	Status *ChainStatus `protobuf:"bytes,2,opt,name=status,proto3" json:"status,omitempty"`
+	Head   *HeadEvent   `protobuf:"bytes,3,opt,name=head,proto3" json:"head,omitempty"`
 	// what SubscribeChainStatus sends for a chain (methods, subscriptions, lower
-	// bounds, finalization, capabilities, labels as one NodeDetails), for this
-	// upstream alone; present when it changed and on full responses
+	// bounds, finalization, labels as one NodeDetails), for this upstream alone;
+	// present on full responses, for new upstreams and when its description or
+	// status changed
 	Description   []*ChainEvent `protobuf:"bytes,4,rep,name=description,proto3" json:"description,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
@@ -3804,7 +3817,7 @@ const file_blockchain_proto_rawDesc = "" +
 	"\tsignature\x18\x02 \x01(\fR\tsignature\x12\x15\n" +
 	"\x06key_id\x18\x03 \x01(\x04R\x05keyId\x12#\n" +
 	"\vupstream_id\x18\x04 \x01(\tB\x02\x18\x01R\n" +
-	"upstreamId\"\x96\x05\n" +
+	"upstreamId\"\xc0\x05\n" +
 	"\x13NativeCallReplyItem\x12\x0e\n" +
 	"\x02id\x18\x01 \x01(\rR\x02id\x12\x18\n" +
 	"\asucceed\x18\x02 \x01(\bR\asucceed\x12\x18\n" +
@@ -3826,7 +3839,8 @@ const file_blockchain_proto_rawDesc = "" +
 	"\ffinalization\x18\r \x01(\v2\x19.emerald.FinalizationDataR\ffinalization\x12<\n" +
 	"\x10response_headers\x18\x0e \x03(\v2\x11.emerald.KeyValueR\x0fresponseHeaders\x12\x1e\n" +
 	"\verror_as_is\x18\x0f \x01(\fR\terrorAsIs\x12>\n" +
-	"\x11response_trailers\x18\x10 \x03(\v2\x11.emerald.KeyValueR\x10responseTrailers\"\xd4\x02\n" +
+	"\x11response_trailers\x18\x10 \x03(\v2\x11.emerald.KeyValueR\x10responseTrailers\x12(\n" +
+	"\x10node_level_error\x18\x11 \x01(\bR\x0enodeLevelError\"\xd4\x02\n" +
 	"\x16NativeSubscribeRequest\x12'\n" +
 	"\x05chain\x18\x01 \x01(\x0e2\x11.emerald.ChainRefR\x05chain\x12\x16\n" +
 	"\x06method\x18\x02 \x01(\tR\x06method\x12\x18\n" +

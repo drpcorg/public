@@ -100,6 +100,9 @@ message NativeCallReplyItem {
     repeated KeyValue response_headers = 14;
     bytes error_as_is = 15;
     repeated KeyValue response_trailers = 16;
+    // set on an error the serving upstream (or the pin) caused rather than the
+    // request: another upstream may answer the same request
+    bool node_level_error = 17;
 }
 
 message NativeSubscribeRequest {
@@ -370,11 +373,14 @@ message UpstreamStatus {
     // the id NativeCallReplyItem.upstream_id names this upstream by; a
     // label selector with name "upstream_id" pins a request to these upstreams
     string upstream_id = 1;
+    // a listed upstream always carries its current status, and its head once it
+    // has one
     ChainStatus status = 2;
     HeadEvent head = 3;
     // what SubscribeChainStatus sends for a chain (methods, subscriptions, lower
-    // bounds, finalization, capabilities, labels as one NodeDetails), for this
-    // upstream alone; present when it changed and on full responses
+    // bounds, finalization, labels as one NodeDetails), for this upstream alone;
+    // present on full responses, for new upstreams and when its description or
+    // status changed
     repeated ChainEvent description = 4;
 }
 
