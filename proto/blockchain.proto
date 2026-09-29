@@ -9,6 +9,7 @@ service Blockchain {
     rpc NativeCall (NativeCallRequest) returns (stream NativeCallReplyItem) {}
     rpc NativeSubscribe (NativeSubscribeRequest) returns (stream NativeSubscribeReplyItem) {}
     rpc SubscribeChainStatus (SubscribeChainStatusRequest) returns (stream SubscribeChainStatusResponse) {}
+    rpc SubscribeUpstreamStatus (SubscribeUpstreamStatusRequest) returns (stream SubscribeUpstreamStatusResponse) {}
 
     rpc Describe (DescribeRequest) returns (DescribeResponse) {}
     rpc SubscribeStatus (StatusRequest) returns (stream ChainStatus) {}
@@ -341,6 +342,38 @@ message ExistsSelector {
 }
 
 message SubscribeChainStatusRequest {
+}
+
+// SubscribeUpstreamStatus streams the state of every upstream of a chain, the
+// inputs of the merged view SubscribeChainStatus streams. SubscribeChainStatus
+// is unaffected.
+message SubscribeUpstreamStatusRequest {
+    // chains to stream; empty = every chain
+    repeated ChainRef chains = 1;
+}
+
+// The upstreams of one chain. Every response lists all of them: an upstream
+// missing from a response is gone.
+message SubscribeUpstreamStatusResponse {
+    ChainRef chain = 1;
+    repeated UpstreamStatus upstreams = 2;
+    // full responses describe every upstream; the first response of a chain is
+    // full, and so is one every resync interval
+    bool full_response = 3;
+    // set on full responses
+    BuildInfo build_info = 4;
+}
+
+message UpstreamStatus {
+    // the id NativeCallReplyItem.upstream_id names this upstream by; a
+    // label selector with name "upstream_id" pins a request to these upstreams
+    string upstream_id = 1;
+    ChainStatus status = 2;
+    HeadEvent head = 3;
+    // what SubscribeChainStatus sends for a chain (methods, subscriptions, lower
+    // bounds, finalization, capabilities, labels as one NodeDetails), for this
+    // upstream alone; present when it changed and on full responses
+    repeated ChainEvent description = 4;
 }
 
 message SubscribeChainStatusResponse {
