@@ -394,9 +394,13 @@ message UpstreamStatus {
 message SubscribeNodeGroupStatusRequest {
     repeated ChainRef chains = 1;
     bool full_separation = 2; // one upstream per group instead of labels + call methods
+    // Opt in to head/status-only deltas with description and upstream_indices
+    // omitted when unchanged. Initial snapshots and resync remain complete.
+    bool compact_updates = 3;
 }
 
-// Each changed group carries a complete current description. A full response
+// Unless compact_updates is requested, each changed group carries a complete
+// current description. Compact deltas retain omitted description/membership. A full response
 // replaces the catalog; deltas replace listed groups and remove listed IDs.
 message SubscribeNodeGroupStatusResponse {
     ChainRef chain = 1;

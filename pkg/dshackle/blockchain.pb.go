@@ -3154,6 +3154,9 @@ type SubscribeNodeGroupStatusRequest struct {
 	state          protoimpl.MessageState `protogen:"open.v1"`
 	Chains         []ChainRef             `protobuf:"varint,1,rep,packed,name=chains,proto3,enum=emerald.ChainRef" json:"chains,omitempty"`
 	FullSeparation bool                   `protobuf:"varint,2,opt,name=full_separation,json=fullSeparation,proto3" json:"full_separation,omitempty"` // one upstream per group instead of labels + call methods
+	// Opt in to head/status-only deltas with description and upstream_indices
+	// omitted when unchanged. Initial snapshots and resync remain complete.
+	CompactUpdates bool `protobuf:"varint,3,opt,name=compact_updates,json=compactUpdates,proto3" json:"compact_updates,omitempty"`
 	unknownFields  protoimpl.UnknownFields
 	sizeCache      protoimpl.SizeCache
 }
@@ -3202,7 +3205,15 @@ func (x *SubscribeNodeGroupStatusRequest) GetFullSeparation() bool {
 	return false
 }
 
-// Each changed group carries a complete current description. A full response
+func (x *SubscribeNodeGroupStatusRequest) GetCompactUpdates() bool {
+	if x != nil {
+		return x.CompactUpdates
+	}
+	return false
+}
+
+// Unless compact_updates is requested, each changed group carries a complete
+// current description. Compact deltas retain omitted description/membership. A full response
 // replaces the catalog; deltas replace listed groups and remove listed IDs.
 type SubscribeNodeGroupStatusResponse struct {
 	state               protoimpl.MessageState `protogen:"open.v1"`
@@ -4233,10 +4244,11 @@ const file_blockchain_proto_rawDesc = "" +
 	"upstreamId\x12,\n" +
 	"\x06status\x18\x02 \x01(\v2\x14.emerald.ChainStatusR\x06status\x12&\n" +
 	"\x04head\x18\x03 \x01(\v2\x12.emerald.HeadEventR\x04head\x125\n" +
-	"\vdescription\x18\x04 \x03(\v2\x13.emerald.ChainEventR\vdescription\"u\n" +
+	"\vdescription\x18\x04 \x03(\v2\x13.emerald.ChainEventR\vdescription\"\x9e\x01\n" +
 	"\x1fSubscribeNodeGroupStatusRequest\x12)\n" +
 	"\x06chains\x18\x01 \x03(\x0e2\x11.emerald.ChainRefR\x06chains\x12'\n" +
-	"\x0ffull_separation\x18\x02 \x01(\bR\x0efullSeparation\"\xbf\x02\n" +
+	"\x0ffull_separation\x18\x02 \x01(\bR\x0efullSeparation\x12'\n" +
+	"\x0fcompact_updates\x18\x03 \x01(\bR\x0ecompactUpdates\"\xbf\x02\n" +
 	" SubscribeNodeGroupStatusResponse\x12'\n" +
 	"\x05chain\x18\x01 \x01(\x0e2\x11.emerald.ChainRefR\x05chain\x120\n" +
 	"\x06groups\x18\x02 \x03(\v2\x18.emerald.NodeGroupStatusR\x06groups\x12#\n" +
