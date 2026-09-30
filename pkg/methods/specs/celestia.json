@@ -1,7 +1,7 @@
 {
   "openrpc": "1.0.0",
   "info": {
-    "title": "Celestia chain methods - DA node JSON-RPC and websocket plus Cosmos Tendermint RPC, LCD REST and gRPC",
+    "title": "Celestia chain methods - DA node JSON-RPC and websocket, celestia-app gRPC, plus Cosmos Tendermint RPC, LCD REST and gRPC",
     "version": "1.0.0"
   },
   "spec": {
@@ -11,6 +11,7 @@
   "spec-imports": [
     "celestia-json-rpc",
     "celestia-websocket",
+    "celestia-grpc",
     "cosmos"
   ]
 }

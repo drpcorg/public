@@ -1,0 +1,45 @@
+# buf v2 generation template for the celestia-app protos, pinned to a
+# celestia-app release tag. Same shape and the same rationale as
+# chain-apis/ibc.gen.yaml - see the comment there for why the shared
+# cosmos/gogoproto files are redirected instead of generated. celestia-app's
+# own Go packages are gogo-generated, so they never reach
+# protoregistry.GlobalFiles and cannot serve reflection either.
+#
+# Inputs are the directories behind the services specs/celestia-grpc.json
+# declares: the module Query services a standard celestia-appd build
+# registers, plus the app-level GasEstimator and Tx. fibre/v1 and valaddr/v1
+# are deliberately NOT generated - v9 compiles those modules only under the
+# fibre build tag, so a standard node serves neither, and nothing else here
+# imports them. Add them when the pin moves to a release that wires them in
+# unconditionally (v10).
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/drpcorg/public/pkg
+plugins:
+  - local: ["go", "tool", "protoc-gen-go"]
+    out: pkg
+    opt:
+      - module=github.com/drpcorg/public/pkg
+      - Mcosmos/base/query/v1beta1/pagination.proto=cosmossdk.io/api/cosmos/base/query/v1beta1
+      - Mcosmos/base/v1beta1/coin.proto=cosmossdk.io/api/cosmos/base/v1beta1
+      - Mcosmos/msg/v1/msg.proto=cosmossdk.io/api/cosmos/msg/v1
+      - Mcosmos_proto/cosmos.proto=github.com/cosmos/cosmos-proto
+      - Mgogoproto/gogo.proto=github.com/drpcorg/public/pkg/gogoproto
+      - Mgoogle/api/annotations.proto=google.golang.org/genproto/googleapis/api/annotations
+      - Mgoogle/api/http.proto=google.golang.org/genproto/googleapis/api/annotations
+inputs:
+  - git_repo: https://github.com/celestiaorg/celestia-app.git
+    tag: v9.0.8
+    subdir: proto
+    paths:
+      - celestia/blob/v1
+      - celestia/core/v1/gas_estimation
+      - celestia/core/v1/tx
+      - celestia/forwarding/v1
+      - celestia/minfee/v1
+      - celestia/mint/v1
+      - celestia/signal/v1
+      - celestia/zkism/v1

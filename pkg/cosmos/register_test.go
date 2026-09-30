@@ -63,8 +63,39 @@ func TestEveryCosmosGrpcSpecMethodHasADescriptor(t *testing.T) {
 	assert.Equal(t, len(methods)-len(knownUnreflectable), resolved)
 }
 
+// Every celestia.* method in the celestia bundle must resolve too, with no
+// known gaps: the spec declares exactly what a v9 celestia-appd serves, and
+// pkg/celestia is generated from that release.
+func TestEveryCelestiaGrpcSpecMethodHasADescriptor(t *testing.T) {
+	require.NoError(t, specs.NewMethodSpecLoader().Load())
+
+	groups := specs.GetSpecMethodsByConnectors("celestia", []specs.ApiConnectorType{specs.GrpcConnector})
+	require.NotNil(t, groups)
+
+	resolved := 0
+	for name := range groups[specs.DefaultMethodGroup] {
+		if !strings.HasPrefix(name, "/celestia.") {
+			continue
+		}
+		serviceName, methodName, found := strings.Cut(strings.TrimPrefix(name, "/"), "/")
+		require.True(t, found, name)
+
+		descriptor, err := protoregistry.GlobalFiles.FindDescriptorByName(protoreflect.FullName(serviceName))
+		require.NoError(t, err, "service %s is advertised but not registered", serviceName)
+
+		service, ok := descriptor.(protoreflect.ServiceDescriptor)
+		require.True(t, ok, "%s is not a service", serviceName)
+
+		if assert.NotNil(t, service.Methods().ByName(protoreflect.Name(methodName)), "%s has no descriptor", name) {
+			resolved++
+		}
+	}
+	assert.Equal(t, 18, resolved)
+}
+
 // Cosmos gRPC carries no streaming RPC at all - not in the SDK, not in ibc-go,
-// not in wasmd - which is why the spec needs no grpc.call-type annotation.
+// not in wasmd, not in celestia-app - which is why the specs need no
+// grpc.call-type annotation.
 // Assert it against the descriptors, not the spec.
 func TestNoCosmosGrpcMethodStreams(t *testing.T) {
 	require.NoError(t, specs.NewMethodSpecLoader().Load())
