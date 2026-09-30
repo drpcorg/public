@@ -494,6 +494,7 @@ chain-settings:
       label: Avalanche
       type: eth
       settings:
+        method-spec: "avalanche"
         expected-block-time: 2s
         allow-pruning-requirement: true
         options:
