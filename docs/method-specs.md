@@ -245,7 +245,7 @@ The `specs` package embeds the specs below (see [`pkg/methods/specs/`](../pkg/me
 | `polkadot` | `polkadot-json-rpc`, `polkadot-websocket` |
 | `astar` | `eth`, `polkadot` |
 | `cosmos-evm` | `eth`, `cosmos` |
-| `celestia` | `celestia-json-rpc`, `celestia-websocket`, `cosmos` |
+| `celestia` | `celestia-json-rpc`, `celestia-websocket`, `celestia-grpc`, `cosmos` |
 
 ### Plain specs
 
@@ -259,7 +259,7 @@ Grouped by the transports they declare:
 | `tendermint` | `cosmos-tendermint` |
 | `rest` | `algorand-rest`, `aptos`, `cosmos-rest`, `eth-beacon-chain`, `stellar-horizon`, `ton-http-v2`, `tron-rest` |
 | `rest-indexer` | `ton-index-v3` |
-| `grpc` | `cosmos-grpc`, `sui-grpc` |
+| `grpc` | `celestia-grpc`, `cosmos-grpc`, `sui-grpc` |
 | `rest-additional` | `bitcoin-esplora`, `hyperliquid-rest-additional`, `tron-rest-solidity` |
 
 ## Adding a new method

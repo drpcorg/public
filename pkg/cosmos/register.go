@@ -1,6 +1,7 @@
 // Package cosmos registers the protobuf descriptors for every gRPC service
-// that specs/cosmos-grpc.json can route, so that importing it (a blank import
-// is enough) lets a gRPC ingress answer server reflection for them.
+// that the Cosmos-family specs can route - specs/cosmos-grpc.json, and
+// specs/celestia-grpc.json on top of it - so that importing it (a blank
+// import is enough) lets a gRPC ingress answer server reflection for them.
 //
 // The descriptors come from two different places, for one reason:
 //
@@ -18,6 +19,11 @@
 //     init against cosmossdk.io/api. The generation templates redirect those
 //     shared files at cosmossdk.io/api instead, so only one copy is linked.
 //
+//   - celestia.* comes from pkg/celestia, generated the same way (make
+//     celestia-proto-gen). celestia-app's own Go packages are gogo-generated
+//     and sit on its cosmos-sdk fork, so they can serve neither reflection
+//     nor this module's dependency graph.
+//
 //   - gogoproto/gogo.proto and cosmos/ics23/v1/proofs.proto come from
 //     pkg/gogoproto and pkg/ics23, which this repository also generates
 //     (make gogoproto-proto-gen, make ics23-proto-gen) and the generated
@@ -31,10 +37,11 @@
 //     missing imports, which is why grpcurl works without them.
 //     pkg/descriptors' TestEveryGrpcImportResolvesByFilename guards this.
 //
-// The import list must stay in step with specs/cosmos-grpc.json; the spec is
-// what GetGrpcServices advertises, and advertising a service whose descriptors
-// are absent makes reflection fail for it. Five methods are knowingly absent -
-// see TestEveryCosmosGrpcSpecMethodHasADescriptor.
+// The import list must stay in step with specs/cosmos-grpc.json and
+// specs/celestia-grpc.json; the specs are what GetGrpcServices advertises,
+// and advertising a service whose descriptors are absent makes reflection
+// fail for it. Five methods are knowingly absent - see
+// TestEveryCosmosGrpcSpecMethodHasADescriptor.
 package cosmos
 
 import (
@@ -55,6 +62,14 @@ import (
 	_ "cosmossdk.io/api/cosmos/tx/v1beta1"
 	_ "cosmossdk.io/api/cosmos/upgrade/v1beta1"
 
+	_ "github.com/drpcorg/public/pkg/celestia/blob/v1"
+	_ "github.com/drpcorg/public/pkg/celestia/core/v1/gas_estimation"
+	_ "github.com/drpcorg/public/pkg/celestia/core/v1/tx"
+	_ "github.com/drpcorg/public/pkg/celestia/forwarding/v1"
+	_ "github.com/drpcorg/public/pkg/celestia/minfee/v1"
+	_ "github.com/drpcorg/public/pkg/celestia/mint/v1"
+	_ "github.com/drpcorg/public/pkg/celestia/signal/v1"
+	_ "github.com/drpcorg/public/pkg/celestia/zkism/v1"
 	_ "github.com/drpcorg/public/pkg/cosmwasm/wasm/v1"
 	_ "github.com/drpcorg/public/pkg/ibc/applications/transfer/v1"
 	_ "github.com/drpcorg/public/pkg/ibc/core/channel/v1"
