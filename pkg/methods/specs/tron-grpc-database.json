@@ -1,0 +1,45 @@
+{
+  "openrpc": "1.0.0",
+  "info": {
+    "title": "TRON gRPC database methods served on every gRPC port (protocol.Database)",
+    "version": "1.0.0"
+  },
+  "spec": {
+    "name": "tron-grpc-database",
+    "api-connectors": [
+      "grpc",
+      "grpc-additional"
+    ],
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "/protocol.Database/getBlockReference",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Database/GetDynamicProperties",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Database/GetNowBlock",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Database/GetBlockByNum",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    }
+  ]
+}

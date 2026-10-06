@@ -6,6 +6,7 @@ import (
 
 	specs "github.com/drpcorg/public/pkg/methods"
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestLoadSpecAndCheckGroupsAndDefaultParams(t *testing.T) {
@@ -508,4 +509,58 @@ func TestLoadSpecGrpcServerStreamDispatchThenError(t *testing.T) {
 	err := specs.NewMethodSpecLoaderWithFs(os.DirFS("test_specs/grpc_server_stream_dispatch")).Load()
 
 	assert.ErrorContains(t, err, "couldn't read method specs: error during method '/pkg.Service/Method' of 'spec1.json' validation, cause: dispatch cannot be used with server-stream methods")
+}
+
+func TestLoadSpecGrpcAdditionalConnector(t *testing.T) {
+	err := specs.NewMethodSpecLoaderWithFs(os.DirFS("test_specs/grpc_additional")).Load()
+	require.NoError(t, err)
+
+	assert.Equal(t, []specs.ApiConnectorType{specs.GrpcAdditional}, specs.GetSpecConnectors("grpc_additional_test"))
+	assert.True(t, specs.IsAdditionalApiConnectorType(specs.GrpcAdditional))
+	assert.True(t, specs.IsGrpcApiConnectorType(specs.GrpcAdditional))
+	assert.True(t, specs.IsGrpcApiConnectorType(specs.GrpcConnector))
+	assert.False(t, specs.IsGrpcApiConnectorType(specs.RestAdditional))
+	assert.Equal(t, "grpc-additional", specs.GrpcAdditional.String())
+	assert.Equal(t, specs.GrpcAdditional, specs.GetApiConnectorType("grpc-additional"))
+	assert.NotContains(t, specs.GetPlainApiConnectorType(), specs.GrpcAdditional)
+
+	method := specs.GetSpecMethod("grpc_additional_test", "/pkg.SolidityService/UnaryNoSettings")
+	require.NotNil(t, method)
+	assert.Equal(t, specs.GrpcCallTypeUnary, method.GrpcCallType())
+
+	// grpc settings are legal on a grpc-additional spec
+	method = specs.GetSpecMethod("grpc_additional_test", "/pkg.SolidityService/UnaryExplicit")
+	require.NotNil(t, method)
+	assert.Equal(t, specs.GrpcCallTypeUnary, method.GrpcCallType())
+
+	// reflection must advertise a service declared only under grpc-additional
+	assert.Contains(t, specs.GetGrpcServices(), "pkg.SolidityService")
+}
+
+func TestLoadSpecGrpcAdditionalWrongMethodNameThenError(t *testing.T) {
+	err := specs.NewMethodSpecLoaderWithFs(os.DirFS("test_specs/grpc_additional_wrong_method_name")).Load()
+
+	assert.ErrorContains(t, err, "couldn't read method specs: file - 'spec1.json', spec validation error: invalid grpc method name 'getObject', expected the '/package.Service/Method' shape")
+}
+
+// A bundle composed of a grpc spec, a grpc-additional spec and a plain spec
+// declaring both: each bucket holds exactly its own methods plus the shared
+// ones, and the bundle lists both connectors.
+func TestLoadSpecGrpcAdditionalBundle(t *testing.T) {
+	err := specs.NewMethodSpecLoaderWithFs(os.DirFS("test_specs/grpc_additional_bundle")).Load()
+	require.NoError(t, err)
+
+	assert.Equal(t, []specs.ApiConnectorType{specs.GrpcConnector, specs.GrpcAdditional}, specs.GetSpecConnectors("bundle"))
+
+	grpc := specs.GetSpecMethodsByConnectors("bundle", []specs.ApiConnectorType{specs.GrpcConnector})[specs.DefaultMethodGroup]
+	assert.Contains(t, grpc, "/pkg.Full/Get")
+	assert.Contains(t, grpc, "/pkg.Shared/Get")
+	assert.NotContains(t, grpc, "/pkg.Solidity/Get")
+
+	additional := specs.GetSpecMethodsByConnectors("bundle", []specs.ApiConnectorType{specs.GrpcAdditional})[specs.DefaultMethodGroup]
+	assert.Contains(t, additional, "/pkg.Solidity/Get")
+	assert.Contains(t, additional, "/pkg.Shared/Get")
+	assert.NotContains(t, additional, "/pkg.Full/Get")
+
+	assert.Subset(t, specs.GetGrpcServices(), []string{"pkg.Full", "pkg.Shared", "pkg.Solidity"})
 }

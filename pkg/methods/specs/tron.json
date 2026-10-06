@@ -11,6 +11,9 @@
   "spec-imports": [
     "tron-json-rpc",
     "tron-rest",
-    "tron-rest-solidity"
+    "tron-rest-solidity",
+    "tron-grpc",
+    "tron-grpc-solidity",
+    "tron-grpc-database"
   ]
 }

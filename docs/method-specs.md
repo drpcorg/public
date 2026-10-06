@@ -44,7 +44,7 @@ Each file declares one *named spec*. The spec name (`spec.name`) is what `chains
 - `type` (string, required) — either `plain` or `bundle`:
   - `plain` — a spec that contributes its own `methods` and declares its own `api-connectors`.
   - `bundle` — a spec that imports one or more other specs via `spec-imports` and exposes the union. A bundle must not declare `api-connectors` or `methods` of its own.
-- `api-connectors` (array of strings) — which transports this spec applies to. Allowed values: `json-rpc`, `tendermint`, `rest`, `grpc`, `websocket`, `rest-indexer`, `rest-additional`. **Required on plain specs**, **forbidden on bundle specs**.
+- `api-connectors` (array of strings) — which transports this spec applies to. Allowed values: `json-rpc`, `tendermint`, `rest`, `grpc`, `websocket`, `rest-indexer`, `rest-additional`, `grpc-additional`. **Required on plain specs**, **forbidden on bundle specs**.
 
   > **⚠️ Order is significant.** the service iterates `api-connectors` in the order written and selects the connector for each method in that order. List the transports from preferred to least preferred for the methods in this spec — the first entry is what the service will try first when more than one of these connectors is configured on an upstream.
 
@@ -98,7 +98,7 @@ Each method object:
   - Dispatch methods must not be `local`, `subscription`, or sticky methods. Fan-out policies (`broadcast`, `maximum-value`) bypass the normal cache processor path because one client request intentionally maps to multiple upstream calls. `not-null` also bypasses the cache path so a cached `null` cannot prevent retrying another upstream.
   - Dispatch increases upstream load and usually makes latency depend on the slowest selected upstream, bounded by existing connector/request timeouts.
 
-- `grpc` (object) — only in specs whose `api-connectors` include `grpc`:
+- `grpc` (object) — only in specs whose `api-connectors` include `grpc` or `grpc-additional`:
   - `call-type` (string) — `unary` (the default when the block is absent; only streaming methods carry an annotation), `server-stream-subscription` (an unbounded live stream such as Sui's `SubscribeCheckpoints`; the node ending it is a failure, reported as `UNAVAILABLE`) or `server-stream-finite` (a bounded stream such as `ListCheckpoints`; the node ending it is normal completion, `OK`). Arity is **not encoded on the gRPC wire**, so the spec is the only source of it. Both streaming types are treated as subscriptions by the router: one upstream stream per client, no retries, hedges, caching or quorum, and no sharing between clients in this version. Client-streaming/bidi methods are never listed — absence is the rejection.
   - `subscription` settings are rejected on gRPC methods: `grpc.call-type` carries that information.
   - In gRPC specs every method `name` is the full method string (`/sui.rpc.v2.LedgerService/GetObject`, exact-match lookup, no templates) and must match the `/package.Service/Method` shape. the streaming call types are mutually exclusive with `sticky`, `dispatch` and `cacheable: true` (and default to non-cacheable).
@@ -157,6 +157,10 @@ Example (Hyperliquid):
 ```
 
 `rest-additional` is reserved for specs that augment an upstream whose primary transport is something else. An upstream cannot consist of only `rest-additional` connectors (see [Upstream config](05-upstream-config.md#connectors)).
+
+## A second gRPC port: the `grpc-additional` connector
+
+`grpc-additional` is the gRPC twin of `rest-additional`: the same `/package.Service/Method` naming, the same `grpc` settings, served by a second gRPC endpoint of the same upstream. java-tron is the motivating case - `protocol.Wallet` on the full-node port and `protocol.WalletSolidity` (confirmed data only) on the solidity port, with no URL path to tell them apart. A plain spec may declare both `grpc` and `grpc-additional`; its methods are then routed on either port (`tron-grpc-database` does this for `protocol.Database`, which java-tron serves on every gRPC port). Reflection (`GetGrpcServices`) advertises services from both connectors. Like `rest-additional`, it is an additional connector (`IsAdditionalApiConnectorType` is true for it): it augments an upstream whose primary gRPC transport is `grpc`, and an upstream cannot consist of only `grpc-additional` connectors.
 
 ## Dual-shape methods: the `tendermint` connector
 
@@ -217,7 +221,7 @@ A bundle stitches together transport-specific plain specs:
 
 The resulting `eth` spec carries every method declared by `eth-json-rpc` plus every method declared by `eth-websocket`, attached to the corresponding `api-connectors`.
 
-The `tron` bundle is the multi-transport example: it composes `tron-json-rpc` (Ethereum-compatible `/jsonrpc`), `tron-rest` (the canonical `/wallet/*` HTTP API), and `tron-rest-solidity` (a `rest-additional` mirror over `/walletsolidity/*` for confirmed-only reads). The resulting `tron` spec carries methods across all three connectors at once.
+The `tron` bundle is the multi-transport example: it composes `tron-json-rpc` (Ethereum-compatible `/jsonrpc`), `tron-rest` (the canonical `/wallet/*` HTTP API), `tron-rest-solidity` (a `rest-additional` mirror over `/walletsolidity/*` for confirmed-only reads), and the gRPC equivalents `tron-grpc` (`protocol.Wallet` on `grpc`), `tron-grpc-solidity` (`protocol.WalletSolidity` on `grpc-additional`) and `tron-grpc-database` (`protocol.Database`, served by java-tron on every gRPC port, hence declared on both). The resulting `tron` spec carries methods across five connectors at once.
 
 A bundle can also import other bundles: `astar` is `["eth", "polkadot"]`, because an Astar node serves the EVM RPC and the substrate RPC from the same endpoint. Both halves keep their own behaviour — the eth methods stay cacheable with their tag parsers, the polkadot methods stay `cacheable: false` — and both subscription families end up in the ws `sub` group. Same-level imports may not define the same method name, so this composition only works because the eth and polkadot method sets are disjoint. `cosmos-evm` is the same shape over `["eth", "cosmos"]`, for Cosmos SDK chains with an EVM module (Injective and the like) whose nodes expose the EVM JSON-RPC alongside the Tendermint RPC, LCD REST and gRPC endpoints. Point any such chain at it via `method-spec: "cosmos-evm"`.
 
@@ -233,7 +237,7 @@ The `specs` package embeds the specs below (see [`pkg/methods/specs/`](../pkg/me
 | `solana` | `solana-json-rpc`, `solana-websocket` |
 | `klaytn` | `klaytn-json-rpc`, `klaytn-websocket` |
 | `hyperliquid` | `hyperliquid-eth`, `hyperliquid-rest-additional` |
-| `tron` | `tron-json-rpc`, `tron-rest`, `tron-rest-solidity` |
+| `tron` | `tron-json-rpc`, `tron-rest`, `tron-rest-solidity`, `tron-grpc`, `tron-grpc-solidity`, `tron-grpc-database` |
 | `bitcoin` | `bitcoin-json-rpc`, `bitcoin-esplora` |
 | `algorand` | `algorand-json-rpc`, `algorand-rest` |
 | `near` | `near-json-rpc` |
@@ -259,8 +263,10 @@ Grouped by the transports they declare:
 | `tendermint` | `cosmos-tendermint` |
 | `rest` | `algorand-rest`, `aptos`, `cosmos-rest`, `eth-beacon-chain`, `stellar-horizon`, `ton-http-v2`, `tron-rest` |
 | `rest-indexer` | `ton-index-v3` |
-| `grpc` | `celestia-grpc`, `cosmos-grpc`, `sui-grpc` |
+| `grpc` | `celestia-grpc`, `cosmos-grpc`, `sui-grpc`, `tron-grpc` |
+| `grpc`, `grpc-additional` | `tron-grpc-database` |
 | `rest-additional` | `bitcoin-esplora`, `hyperliquid-rest-additional`, `tron-rest-solidity` |
+| `grpc-additional` | `tron-grpc-solidity` |
 
 ## Adding a new method
 
