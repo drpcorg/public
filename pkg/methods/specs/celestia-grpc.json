@@ -1,0 +1,142 @@
+{
+  "openrpc": "1.0.0",
+  "info": {
+    "title": "Celestia app gRPC query methods",
+    "version": "1.0.0"
+  },
+  "spec": {
+    "api-connectors": [
+      "grpc"
+    ],
+    "name": "celestia-grpc",
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "/celestia.blob.v1.Query/Params",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.core.v1.gas_estimation.GasEstimator/EstimateGasPrice",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.core.v1.gas_estimation.GasEstimator/EstimateGasPriceAndUsage",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.core.v1.tx.Tx/TxStatus",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.core.v1.tx.Tx/TxStatusBatch",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.forwarding.v1.Query/DeriveForwardingAddress",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.forwarding.v1.Query/QuoteForwardingFee",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.minfee.v1.Query/NetworkMinGasPrice",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.minfee.v1.Query/Params",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.mint.v1.Query/AnnualProvisions",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.mint.v1.Query/GenesisTime",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.mint.v1.Query/InflationRate",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.signal.v1.Query/GetMissingValidators",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.signal.v1.Query/GetUpgrade",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.signal.v1.Query/VersionTally",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.zkism.v1.Query/Ism",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.zkism.v1.Query/Isms",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/celestia.zkism.v1.Query/Messages",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    }
+  ]
+}

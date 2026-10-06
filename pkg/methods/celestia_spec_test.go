@@ -2,6 +2,8 @@ package specs_test
 
 import (
 	"os"
+	"slices"
+	"strings"
 	"testing"
 
 	specs "github.com/drpcorg/public/pkg/methods"
@@ -46,6 +48,54 @@ func TestCelestiaWebsocketChannelSubscriptions(t *testing.T) {
 	assert.Contains(t, wsMethods(t, "celestia"), "header.Subscribe")
 	assert.NotContains(t, jsonRpcMethods(t, "celestia"), "header.Subscribe")
 	assert.NotContains(t, wsMethods(t, "celestia"), "header.LocalHead")
+}
+
+// celestia-app registers its own gRPC services next to the SDK's: the Query
+// services of its modules plus the app-level GasEstimator and Tx. Only the
+// services a standard (non-fibre) celestia-appd build serves are declared -
+// fibre and valaddr are behind the fibre build tag until v10, the Fibre shard
+// service runs on the validators' separate fibre server, and Msg services
+// are tx payloads, never RPCs. Plain cosmos chains must not see any of them.
+func TestCelestiaGrpcServices(t *testing.T) {
+	require.NoError(t, specs.NewMethodSpecLoader().Load())
+
+	groups := specs.GetSpecMethodsByConnectors("celestia", []specs.ApiConnectorType{specs.GrpcConnector})
+	require.NotNil(t, groups)
+
+	var celestiaServices []string
+	celestiaMethods := 0
+	for name, method := range groups[specs.DefaultMethodGroup] {
+		if !strings.HasPrefix(name, "/celestia.") {
+			continue
+		}
+		celestiaMethods++
+		assert.False(t, method.IsCacheable(), "%s must not be cacheable", name)
+		assert.Equal(t, specs.GrpcCallTypeUnary, method.GrpcCallType(), name)
+		assert.Nil(t, specs.GetSpecMethod("cosmos", name), "%s leaked into the cosmos bundle", name)
+
+		service, _, found := strings.Cut(strings.TrimPrefix(name, "/"), "/")
+		require.True(t, found, name)
+		if !slices.Contains(celestiaServices, service) {
+			celestiaServices = append(celestiaServices, service)
+		}
+	}
+	slices.Sort(celestiaServices)
+
+	assert.Equal(t, 18, celestiaMethods)
+	assert.Equal(t, []string{
+		"celestia.blob.v1.Query",
+		"celestia.core.v1.gas_estimation.GasEstimator",
+		"celestia.core.v1.tx.Tx",
+		"celestia.forwarding.v1.Query",
+		"celestia.minfee.v1.Query",
+		"celestia.mint.v1.Query",
+		"celestia.signal.v1.Query",
+		"celestia.zkism.v1.Query",
+	}, celestiaServices)
+	assert.Subset(t, specs.GetGrpcServices(), celestiaServices)
+
+	// The SDK half still comes from the cosmos import.
+	assert.NotNil(t, specs.GetSpecMethod("celestia", "/cosmos.bank.v1beta1.Query/Params"))
 }
 
 // An absent type means the JSON-RPC subscription model every other websocket
