@@ -9,7 +9,6 @@ service Blockchain {
     rpc NativeCall (NativeCallRequest) returns (stream NativeCallReplyItem) {}
     rpc NativeSubscribe (NativeSubscribeRequest) returns (stream NativeSubscribeReplyItem) {}
     rpc SubscribeChainStatus (SubscribeChainStatusRequest) returns (stream SubscribeChainStatusResponse) {}
-    rpc SubscribeUpstreamStatus (SubscribeUpstreamStatusRequest) returns (stream SubscribeUpstreamStatusResponse) {}
     rpc SubscribeNodeGroupStatus (SubscribeNodeGroupStatusRequest) returns (stream SubscribeNodeGroupStatusResponse) {}
 
     rpc Describe (DescribeRequest) returns (DescribeResponse) {}
@@ -346,46 +345,6 @@ message ExistsSelector {
 }
 
 message SubscribeChainStatusRequest {
-}
-
-// SubscribeUpstreamStatus streams the state of every upstream of a chain, the
-// inputs of the merged view SubscribeChainStatus streams. SubscribeChainStatus
-// is unaffected.
-message SubscribeUpstreamStatusRequest {
-    // chains to stream; empty = every chain
-    repeated ChainRef chains = 1;
-}
-
-// The upstreams of one chain. A full response lists and describes all of them,
-// so an upstream missing from it is gone; the first response of a chain is
-// full, and so is one every resync interval. Any other response is a delta:
-// only the upstreams that are new or changed, and the ids of those removed.
-message SubscribeUpstreamStatusResponse {
-    ChainRef chain = 1;
-    repeated UpstreamStatus upstreams = 2;
-    bool full_response = 3;
-    // set on full responses
-    BuildInfo build_info = 4;
-    // deltas only: upstreams gone since the previous response
-    repeated string removed_upstream_ids = 5;
-}
-
-message UpstreamStatus {
-    // Runtime index embedded in sticky/filter handles. Consumers use it only
-    // to find the owning upstream/group; upstream_id remains the routing pin.
-    string upstream_index = 5;
-    // the id NativeCallReplyItem.upstream_id names this upstream by; a
-    // label selector with name "upstream_id" pins a request to these upstreams
-    string upstream_id = 1;
-    // a listed upstream always carries its current status, and its head once it
-    // has one
-    ChainStatus status = 2;
-    HeadEvent head = 3;
-    // what SubscribeChainStatus sends for a chain (methods, subscriptions, lower
-    // bounds, finalization, labels as one NodeDetails), for this upstream alone;
-    // present on full responses, for new upstreams and when its description or
-    // status changed
-    repeated ChainEvent description = 4;
 }
 
 // Groups are owned by nodecore. Their opaque IDs can be used in a
