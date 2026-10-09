@@ -765,7 +765,7 @@ chain-settings:
       label: opBNB
       type: eth
       settings:
-        expected-block-time: 500ms
+        expected-block-time: 250ms
         options:
           validate-peers: false
         lags:
@@ -2761,7 +2761,7 @@ chain-settings:
       label: Monad
       type: eth
       settings:
-        expected-block-time: 400ms
+        expected-block-time: 300ms
         fork-tolerance: 2
         options:
           validate-peers: false
@@ -4329,7 +4329,7 @@ chain-settings:
       type: eth
       settings:
         method-spec: "astar"
-        expected-block-time: 10s
+        expected-block-time: 6s
         options:
           validate-peers: false
         lags:
