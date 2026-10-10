@@ -11,6 +11,7 @@
   "spec-imports": [
     "cosmos-tendermint",
     "cosmos-rest",
-    "cosmos-grpc"
+    "cosmos-grpc",
+    "rosetta"
   ]
 }

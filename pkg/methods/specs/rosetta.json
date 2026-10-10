@@ -1,0 +1,160 @@
+{
+  "openrpc": "1.0.0",
+  "info": {
+    "title": "Rosetta API methods",
+    "version": "1.0.0"
+  },
+  "spec": {
+    "name": "rosetta",
+    "api-connectors": [
+      "rest-additional"
+    ],
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "POST#/network/list",
+      "group": "network",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/network/status",
+      "group": "network",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/network/options",
+      "group": "network",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/block",
+      "group": "block",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/block/transaction",
+      "group": "block",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/account/balance",
+      "group": "account",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/account/coins",
+      "group": "account",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/mempool",
+      "group": "mempool",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/mempool/transaction",
+      "group": "mempool",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/construction/derive",
+      "group": "construction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/construction/preprocess",
+      "group": "construction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/construction/metadata",
+      "group": "construction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/construction/payloads",
+      "group": "construction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/construction/parse",
+      "group": "construction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/construction/combine",
+      "group": "construction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/construction/hash",
+      "group": "construction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/construction/submit",
+      "group": "construction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/search/transactions",
+      "group": "search",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    }
+  ]
+}
