@@ -18,6 +18,13 @@
       }
     },
     {
+      "name": "getAgGenesisCert",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
       "name": "getBalance",
       "params": []
     },
