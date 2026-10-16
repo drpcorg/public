@@ -9,12 +9,13 @@ test:
 # One pattern rule serves every vendored chain API: per-chain differences
 # (proto source, subtree to generate, output path, import remaps) live in
 # chain-apis/<name>.gen.yaml, never here. `make sui-proto-gen`,
-# `make ibc-proto-gen`, `make cosmwasm-proto-gen`, `make celestia-proto-gen`
-# and `make tron-proto-gen` today; a new one adds its yaml and its target
-# already works. The source can be a submodule (sui) or a tagged git repo
-# (ibc, cosmwasm, celestia, tron) - that is the yaml's business, not the
-# rule's.
-# Needs `buf` on PATH; protoc-gen-go comes from go.mod (tool directive).
+# `make ibc-proto-gen`, `make cosmwasm-proto-gen`, `make celestia-proto-gen`,
+# `make tron-proto-gen` and `make yellowstone-proto-gen` today; a new one adds
+# its yaml and its target already works. The source can be a submodule (sui)
+# or a tagged git repo (ibc, cosmwasm, celestia, tron, yellowstone) - that is
+# the yaml's business, not the rule's.
+# Needs `buf` on PATH; protoc-gen-go and protoc-gen-go-grpc come from go.mod
+# (tool directive).
 %-proto-gen:
 	buf generate --template chain-apis/$*.gen.yaml
 	gofmt -w pkg/$*
