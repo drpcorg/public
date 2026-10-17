@@ -9,6 +9,7 @@ service Blockchain {
     rpc NativeCall (NativeCallRequest) returns (stream NativeCallReplyItem) {}
     rpc NativeSubscribe (NativeSubscribeRequest) returns (stream NativeSubscribeReplyItem) {}
     rpc SubscribeChainStatus (SubscribeChainStatusRequest) returns (stream SubscribeChainStatusResponse) {}
+    rpc SubscribeNodeGroupStatus (SubscribeNodeGroupStatusRequest) returns (stream SubscribeNodeGroupStatusResponse) {}
 
     rpc Describe (DescribeRequest) returns (DescribeResponse) {}
     rpc SubscribeStatus (StatusRequest) returns (stream ChainStatus) {}
@@ -99,6 +100,9 @@ message NativeCallReplyItem {
     repeated KeyValue response_headers = 14;
     bytes error_as_is = 15;
     repeated KeyValue response_trailers = 16;
+    // set on an error the serving upstream (or the pin) caused rather than the
+    // request: another upstream may answer the same request
+    bool node_level_error = 17;
 }
 
 message NativeSubscribeRequest {
@@ -341,6 +345,40 @@ message ExistsSelector {
 }
 
 message SubscribeChainStatusRequest {
+}
+
+// Groups are owned by nodecore. Their opaque IDs can be used in a
+// node_group_id label selector at the top level or under AND. Each attempt
+// selects exactly one group; empty/multiple IDs and groups under OR/NOT fail.
+message SubscribeNodeGroupStatusRequest {
+    repeated ChainRef chains = 1;
+    bool full_separation = 2; // one upstream per group instead of labels + call methods
+    // Opt in to head/status-only deltas with description and upstream_indices
+    // omitted when unchanged. Initial snapshots and resync remain complete.
+    bool compact_updates = 3;
+}
+
+// Unless compact_updates is requested, each changed group carries a complete
+// current description. Compact deltas retain omitted description/membership. A full response
+// replaces the catalog; deltas replace listed groups and remove listed IDs.
+message SubscribeNodeGroupStatusResponse {
+    ChainRef chain = 1;
+    repeated NodeGroupStatus groups = 2;
+    bool full_response = 3;
+    BuildInfo build_info = 4;
+    repeated string removed_node_group_ids = 5;
+    // Authoritative network view; always a complete description.
+    ChainDescription network = 6;
+}
+
+message NodeGroupStatus {
+    string node_group_id = 1;
+    ChainStatus status = 2;
+    HeadEvent head = 3;
+    repeated ChainEvent description = 4;
+    // Member IDs and runtime indices are diagnostic/sticky ownership metadata.
+    // Execution uses node_group_id, not a client-side membership snapshot.
+    map<string, string> upstream_indices = 5;
 }
 
 message SubscribeChainStatusResponse {
