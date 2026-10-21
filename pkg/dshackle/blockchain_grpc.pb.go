@@ -19,14 +19,14 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Blockchain_SubscribeHead_FullMethodName            = "/emerald.Blockchain/SubscribeHead"
-	Blockchain_NativeCall_FullMethodName               = "/emerald.Blockchain/NativeCall"
-	Blockchain_NativeSubscribe_FullMethodName          = "/emerald.Blockchain/NativeSubscribe"
-	Blockchain_SubscribeChainStatus_FullMethodName     = "/emerald.Blockchain/SubscribeChainStatus"
-	Blockchain_SubscribeNodeGroupStatus_FullMethodName = "/emerald.Blockchain/SubscribeNodeGroupStatus"
-	Blockchain_Describe_FullMethodName                 = "/emerald.Blockchain/Describe"
-	Blockchain_SubscribeStatus_FullMethodName          = "/emerald.Blockchain/SubscribeStatus"
-	Blockchain_SubscribeNodeStatus_FullMethodName      = "/emerald.Blockchain/SubscribeNodeStatus"
+	Blockchain_SubscribeHead_FullMethodName           = "/emerald.Blockchain/SubscribeHead"
+	Blockchain_NativeCall_FullMethodName              = "/emerald.Blockchain/NativeCall"
+	Blockchain_NativeSubscribe_FullMethodName         = "/emerald.Blockchain/NativeSubscribe"
+	Blockchain_SubscribeChainStatus_FullMethodName    = "/emerald.Blockchain/SubscribeChainStatus"
+	Blockchain_SubscribeUpstreamStatus_FullMethodName = "/emerald.Blockchain/SubscribeUpstreamStatus"
+	Blockchain_Describe_FullMethodName                = "/emerald.Blockchain/Describe"
+	Blockchain_SubscribeStatus_FullMethodName         = "/emerald.Blockchain/SubscribeStatus"
+	Blockchain_SubscribeNodeStatus_FullMethodName     = "/emerald.Blockchain/SubscribeNodeStatus"
 )
 
 // BlockchainClient is the client API for Blockchain service.
@@ -37,7 +37,7 @@ type BlockchainClient interface {
 	NativeCall(ctx context.Context, in *NativeCallRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[NativeCallReplyItem], error)
 	NativeSubscribe(ctx context.Context, in *NativeSubscribeRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[NativeSubscribeReplyItem], error)
 	SubscribeChainStatus(ctx context.Context, in *SubscribeChainStatusRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[SubscribeChainStatusResponse], error)
-	SubscribeNodeGroupStatus(ctx context.Context, in *SubscribeNodeGroupStatusRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[SubscribeNodeGroupStatusResponse], error)
+	SubscribeUpstreamStatus(ctx context.Context, in *SubscribeChainStatusRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[SubscribeChainStatusResponse], error)
 	Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DescribeResponse, error)
 	SubscribeStatus(ctx context.Context, in *StatusRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[ChainStatus], error)
 	SubscribeNodeStatus(ctx context.Context, in *SubscribeNodeStatusRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[NodeStatusResponse], error)
@@ -127,13 +127,13 @@ func (c *blockchainClient) SubscribeChainStatus(ctx context.Context, in *Subscri
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
 type Blockchain_SubscribeChainStatusClient = grpc.ServerStreamingClient[SubscribeChainStatusResponse]
 
-func (c *blockchainClient) SubscribeNodeGroupStatus(ctx context.Context, in *SubscribeNodeGroupStatusRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[SubscribeNodeGroupStatusResponse], error) {
+func (c *blockchainClient) SubscribeUpstreamStatus(ctx context.Context, in *SubscribeChainStatusRequest, opts ...grpc.CallOption) (grpc.ServerStreamingClient[SubscribeChainStatusResponse], error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
-	stream, err := c.cc.NewStream(ctx, &Blockchain_ServiceDesc.Streams[4], Blockchain_SubscribeNodeGroupStatus_FullMethodName, cOpts...)
+	stream, err := c.cc.NewStream(ctx, &Blockchain_ServiceDesc.Streams[4], Blockchain_SubscribeUpstreamStatus_FullMethodName, cOpts...)
 	if err != nil {
 		return nil, err
 	}
-	x := &grpc.GenericClientStream[SubscribeNodeGroupStatusRequest, SubscribeNodeGroupStatusResponse]{ClientStream: stream}
+	x := &grpc.GenericClientStream[SubscribeChainStatusRequest, SubscribeChainStatusResponse]{ClientStream: stream}
 	if err := x.ClientStream.SendMsg(in); err != nil {
 		return nil, err
 	}
@@ -144,7 +144,7 @@ func (c *blockchainClient) SubscribeNodeGroupStatus(ctx context.Context, in *Sub
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type Blockchain_SubscribeNodeGroupStatusClient = grpc.ServerStreamingClient[SubscribeNodeGroupStatusResponse]
+type Blockchain_SubscribeUpstreamStatusClient = grpc.ServerStreamingClient[SubscribeChainStatusResponse]
 
 func (c *blockchainClient) Describe(ctx context.Context, in *DescribeRequest, opts ...grpc.CallOption) (*DescribeResponse, error) {
 	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
@@ -202,7 +202,7 @@ type BlockchainServer interface {
 	NativeCall(*NativeCallRequest, grpc.ServerStreamingServer[NativeCallReplyItem]) error
 	NativeSubscribe(*NativeSubscribeRequest, grpc.ServerStreamingServer[NativeSubscribeReplyItem]) error
 	SubscribeChainStatus(*SubscribeChainStatusRequest, grpc.ServerStreamingServer[SubscribeChainStatusResponse]) error
-	SubscribeNodeGroupStatus(*SubscribeNodeGroupStatusRequest, grpc.ServerStreamingServer[SubscribeNodeGroupStatusResponse]) error
+	SubscribeUpstreamStatus(*SubscribeChainStatusRequest, grpc.ServerStreamingServer[SubscribeChainStatusResponse]) error
 	Describe(context.Context, *DescribeRequest) (*DescribeResponse, error)
 	SubscribeStatus(*StatusRequest, grpc.ServerStreamingServer[ChainStatus]) error
 	SubscribeNodeStatus(*SubscribeNodeStatusRequest, grpc.ServerStreamingServer[NodeStatusResponse]) error
@@ -228,8 +228,8 @@ func (UnimplementedBlockchainServer) NativeSubscribe(*NativeSubscribeRequest, gr
 func (UnimplementedBlockchainServer) SubscribeChainStatus(*SubscribeChainStatusRequest, grpc.ServerStreamingServer[SubscribeChainStatusResponse]) error {
 	return status.Error(codes.Unimplemented, "method SubscribeChainStatus not implemented")
 }
-func (UnimplementedBlockchainServer) SubscribeNodeGroupStatus(*SubscribeNodeGroupStatusRequest, grpc.ServerStreamingServer[SubscribeNodeGroupStatusResponse]) error {
-	return status.Error(codes.Unimplemented, "method SubscribeNodeGroupStatus not implemented")
+func (UnimplementedBlockchainServer) SubscribeUpstreamStatus(*SubscribeChainStatusRequest, grpc.ServerStreamingServer[SubscribeChainStatusResponse]) error {
+	return status.Error(codes.Unimplemented, "method SubscribeUpstreamStatus not implemented")
 }
 func (UnimplementedBlockchainServer) Describe(context.Context, *DescribeRequest) (*DescribeResponse, error) {
 	return nil, status.Error(codes.Unimplemented, "method Describe not implemented")
@@ -305,16 +305,16 @@ func _Blockchain_SubscribeChainStatus_Handler(srv interface{}, stream grpc.Serve
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
 type Blockchain_SubscribeChainStatusServer = grpc.ServerStreamingServer[SubscribeChainStatusResponse]
 
-func _Blockchain_SubscribeNodeGroupStatus_Handler(srv interface{}, stream grpc.ServerStream) error {
-	m := new(SubscribeNodeGroupStatusRequest)
+func _Blockchain_SubscribeUpstreamStatus_Handler(srv interface{}, stream grpc.ServerStream) error {
+	m := new(SubscribeChainStatusRequest)
 	if err := stream.RecvMsg(m); err != nil {
 		return err
 	}
-	return srv.(BlockchainServer).SubscribeNodeGroupStatus(m, &grpc.GenericServerStream[SubscribeNodeGroupStatusRequest, SubscribeNodeGroupStatusResponse]{ServerStream: stream})
+	return srv.(BlockchainServer).SubscribeUpstreamStatus(m, &grpc.GenericServerStream[SubscribeChainStatusRequest, SubscribeChainStatusResponse]{ServerStream: stream})
 }
 
 // This type alias is provided for backwards compatibility with existing code that references the prior non-generic stream type by name.
-type Blockchain_SubscribeNodeGroupStatusServer = grpc.ServerStreamingServer[SubscribeNodeGroupStatusResponse]
+type Blockchain_SubscribeUpstreamStatusServer = grpc.ServerStreamingServer[SubscribeChainStatusResponse]
 
 func _Blockchain_Describe_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
 	in := new(DescribeRequest)
@@ -390,8 +390,8 @@ var Blockchain_ServiceDesc = grpc.ServiceDesc{
 			ServerStreams: true,
 		},
 		{
-			StreamName:    "SubscribeNodeGroupStatus",
-			Handler:       _Blockchain_SubscribeNodeGroupStatus_Handler,
+			StreamName:    "SubscribeUpstreamStatus",
+			Handler:       _Blockchain_SubscribeUpstreamStatus_Handler,
 			ServerStreams: true,
 		},
 		{
