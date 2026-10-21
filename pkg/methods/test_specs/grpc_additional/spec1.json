@@ -1,0 +1,22 @@
+{
+  "spec": {
+    "api-connectors": ["grpc-additional"],
+    "name": "grpc_additional_test",
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "/pkg.SolidityService/UnaryNoSettings",
+      "params": []
+    },
+    {
+      "name": "/pkg.SolidityService/UnaryExplicit",
+      "params": [],
+      "settings": {
+        "grpc": {
+          "call-type": "unary"
+        }
+      }
+    }
+  ]
+}

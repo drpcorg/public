@@ -101,7 +101,9 @@ func TestNoCosmosGrpcMethodStreams(t *testing.T) {
 	require.NoError(t, specs.NewMethodSpecLoader().Load())
 
 	for _, serviceName := range specs.GetGrpcServices() {
-		if strings.HasPrefix(serviceName, "sui.") {
+		// sui.* and protocol.* (tron) are registered by other packages this test
+		// binary does not link; their no-stream guarantees live in pkg/descriptors.
+		if strings.HasPrefix(serviceName, "sui.") || strings.HasPrefix(serviceName, "protocol.") {
 			continue
 		}
 		descriptor, err := protoregistry.GlobalFiles.FindDescriptorByName(protoreflect.FullName(serviceName))

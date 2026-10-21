@@ -1,0 +1,16 @@
+{
+  "spec": {
+    "api-connectors": ["grpc"],
+    "name": "full",
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "/pkg.Full/Get",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    }
+  ]
+}

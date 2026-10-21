@@ -1,0 +1,55 @@
+# buf v2 generation template for the java-tron protos, pinned to a java-tron
+# release tag. Same shape as chain-apis/celestia.gen.yaml: no submodule, the
+# tag in the git_repo input pins the source. Message types and service
+# descriptors only, no client stubs - consumers build RequestHolders, they
+# never dial. What this exists for is descriptors: importing pkg/tron/api
+# registers protocol.* in protoregistry.GlobalFiles so a gRPC ingress can
+# answer reflection for the methods specs/tron-grpc*.json declare.
+#
+# Why generate at all: there is no Buf Schema Registry module for Tron, the
+# repo upstream's go_package options point at (tronprotocol/grpc-gateway) is
+# archived, and github.com/fbsobreira/gotron-sdk drags go-ethereum into the
+# module graph and registers the same file paths (api/api.proto,
+# core/Tron.proto) - linking it next to this package panics at init.
+#
+# The two go_package overrides are the whole trick. core/Tron.proto imports
+# core/contract/common.proto and every core/contract/*.proto imports
+# core/Tron.proto: legal in protobuf, an import cycle in Go if the two
+# directories became two packages. Upstream's own go_package puts both in one
+# `core` package; `path: core` does the same here, which is why
+# pkg/tron/core holds the contract files flat. Keep it when touching this.
+#
+# Licence: java-tron is LGPL-3.0, and several core/contract/*.proto files carry
+# a GPL-3.0-or-later header that the generated Go reproduces. Every other
+# vendored source in chain-apis/ is Apache-2.0; this is the one exception, and
+# consumers statically link it as soon as they import pkg/tron/api.
+#
+# Inputs are the closure of the three services the specs declare:
+# api/api.proto plus the core tree it imports (Discover.proto via Tron.proto).
+# api/zksnark.proto is deliberately not generated - no java-tron server
+# registers TronZksnark. The upstream files import nothing beyond
+# google/protobuf/any.proto, so there are no M remaps.
+version: v2
+managed:
+  enabled: true
+  override:
+    - file_option: go_package_prefix
+      value: github.com/drpcorg/public/pkg/tron
+    - file_option: go_package
+      path: core
+      value: github.com/drpcorg/public/pkg/tron/core
+    - file_option: go_package
+      path: api
+      value: github.com/drpcorg/public/pkg/tron/api
+plugins:
+  - local: ["go", "tool", "protoc-gen-go"]
+    out: pkg
+    opt:
+      - module=github.com/drpcorg/public/pkg
+inputs:
+  - git_repo: https://github.com/tronprotocol/java-tron.git
+    tag: GreatVoyage-v4.8.2.3
+    subdir: protocol/src/main/protos
+    paths:
+      - api/api.proto
+      - core

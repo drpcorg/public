@@ -1,0 +1,16 @@
+{
+  "spec": {
+    "api-connectors": ["grpc", "grpc-additional"],
+    "name": "shared",
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "/pkg.Shared/Get",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    }
+  ]
+}

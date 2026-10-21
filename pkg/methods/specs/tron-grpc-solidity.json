@@ -1,0 +1,345 @@
+{
+  "openrpc": "1.0.0",
+  "info": {
+    "title": "TRON solidity-node gRPC methods (protocol.WalletSolidity)",
+    "version": "1.0.0"
+  },
+  "spec": {
+    "name": "tron-grpc-solidity",
+    "api-connectors": [
+      "grpc-additional"
+    ],
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "/protocol.WalletSolidity/GetAccount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetAccountById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/ListWitnesses",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetPaginatedNowWitnessList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetAssetIssueList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetPaginatedAssetIssueList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetAssetIssueByName",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetAssetIssueListByName",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetAssetIssueById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetNowBlock",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetNowBlock2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetBlockByNum",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetBlockByNum2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetTransactionCountByBlockNum",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetDelegatedResource",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetDelegatedResourceV2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetDelegatedResourceAccountIndex",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetDelegatedResourceAccountIndexV2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetCanDelegatedMaxSize",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetAvailableUnfreezeCount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetCanWithdrawUnfreezeAmount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetExchangeById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/ListExchanges",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetTransactionById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetTransactionInfoById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetMerkleTreeVoucherInfo",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/ScanNoteByIvk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/ScanAndMarkNoteByIvk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/ScanNoteByOvk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/IsSpend",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/ScanShieldedTRC20NotesByIvk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/ScanShieldedTRC20NotesByOvk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/IsShieldedTRC20ContractNoteSpent",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetRewardInfo",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetBrokerageInfo",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/TriggerConstantContract",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/EstimateEnergy",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetTransactionInfoByBlockNum",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetMarketOrderById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetMarketOrderByAccount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetMarketPriceByPair",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetMarketOrderListByPair",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetMarketPairList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetBurnTrx",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetBlock",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetBandwidthPrices",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.WalletSolidity/GetEnergyPrices",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    }
+  ]
+}

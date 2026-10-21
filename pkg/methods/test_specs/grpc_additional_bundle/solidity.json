@@ -1,0 +1,16 @@
+{
+  "spec": {
+    "api-connectors": ["grpc-additional"],
+    "name": "solidity",
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "/pkg.Solidity/Get",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    }
+  ]
+}

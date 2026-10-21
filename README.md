@@ -222,6 +222,8 @@ and the generated protobuf types.
 | `github.com/drpcorg/public/pkg/cosmos` | `cosmos` | Blank imports of every package behind `cosmos-grpc` — `cosmossdk.io/api` for `cosmos.*`, plus `pkg/ibc` and `pkg/cosmwasm`. Importing it registers all of their descriptors in `protoregistry.GlobalFiles`. |
 | `github.com/drpcorg/public/pkg/ibc` | per proto package | Generated `ibc.*` message types from `cosmos/ibc-go` (tagged release). Reached through `pkg/cosmos`; import directly only if you need the types. |
 | `github.com/drpcorg/public/pkg/cosmwasm` | per proto package | Generated `cosmwasm.wasm.v1` message types from `CosmWasm/wasmd` (tagged release). Same. |
+| `github.com/drpcorg/public/pkg/tron/api` | `api` | Generated `protocol.Wallet`, `protocol.WalletSolidity` and `protocol.Database` service descriptors and request/response types from `tronprotocol/java-tron` (tagged release, LGPL-3.0; some proto files carry a GPL-3.0-or-later header). Blank-import it to serve reflection for the `tron-grpc*` specs. Never link it next to `github.com/fbsobreira/gotron-sdk`: both register `api/api.proto` and panic at init. |
+| `github.com/drpcorg/public/pkg/tron/core` | `core` | Generated java-tron `core/` and `core/contract/` message types, one package on purpose (the two proto directories import each other). Reached through `pkg/tron/api`; import directly only if you need the types. |
 
 ## Using it
 
@@ -263,11 +265,12 @@ make dshackle-proto-gen  # regenerate pkg/dshackle from proto/ (needs protoc)
 make sui-proto-gen       # regenerate pkg/sui from chain-apis/sui (needs buf)
 make ibc-proto-gen       # regenerate pkg/ibc from the pinned ibc-go tag (needs buf)
 make cosmwasm-proto-gen  # regenerate pkg/cosmwasm from the pinned wasmd tag (needs buf)
+make tron-proto-gen      # regenerate pkg/tron from the pinned java-tron tag (needs buf)
 ```
 
 Clone with `--recursive` (or run `git submodule update --init`) if you need to
-regenerate the sui protos; the ibc and cosmwasm templates pull their sources by
-git tag and need network instead. Builds and tests use the committed output and
+regenerate the sui protos; the ibc, cosmwasm and tron templates pull their
+sources by git tag and need network instead. Builds and tests use the committed output and
 need none of it.
 
 ## Releasing

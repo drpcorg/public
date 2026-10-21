@@ -199,7 +199,7 @@ func (m *MethodSpec) validate() error {
 var grpcMethodNamePattern = regexp.MustCompile(`^/(?:[A-Za-z_][A-Za-z0-9_]*\.)+[A-Za-z_][A-Za-z0-9_]*/[A-Za-z_][A-Za-z0-9_]*$`)
 
 func (m *MethodSpec) validateGrpcMethods() error {
-	hasGrpcConnector := slices.Contains(m.SpecData.apiConnectors, GrpcConnector)
+	hasGrpcConnector := slices.ContainsFunc(m.SpecData.apiConnectors, IsGrpcApiConnectorType)
 	for _, method := range m.Methods {
 		if !hasGrpcConnector {
 			if method.Settings != nil && method.Settings.Grpc != nil {
@@ -350,6 +350,7 @@ const (
 	GrpcConnector
 	WebsocketConnector
 	RestAdditional // is used for connectors that provide extra REST methods, but they can't be used for chain-specific
+	GrpcAdditional // the gRPC twin of RestAdditional: a second gRPC endpoint on the same upstream (e.g. java-tron's solidity port)
 )
 
 func (a ApiConnectorType) String() string {
@@ -368,6 +369,8 @@ func (a ApiConnectorType) String() string {
 		return "rest-indexer"
 	case RestAdditional:
 		return "rest-additional"
+	case GrpcAdditional:
+		return "grpc-additional"
 	case TendermintConnector:
 		return "tendermint"
 	}
@@ -382,6 +385,7 @@ var apiConnectors = map[string]ApiConnectorType{
 	"websocket":       WebsocketConnector,
 	"rest-indexer":    RestIndexer,
 	"rest-additional": RestAdditional,
+	"grpc-additional": GrpcAdditional,
 }
 var plainApiConnectorTypes = []ApiConnectorType{
 	JsonRpcConnector,
@@ -392,10 +396,21 @@ var plainApiConnectorTypes = []ApiConnectorType{
 	RestIndexer,
 }
 
-var additionalApiConnectors = mapset.NewThreadUnsafeSet[ApiConnectorType](RestAdditional)
+var additionalApiConnectors = mapset.NewThreadUnsafeSet[ApiConnectorType](RestAdditional, GrpcAdditional)
+
+// grpcApiConnectors is every connector whose methods are gRPC methods:
+// '/package.Service/Method' names, grpc settings, reflection. Anything in the
+// loader that keys on "is this gRPC" must use this set, not GrpcConnector alone.
+var grpcApiConnectors = mapset.NewThreadUnsafeSet[ApiConnectorType](GrpcConnector, GrpcAdditional)
 
 func IsAdditionalApiConnectorType(apiConnectorType ApiConnectorType) bool {
 	return additionalApiConnectors.Contains(apiConnectorType)
+}
+
+// IsGrpcApiConnectorType reports whether methods of this connector are gRPC
+// methods, whichever port they are served on.
+func IsGrpcApiConnectorType(apiConnectorType ApiConnectorType) bool {
+	return grpcApiConnectors.Contains(apiConnectorType)
 }
 
 func GetPlainApiConnectorType() []ApiConnectorType {

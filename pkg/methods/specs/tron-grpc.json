@@ -1,0 +1,1045 @@
+{
+  "openrpc": "1.0.0",
+  "info": {
+    "title": "TRON full-node gRPC methods (protocol.Wallet)",
+    "version": "1.0.0"
+  },
+  "spec": {
+    "name": "tron-grpc",
+    "api-connectors": [
+      "grpc"
+    ],
+    "type": "plain"
+  },
+  "methods": [
+    {
+      "name": "/protocol.Wallet/GetAccount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAccountById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAccountBalance",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBlockBalanceTrace",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateTransaction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateTransaction2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/BroadcastTransaction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UpdateAccount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/SetAccountId",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UpdateAccount2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/VoteWitnessAccount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UpdateSetting",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UpdateEnergyLimit",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/VoteWitnessAccount2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateAssetIssue",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateAssetIssue2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UpdateWitness",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UpdateWitness2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateAccount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateAccount2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateWitness",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateWitness2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/TransferAsset",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/TransferAsset2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ParticipateAssetIssue",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ParticipateAssetIssue2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/FreezeBalance",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/FreezeBalance2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/FreezeBalanceV2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UnfreezeBalance",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UnfreezeBalance2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UnfreezeBalanceV2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UnfreezeAsset",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UnfreezeAsset2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/WithdrawBalance",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/WithdrawBalance2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/WithdrawExpireUnfreeze",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/DelegateResource",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UnDelegateResource",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CancelAllUnfreezeV2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UpdateAsset",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UpdateAsset2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ProposalCreate",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ProposalApprove",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ProposalDelete",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/BuyStorage",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/BuyStorageBytes",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/SellStorage",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ExchangeCreate",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ExchangeInject",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ExchangeWithdraw",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ExchangeTransaction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/MarketSellAsset",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/MarketCancelOrder",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetMarketOrderById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetMarketOrderByAccount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetMarketPriceByPair",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetMarketOrderListByPair",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetMarketPairList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ListNodes",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAssetIssueByAccount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAccountNet",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAccountResource",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAssetIssueByName",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAssetIssueListByName",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAssetIssueById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetNowBlock",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetNowBlock2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBlockByNum",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBlockByNum2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetTransactionCountByBlockNum",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBlockById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBlockByLimitNext",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBlockByLimitNext2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBlockByLatestNum",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBlockByLatestNum2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetTransactionById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/DeployContract",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetContract",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetContractInfo",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/TriggerContract",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/TriggerConstantContract",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/EstimateEnergy",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ClearContractABI",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ListWitnesses",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetPaginatedNowWitnessList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetDelegatedResource",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetDelegatedResourceV2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetDelegatedResourceAccountIndex",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetDelegatedResourceAccountIndexV2",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetCanDelegatedMaxSize",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAvailableUnfreezeCount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetCanWithdrawUnfreezeAmount",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ListProposals",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetPaginatedProposalList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetProposalById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ListExchanges",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetPaginatedExchangeList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetExchangeById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetChainParameters",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAssetIssueList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetPaginatedAssetIssueList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/TotalTransaction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetNextMaintenanceTime",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetTransactionInfoById",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/AccountPermissionUpdate",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetTransactionSignWeight",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetTransactionApprovedList",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetNodeInfo",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetRewardInfo",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBrokerageInfo",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/UpdateBrokerage",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateShieldedTransaction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetMerkleTreeVoucherInfo",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ScanNoteByIvk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ScanAndMarkNoteByIvk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ScanNoteByOvk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetSpendingKey",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetExpandedSpendingKey",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetAkFromAsk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetNkFromNsk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetIncomingViewingKey",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetDiversifier",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetNewShieldedAddress",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetZenPaymentAddress",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetRcm",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/IsSpend",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateShieldedTransactionWithoutSpendAuthSig",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetShieldTransactionHash",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateSpendAuthSig",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateShieldNullifier",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateShieldedContractParameters",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateShieldedContractParametersWithoutAsk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ScanShieldedTRC20NotesByIvk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/ScanShieldedTRC20NotesByOvk",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/IsShieldedTRC20ContractNoteSpent",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetTriggerInputForShieldedTRC20Contract",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/CreateCommonTransaction",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetTransactionInfoByBlockNum",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBurnTrx",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetTransactionFromPending",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetTransactionListFromPending",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetPendingSize",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBlock",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetBandwidthPrices",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetEnergyPrices",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "/protocol.Wallet/GetMemoFee",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    }
+  ]
+}

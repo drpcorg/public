@@ -1,0 +1,11 @@
+{
+  "spec": {
+    "name": "bundle",
+    "type": "bundle"
+  },
+  "spec-imports": [
+    "full",
+    "solidity",
+    "shared"
+  ]
+}
