@@ -4522,3 +4522,28 @@ chain-settings:
           grpcId: 1178
           short-names: [peaq, peaq-mainnet]
           chain-id: 0xd0a
+    - id: onyx
+      label: Onyx
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ONYX_MAINNET
+          grpcId: 1179
+          short-names: [onyx, onyx-mainnet]
+          chain-id: 0x147
+        - id: Testnet
+          priority: 10
+          code: ONYX_TESTNET
+          grpcId: 10214
+          short-names: [onyx-testnet]
+          chain-id: 0x22c5
+          settings:
+            expected-block-time: 2s
