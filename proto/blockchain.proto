@@ -9,6 +9,7 @@ service Blockchain {
     rpc NativeCall (NativeCallRequest) returns (stream NativeCallReplyItem) {}
     rpc NativeSubscribe (NativeSubscribeRequest) returns (stream NativeSubscribeReplyItem) {}
     rpc SubscribeChainStatus (SubscribeChainStatusRequest) returns (stream SubscribeChainStatusResponse) {}
+    rpc SubscribeUpstreamStatus (SubscribeChainStatusRequest) returns (stream SubscribeChainStatusResponse) {}
 
     rpc Describe (DescribeRequest) returns (DescribeResponse) {}
     rpc SubscribeStatus (StatusRequest) returns (stream ChainStatus) {}
@@ -99,6 +100,9 @@ message NativeCallReplyItem {
     repeated KeyValue response_headers = 14;
     bytes error_as_is = 15;
     repeated KeyValue response_trailers = 16;
+    // set on an error the serving upstream (or the pin) caused rather than the
+    // request: another upstream may answer the same request
+    bool node_level_error = 17;
 }
 
 message NativeSubscribeRequest {
@@ -343,7 +347,12 @@ message ExistsSelector {
 message SubscribeChainStatusRequest {
 }
 
+// SubscribeUpstreamStatus uses the existing chain-status format for one upstream.
+// Only that RPC sets upstream_id and upstream_index. Each upstream gets its own
+// full response, deltas and periodic resync; removal is an unavailable status.
 message SubscribeChainStatusResponse {
+    string upstream_id = 4;
+    string upstream_index = 5;
     ChainDescription chain_description = 1;
     BuildInfo build_info = 2;
     bool full_response = 3;
