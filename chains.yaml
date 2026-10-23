@@ -4532,9 +4532,23 @@ chain-settings:
           grpcId: 1180
           short-names: [lukso, lukso-mainnet]
           chain-id: 0x2a
+          lower-bounds:
+            tx:
+              block: 39697
+              hash: "0x868a34a2b1010d647287165c549ec14bd04e424ab327ccbbdd84430061beb4c8"
+            receipts:
+              block: 39697
+              hash: "0x868a34a2b1010d647287165c549ec14bd04e424ab327ccbbdd84430061beb4c8"
         - id: Testnet
           priority: 10
           code: LUKSO_TESTNET
           grpcId: 10215
           short-names: [lukso-testnet]
           chain-id: 0x1069
+          lower-bounds:
+            tx:
+              block: 10
+              hash: "0x52554afe582b8c146fa7501474c11855f8ec218920bf6a34f24e92a19a86a1e3"
+            receipts:
+              block: 10
+              hash: "0x52554afe582b8c146fa7501474c11855f8ec218920bf6a34f24e92a19a86a1e3"
