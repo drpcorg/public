@@ -4522,3 +4522,19 @@ chain-settings:
           grpcId: 1178
           short-names: [peaq, peaq-mainnet]
           chain-id: 0xd0a
+    - id: lukso
+      label: LUKSO
+      type: eth
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: LUKSO_MAINNET
+          grpcId: 1180
+          short-names: [lukso, lukso-mainnet]
+          chain-id: 0x2a
+        - id: Testnet
+          priority: 10
+          code: LUKSO_TESTNET
+          grpcId: 10215
+          short-names: [lukso-testnet]
+          chain-id: 0x1069

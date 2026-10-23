@@ -206,6 +206,7 @@ const (
 	ChainRef_CHAIN_SUI__MAINNET                 ChainRef = 1176
 	ChainRef_CHAIN_GRAVITY__MAINNET             ChainRef = 1177
 	ChainRef_CHAIN_PEAQ__MAINNET                ChainRef = 1178
+	ChainRef_CHAIN_LUKSO__MAINNET               ChainRef = 1180
 	// Testnets start with 10_000
 	ChainRef_CHAIN_ETHEREUM__MORDEN                    ChainRef = 10001
 	ChainRef_CHAIN_ETHEREUM__KOVAN                     ChainRef = 10002
@@ -396,6 +397,7 @@ const (
 	ChainRef_CHAIN_SUI__DEVNET                         ChainRef = 10211
 	ChainRef_CHAIN_GRAVITY__TESTNET                    ChainRef = 10212
 	ChainRef_CHAIN_TRON_EVM__NILE                      ChainRef = 10213
+	ChainRef_CHAIN_LUKSO__TESTNET                      ChainRef = 10215
 	// Virtual chains (no real blockchain)
 	ChainRef_CHAIN_LAMBDA__VIRTUAL ChainRef = 100000 // P2P Lambda REST API synthetic provider
 )
@@ -585,6 +587,7 @@ var (
 		1176:   "CHAIN_SUI__MAINNET",
 		1177:   "CHAIN_GRAVITY__MAINNET",
 		1178:   "CHAIN_PEAQ__MAINNET",
+		1180:   "CHAIN_LUKSO__MAINNET",
 		10001:  "CHAIN_ETHEREUM__MORDEN",
 		10002:  "CHAIN_ETHEREUM__KOVAN",
 		10003:  "CHAIN_BITCOIN__TESTNET",
@@ -774,6 +777,7 @@ var (
 		10211:  "CHAIN_SUI__DEVNET",
 		10212:  "CHAIN_GRAVITY__TESTNET",
 		10213:  "CHAIN_TRON_EVM__NILE",
+		10215:  "CHAIN_LUKSO__TESTNET",
 		100000: "CHAIN_LAMBDA__VIRTUAL",
 	}
 	ChainRef_value = map[string]int32{
@@ -959,6 +963,7 @@ var (
 		"CHAIN_SUI__MAINNET":                        1176,
 		"CHAIN_GRAVITY__MAINNET":                    1177,
 		"CHAIN_PEAQ__MAINNET":                       1178,
+		"CHAIN_LUKSO__MAINNET":                      1180,
 		"CHAIN_ETHEREUM__MORDEN":                    10001,
 		"CHAIN_ETHEREUM__KOVAN":                     10002,
 		"CHAIN_BITCOIN__TESTNET":                    10003,
@@ -1148,6 +1153,7 @@ var (
 		"CHAIN_SUI__DEVNET":                         10211,
 		"CHAIN_GRAVITY__TESTNET":                    10212,
 		"CHAIN_TRON_EVM__NILE":                      10213,
+		"CHAIN_LUKSO__TESTNET":                      10215,
 		"CHAIN_LAMBDA__VIRTUAL":                     100000,
 	}
 )
@@ -1847,7 +1853,7 @@ const file_common_proto_rawDesc = "" +
 	"\ttimestamp\x18\x03 \x01(\x04R\ttimestamp\"Y\n" +
 	"\x10FinalizationData\x12\x16\n" +
 	"\x06height\x18\x01 \x01(\x04R\x06height\x12-\n" +
-	"\x04type\x18\x02 \x01(\x0e2\x19.emerald.FinalizationTypeR\x04type*\xd9U\n" +
+	"\x04type\x18\x02 \x01(\x0e2\x19.emerald.FinalizationTypeR\x04type*\x8fV\n" +
 	"\bChainRef\x12\x15\n" +
 	"\x11CHAIN_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16CHAIN_BITCOIN__MAINNET\x10\x01\x12\x1b\n" +
@@ -2030,7 +2036,8 @@ const file_common_proto_rawDesc = "" +
 	"\x17CHAIN_CELESTIA__MAINNET\x10\x97\t\x12\x17\n" +
 	"\x12CHAIN_SUI__MAINNET\x10\x98\t\x12\x1b\n" +
 	"\x16CHAIN_GRAVITY__MAINNET\x10\x99\t\x12\x18\n" +
-	"\x13CHAIN_PEAQ__MAINNET\x10\x9a\t\x12\x1b\n" +
+	"\x13CHAIN_PEAQ__MAINNET\x10\x9a\t\x12\x19\n" +
+	"\x14CHAIN_LUKSO__MAINNET\x10\x9c\t\x12\x1b\n" +
 	"\x16CHAIN_ETHEREUM__MORDEN\x10\x91N\x12\x1a\n" +
 	"\x15CHAIN_ETHEREUM__KOVAN\x10\x92N\x12\x1b\n" +
 	"\x16CHAIN_BITCOIN__TESTNET\x10\x93N\x12\x1c\n" +
@@ -2219,7 +2226,8 @@ const file_common_proto_rawDesc = "" +
 	"\x12CHAIN_SUI__TESTNET\x10\xe2O\x12\x16\n" +
 	"\x11CHAIN_SUI__DEVNET\x10\xe3O\x12\x1b\n" +
 	"\x16CHAIN_GRAVITY__TESTNET\x10\xe4O\x12\x19\n" +
-	"\x14CHAIN_TRON_EVM__NILE\x10\xe5O\x12\x1b\n" +
+	"\x14CHAIN_TRON_EVM__NILE\x10\xe5O\x12\x19\n" +
+	"\x14CHAIN_LUKSO__TESTNET\x10\xe7O\x12\x1b\n" +
 	"\x15CHAIN_LAMBDA__VIRTUAL\x10\xa0\x8d\x06\"\x04\b\x02\x10\x02\"\x06\b\xe9\a\x10\xe9\a\"\x06\b\x94N\x10\x94N\"\x06\b\x95N\x10\x95N\"\x06\b\x99N\x10\x99N\"\x06\b\x9aN\x10\x9aN\"\x06\b\x9bN\x10\x9bN\"\x06\b\x9cN\x10\x9cN\"\x06\b\x9dN\x10\x9dN\"\x06\b\x9eN\x10\x9eN\"\x06\b\x9fN\x10\x9fN\"\x06\b\xa3N\x10\xa3N\"\x06\b\xa4N\x10\xa4N\"\x06\b\xa6N\x10\xa6N\"\x06\b\xa7N\x10\xa7N\"\x06\b\xafN\x10\xafN\"\x06\b\xb3N\x10\xb3N\"\x06\b\xbbN\x10\xbbN\"\x06\b\xbdN\x10\xbdN\"\x06\b\xc4N\x10\xc4N\"\x06\b\xd5N\x10\xd5N\"\x06\b\xf1N\x10\xf1N*\x96\x01\n" +
 	"\x10AvailabilityEnum\x12\x11\n" +
 	"\rAVAIL_UNKNOWN\x10\x00\x12\f\n" +
