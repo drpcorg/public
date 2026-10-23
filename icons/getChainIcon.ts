@@ -49,6 +49,7 @@ import Kusama from "./Kusama.svg";
 import Lens from "./Lens.png";
 import Linea from "./Linea.svg";
 import Lisk from "./Lisk.png";
+import Lukso from "./Lukso.svg";
 import Manta from "./Manta.png";
 import Mantle from "./Mantle.svg";
 import MantleDark from "./MantleDark.svg";
@@ -219,6 +220,7 @@ export const Icons: Record<string, any> = {
   swell: Swell,
   hyperliquid: Hyperliquid,
   ozean: Ozean,
+  lukso: Lukso,
 };
 
 export const DarkIcons: Record<string, any> = {
