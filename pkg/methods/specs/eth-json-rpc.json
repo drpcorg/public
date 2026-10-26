@@ -412,6 +412,13 @@
       "params": []
     },
     {
+      "name": "eth_callMany",
+      "settings": {
+        "cacheable": false
+      },
+      "params": []
+    },
+    {
       "name": "eth_getStorageValues",
       "settings": {
         "cacheable": false

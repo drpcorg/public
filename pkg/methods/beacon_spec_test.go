@@ -17,7 +17,7 @@ func TestBeaconChainSpecLoadsAndMatchesRestPaths(t *testing.T) {
 	require.NotNil(t, groups)
 	defaultGroup, ok := groups[specs.DefaultMethodGroup]
 	require.True(t, ok)
-	assert.Len(t, defaultGroup, 84)
+	assert.Len(t, defaultGroup, 103)
 
 	// Beacon responses are alias-addressed (head/finalized), so caching is off.
 	for _, method := range defaultGroup {
@@ -36,6 +36,13 @@ func TestBeaconChainSpecLoadsAndMatchesRestPaths(t *testing.T) {
 		{"GET#/eth/v1/node/syncing", "GET#/eth/v1/node/syncing", nil},
 		{"POST#/eth/v1/beacon/states/head/validator_balances", "POST#/eth/v1/beacon/states/*/validator_balances", []string{"head"}},
 		{"GET#/eth/v1/beacon/states/head/validators/0", "GET#/eth/v1/beacon/states/*/validators/*", []string{"head", "0"}},
+		// Beacon API v5.0.0-beta.0 (Gloas)
+		{"GET#/eth/v2/validator/duties/proposer/131113", "GET#/eth/v2/validator/duties/proposer/*", []string{"131113"}},
+		{"GET#/eth/v2/node/version", "GET#/eth/v2/node/version", nil},
+		{"POST#/eth/v4/validator/blocks/42", "POST#/eth/v4/validator/blocks/*", []string{"42"}},
+		{"GET#/eth/v1/beacon/states/head/ptc", "GET#/eth/v1/beacon/states/*/ptc", []string{"head"}},
+		{"POST#/eth/v1/validator/duties/ptc/7", "POST#/eth/v1/validator/duties/ptc/*", []string{"7"}},
+		{"GET#/eth/v1/validator/execution_payload_envelopes/42/0xab", "GET#/eth/v1/validator/execution_payload_envelopes/*/*", []string{"42", "0xab"}},
 	}
 	for _, c := range cases {
 		template, params, ok := specs.MatchRestMethod("eth-beacon-chain", c.path)

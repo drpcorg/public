@@ -599,6 +599,139 @@
       "settings": {
         "cacheable": false
       }
+    },
+    {
+      "name": "GET#/eth/v2/validator/duties/proposer/*",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "GET#/eth/v2/node/version",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "GET#/eth/v2/debug/fork_choice",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/eth/v4/validator/blocks/*",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "GET#/eth/v1/beacon/execution_payload_envelopes/*",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "GET#/eth/v1/beacon/states/*/builder_pending_payments",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "GET#/eth/v1/beacon/states/*/builder_pending_withdrawals",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "GET#/eth/v1/beacon/states/*/ptc",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/eth/v1/beacon/states/*/builders",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "GET#/eth/v1/beacon/pool/payload_attestations",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "GET#/eth/v1/beacon/proposer_preferences",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/eth/v1/validator/duties/ptc/*",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "GET#/eth/v1/validator/payload_attestation_data",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "GET#/eth/v1/validator/execution_payload_envelopes/*/*",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/eth/v1/beacon/pool/payload_attestations",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/eth/v1/beacon/execution_payload_bids",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/eth/v1/beacon/execution_payload_envelopes",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/eth/v1/validator/proposer_preferences",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
+    },
+    {
+      "name": "POST#/eth/v1/validator/builder_preferences",
+      "params": [],
+      "settings": {
+        "cacheable": false
+      }
     }
   ]
 }
