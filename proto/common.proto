@@ -196,6 +196,7 @@ enum ChainRef {
   CHAIN_SUI__MAINNET = 1176;
   CHAIN_GRAVITY__MAINNET = 1177;
   CHAIN_PEAQ__MAINNET = 1178;
+  CHAIN_LUKSO__MAINNET = 1180;
 
   // Testnets start with 10_000
   CHAIN_ETHEREUM__MORDEN = 10001;
@@ -407,6 +408,7 @@ enum ChainRef {
   CHAIN_SUI__DEVNET = 10211;
   CHAIN_GRAVITY__TESTNET = 10212;
   CHAIN_TRON_EVM__NILE = 10213;
+  CHAIN_LUKSO__TESTNET = 10215;
 
   // Virtual chains (no real blockchain)
   CHAIN_LAMBDA__VIRTUAL = 100000; // P2P Lambda REST API synthetic provider
