@@ -1426,3 +1426,17 @@
   chain-id: 61901
   explorers:
     - https://scan.movan.movachain.com
+- currency:
+    name: LUKSO
+    symbol: LYX
+    decimals: 18
+  chain-id: 42
+  explorers:
+    - https://explorer.execution.mainnet.lukso.network
+- currency:
+    name: TestLYX
+    symbol: LYXt
+    decimals: 18
+  chain-id: 4201
+  explorers:
+    - https://explorer.execution.testnet.lukso.network
