@@ -1440,3 +1440,15 @@
   chain-id: 4201
   explorers:
     - https://explorer.execution.testnet.lukso.network
+- currency:
+    name: HYPE
+    symbol: HYPE
+    decimals: 18
+  chain-id: 99901
+- currency:
+    name: HYPE
+    symbol: HYPE
+    decimals: 18
+  chain-id: 99801
+  explorers:
+    - https://explorer-elysium-testnet.t.conduit.xyz

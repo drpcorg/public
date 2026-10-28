@@ -4552,3 +4552,33 @@ chain-settings:
             receipts:
               block: 10
               hash: "0x52554afe582b8c146fa7501474c11855f8ec218920bf6a34f24e92a19a86a1e3"
+    - id: elysium
+      label: Elysium
+      type: eth
+      settings:
+        expected-block-time: 100ms
+        options:
+          validate-peers: false
+        lags:
+          syncing: 80
+          lagging: 40
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ELYSIUM_MAINNET
+          grpcId: 1181
+          short-names: [elysium, elysium-mainnet]
+          chain-id: 0x1863d
+        - id: Testnet
+          priority: 10
+          code: ELYSIUM_TESTNET
+          grpcId: 10216
+          short-names: [elysium-testnet]
+          chain-id: 0x185d9
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0xef15851a10ad76236bb690d655534a2133be53d2e0a23f574e48e93db0f08ef3"
+            receipts:
+              block: 1
+              hash: "0xef15851a10ad76236bb690d655534a2133be53d2e0a23f574e48e93db0f08ef3"

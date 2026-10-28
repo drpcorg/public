@@ -24,6 +24,7 @@ import CosmosHub from "./CosmosHub.svg";
 import Cronos from "./Cronos.svg";
 import Cronoszkevm from "./Cronos-zkevm.svg";
 import Dymension from "./Dymension.png";
+import Elysium from "./Elysium.png";
 import Ethereum from "./Ethereum.svg";
 import Everclear from "./Everclear.png";
 import Evmos from "./Evmos.svg";
@@ -221,6 +222,7 @@ export const Icons: Record<string, any> = {
   hyperliquid: Hyperliquid,
   ozean: Ozean,
   lukso: Lukso,
+  elysium: Elysium,
 };
 
 export const DarkIcons: Record<string, any> = {
