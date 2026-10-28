@@ -4525,6 +4525,11 @@ chain-settings:
     - id: lukso
       label: LUKSO
       type: eth
+      settings:
+        expected-block-time: 12s
+        lags:
+          syncing: 6
+          lagging: 1
       chains:
         - id: Mainnet
           priority: 100
