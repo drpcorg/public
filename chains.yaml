@@ -4587,3 +4587,28 @@ chain-settings:
             receipts:
               block: 1
               hash: "0xef15851a10ad76236bb690d655534a2133be53d2e0a23f574e48e93db0f08ef3"
+    - id: onyx
+      label: Onyx
+      type: eth
+      settings:
+        expected-block-time: 1s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ONYX_MAINNET
+          grpcId: 1179
+          short-names: [onyx, onyx-mainnet]
+          chain-id: 0x147
+        - id: Testnet
+          priority: 10
+          code: ONYX_TESTNET
+          grpcId: 10214
+          short-names: [onyx-testnet]
+          chain-id: 0x22c5
+          settings:
+            expected-block-time: 4s
