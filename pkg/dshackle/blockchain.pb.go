@@ -2896,7 +2896,11 @@ func (x *ExistsSelector) GetName() string {
 }
 
 type SubscribeChainStatusRequest struct {
-	state         protoimpl.MessageState `protogen:"open.v1"`
+	state protoimpl.MessageState `protogen:"open.v1"`
+	// Applies only to SubscribeUpstreamStatus. Zero sends changes immediately;
+	// positive values coalesce each chain's changes at this minimum interval.
+	// The initial full response is sent immediately regardless of this value.
+	MinIntervalMs uint32 `protobuf:"varint,1,opt,name=min_interval_ms,json=minIntervalMs,proto3" json:"min_interval_ms,omitempty"`
 	unknownFields protoimpl.UnknownFields
 	sizeCache     protoimpl.SizeCache
 }
@@ -2929,6 +2933,13 @@ func (x *SubscribeChainStatusRequest) ProtoReflect() protoreflect.Message {
 // Deprecated: Use SubscribeChainStatusRequest.ProtoReflect.Descriptor instead.
 func (*SubscribeChainStatusRequest) Descriptor() ([]byte, []int) {
 	return file_blockchain_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *SubscribeChainStatusRequest) GetMinIntervalMs() uint32 {
+	if x != nil {
+		return x.MinIntervalMs
+	}
+	return 0
 }
 
 // SubscribeUpstreamStatus uses the existing chain-status format for one upstream.
@@ -3799,8 +3810,9 @@ const file_blockchain_proto_rawDesc = "" +
 	"\x12MaxVersionSelector\x12\x18\n" +
 	"\aversion\x18\x01 \x01(\tR\aversion\"$\n" +
 	"\x0eExistsSelector\x12\x12\n" +
-	"\x04name\x18\x01 \x01(\tR\x04name\"\x1d\n" +
-	"\x1bSubscribeChainStatusRequest\"\x86\x02\n" +
+	"\x04name\x18\x01 \x01(\tR\x04name\"E\n" +
+	"\x1bSubscribeChainStatusRequest\x12&\n" +
+	"\x0fmin_interval_ms\x18\x01 \x01(\rR\rminIntervalMs\"\x86\x02\n" +
 	"\x1cSubscribeChainStatusResponse\x12\x1f\n" +
 	"\vupstream_id\x18\x04 \x01(\tR\n" +
 	"upstreamId\x12%\n" +

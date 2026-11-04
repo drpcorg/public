@@ -345,6 +345,10 @@ message ExistsSelector {
 }
 
 message SubscribeChainStatusRequest {
+    // Applies only to SubscribeUpstreamStatus. Zero sends changes immediately;
+    // positive values coalesce each chain's changes at this minimum interval.
+    // The initial full response is sent immediately regardless of this value.
+    uint32 min_interval_ms = 1;
 }
 
 // SubscribeUpstreamStatus uses the existing chain-status format for one upstream.

@@ -24,4 +24,7 @@ rules:
       - "GET#/eth/v1/beacon/headers"
       - "GET#/eth/v1/beacon/headers/*"
       - "GET#/eth/v1/beacon/light_client/finality_update"
+      - "GET#/eth/v1/beacon/states/*/validators"
+      - "POST#/eth/v1/beacon/states/*/validators"
+      - "GET#/eth/v1/beacon/states/*/validators/*"
     blacklist: []
