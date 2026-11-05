@@ -379,13 +379,13 @@ chain-settings:
       label: Base
       type: eth
       settings:
-        expected-block-time: 2s
+        expected-block-time: 200ms
         allow-pruning-requirement: true
         options:
           validate-peers: false
         lags:
-          syncing: 40
-          lagging: 20
+          syncing: 100
+          lagging: 30
       chains:
         - id: Mainnet
           priority: 100
