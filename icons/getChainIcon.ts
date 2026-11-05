@@ -66,6 +66,8 @@ import Near from "./Near.svg";
 import Neon from "./Neon.jpeg";
 import Neutron from "./Neutron.jpeg";
 import OKTChain from "./OKTChain.png";
+import Onyx from "./Onyx.svg";
+import OnyxDark from "./OnyxDark.svg";
 import OpBNB from "./OpBNB.svg";
 import OpenCampusCodex from "./OpenCampusCodex.svg";
 import Optimism from "./Optimism.svg";
@@ -223,6 +225,7 @@ export const Icons: Record<string, any> = {
   ozean: Ozean,
   lukso: Lukso,
   elysium: Elysium,
+  onyx: Onyx,
 };
 
 export const DarkIcons: Record<string, any> = {
@@ -231,6 +234,7 @@ export const DarkIcons: Record<string, any> = {
   celo: CeloDark,
   fantom: FantomDark,
   mantle: MantleDark,
+  onyx: OnyxDark,
 };
 
 export const getChainIcon = (network: string, isDark = false) => {

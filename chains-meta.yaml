@@ -1452,3 +1452,17 @@
   chain-id: 99801
   explorers:
     - https://explorer-elysium-testnet.t.conduit.xyz
+- currency:
+    name: Onyxcoin
+    symbol: XCN
+    decimals: 18
+  chain-id: 327
+  explorers:
+    - https://onyxscan.org
+- currency:
+    name: Onyxcoin
+    symbol: XCN
+    decimals: 18
+  chain-id: 8901
+  explorers:
+    - https://onyxscan.org/testnet
