@@ -1308,7 +1308,7 @@
   explorers:
     - https://explorer.testnet.oasys.games
 - currency:
-    name: Robinhood Testnet
+    name: Sepolia Ether
     symbol: ETH
     decimals: 18
   chain-id: 46630
@@ -1348,7 +1348,7 @@
     decimals: 18
   chain-id: 4663
   explorers:
-    - https://explorer.chain.robinhood.com
+    - https://robinhoodchain.blockscout.com
 - currency:
     name: KITE
     symbol: KITE
