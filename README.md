@@ -129,32 +129,6 @@ settings:
 | `options.validate-syncing`   | Enable validation of syncing state          |
 | `options.disable-validation` | Disable all validations                     |
 
-## Meta data
-
-### Icons
-
-Icons are stored in the `/icons` directory. To add a new icon, place a `.svg` or `.png` file into the `/icons` folder. Ensure the filename corresponds to the identifier for the protocol.
-
-Next, register the icon in the Icons map within the `/icons/getChainIcon.ts` file.
-
-**Example:**
-
-```typescript
-import Ethereum from "./Ethereum.svg";
-
-const Icons: Record<string, React.ComponentType> = {
-  // existing icons
-  ethereum: Ethereum,
-  // add new icons here
-};
-```
-
-If you are adding or modifying an .svg icon, ensure to compress it using [SVGOMG](https://jakearchibald.github.io/svgomg/).
-
-### Descriptions
-
-Each chain's description is displayed on the `https://drpc.org/chainlist/*` pages (e.g., https://drpc.org/chainlist/ethereum). To add a description for a new chain, insert the corresponding text into the `CHAIN_DESCRIPTION` map in the `./chain_descriptions.tsx` file.
-
 # Clients compatibility list
 
 File `compatible-clients.yaml` describes compatible clients of blockchains for drpc. It contains of list of clients, optional list of chains and enumeration of allowed or disallowed versions of clients.
