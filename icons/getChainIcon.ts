@@ -19,6 +19,8 @@ import Boba from "./Boba.svg";
 import BSC from "./BSC.svg";
 import Celo from "./Celo.svg";
 import CeloDark from "./CeloDark.svg";
+import Codex from "./Codex.svg";
+import CodexDark from "./CodexDark.svg";
 import Core from "./Core.png";
 import CosmosHub from "./CosmosHub.svg";
 import Cronos from "./Cronos.svg";
@@ -226,6 +228,7 @@ export const Icons: Record<string, any> = {
   lukso: Lukso,
   elysium: Elysium,
   onyx: Onyx,
+  codex: Codex,
 };
 
 export const DarkIcons: Record<string, any> = {
@@ -235,6 +238,7 @@ export const DarkIcons: Record<string, any> = {
   fantom: FantomDark,
   mantle: MantleDark,
   onyx: OnyxDark,
+  codex: CodexDark,
 };
 
 export const getChainIcon = (network: string, isDark = false) => {

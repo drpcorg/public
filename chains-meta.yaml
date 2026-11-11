@@ -1466,3 +1466,17 @@
   chain-id: 8901
   explorers:
     - https://onyxscan.org/testnet
+- currency:
+    name: Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 81224
+  explorers:
+    - https://explorer.codex.xyz
+- currency:
+    name: Sepolia Ether
+    symbol: ETH
+    decimals: 18
+  chain-id: 812242
+  explorers:
+    - https://explorer.codex-stg.xyz
