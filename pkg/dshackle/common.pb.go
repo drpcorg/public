@@ -209,6 +209,7 @@ const (
 	ChainRef_CHAIN_ONYX__MAINNET                ChainRef = 1179
 	ChainRef_CHAIN_LUKSO__MAINNET               ChainRef = 1180
 	ChainRef_CHAIN_ELYSIUM__MAINNET             ChainRef = 1181
+	ChainRef_CHAIN_CODEX__MAINNET               ChainRef = 1182
 	// Testnets start with 10_000
 	ChainRef_CHAIN_ETHEREUM__MORDEN                    ChainRef = 10001
 	ChainRef_CHAIN_ETHEREUM__KOVAN                     ChainRef = 10002
@@ -402,6 +403,7 @@ const (
 	ChainRef_CHAIN_ONYX__TESTNET                       ChainRef = 10214
 	ChainRef_CHAIN_LUKSO__TESTNET                      ChainRef = 10215
 	ChainRef_CHAIN_ELYSIUM__TESTNET                    ChainRef = 10216
+	ChainRef_CHAIN_CODEX__TESTNET                      ChainRef = 10217
 	// Virtual chains (no real blockchain)
 	ChainRef_CHAIN_LAMBDA__VIRTUAL ChainRef = 100000 // P2P Lambda REST API synthetic provider
 )
@@ -594,6 +596,7 @@ var (
 		1179:   "CHAIN_ONYX__MAINNET",
 		1180:   "CHAIN_LUKSO__MAINNET",
 		1181:   "CHAIN_ELYSIUM__MAINNET",
+		1182:   "CHAIN_CODEX__MAINNET",
 		10001:  "CHAIN_ETHEREUM__MORDEN",
 		10002:  "CHAIN_ETHEREUM__KOVAN",
 		10003:  "CHAIN_BITCOIN__TESTNET",
@@ -786,6 +789,7 @@ var (
 		10214:  "CHAIN_ONYX__TESTNET",
 		10215:  "CHAIN_LUKSO__TESTNET",
 		10216:  "CHAIN_ELYSIUM__TESTNET",
+		10217:  "CHAIN_CODEX__TESTNET",
 		100000: "CHAIN_LAMBDA__VIRTUAL",
 	}
 	ChainRef_value = map[string]int32{
@@ -974,6 +978,7 @@ var (
 		"CHAIN_ONYX__MAINNET":                       1179,
 		"CHAIN_LUKSO__MAINNET":                      1180,
 		"CHAIN_ELYSIUM__MAINNET":                    1181,
+		"CHAIN_CODEX__MAINNET":                      1182,
 		"CHAIN_ETHEREUM__MORDEN":                    10001,
 		"CHAIN_ETHEREUM__KOVAN":                     10002,
 		"CHAIN_BITCOIN__TESTNET":                    10003,
@@ -1166,6 +1171,7 @@ var (
 		"CHAIN_ONYX__TESTNET":                       10214,
 		"CHAIN_LUKSO__TESTNET":                      10215,
 		"CHAIN_ELYSIUM__TESTNET":                    10216,
+		"CHAIN_CODEX__TESTNET":                      10217,
 		"CHAIN_LAMBDA__VIRTUAL":                     100000,
 	}
 )
@@ -1865,7 +1871,7 @@ const file_common_proto_rawDesc = "" +
 	"\ttimestamp\x18\x03 \x01(\x04R\ttimestamp\"Y\n" +
 	"\x10FinalizationData\x12\x16\n" +
 	"\x06height\x18\x01 \x01(\x04R\x06height\x12-\n" +
-	"\x04type\x18\x02 \x01(\x0e2\x19.emerald.FinalizationTypeR\x04type*\xfdV\n" +
+	"\x04type\x18\x02 \x01(\x0e2\x19.emerald.FinalizationTypeR\x04type*\xb3W\n" +
 	"\bChainRef\x12\x15\n" +
 	"\x11CHAIN_UNSPECIFIED\x10\x00\x12\x1a\n" +
 	"\x16CHAIN_BITCOIN__MAINNET\x10\x01\x12\x1b\n" +
@@ -2051,7 +2057,8 @@ const file_common_proto_rawDesc = "" +
 	"\x13CHAIN_PEAQ__MAINNET\x10\x9a\t\x12\x18\n" +
 	"\x13CHAIN_ONYX__MAINNET\x10\x9b\t\x12\x19\n" +
 	"\x14CHAIN_LUKSO__MAINNET\x10\x9c\t\x12\x1b\n" +
-	"\x16CHAIN_ELYSIUM__MAINNET\x10\x9d\t\x12\x1b\n" +
+	"\x16CHAIN_ELYSIUM__MAINNET\x10\x9d\t\x12\x19\n" +
+	"\x14CHAIN_CODEX__MAINNET\x10\x9e\t\x12\x1b\n" +
 	"\x16CHAIN_ETHEREUM__MORDEN\x10\x91N\x12\x1a\n" +
 	"\x15CHAIN_ETHEREUM__KOVAN\x10\x92N\x12\x1b\n" +
 	"\x16CHAIN_BITCOIN__TESTNET\x10\x93N\x12\x1c\n" +
@@ -2243,7 +2250,8 @@ const file_common_proto_rawDesc = "" +
 	"\x14CHAIN_TRON_EVM__NILE\x10\xe5O\x12\x18\n" +
 	"\x13CHAIN_ONYX__TESTNET\x10\xe6O\x12\x19\n" +
 	"\x14CHAIN_LUKSO__TESTNET\x10\xe7O\x12\x1b\n" +
-	"\x16CHAIN_ELYSIUM__TESTNET\x10\xe8O\x12\x1b\n" +
+	"\x16CHAIN_ELYSIUM__TESTNET\x10\xe8O\x12\x19\n" +
+	"\x14CHAIN_CODEX__TESTNET\x10\xe9O\x12\x1b\n" +
 	"\x15CHAIN_LAMBDA__VIRTUAL\x10\xa0\x8d\x06\"\x04\b\x02\x10\x02\"\x06\b\xe9\a\x10\xe9\a\"\x06\b\x94N\x10\x94N\"\x06\b\x95N\x10\x95N\"\x06\b\x99N\x10\x99N\"\x06\b\x9aN\x10\x9aN\"\x06\b\x9bN\x10\x9bN\"\x06\b\x9cN\x10\x9cN\"\x06\b\x9dN\x10\x9dN\"\x06\b\x9eN\x10\x9eN\"\x06\b\x9fN\x10\x9fN\"\x06\b\xa3N\x10\xa3N\"\x06\b\xa4N\x10\xa4N\"\x06\b\xa6N\x10\xa6N\"\x06\b\xa7N\x10\xa7N\"\x06\b\xafN\x10\xafN\"\x06\b\xb3N\x10\xb3N\"\x06\b\xbbN\x10\xbbN\"\x06\b\xbdN\x10\xbdN\"\x06\b\xc4N\x10\xc4N\"\x06\b\xd5N\x10\xd5N\"\x06\b\xf1N\x10\xf1N*\x96\x01\n" +
 	"\x10AvailabilityEnum\x12\x11\n" +
 	"\rAVAIL_UNKNOWN\x10\x00\x12\f\n" +

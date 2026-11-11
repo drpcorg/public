@@ -4612,3 +4612,40 @@ chain-settings:
           chain-id: 0x22c5
           settings:
             expected-block-time: 4s
+    - id: codex
+      label: Codex
+      type: eth
+      settings:
+        expected-block-time: 2s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 40
+          lagging: 20
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: CODEX_MAINNET
+          grpcId: 1182
+          short-names: [codex, codex-mainnet]
+          chain-id: 0x13d48
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0xa39eed90b27825fe46bc7fac1dc29fba8524ea1146ab87d93804b1478b10b267"
+            receipts:
+              block: 1
+              hash: "0xa39eed90b27825fe46bc7fac1dc29fba8524ea1146ab87d93804b1478b10b267"
+        - id: Testnet
+          priority: 10
+          code: CODEX_TESTNET
+          grpcId: 10217
+          short-names: [codex-testnet]
+          chain-id: 0xc64d2
+          lower-bounds:
+            tx:
+              block: 1
+              hash: "0x900db2b37e720cef39a79abb8893097bdaf666c4523cadcb9714dcdb84802d66"
+            receipts:
+              block: 1
+              hash: "0x900db2b37e720cef39a79abb8893097bdaf666c4523cadcb9714dcdb84802d66"
