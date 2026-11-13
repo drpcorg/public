@@ -348,6 +348,7 @@ chain-settings:
           lagging: 50
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
       chains:
         - id: Mainnet
           priority: 100
@@ -496,6 +497,7 @@ chain-settings:
         allow-pruning-requirement: true
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         lags:
           syncing: 10
           lagging: 5
@@ -533,6 +535,7 @@ chain-settings:
         expected-block-time: 1s
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         lags:
           syncing: 80
           lagging: 40
@@ -583,6 +586,7 @@ chain-settings:
         allow-pruning-requirement: true
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         lags:
           syncing: 40
           lagging: 20
@@ -953,6 +957,7 @@ chain-settings:
           lagging: 10
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
       chains:
         - id: Mainnet
           priority: 100
@@ -1024,6 +1029,8 @@ chain-settings:
         lags:
           syncing: 20
           lagging: 10
+        options:
+          disable-gas-limit-validation: true
       chains:
         - id: Mainnet
           priority: 100
@@ -1115,6 +1122,8 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
+        options:
+          disable-gas-limit-validation: true
       chains:
         - id: Mainnet Shard 0
           priority: 100
@@ -1310,6 +1319,7 @@ chain-settings:
       settings:
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         expected-block-time: 500ms
         lags:
           syncing: 40
@@ -1519,6 +1529,7 @@ chain-settings:
       settings:
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         expected-block-time: 300ms
         lags:
           syncing: 40
@@ -1622,6 +1633,8 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
+        options:
+          disable-gas-limit-validation: true
       chains:
         - id: Mainnet
           priority: 100
@@ -1922,6 +1935,7 @@ chain-settings:
         support-safe-block-tag: false
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         expected-block-time: 2s
         lags:
           syncing: 10
@@ -2263,6 +2277,7 @@ chain-settings:
           lagging: 50
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
       chains:
         - id: Testnet
           priority: 1
@@ -2440,6 +2455,7 @@ chain-settings:
           lagging: 20
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
       chains:
         - id: Mainnet
           priority: 100
@@ -2464,6 +2480,8 @@ chain-settings:
         lags:
           syncing: 10
           lagging: 20
+        options:
+          disable-gas-limit-validation: true
       chains:
         - id: Mainnet
           priority: 100
@@ -2600,6 +2618,7 @@ chain-settings:
         expected-block-time: 1s
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         lags:
           syncing: 40
           lagging: 20
@@ -2763,6 +2782,7 @@ chain-settings:
         fork-tolerance: 2
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         lags:
           syncing: 10
           lagging: 5
@@ -3335,6 +3355,7 @@ chain-settings:
         expected-block-time: 1.5s
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         lags:
           syncing: 40
           lagging: 20
@@ -4137,6 +4158,7 @@ chain-settings:
         expected-block-time: 10s
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         lags:
           syncing: 12
           lagging: 4
@@ -4186,6 +4208,7 @@ chain-settings:
         options:
           validate-peers: false
           disable-log-index-validation: true
+          disable-gas-limit-validation: true
         lags:
           syncing: 10
           lagging: 5
@@ -4210,6 +4233,8 @@ chain-settings:
         lags:
           syncing: 20
           lagging: 10
+        options:
+          disable-gas-limit-validation: true
       chains:
         - id: Mainnet
           priority: 100
@@ -4370,6 +4395,7 @@ chain-settings:
         expected-block-time: 1s
         options:
           validate-peers: false
+          disable-gas-limit-validation: true
         lags:
           syncing: 40
           lagging: 20
