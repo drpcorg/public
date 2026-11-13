@@ -3577,6 +3577,8 @@ chain-settings:
         lags:
           syncing: 40
           lagging: 20
+        options:
+          disable-gas-limit-validation: true
       chains:
         - id: Mainnet
           chain-ids:
