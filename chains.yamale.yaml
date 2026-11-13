@@ -42,6 +42,7 @@ options:
   validate-syncing: bool(required=False)
   disable-liveness-subscription-validation: bool(required=False)
   disable-log-index-validation: bool(required=False)
+  disable-gas-limit-validation: bool(required=False)
 
 ---
 chain:
