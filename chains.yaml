@@ -2697,7 +2697,7 @@ chain-settings:
           priority: 100
           code: HYPERLIQUID_MAINNET
           grpcId: 1103
-          short-names: [hyperliquid, hyperliquid-mainnet]
+          short-names: [hyperliquid, hyperliquid-mainnet, hyperevm]
           chain-id: 0x3e7
         - id: Testnet
           priority: 1
