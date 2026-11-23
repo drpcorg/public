@@ -4677,3 +4677,30 @@ chain-settings:
             receipts:
               block: 1
               hash: "0x900db2b37e720cef39a79abb8893097bdaf666c4523cadcb9714dcdb84802d66"
+    - id: qms
+      label: QMS
+      type: eth
+      settings:
+        expected-block-time: 12s
+        lags:
+          syncing: 10
+          lagging: 5
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: QMS_MAINNET
+          grpcId: 1183
+          short-names: [qms, qms-mainnet]
+          chain-id: 0x79c
+        - id: Testnet
+          priority: 10
+          code: QMS_TESTNET
+          grpcId: 10218
+          short-names: [qms-testnet]
+          chain-id: 0x4c18
+        - id: Stagenet
+          priority: 1
+          code: QMS_STAGENET
+          grpcId: 10219
+          short-names: [qms-stagenet]
+          chain-id: 0x67932
