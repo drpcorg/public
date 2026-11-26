@@ -4704,3 +4704,40 @@ chain-settings:
           grpcId: 10219
           short-names: [qms-stagenet]
           chain-id: 0x67932
+    - id: alpen
+      label: Alpen
+      type: eth
+      settings:
+        expected-block-time: 5s
+        options:
+          validate-peers: false
+        lags:
+          syncing: 20
+          lagging: 10
+      chains:
+        - id: Mainnet
+          priority: 100
+          code: ALPEN_MAINNET
+          grpcId: 1184
+          short-names: [alpen, alpen-mainnet]
+          chain-id: 0x7168
+          lower-bounds:
+            tx:
+              block: 402468
+              hash: "0x54244a4bf90a387bfdca7618863c8eaf2ae150ecde2551a0b3567217342bab03"
+            receipts:
+              block: 402468
+              hash: "0x54244a4bf90a387bfdca7618863c8eaf2ae150ecde2551a0b3567217342bab03"
+        - id: Testnet
+          priority: 10
+          code: ALPEN_TESTNET
+          grpcId: 10220
+          short-names: [alpen-testnet]
+          chain-id: 0x4f56
+          lower-bounds:
+            tx:
+              block: 67392
+              hash: "0x8df8109bb58ca9d8fc43359d225460b71ae6ceedab4be1a1e3eeac35557c2ab7"
+            receipts:
+              block: 67392
+              hash: "0x8df8109bb58ca9d8fc43359d225460b71ae6ceedab4be1a1e3eeac35557c2ab7"

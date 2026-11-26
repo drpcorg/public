@@ -1480,3 +1480,17 @@
   chain-id: 812242
   explorers:
     - https://explorer.codex-stg.xyz
+- currency:
+    name: Bitcoin
+    symbol: BTC
+    decimals: 18
+  chain-id: 29032
+  explorers:
+    - https://explorer.mainnet.alpen.org
+- currency:
+    name: Signet Bitcoin
+    symbol: BTC
+    decimals: 18
+  chain-id: 20310
+  explorers:
+    - https://explorer.testnet.alpen.org
