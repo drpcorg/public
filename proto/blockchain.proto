@@ -9,6 +9,7 @@ service Blockchain {
     rpc NativeCall (NativeCallRequest) returns (stream NativeCallReplyItem) {}
     rpc NativeSubscribe (NativeSubscribeRequest) returns (stream NativeSubscribeReplyItem) {}
     rpc SubscribeChainStatus (SubscribeChainStatusRequest) returns (stream SubscribeChainStatusResponse) {}
+    rpc SubscribeUpstreamStatus (SubscribeUpstreamStatusRequest) returns (stream SubscribeUpstreamStatusResponse) {}
 
     rpc Describe (DescribeRequest) returns (DescribeResponse) {}
     rpc SubscribeStatus (StatusRequest) returns (stream ChainStatus) {}
@@ -277,6 +278,7 @@ message Selector {
         LowerHeightSelector lower_height_selector = 8;
         MinVersionSelector minVersionSelector = 9;
         MaxVersionSelector maxVersionSelector = 10;
+        UpstreamSelector upstream_selector = 11;
     }
 
     bool should_be_forwarded = 100;
@@ -340,6 +342,12 @@ message ExistsSelector {
     string name = 1;
 }
 
+// Admits exactly one upstream instance: both fields must match.
+message UpstreamSelector {
+    string upstream_id = 1;
+    string upstream_index = 2;
+}
+
 message SubscribeChainStatusRequest {
 }
 
@@ -347,6 +355,23 @@ message SubscribeChainStatusResponse {
     ChainDescription chain_description = 1;
     BuildInfo build_info = 2;
     bool full_response = 3;
+}
+
+message SubscribeUpstreamStatusRequest {
+    // 0 sends every change at once; a positive value is the minimum time between two
+    // responses about the same upstream.
+    uint32 min_interval_ms = 1;
+}
+
+// One upstream of one chain. Fields 1-3 are the ones of SubscribeChainStatusResponse, with
+// the same numbers and meaning.
+message SubscribeUpstreamStatusResponse {
+    ChainDescription chain_description = 1;
+    BuildInfo build_info = 2;
+    bool full_response = 3;
+    // Set on every response.
+    string upstream_id = 4;
+    string upstream_index = 5;
 }
 
 message ChainDescription {
