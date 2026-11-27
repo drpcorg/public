@@ -201,6 +201,7 @@ enum ChainRef {
   CHAIN_ELYSIUM__MAINNET = 1181;
   CHAIN_CODEX__MAINNET = 1182;
   CHAIN_QMS__MAINNET = 1183;
+  CHAIN_ALPEN__MAINNET = 1184;
 
   // Testnets start with 10_000
   CHAIN_ETHEREUM__MORDEN = 10001;
@@ -418,6 +419,7 @@ enum ChainRef {
   CHAIN_CODEX__TESTNET = 10217;
   CHAIN_QMS__TESTNET = 10218;
   CHAIN_QMS__STAGENET = 10219;
+  CHAIN_ALPEN__TESTNET = 10220;
 
   // Virtual chains (no real blockchain)
   CHAIN_LAMBDA__VIRTUAL = 100000; // P2P Lambda REST API synthetic provider
